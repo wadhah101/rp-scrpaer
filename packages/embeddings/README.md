@@ -22,7 +22,7 @@ Hybrid strategy: **semantic embeddings + muscle group filtering**.
 2. **Filter by muscle group** --- Join RP exercises with a muscle group mapping (`data/muscle_group_mapping.json`) so candidates are constrained to the same body part
 3. **Embed** --- Encode all enriched strings with `paraphrase-mpnet-base-v2` (768-dim, trained on paraphrase detection)
 4. **Store & query** --- Index Hevy embeddings in an in-memory ChromaDB collection (HNSW, cosine distance). Query with RP embeddings to retrieve the top 3 Hevy matches per RP exercise
-5. **Export** --- Write results to `final_result.yaml`
+5. **Export** --- Write one YAML file per RP exercise to the `output/` directory
 
 ## Project Structure
 
@@ -35,9 +35,11 @@ src/embeddings/
   embed.py       # Model loading, encoding, similarity search, YAML export
 
 data/
-  rp/exercises.json             # ~2000 RP exercises
-  hevy/exercises.json           # ~2100 Hevy exercises
+  rp/exercises.json             # 315 RP exercises
+  hevy/exercises.json           # 433 Hevy exercises
   muscle_group_mapping.json     # RP muscleGroupId -> Hevy primary_muscle_group
+
+output/                         # ~314 per-exercise YAML match files (generated)
 ```
 
 ## Data Shapes
@@ -56,8 +58,8 @@ hevy_id  | hevy_title            | hevy_primary_muscle_group | hevy_secondary_mu
 
 **Rich text representation** (fed to the model):
 ```
-RP:   "bench press (medium grip), barbell, chest"
-Hevy: "bench press (barbell), chest, triceps, shoulders"
+RP:   "bench press medium grip, barbell, chest"
+Hevy: "bench press barbell, chest, triceps, shoulders"
 ```
 
 ## Setup
@@ -77,21 +79,28 @@ uv sync --extra cu130
 
 ## Usage
 
+Requires the `MONOREPO_ROOT` environment variable pointing to the repository root.
+
 ```bash
+# Using mise task runner
+mise run embed
+
+# Or directly
 uv run python -m embeddings.embed
 ```
 
-Output is written to `final_result.yaml`. Each entry looks like:
+Each RP exercise produces a separate YAML file in `output/`, named after the normalized exercise string:
 
 ```yaml
-- rp_exercise: "bench press (medium grip), barbell, chest"
-  hevy_matches:
-    - name: "bench press (barbell), chest, triceps, shoulders"
-      distance: 0.0832
-    - name: "bench press (dumbbell), chest, triceps, shoulders"
-      distance: 0.1145
-    - name: "close grip bench press (barbell), chest, triceps, shoulders"
-      distance: 0.1290
+# output/ab-wheel-bodyweight-only-abdominals.yaml
+rp_embedding_name: ab wheel, bodyweight-only, abdominals
+matches:
+  - hevy_embedding_name: ab wheel, abdominals
+    distance: 0.1214
+  - hevy_embedding_name: torso rotation, abdominals
+    distance: 0.2834
+  - hevy_embedding_name: reverse crunch, abdominals
+    distance: 0.2859
 ```
 
 Lower distance = better match (cosine distance, 0.0 = identical).
@@ -104,8 +113,9 @@ Lower distance = better match (cosine distance, 0.0 = identical).
 | `chromadb` | In-memory vector store with HNSW index |
 | `polars` | DataFrame loading, joins, and transformations |
 | `torch` | Tensor backend (MPS / CPU / CUDA) |
-| `pydantic` | Data validation |
+| `pydantic` | Data validation schemas |
+| `aiohttp` / `aiohttp-retry` | Async HTTP (planned) |
 
 ## Hardware
 
-Automatically uses Apple Silicon GPU (MPS) when available, falls back to CPU. The dataset is small (~4k exercises total), so a full run completes in under a minute on most machines.
+Automatically uses Apple Silicon GPU (MPS) when available, falls back to CPU. The dataset is small (~750 exercises total), so a full run completes in under a minute on most machines.
