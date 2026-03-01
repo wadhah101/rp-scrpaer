@@ -1,27 +1,26 @@
 config:
   model: mixedbread-ai/mxbai-embed-large-v1
-  prompt:
-    translate to common exercise names that would make sense across different
-    fitness apps in english
+  rp_prompt: You are translating exercise descriptions from english to common exercise names that would make sense across different fitness apps in english
+  hevy_prompt: You are translating exercise descriptions from english to common exercise names that would make sense across different fitness apps in english
   n_results: 3
   device: mps
   n_rp_exercises: 315
   n_hevy_exercises: 433
-  timestamp: "2026-03-01T16:20:17.340963+00:00"
+  timestamp: '2026-03-01T16:31:35.346400+00:00'
 distance:
-  top1_mean: 0.0327
-  top1_median: 0.0318
-  top1_stdev: 0.0138
-  top1_min: 0.0053
-  top1_max: 0.0781
+  top1_mean: 0.0249
+  top1_median: 0.0237
+  top1_stdev: 0.0111
+  top1_min: 0.003
+  top1_max: 0.0748
 muscle_group_precision:
-  precision_at_1: 0.8921
-  precision_at_k: 0.9397
-  top1_correct: 281
-  topk_correct: 296
+  precision_at_1: 0.873
+  precision_at_k: 0.9429
+  top1_correct: 275
+  topk_correct: 297
   total: 315
 confidence:
-  mean_gap: 0.0056
-  median_gap: 0.0036
+  mean_gap: 0.0045
+  median_gap: 0.0033
   high_confidence_count: 315
   low_confidence_count: 0

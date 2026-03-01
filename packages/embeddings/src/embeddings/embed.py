@@ -1,6 +1,7 @@
 import logging
 import os
 import statistics
+import sys
 from datetime import UTC, datetime
 
 import torch
@@ -22,13 +23,15 @@ MODEL_NAME = "mixedbread-ai/mxbai-embed-large-v1"
 logger.info("Loading model %s", MODEL_NAME)
 model = SentenceTransformer(MODEL_NAME, device=device)
 
-prompt = "translate to common exercise names that would make sense across different fitness apps in english"
+rp_prompt = "You are translating exercise descriptions from english to common exercise names that would make sense across different fitness apps in english"
+
+hevy_prompt = rp_prompt
 
 # 3. Encode and store hevy exercises
 hevy_docs = hevy_exercises["rich_text_representation"].to_list()
 hevy_ids = hevy_exercises["hevy_id"].to_list()
 logger.info("Encoding %d hevy exercises", len(hevy_docs))
-hevy_embeddings = model.encode(hevy_docs, prompt=prompt)
+hevy_embeddings = model.encode(hevy_docs, prompt=hevy_prompt)
 logger.debug(
     "Hevy embeddings shape: %s, dtype: %s",
     hevy_embeddings.shape,
@@ -55,7 +58,7 @@ logger.info(
 rp_docs = rp_exercises["rich_text_representation"].to_list()
 rp_ids = rp_exercises["rp_id"].cast(str).to_list()
 logger.info("Encoding %d rp exercises", len(rp_docs))
-rp_embeddings = model.encode(rp_docs, prompt=prompt)
+rp_embeddings = model.encode(rp_docs, prompt=rp_prompt)
 logger.debug(
     "RP embeddings shape: %s, dtype: %s",
     rp_embeddings.shape,
@@ -129,7 +132,8 @@ n_rp = len(rp_docs)
 metrics = {
     "config": {
         "model": MODEL_NAME,
-        "prompt": prompt,
+        "rp_prompt": rp_prompt,
+        "hevy_prompt": hevy_prompt,
         "n_results": n_results,
         "device": device,
         "n_rp_exercises": n_rp,
@@ -168,6 +172,11 @@ with open("metrics.yaml", "w") as f:
 
 
 MONOREPO_ROOT = os.environ.get("MONOREPO_ROOT")
+UPDATE_OUTPUT = os.environ.get("UPDATE_OUTPUT", "false").lower() == "true"
+
+if not UPDATE_OUTPUT:
+    logger.info("Skipping output update")
+    sys.exit(0)
 
 for item in final_result:
     normalized_exercise = (
