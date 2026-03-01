@@ -10,8 +10,6 @@ The defining principle of this repo is that **`.mise.toml` + `mise.lock` are the
 
 Change `python = "3.13"` in `.mise.toml` and **every developer machine, every Docker image, and every CI run** picks it up. Zero drift, zero duplication.
 
-⁠![Diagram](Diagram.webp)
-
 ## Monorepo Architecture
 
 This project is a **uv + mise driven Python monorepo** — uv manages Python packages and dependencies, mise orchestrates tasks and tool versions, and hk runs lightning-fast git hooks.
