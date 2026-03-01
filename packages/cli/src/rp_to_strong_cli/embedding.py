@@ -91,7 +91,7 @@ def _chromadb_options(f):
     @click.option(
         "--chroma-mode",
         type=click.Choice(["memory", "persistent", "http"], case_sensitive=False),
-        default="memory",
+        default="persistent",
         help="ChromaDB client mode.",
     )
     @click.option(

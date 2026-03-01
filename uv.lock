@@ -2727,7 +2727,9 @@ dependencies = [
     { name = "api-service" },
     { name = "click" },
     { name = "cloudpathlib", extra = ["s3"] },
+    { name = "embeddings" },
     { name = "pydantic" },
+    { name = "pyyaml" },
 ]
 
 [package.metadata]
@@ -2735,7 +2737,9 @@ requires-dist = [
     { name = "api-service", editable = "packages/api-service" },
     { name = "click", specifier = ">=8.1" },
     { name = "cloudpathlib", extras = ["s3"] },
+    { name = "embeddings", editable = "packages/embeddings" },
     { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pyyaml", specifier = ">=6.0" },
 ]
 
 [[package]]

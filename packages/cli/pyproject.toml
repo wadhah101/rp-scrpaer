@@ -8,4 +8,6 @@ dependencies = [
   "pydantic>=2.12.5",
   "api-service",
   "cloudpathlib[s3]",
+  "embeddings",
+  "pyyaml>=6.0",
 ]
