@@ -10,11 +10,11 @@ Extract workout data from the [RP Hypertrophy](https://rpstrength.com/) and [Hev
 
 Three specific problems make this project necessary:
 
-1. **RP has no public API.** There is no documented developer interface. The SDK in `packages/api-service` is built against a private API that was reverse-engineered from the mobile app's network traffic. Endpoints, auth flows, and payload shapes were discovered by inspecting requests — nothing is guaranteed to be stable, and there are no official docs to fall back on.
+1. **RP has no public API.** There is no documented developer interface. The SDK in [`packages/api-service`](packages/api-service/README.md) is built against a private API that was reverse-engineered from the mobile app's network traffic. Endpoints, auth flows, and payload shapes were discovered by inspecting requests — nothing is guaranteed to be stable, and there are no official docs to fall back on.
 
-2. **Hevy's OpenAPI spec is broken.** Hevy *does* publish API docs at `api.hevyapp.com/docs`, but the spec is embedded inside a Swagger UI init script and riddled with violations: missing `operationId` on every endpoint, parameters without `schema`, `type: "enum"` instead of `type: "string"`, per-property `required: true` booleans instead of a proper `required` array, and `$ref` nodes with illegal sibling properties. The spec cannot be fed to any code generator without significant patching first — which is exactly what `scripts/hevy-extract/` does.
+2. **Hevy's OpenAPI spec is broken.** Hevy *does* publish API docs at `api.hevyapp.com/docs`, but the spec is embedded inside a Swagger UI init script and riddled with violations: missing `operationId` on every endpoint, parameters without `schema`, `type: "enum"` instead of `type: "string"`, per-property `required: true` booleans instead of a proper `required` array, and `$ref` nodes with illegal sibling properties. The spec cannot be fed to any code generator without significant patching first — which is exactly what [`scripts/hevy-extract/`](scripts/hevy-extract/README.md) does.
 
-3. **Exercises don't match across platforms.** RP calls it "Barbell Bench Press", Hevy calls it "Bench Press (Barbell)". Multiply that across hundreds of exercises and there is no reliable way to map one catalog to the other with string matching alone. The `embeddings` package solves this with LLM-based semantic embeddings and vector similarity search.
+3. **Exercises don't match across platforms.** RP calls it "Barbell Bench Press", Hevy calls it "Bench Press (Barbell)". Multiply that across hundreds of exercises and there is no reliable way to map one catalog to the other with string matching alone. The [`embeddings`](packages/embeddings/README.md) package solves this with LLM-based semantic embeddings and vector similarity search.
 
 ## The Core Idea: One Source of Truth, Everywhere
 
@@ -50,10 +50,10 @@ This project is a **uv + mise driven Python monorepo** — uv manages Python pac
        └───────────────────┘    └─────────────────────┘
 ```
 
-- **`api-service`** --- Auto-generated async Python SDKs for the RP and Hevy APIs, produced from OpenAPI specs. The foundation that all other packages build on.
-- **`cli`** --- Click-based CLI frontend. Exports workout data to JSON (local or cloud storage), runs embedding and similarity search. The primary user-facing interface today.
-- **`embeddings`** --- Semantic exercise matching library. Encodes RP and Hevy exercises with LLM-based embedding models, stores them in ChromaDB, and finds the best cross-platform matches. Achieves 91.75% muscle group precision@1 with `Qwen/Qwen3-Embedding-8B`.
-- **`pipeline`** *(not yet implemented)* --- Dagster orchestration layer. Will do the same data extraction as the CLI but on a cron schedule with DAG-based execution, automatic retries, failure alerts, and user notifications. Currently scaffolded with empty assets and resources.
+- **[`api-service`](packages/api-service/README.md)** --- Auto-generated async Python SDKs for the RP and Hevy APIs, produced from OpenAPI specs. The foundation that all other packages build on.
+- **[`cli`](packages/cli/README.md)** --- Click-based CLI frontend. Exports workout data to JSON (local or cloud storage), runs embedding and similarity search. The primary user-facing interface today.
+- **[`embeddings`](packages/embeddings/README.md)** --- Semantic exercise matching library. Encodes RP and Hevy exercises with LLM-based embedding models, stores them in ChromaDB, and finds the best cross-platform matches. Achieves 91.75% muscle group precision@1 with `Qwen/Qwen3-Embedding-8B`.
+- **[`pipeline`](packages/pipeline/README.md)** *(not yet implemented)* --- Dagster orchestration layer. Will do the same data extraction as the CLI but on a cron schedule with DAG-based execution, automatic retries, failure alerts, and user notifications. Currently scaffolded with empty assets and resources.
 
 ## Quick Start
 
@@ -82,10 +82,10 @@ The root `pyproject.toml` declares a [uv workspace](https://docs.astral.sh/uv/co
 | Package                 | Path                    | Description                                     | Workspace dependencies            |
 | ----------------------- | ----------------------- | ----------------------------------------------- | --------------------------------- |
 | `rp-to-strong`          | *(root)*                | Workspace root                                  | all below                         |
-| `api-service`           | `packages/api-service`  | Auto-generated async API SDKs (RP + Hevy)       | External only                     |
-| `embeddings`            | `packages/embeddings`   | Semantic exercise matching (ChromaDB + LLM)     | External only                     |
-| `rp-to-strong-cli`      | `packages/cli`          | Click CLI frontend                              | `api-service`, `embeddings`       |
-| `rp-to-strong-pipeline` | `packages/pipeline`     | Dagster pipeline *(not yet implemented)*        | External only                     |
+| [`api-service`](packages/api-service/README.md)           | `packages/api-service`  | Auto-generated async API SDKs (RP + Hevy)       | External only                     |
+| [`embeddings`](packages/embeddings/README.md)            | `packages/embeddings`   | Semantic exercise matching (ChromaDB + LLM)     | External only                     |
+| [`rp-to-strong-cli`](packages/cli/README.md)      | `packages/cli`          | Click CLI frontend                              | `api-service`, `embeddings`       |
+| [`rp-to-strong-pipeline`](packages/pipeline/README.md) | `packages/pipeline`     | Dagster pipeline *(not yet implemented)*        | External only                     |
 
 Key properties of uv workspaces:
 
@@ -205,7 +205,7 @@ mise //packages/cli:build
 mise //packages/api-service:build
 ```
 
-## scripts/hevy-extract: OpenAPI Spec Extraction
+## [scripts/hevy-extract](scripts/hevy-extract/README.md): OpenAPI Spec Extraction
 
 A standalone Bun/TypeScript tool that fetches the Hevy OpenAPI spec from their Swagger UI docs page, fixes every spec violation, and outputs clean JSON ready for code generation.
 
