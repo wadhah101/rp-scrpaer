@@ -17,7 +17,7 @@ RP_APP_VERSION = "1.1.13"
 [tasks.test]
 run = "echo 'No tests defined'"
 
-[tasks.generate-models-hevy]
+[tasks.generate-libs-hevy]
 depends = "//scripts/hevy-extract:export"
 description = "Generate Python SDK from OpenAPI spec"
 run = """
@@ -30,7 +30,7 @@ openapi-generator-cli generate \
   --additional-properties=library=asyncio
 """
 
-[tasks.generate-models-rp]
+[tasks.generate-libs-rp]
 description = "Generate Python SDK from OpenAPI spec"
 run = """
 openapi-generator-cli generate \

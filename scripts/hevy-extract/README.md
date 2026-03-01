@@ -36,7 +36,7 @@ packages/api-service/src/hevy_api_service/     ← async Python SDK
   └── …
 ```
 
-The `mise` task `generate-models-hevy` in `packages/api-service/.mise.toml` declares a dependency on `//scripts/hevy-extract:export`, so running it will automatically fetch, fix, convert, and generate the SDK in one go.
+The `mise` task `generate-libs-hevy` in `packages/api-service/.mise.toml` declares a dependency on `//scripts/hevy-extract:export`, so running it will automatically fetch, fix, convert, and generate the SDK in one go.
 
 ## Prerequisites
 

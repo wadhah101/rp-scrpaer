@@ -15,7 +15,7 @@ Both use the `asyncio` library backend (`aiohttp`).
 
 ## How the specs are produced
 
-- **Hevy** — The spec is scraped and fixed by [`scripts/hevy-extract`](../../scripts/hevy-extract/). The `generate-models-hevy` task depends on it automatically.
+- **Hevy** — The spec is scraped and fixed by [`scripts/hevy-extract`](../../scripts/hevy-extract/). The `generate-libs-hevy` task depends on it automatically.
 - **RP** — The spec at `openapi/rp.openapi.yaml` is hand-authored.
 
 ## Prerequisites
@@ -32,10 +32,10 @@ Managed by [mise](https://mise.jdx.dev/) (see `.mise.toml`):
 
 ```sh
 # Generate the Hevy SDK (also fetches + fixes the spec via hevy-extract)
-mise run generate-models-hevy
+mise run generate-libs-hevy
 
 # Generate the RP SDK
-mise run generate-models-rp
+mise run generate-libs-rp
 ```
 
 Both commands run `openapi-generator-cli generate` with `-g python`, `--package-name <name>`, and `library=asyncio`.
@@ -92,8 +92,8 @@ async with ApiClient(config) as client:
 
 | Task | Description |
 |------|-------------|
-| `generate-models-hevy` | Fetch Hevy spec + generate Python SDK |
-| `generate-models-rp` | Generate RP Python SDK |
+| `generate-libs-hevy` | Fetch Hevy spec + generate Python SDK |
+| `generate-libs-rp` | Generate RP Python SDK |
 | `compile-openai-hevy` | Build Hevy Redocly HTML docs |
 | `serve-openapi-hevy` | Serve Hevy docs locally |
 | `compile-openai-rp` | Build RP Redocly HTML docs |

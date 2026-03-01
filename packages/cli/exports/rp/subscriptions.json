@@ -1,0 +1,51 @@
+{
+  "activeSubscriptions": [
+    {
+      "platform": "rp",
+      "iapId": 993,
+      "iapPurchaseType": "subscription",
+      "iapPlatformId": "stripe_sub_training_monthly_ny_26",
+      "iapName": "Hypertrophy App Monthly",
+      "isFreeTrial": false,
+      "isIntroPriced": false,
+      "referralId": 5855,
+      "referralCode": "RP_YOUTUBE",
+      "referralType": "ad",
+      "purchaseDate": "2025-08-26T17:47:51.286000Z",
+      "expirationDate": "2026-03-26T17:47:41Z",
+      "cancellationDate": null,
+      "access": [
+        "training"
+      ],
+      "subscriptionId": "sub_1S0QyAE49t9KAomxrA0QQHac"
+    }
+  ],
+  "consumedIaps": [
+    {
+      "platform": "rp",
+      "purchaseType": "subscription",
+      "platformId": "stripe_sub_training_monthly_ny_26",
+      "subscriptionGroupId": "stripe_sale",
+      "subscriptionGroupKey": "stripe_sale",
+      "access": [
+        "training"
+      ],
+      "accessEndsAt": "2026-03-26T17:47:41Z"
+    },
+    {
+      "platform": "rp",
+      "purchaseType": "subscription",
+      "platformId": "stripe_sub_training_monthly",
+      "subscriptionGroupId": "stripe_no_intro",
+      "subscriptionGroupKey": "stripe_no_intro",
+      "access": [
+        "training"
+      ],
+      "accessEndsAt": "2025-08-25T10:23:33Z"
+    }
+  ],
+  "stripeIds": [
+    "cus_SNMRkQK3I6nFjV"
+  ],
+  "trainingLastAccessAddedAt": "2026-02-26T17:49:14Z"
+}

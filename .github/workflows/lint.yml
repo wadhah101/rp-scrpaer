@@ -34,7 +34,7 @@ jobs:
         with:
           working_directory: scripts/hevy-extract
       - name: mise generate
-        run: mise "//...:generate-models*"
+        run: mise "//...:generate-libs*"
       - name: fix formatting
         run: mise format
       - name: assert no diff

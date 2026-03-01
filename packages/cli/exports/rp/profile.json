@@ -1,0 +1,25 @@
+{
+  "id": 1588211,
+  "email": "wadhah.mahroug15@gmail.com",
+  "displayName": "wadhah mahrouk",
+  "photoUrl": "https://lh3.googleusercontent.com/a/ACg8ocJjDAyUraeAtNLY4XW-uSgs7deVoNxWuGDQAdlLOgDqeI9PoYh6yQ=s96-c",
+  "googleId": "115511659297704278084",
+  "appleId": null,
+  "facebookId": null,
+  "roleId": 4,
+  "stripeId": null,
+  "klaviyoId": null,
+  "createdAt": "2024-11-27T10:11:58.218000Z",
+  "updatedAt": "2026-02-28T11:15:46.246000Z",
+  "firstSeenAt": "2024-11-27T10:11:58.218000Z",
+  "attributes": {
+    "BIRTHDATE": "2000-01-01T00:00:00.000Z",
+    "SEX": "male",
+    "TRAINING_YEARS": "some",
+    "TRAINING_PREFERENCE_EXERCISE_TYPES": "{\"machine\":true,\"barbell\":true,\"smith-machine\":true,\"dumbbell\":true,\"cable\":true,\"freemotion\":false,\"bodyweight-only\":true,\"bodyweight-loadable\":true,\"machine-assistance\":true}",
+    "ATTRIBUTION_SURVEY": "YouTube",
+    "CREATED_ON_PLATFORM": "rp",
+    "TRAINING_FEATURE_AUTO_APPLY_WEIGHTS": true,
+    "TRAINING_APPLY_EXERCISE_TYPES": false
+  }
+}

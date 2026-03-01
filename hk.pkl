@@ -49,9 +49,12 @@ local config_linters = new Mapping<String, Step> {
 
 // --- GitHub Actions ---
 local gh_actions_linters = new Mapping<String, Step> {
-  ["pinact"] = Builtins.pinact
-  // Audits GitHub Actions workflows for security vulnerabilities
   ["zizmor"] = Builtins.zizmor
+}
+
+local pinact = new Mapping<String, Step> {
+  ["pinact"] = Builtins.pinact
+  ["pinact-update"] = Builtins.pinact_update
 }
 
 // --- Containers ---
@@ -71,6 +74,10 @@ local all_linters = new Mapping<String, Step> {
 fail_fast = false
 
 hooks {
+  ["pinact"] {
+    fix = true
+    steps = pinact
+  }
   ["fix"] {
     fix = true
     steps = all_linters

@@ -4,7 +4,7 @@ experimental_monorepo_root = true
 DOCKER_BUILDKIT = 1
 RP_AUTH_TOKEN = ""
 MONOREPO_ROOT = "{{config_root}}"
-
+'_'.file = { path = ".env" }
 [monorepo]
 config_roots = ["packages/*", "scripts/*"]
 
@@ -39,3 +39,15 @@ run = "hk check -a"
 
 [prepare.uv]
 run = "uv sync --all-packages"
+
+[tasks.all-ci]
+description = "Will simulate CI environment by running all checks and tests"
+run = [
+  { task = "//...:generate-libs*" },
+  { task = "//:format" },
+  { tasks = [
+    "//:lint",
+    "//...:build",
+    "//...:test",
+  ] },
+]
