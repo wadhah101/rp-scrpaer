@@ -3,4 +3,9 @@ name = "rp-to-strong-cli"
 version = "0.1.0"
 description = "CLI frontend for RP to STRONG workout data exporter"
 requires-python = ">=3.12"
-dependencies = ["click>=8.1", "pydantic>=2.12.5", "api-service", "cloudpathlib[s3]"]
+dependencies = [
+  "click>=8.1",
+  "pydantic>=2.12.5",
+  "api-service",
+  "cloudpathlib[s3]",
+]
