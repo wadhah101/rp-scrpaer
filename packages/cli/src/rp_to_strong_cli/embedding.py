@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import functools
-import os
+import tempfile
 from pathlib import Path
 
 import click
+import numpy as np
 import yaml
 from cloudpathlib import AnyPath, CloudPath
 from embeddings import (
@@ -163,6 +164,18 @@ def _build_chroma_client(
     )
 
 
+def _resolve_input(path_str: str) -> str:
+    """If *path_str* is a cloud URI, download to a local temp file and return its path."""
+    path = AnyPath(path_str)
+    if isinstance(path, CloudPath):
+        suffix = "".join(path.suffixes)
+        tmp = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+        tmp.write(path.read_bytes())
+        tmp.close()
+        return tmp.name
+    return path_str
+
+
 def _write_yaml(data: object, output_path: str) -> None:
     path = AnyPath(output_path)
     content = yaml.dump(data, sort_keys=False, default_flow_style=False)
@@ -221,9 +234,9 @@ def embd(
         api_batch_size,
     )
 
-    rp_raw = load_rp_exercises(rp_path)
-    hevy_raw = load_hevy_exercises(hevy_path)
-    mappings = load_muscle_group_mappings(mappings_path)
+    rp_raw = load_rp_exercises(_resolve_input(rp_path))
+    hevy_raw = load_hevy_exercises(_resolve_input(hevy_path))
+    mappings = load_muscle_group_mappings(_resolve_input(mappings_path))
 
     rp_df = prepare_rp_exercises(rp_raw, mappings)
     hevy_df = prepare_hevy_exercises(hevy_raw)
@@ -264,11 +277,7 @@ def embd(
 
 
 @embedding.command("run-rp-similarity-search")
-@_common_options
-@click.option("--rp-prompt", default="", help="Prompt prepended to RP exercise texts.")
-@click.option(
-    "--hevy-prompt", default="", help="Prompt prepended to Hevy exercise texts."
-)
+@_chromadb_options
 @click.option(
     "--n-results",
     type=int,
@@ -283,90 +292,61 @@ def embd(
     default=None,
     help="Directory to write per-exercise YAML (opt-in).",
 )
+@click.option(
+    "--rp-path",
+    default="data/rp/exercises.json",
+    help="Path to RP exercises JSON (used for metrics ground truth).",
+)
+@click.option(
+    "--mappings-path",
+    default="data/muscle_group_mapping.json",
+    help="Path to muscle-group mapping JSON (used for metrics ground truth).",
+)
+@click.option("--model-name", default="", help="Model name label for metrics output.")
+@click.option("--rp-prompt", default="", help="RP prompt label for metrics output.")
+@click.option("--hevy-prompt", default="", help="Hevy prompt label for metrics output.")
 def run_rp_similarity_search(
-    rp_path: str,
-    hevy_path: str,
-    mappings_path: str,
-    backend: str,
-    model_name: str,
-    api_base_url: str | None,
-    api_key: str | None,
-    api_model: str | None,
-    api_dimensions: int | None,
-    api_max_rpm: int,
-    api_batch_size: int,
     chroma_mode: str,
     chroma_path: str,
     chroma_host: str,
     chroma_port: int,
-    rp_prompt: str,
-    hevy_prompt: str,
     n_results: int,
     metrics_output: str | None,
     exercise_output_dir: str | None,
+    rp_path: str,
+    mappings_path: str,
+    model_name: str,
+    rp_prompt: str,
+    hevy_prompt: str,
 ):
-    """Embed exercises, run similarity search, and optionally output metrics."""
-    embedder = _build_embedder(
-        backend,
-        model_name,
-        api_base_url,
-        api_key,
-        api_model,
-        api_dimensions,
-        api_max_rpm,
-        api_batch_size,
-    )
-
-    rp_raw = load_rp_exercises(rp_path)
-    hevy_raw = load_hevy_exercises(hevy_path)
-    mappings = load_muscle_group_mappings(mappings_path)
-
-    rp_df = prepare_rp_exercises(rp_raw, mappings)
-    hevy_df = prepare_hevy_exercises(hevy_raw)
-
+    """Run similarity search on already-embedded exercises in ChromaDB."""
     client = _build_chroma_client(chroma_mode, chroma_path, chroma_host, chroma_port)
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 
-    hevy_docs = hevy_df["rich_text_representation"].to_list()
-    hevy_ids = hevy_df["hevy_id"].to_list()
-    hevy_metadatas = [
-        {"primary_muscle_group": mg}
-        for mg in hevy_df["hevy_primary_muscle_group"].to_list()
-    ]
-    encode_and_store(
-        embedder,
-        hevy_collection,
-        hevy_docs,
-        hevy_ids,
-        prompt=hevy_prompt,
-        metadatas=hevy_metadatas,
-    )
-
-    rp_docs = rp_df["rich_text_representation"].to_list()
-    rp_ids = rp_df["rp_id"].cast(str).to_list()
-    rp_embeddings = encode_and_store(
-        embedder,
-        rp_collection,
-        rp_docs,
-        rp_ids,
-        prompt=rp_prompt,
-    )
+    rp_data = rp_collection.get(include=["embeddings", "documents"])
+    rp_embeddings = np.array(rp_data["embeddings"], dtype=np.float32)
+    rp_docs = rp_data["documents"]
 
     results = query_matches(hevy_collection, rp_embeddings, n_results)
+
+    hevy_data = hevy_collection.get(include=["documents"])
+    hevy_docs = hevy_data["documents"]
     click.echo(
         f"Queried {len(rp_docs)} RP exercises against {len(hevy_docs)} Hevy exercises."
     )
 
     if metrics_output:
-        device = detect_device()
+        rp_raw = load_rp_exercises(_resolve_input(rp_path))
+        mappings = load_muscle_group_mappings(_resolve_input(mappings_path))
+        rp_df = prepare_rp_exercises(rp_raw, mappings)
         rp_expected_muscles = rp_df["hevy_primary"].to_list()
         metrics = compute_metrics(
             model_name=model_name,
             rp_prompt=rp_prompt,
             hevy_prompt=hevy_prompt,
             n_results=n_results,
-            device=device,
+            device="",
             rp_docs=rp_docs,
             hevy_docs=hevy_docs,
             rp_expected_muscles=rp_expected_muscles,
@@ -385,4 +365,4 @@ def run_rp_similarity_search(
                 .replace(")", "")
                 .replace("(", "")
             )
-            _write_yaml(item, os.path.join(exercise_output_dir, f"{normalized}.yaml"))
+            _write_yaml(item, str(AnyPath(exercise_output_dir) / f"{normalized}.yaml"))
