@@ -1,30 +1,34 @@
 # rp-to-strong-cli
 
-Command-line tool for exporting personal workout data from the [RP Hypertrophy](https://rpstrength.com/) app to JSON. Built with [Click](https://click.palletsprojects.com/) and powered by the `rp-to-strong-api-service-rp` library.
+Command-line tool for exporting workout data from the [RP Hypertrophy](https://rpstrength.com/) and [Hevy](https://www.hevyapp.com/) apps to JSON, plus semantic exercise matching via embeddings. Built with [Click](https://click.palletsprojects.com/) and powered by the workspace packages `api-service` and `embeddings`.
 
 ## Quick Start
 
-1. Grab your bearer token from the RP Strength web app and save it to `token.txt`.
-2. Run the export:
-
 ```bash
-mise run cli              # or: mise run cli export
+# Run any command
+mise //packages/cli:cli rp export
+mise //packages/cli:cli hevy export
+mise //packages/cli:cli embedding embd
 ```
 
-This creates an `export/` directory with one JSON file per data type.
+## Command Groups
 
-## CLI Reference
+The CLI has three top-level groups:
+
+### `rp` — RP Hypertrophy Export
+
+Export personal workout data from the RP Hypertrophy app to JSON.
 
 ```
-Usage: main.py export [OPTIONS]
+Usage: rp export [OPTIONS]
 
 Options:
-  --token-file TEXT  Path to bearer-token file  [default: token.txt]
-  --type TEXT        Data type to export         [default: all]
-  -o, --output PATH  Output file or directory
+  --token-file TEXT   Path to bearer-token file  [default: token.txt]
+  --type TEXT         Data type to export         [default: all]
+  -o, --output PATH   Output file or directory
 ```
 
-### Export types
+Grab your bearer token from the RP Strength web app and save it to `token.txt`.
 
 | `--type` | Output | Description |
 | --- | --- | --- |
@@ -36,27 +40,78 @@ Options:
 | `templates` | `templates.json` | Built-in and custom training templates |
 | `exercise-history` | `exercise_history.json` | Per-exercise last-performed timestamps |
 
-### Examples
+### `hevy` — Hevy Export
+
+Export exercise data from the Hevy app. Requires the `HEVY_API_KEY` environment variable (get it at https://hevy.com/settings?developer).
+
+```
+Usage: hevy export [OPTIONS]
+
+Options:
+  --type TEXT         Data type to export  [default: all]
+  -o, --output PATH   Output file or directory
+```
+
+| `--type` | Description |
+| --- | --- |
+| `all` *(default)* | All data types to a directory |
+| `exercise-templates` | Hevy exercise template catalog (~433 exercises) |
+
+### `embedding` — Similarity Search
+
+Embed RP and Hevy exercises into ChromaDB, then run similarity search to match RP exercises to their Hevy equivalents. See the [embeddings package](../embeddings/README.md) for background on the approach.
+
+**`embedding embd`** — Encode exercises and store in ChromaDB:
 
 ```bash
-# Export everything to export/
-mise run cli export
-
-# Export only mesocycles to a custom path
-mise run cli export --type mesocycles -o data/mesocycles.json
-
-# Use a different token file
-mise run cli export --token-file ~/.config/rp/token.txt
+mise //packages/cli:cli embedding embd \
+  --backend local --model-name Qwen/Qwen3-Embedding-8B \
+  --chroma-mode persistent --chroma-path ./chroma_data
 ```
+
+**`embedding run-rp-similarity-search`** — Query already-embedded exercises:
+
+```bash
+mise //packages/cli:cli embedding run-rp-similarity-search \
+  --chroma-mode persistent --chroma-path ./chroma_data \
+  --metrics-output metrics.yaml --exercise-output-dir output/
+```
+
+Key options for both commands:
+- `--backend` (`local` | `api`) — Use a local sentence-transformer or an OpenAI-compatible API
+- `--model-name` — Model to load (default: `Qwen/Qwen3-Embedding-8B`)
+- `--chroma-mode` (`memory` | `persistent` | `http`) — ChromaDB client mode
+- `--rp-prompt` / `--hevy-prompt` — Instruction prompts prepended to exercise text
+
+## Cloud Storage
+
+All output paths (`-o` / `--output`) support cloud URIs via [cloudpathlib](https://cloudpathlib.drivendata.org/). Pass an S3, GCS, or Azure Blob path directly:
+
+```bash
+mise //packages/cli:cli rp export --all -o s3://my-bucket/exports/rp
+mise //packages/cli:cli hevy export -o s3://my-bucket/exports/hevy/exercises.json
+```
+
+## mise Tasks
+
+| Task | Description |
+| --- | --- |
+| `cli` | Run the CLI (`uv run python -m rp_to_strong_cli`) |
+| `export-rp-local` | Export all RP data to `exports/rp/` |
+| `export-rp-s3` | Export all RP data to S3 (requires `BUCKET_NAME`) |
+| `export-hevy-local` | Export Hevy exercises to `exports/hevy/` |
+| `export-hevy-s3` | Export Hevy exercises to S3 (requires `BUCKET_NAME`) |
+| `build` | Build the Docker image |
 
 ## Package Structure
 
 ```
 src/rp_to_strong_cli/
-  __init__.py
-  main.py      # Click CLI — reads token, calls RPClient, writes JSON
-swagger.yaml   # OpenAPI 3.0.3 spec for the RP Strength API
-export/        # Default output directory (sample data included)
+  __main__.py      # Click group: rp, hevy, embedding
+  rp.py            # RP Hypertrophy export commands
+  hevy.py          # Hevy export commands
+  embedding.py     # Embedding + similarity search commands
+  _utils.py        # Shared helpers (token reading, JSON serialization)
 ```
 
 ## Dependencies
@@ -64,24 +119,26 @@ export/        # Default output directory (sample data included)
 | Package | Purpose |
 | --- | --- |
 | `click` >=8.1 | CLI framework |
-| `rp-to-strong-api-service-rp` | Async API client and Pydantic models |
-| `aiohttp` >=3.13 | Async HTTP (transitive) |
-| `aiofiles` >=25.1 | Async file I/O |
-| `pydantic` >=2.12 | Data validation (transitive) |
+| `pydantic` >=2.12 | Data validation |
+| `api-service` | Async API clients for RP and Hevy (workspace) |
+| `embeddings` | Embedding and similarity search library (workspace) |
+| `cloudpathlib[s3]` | Cloud storage abstraction (S3, GCS, Azure) |
+| `pyyaml` >=6.0 | YAML output for embedding results |
 
 Requires **Python >= 3.12**.
 
 ## Docker
 
 ```bash
-mise run build       # builds multi-stage image (debian:trixie-slim runtime)
+mise //packages/cli:build
 ```
 
-The image uses a non-root `app` user and defaults to a `bash` entrypoint.
+Multi-stage build (debian:trixie-slim runtime). Runs as non-root `app` user with a `bash` entrypoint.
 
 ## Environment Variables
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `RP_APP_BASE_URL` | `https://training.rpstrength.com/api` | API base URL |
+| `RP_APP_BASE_URL` | `https://training.rpstrength.com/api` | RP API base URL |
 | `RP_APP_VERSION` | `1.1.13` | `accept-version` header value |
+| `HEVY_API_KEY` | *(required)* | Hevy developer API key |

@@ -2,7 +2,7 @@
 
 > **Showcase project** demonstrating the best modern Python tooling: [uv](https://docs.astral.sh/uv/) workspaces, [mise](https://mise.jdx.dev/) monorepo tasks, [hk](https://hk.jdx.dev/) git hooks, multi-stage Docker builds, and GitHub Actions CI — all wired together into a single, reproducible developer experience.
 
-Extract workout data from the RP Hypertrophy app and convert it to [STRONG](https://www.strong.app/) import format.
+Extract workout data from the [RP Hypertrophy](https://rpstrength.com/) and [Hevy](https://www.hevyapp.com/) apps, match exercises across platforms using semantic embeddings, and convert training history to portable formats. The CLI handles on-demand exports; a Dagster pipeline (in progress) will add scheduled extraction with DAG-based orchestration, failure handling, and user notifications.
 
 ## The Core Idea: One Source of Truth, Everywhere
 
@@ -15,6 +15,35 @@ Change `python = "3.13"` in `.mise.toml` and **every developer machine, every Do
 ## Monorepo Architecture
 
 This project is a **uv + mise driven Python monorepo** — uv manages Python packages and dependencies, mise orchestrates tasks and tool versions, and hk runs lightning-fast git hooks.
+
+### How the packages fit together
+
+```
+  ┌──────────────────────────────────────────────────────────┐
+  │                      RP & Hevy APIs                      │
+  └──────────────┬──────────────────────────┬────────────────┘
+                 │                          │
+       ┌─────────▼─────────┐    ┌──────────▼──────────┐
+       │   api-service      │    │   api-service        │
+       │  (RP SDK)          │    │  (Hevy SDK)          │
+       └─────────┬─────────┘    └──────────┬──────────┘
+                 │                          │
+       ┌─────────▼──────────────────────────▼──────────┐
+       │                    cli                         │
+       │  rp export · hevy export · embedding commands  │
+       └─────────┬──────────────────────────┬──────────┘
+                 │                          │
+       ┌─────────▼─────────┐    ┌──────────▼──────────┐
+       │   embeddings       │    │   pipeline (planned) │
+       │  Similarity search │    │  Dagster scheduled   │
+       │  ChromaDB + LLM    │    │  extraction + DAG    │
+       └───────────────────┘    └─────────────────────┘
+```
+
+- **`api-service`** --- Auto-generated async Python SDKs for the RP and Hevy APIs, produced from OpenAPI specs. The foundation that all other packages build on.
+- **`cli`** --- Click-based CLI frontend. Exports workout data to JSON (local or cloud storage), runs embedding and similarity search. The primary user-facing interface today.
+- **`embeddings`** --- Semantic exercise matching library. Encodes RP and Hevy exercises with LLM-based embedding models, stores them in ChromaDB, and finds the best cross-platform matches. Achieves 91.75% muscle group precision@1 with `Qwen/Qwen3-Embedding-8B`.
+- **`pipeline`** *(not yet implemented)* --- Dagster orchestration layer. Will do the same data extraction as the CLI but on a cron schedule with DAG-based execution, automatic retries, failure alerts, and user notifications. Currently scaffolded with empty assets and resources.
 
 ## Quick Start
 
@@ -30,7 +59,7 @@ mise install
 mise prepare          # runs: uv sync --all-packages
 
 # Verify everything works
-mise lint             # runs: hk run pre-commit
+mise lint             # runs: hk check -a
 mise //...:test       # runs tests in every package
 ```
 
@@ -40,16 +69,18 @@ The root `pyproject.toml` declares a [uv workspace](https://docs.astral.sh/uv/co
 
 ### How the workspace fits together
 
-| Package                 | Description                               | Dependencies                        |
-| ----------------------- | ----------------------------------------- | ----------------------------------- |
-| `rp-to-strong`          | Workspace root                            | `rp-to-strong-pipeline` (workspace) |
-| `rp-to-strong-pipeline` | Dagster pipeline (polars, httpx, dagster) | External only                       |
-| `rp-to-strong-cli`      | Click CLI frontend                        | `rp-to-strong-pipeline` (workspace) |
+| Package                 | Path                    | Description                                     | Workspace dependencies            |
+| ----------------------- | ----------------------- | ----------------------------------------------- | --------------------------------- |
+| `rp-to-strong`          | *(root)*                | Workspace root                                  | all below                         |
+| `api-service`           | `packages/api-service`  | Auto-generated async API SDKs (RP + Hevy)       | External only                     |
+| `embeddings`            | `packages/embeddings`   | Semantic exercise matching (ChromaDB + LLM)     | External only                     |
+| `rp-to-strong-cli`      | `packages/cli`          | Click CLI frontend                              | `api-service`, `embeddings`       |
+| `rp-to-strong-pipeline` | `packages/pipeline`     | Dagster pipeline *(not yet implemented)*        | External only                     |
 
 Key properties of uv workspaces:
 
 - **Single lockfile** — `uv lock` resolves all members together into one `uv.lock`, guaranteeing consistent dependency versions across the entire monorepo.
-- **Editable installs** — workspace member cross-references (e.g. cli depending on pipeline) are installed as editable packages automatically.
+- **Editable installs** — workspace member cross-references (e.g. cli depending on api-service and embeddings) are installed as editable packages automatically.
 - **Targeted operations** — `uv sync --package rp-to-strong-cli` installs only what one package needs (used in Docker builds).
 - **Shared `requires-python`** — all members must agree on `>=3.12`, enforced by uv as the intersection of all member constraints.
 
@@ -105,7 +136,7 @@ mise //...:test          # test everything
 mise //...:build         # build everything
 
 # Root-level tasks
-mise lint                # hk run pre-commit
+mise lint                # hk check -a
 mise prepare             # uv sync --all-packages
 ```
 
@@ -161,6 +192,7 @@ mise //...:build
 # Build a specific package
 mise //packages/pipeline:build
 mise //packages/cli:build
+mise //packages/api-service:build
 ```
 
 ## CI/CD
