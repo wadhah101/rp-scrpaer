@@ -1,0 +1,8 @@
+rp_embedding_name: ez bar spider curl, barbell, biceps
+matches:
+  - hevy_embedding_name: spider curl barbell, biceps
+    distance: 0.10209590196609497
+  - hevy_embedding_name: ez bar biceps curl, biceps
+    distance: 0.11283451318740845
+  - hevy_embedding_name: reverse curl barbell, biceps, forearms
+    distance: 0.14156192541122437

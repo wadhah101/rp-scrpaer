@@ -1,0 +1,8 @@
+rp_embedding_name: barbell bent over shrug, barbell, traps
+matches:
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.18209922313690186
+  - hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.21735668182373047
+  - hevy_embedding_name: kettlebell halo, shoulders, traps, upper_back
+    distance: 0.29403263330459595

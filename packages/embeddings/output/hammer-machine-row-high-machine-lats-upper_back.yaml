@@ -1,0 +1,8 @@
+rp_embedding_name: hammer machine row high, machine, lats, upper_back
+matches:
+  - hevy_embedding_name: iso-lateral high row machine, lats, upper_back, biceps, forearms
+    distance: 0.3584177494049072
+  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
+    distance: 0.389645516872406
+  - hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.4104854464530945

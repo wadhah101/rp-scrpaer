@@ -1,0 +1,8 @@
+rp_embedding_name: back extension, bodyweight-loadable, lats, upper_back
+matches:
+  - hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
+    distance: 0.3038584589958191
+  - hevy_embedding_name: low row suspension, upper_back, lats, biceps, forearms
+    distance: 0.3103712201118469
+  - hevy_embedding_name: iso-lateral high row machine, lats, upper_back, biceps, forearms
+    distance: 0.31642991304397583

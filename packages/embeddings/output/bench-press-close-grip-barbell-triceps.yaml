@@ -1,0 +1,8 @@
+rp_embedding_name: bench press close grip, barbell, triceps
+matches:
+  - hevy_embedding_name: bench press - close grip barbell, triceps, chest, shoulders
+    distance: 0.03420424461364746
+  - hevy_embedding_name: bench press - wide grip barbell, chest, shoulders, triceps
+    distance: 0.04889494180679321
+  - hevy_embedding_name: bench press barbell, chest, triceps, shoulders
+    distance: 0.07977354526519775

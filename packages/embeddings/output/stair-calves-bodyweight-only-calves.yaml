@@ -1,0 +1,8 @@
+rp_embedding_name: stair calves, bodyweight-only, calves
+matches:
+  - hevy_embedding_name: single leg standing calf raise, calves
+    distance: 0.2806893587112427
+  - hevy_embedding_name: single leg standing calf raise barbell, calves
+    distance: 0.2916964292526245
+  - hevy_embedding_name: single leg standing calf raise dumbbell, calves
+    distance: 0.30482006072998047

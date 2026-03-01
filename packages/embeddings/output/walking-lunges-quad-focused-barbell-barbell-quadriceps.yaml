@@ -1,0 +1,8 @@
+rp_embedding_name: walking lunges quad-focused, barbell, barbell, quadriceps
+matches:
+  - hevy_embedding_name: walking lunge, quadriceps, glutes, hamstrings
+    distance: 0.24538558721542358
+  - hevy_embedding_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.24714034795761108
+  - hevy_embedding_name: reverse lunge barbell, quadriceps, hamstrings, glutes
+    distance: 0.25224852561950684

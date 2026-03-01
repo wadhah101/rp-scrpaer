@@ -1,0 +1,8 @@
+rp_embedding_name: rogers reverse lunge, machine, glutes
+matches:
+  - hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.37347227334976196
+  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
+    distance: 0.39607852697372437
+  - hevy_embedding_name: rear kick machine, glutes, hamstrings
+    distance: 0.4045005440711975

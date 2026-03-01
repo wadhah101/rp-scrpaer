@@ -1,0 +1,8 @@
+rp_embedding_name: machine reverse fly single hand, machine, lats, upper_back
+matches:
+  - hevy_embedding_name: rear delt reverse fly one hand machine, upper_back, shoulders
+    distance: 0.21422308683395386
+  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
+    distance: 0.2497897744178772
+  - hevy_embedding_name: reverse fly single arm cable, shoulders, upper_back
+    distance: 0.3382836580276489

@@ -1,0 +1,8 @@
+rp_embedding_name: grip roller, machine, forearms
+matches:
+  - hevy_embedding_name: wrist roller, forearms, shoulders
+    distance: 0.22812801599502563
+  - hevy_embedding_name: vertical traction machine, lats, upper_back, biceps, forearms
+    distance: 0.2993212342262268
+  - hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.34521329402923584

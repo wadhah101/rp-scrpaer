@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell press medium incline, dumbbell, chest
+matches:
+  - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
+    distance: 0.08853363990783691
+  - hevy_embedding_name: overhead press dumbbell, shoulders, triceps
+    distance: 0.09549134969711304
+  - hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
+    distance: 0.10751992464065552

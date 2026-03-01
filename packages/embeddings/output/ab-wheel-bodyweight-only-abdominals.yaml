@@ -1,0 +1,8 @@
+rp_embedding_name: ab wheel, bodyweight-only, abdominals
+matches:
+  - hevy_embedding_name: ab wheel, abdominals
+    distance: 0.12142962217330933
+  - hevy_embedding_name: torso rotation, abdominals
+    distance: 0.28336119651794434
+  - hevy_embedding_name: reverse crunch, abdominals
+    distance: 0.28589093685150146

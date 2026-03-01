@@ -1,0 +1,8 @@
+rp_embedding_name: machine triceps pushdown, machine, triceps
+matches:
+  - hevy_embedding_name: triceps pushdown, triceps
+    distance: 0.13609719276428223
+  - hevy_embedding_name: triceps pressdown, triceps
+    distance: 0.16456907987594604
+  - hevy_embedding_name: triceps kickback cable, triceps
+    distance: 0.2181340456008911

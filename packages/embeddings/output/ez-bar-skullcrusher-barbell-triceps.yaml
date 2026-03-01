@@ -1,0 +1,8 @@
+rp_embedding_name: ez bar skullcrusher, barbell, triceps
+matches:
+  - hevy_embedding_name: skullcrusher barbell, triceps
+    distance: 0.11741364002227783
+  - hevy_embedding_name: skullcrusher dumbbell, triceps
+    distance: 0.19166988134384155
+  - hevy_embedding_name: triceps extension barbell, triceps
+    distance: 0.26080846786499023

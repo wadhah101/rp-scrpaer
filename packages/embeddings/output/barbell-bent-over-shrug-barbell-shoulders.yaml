@@ -1,0 +1,8 @@
+rp_embedding_name: barbell bent over shrug, barbell, shoulders
+matches:
+  - hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.20577818155288696
+  - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.23928630352020264
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.24977374076843262

@@ -1,0 +1,8 @@
+rp_embedding_name: belt squat wide stance, machine, glutes
+matches:
+  - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
+    distance: 0.14714723825454712
+  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
+    distance: 0.2095460295677185
+  - hevy_embedding_name: pendulum squat machine, quadriceps, glutes, hamstrings
+    distance: 0.2209048867225647

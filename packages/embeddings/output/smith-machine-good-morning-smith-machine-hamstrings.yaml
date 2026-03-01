@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine good morning, smith-machine, hamstrings
+matches:
+  - hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.32269108295440674
+  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
+    distance: 0.3371388912200928
+  - hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.3533414602279663

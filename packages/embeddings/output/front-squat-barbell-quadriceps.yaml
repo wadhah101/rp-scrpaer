@@ -1,0 +1,8 @@
+rp_embedding_name: front squat, barbell, quadriceps
+matches:
+  - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.11654257774353027
+  - hevy_embedding_name: front squat, quadriceps, hamstrings, glutes
+    distance: 0.11673527956008911
+  - hevy_embedding_name: feet up bench press barbell, chest, shoulders, triceps
+    distance: 0.11695694923400879

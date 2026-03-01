@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell facepull, dumbbell, shoulders
+matches:
+  - hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.1982678771018982
+  - hevy_embedding_name: front raise dumbbell, shoulders
+    distance: 0.21500158309936523
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.2164783477783203

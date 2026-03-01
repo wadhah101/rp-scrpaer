@@ -1,0 +1,8 @@
+rp_embedding_name: machine glute kickback, machine, glutes
+matches:
+  - hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.2210850715637207
+  - hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings
+    distance: 0.3379664421081543
+  - hevy_embedding_name: glute ham raise, hamstrings, glutes
+    distance: 0.40019917488098145

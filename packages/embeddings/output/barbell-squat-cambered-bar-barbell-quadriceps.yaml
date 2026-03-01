@@ -1,0 +1,8 @@
+rp_embedding_name: barbell squat cambered bar, barbell, quadriceps
+matches:
+  - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.18307244777679443
+  - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.19931375980377197
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.20452487468719482

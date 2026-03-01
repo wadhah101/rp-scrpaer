@@ -1,0 +1,8 @@
+rp_embedding_name: inverted skullcrusher, bodyweight-only, triceps
+matches:
+  - hevy_embedding_name: skullcrusher barbell, triceps
+    distance: 0.21694397926330566
+  - hevy_embedding_name: skullcrusher dumbbell, triceps
+    distance: 0.22965854406356812
+  - hevy_embedding_name: seated dip machine, triceps, chest, shoulders
+    distance: 0.34483635425567627

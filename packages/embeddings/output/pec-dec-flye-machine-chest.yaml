@@ -1,0 +1,8 @@
+rp_embedding_name: pec dec flye, machine, chest
+matches:
+  - hevy_embedding_name: chest fly machine, chest
+    distance: 0.26353901624679565
+  - hevy_embedding_name: chest press machine, chest, shoulders, triceps
+    distance: 0.36551380157470703
+  - hevy_embedding_name: bench presshammer machine, chest, triceps
+    distance: 0.3676786422729492

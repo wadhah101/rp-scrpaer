@@ -1,0 +1,8 @@
+rp_embedding_name: freemotion curl single-arm, freemotion, biceps
+matches:
+  - hevy_embedding_name: drag curl, biceps
+    distance: 0.2663363218307495
+  - hevy_embedding_name: single arm curl cable, biceps
+    distance: 0.2709229588508606
+  - hevy_embedding_name: reverse grip concentration curl, biceps, forearms
+    distance: 0.28719085454940796

@@ -1,0 +1,8 @@
+rp_embedding_name: barbell front raise overhand, barbell, shoulders
+matches:
+  - hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.07189512252807617
+  - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
+    distance: 0.15628379583358765
+  - hevy_embedding_name: reverse curl barbell, biceps, forearms
+    distance: 0.17134499549865723

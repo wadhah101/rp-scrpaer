@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell press flye flat, dumbbell, chest
+matches:
+  - hevy_embedding_name: incline chest fly dumbbell, chest
+    distance: 0.11452007293701172
+  - hevy_embedding_name: chest supported reverse fly dumbbell, shoulders, upper_back
+    distance: 0.13043373823165894
+  - hevy_embedding_name: chest fly dumbbell, chest
+    distance: 0.13436150550842285

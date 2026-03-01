@@ -1,0 +1,8 @@
+rp_embedding_name: pulldown single-arm, cable, lats, upper_back
+matches:
+  - hevy_embedding_name: straight arm lat pulldown cable, lats, triceps
+    distance: 0.2183346152305603
+  - hevy_embedding_name: reverse grip lat pulldown cable, lats, upper_back, biceps
+    distance: 0.25528043508529663
+  - hevy_embedding_name: reverse fly single arm cable, shoulders, upper_back
+    distance: 0.2628808617591858

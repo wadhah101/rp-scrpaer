@@ -1,0 +1,8 @@
+rp_embedding_name: concentration curl, dumbbell, biceps
+matches:
+  - hevy_embedding_name: concentration curl, biceps
+    distance: 0.09583079814910889
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.12484055757522583
+  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
+    distance: 0.14424437284469604

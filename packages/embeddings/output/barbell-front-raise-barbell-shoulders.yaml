@@ -1,0 +1,8 @@
+rp_embedding_name: barbell front raise, barbell, shoulders
+matches:
+  - hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.05664348602294922
+  - hevy_embedding_name: front raise dumbbell, shoulders
+    distance: 0.1420796513557434
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.14717233180999756

@@ -1,0 +1,8 @@
+rp_embedding_name: cable side shrug, cable, traps
+matches:
+  - hevy_embedding_name: shrug cable, traps, neck
+    distance: 0.2122669816017151
+  - hevy_embedding_name: front raise cable, shoulders
+    distance: 0.31738829612731934
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.3504512906074524

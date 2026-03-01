@@ -1,0 +1,8 @@
+rp_embedding_name: reverse curl, barbell, forearms
+matches:
+  - hevy_embedding_name: reverse curl barbell, biceps, forearms
+    distance: 0.030820190906524658
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.07432752847671509
+  - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
+    distance: 0.09555935859680176

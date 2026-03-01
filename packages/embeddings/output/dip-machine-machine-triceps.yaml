@@ -1,0 +1,8 @@
+rp_embedding_name: dip machine, machine, triceps
+matches:
+  - hevy_embedding_name: triceps extension machine, triceps
+    distance: 0.22446686029434204
+  - hevy_embedding_name: triceps kickback cable, triceps
+    distance: 0.26594847440719604
+  - hevy_embedding_name: seated dip machine, triceps, chest, shoulders
+    distance: 0.2685985565185547

@@ -1,0 +1,8 @@
+rp_embedding_name: cable rope facepull kneeling, cable, shoulders
+matches:
+  - hevy_embedding_name: front raise cable, shoulders
+    distance: 0.3206108808517456
+  - hevy_embedding_name: single arm lateral raise cable, shoulders
+    distance: 0.32068490982055664
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.33075445890426636

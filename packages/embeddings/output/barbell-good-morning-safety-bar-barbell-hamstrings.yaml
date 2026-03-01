@@ -1,0 +1,8 @@
+rp_embedding_name: barbell good morning safety bar, barbell, hamstrings
+matches:
+  - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.18867576122283936
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.2922484874725342
+  - hevy_embedding_name: triceps extension barbell, triceps
+    distance: 0.2985914349555969

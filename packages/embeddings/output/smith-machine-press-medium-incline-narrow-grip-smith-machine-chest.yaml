@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine press medium incline, narrow grip, smith-machine, chest
+matches:
+  - hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.23644030094146729
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.28768545389175415
+  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
+    distance: 0.32383525371551514

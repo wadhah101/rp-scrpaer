@@ -1,0 +1,8 @@
+rp_embedding_name: dip weighted, chest-focused, bodyweight-loadable, chest
+matches:
+  - hevy_embedding_name: chest dip weighted, chest, triceps, shoulders
+    distance: 0.2566884160041809
+  - hevy_embedding_name: iso-lateral chest press machine, chest, shoulders, triceps
+    distance: 0.2915850877761841
+  - hevy_embedding_name: sit up weighted, abdominals
+    distance: 0.2942052483558655

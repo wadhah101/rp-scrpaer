@@ -1,0 +1,8 @@
+rp_embedding_name: trap bar deadlift, barbell, glutes
+matches:
+  - hevy_embedding_name: deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.2448364496231079
+  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.2576528787612915
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.26066499948501587

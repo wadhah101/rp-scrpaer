@@ -1,0 +1,8 @@
+rp_embedding_name: barbell squat close stance, feet forward, barbell, quadriceps
+matches:
+  - hevy_embedding_name: feet up bench press barbell, chest, shoulders, triceps
+    distance: 0.15969723463058472
+  - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
+    distance: 0.16237199306488037
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.16649430990219116

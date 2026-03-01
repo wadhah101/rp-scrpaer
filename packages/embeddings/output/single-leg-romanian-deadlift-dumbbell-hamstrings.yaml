@@ -1,0 +1,8 @@
+rp_embedding_name: single leg romanian deadlift, dumbbell, hamstrings
+matches:
+  - hevy_embedding_name: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
+    distance: 0.04989105463027954
+  - hevy_embedding_name: romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.12492108345031738
+  - hevy_embedding_name: single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.1456795334815979

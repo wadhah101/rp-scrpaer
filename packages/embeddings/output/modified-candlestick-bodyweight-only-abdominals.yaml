@@ -1,0 +1,8 @@
+rp_embedding_name: modified candlestick, bodyweight-only, abdominals
+matches:
+  - hevy_embedding_name: plank, abdominals
+    distance: 0.39234524965286255
+  - hevy_embedding_name: sit up weighted, abdominals
+    distance: 0.39786189794540405
+  - hevy_embedding_name: side plank, abdominals
+    distance: 0.4196234941482544

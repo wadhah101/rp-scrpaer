@@ -1,0 +1,8 @@
+rp_embedding_name: reverse lunge dumbbell, dumbbell, glutes
+matches:
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.23751598596572876
+  - hevy_embedding_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.2543331980705261
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.26957714557647705

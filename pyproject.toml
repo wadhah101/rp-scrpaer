@@ -11,6 +11,7 @@ members = ["packages/*"]
 rp-to-strong-cli = { workspace = true }
 rp-to-strong-pipeline = { workspace = true }
 api-service = { workspace = true }
+embeddings = { workspace = true }
 
 [tool.ruff]
 target-version = "py312"

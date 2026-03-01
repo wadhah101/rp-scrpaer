@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine shrug, smith-machine, traps
+matches:
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.22098970413208008
+  - hevy_embedding_name: shrug machine, traps, neck
+    distance: 0.33422595262527466
+  - hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.43247950077056885

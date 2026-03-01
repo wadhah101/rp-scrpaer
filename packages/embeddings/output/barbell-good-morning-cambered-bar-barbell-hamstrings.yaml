@@ -1,0 +1,8 @@
+rp_embedding_name: barbell good morning cambered bar, barbell, hamstrings
+matches:
+  - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.20097070932388306
+  - hevy_embedding_name: bicep curl barbell, biceps
+    distance: 0.31172215938568115
+  - hevy_embedding_name: triceps extension barbell, triceps
+    distance: 0.31199657917022705

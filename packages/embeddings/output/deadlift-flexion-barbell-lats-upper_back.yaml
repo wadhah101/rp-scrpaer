@@ -1,0 +1,8 @@
+rp_embedding_name: deadlift flexion, barbell, lats, upper_back
+matches:
+  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.16945689916610718
+  - hevy_embedding_name: straight leg deadlift, hamstrings, glutes, lower_back, upper_back, lats, traps
+    distance: 0.18694370985031128
+  - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.1909085512161255

@@ -1,0 +1,15 @@
+[settings]
+pipx.uvx = true
+auto_install = true
+
+[tools]
+
+
+[env]
+
+
+[tasks.test]
+run = "echo 'No tests defined'"
+
+[tasks.embed]
+run = "uv run src/embeddings/embed.py"

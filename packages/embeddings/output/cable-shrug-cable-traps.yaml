@@ -1,0 +1,8 @@
+rp_embedding_name: cable shrug, cable, traps
+matches:
+  - hevy_embedding_name: shrug cable, traps, neck
+    distance: 0.2166500687599182
+  - hevy_embedding_name: shrug machine, traps, neck
+    distance: 0.34828466176986694
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.35333412885665894

@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine row, smith-machine, lats, upper_back
+matches:
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.3967965841293335
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.4028887152671814
+  - hevy_embedding_name: iso-lateral high row machine, lats, upper_back, biceps, forearms
+    distance: 0.42664146423339844

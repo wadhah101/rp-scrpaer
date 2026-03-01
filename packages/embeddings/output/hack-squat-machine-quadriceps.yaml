@@ -1,0 +1,8 @@
+rp_embedding_name: hack squat, machine, quadriceps
+matches:
+  - hevy_embedding_name: hack squat machine, quadriceps, glutes, hamstrings
+    distance: 0.10039716958999634
+  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
+    distance: 0.1888566017150879
+  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
+    distance: 0.19530391693115234

@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell press flat, dumbbell, chest
+matches:
+  - hevy_embedding_name: floor press dumbbell, chest, shoulders, triceps
+    distance: 0.11805659532546997
+  - hevy_embedding_name: overhead press dumbbell, shoulders, triceps
+    distance: 0.11913830041885376
+  - hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
+    distance: 0.122017502784729

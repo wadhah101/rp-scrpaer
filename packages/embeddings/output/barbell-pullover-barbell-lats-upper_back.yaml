@@ -1,0 +1,8 @@
+rp_embedding_name: barbell pullover, barbell, lats, upper_back
+matches:
+  - hevy_embedding_name: kettlebell halo, shoulders, traps, upper_back
+    distance: 0.29098212718963623
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.3024609088897705
+  - hevy_embedding_name: lat pulldown band, lats, upper_back, biceps, forearms
+    distance: 0.315712571144104

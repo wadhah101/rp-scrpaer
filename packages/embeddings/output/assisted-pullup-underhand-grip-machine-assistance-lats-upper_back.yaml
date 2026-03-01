@@ -1,0 +1,8 @@
+rp_embedding_name: assisted pullup underhand grip, machine-assistance, lats, upper_back
+matches:
+  - hevy_embedding_name: reverse grip lat pulldown cable, lats, upper_back, biceps
+    distance: 0.24076110124588013
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.26453232765197754
+  - hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
+    distance: 0.2731890082359314

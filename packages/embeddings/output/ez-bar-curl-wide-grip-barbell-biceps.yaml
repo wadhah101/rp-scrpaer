@@ -1,0 +1,8 @@
+rp_embedding_name: ez bar curl wide grip, barbell, biceps
+matches:
+  - hevy_embedding_name: ez bar biceps curl, biceps
+    distance: 0.07349598407745361
+  - hevy_embedding_name: reverse curl barbell, biceps, forearms
+    distance: 0.13692951202392578
+  - hevy_embedding_name: bicep curl barbell, biceps
+    distance: 0.1389477252960205

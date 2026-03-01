@@ -1,0 +1,8 @@
+rp_embedding_name: deadlift sumo stance, barbell, glutes
+matches:
+  - hevy_embedding_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
+    distance: 0.20106667280197144
+  - hevy_embedding_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
+    distance: 0.202925443649292
+  - hevy_embedding_name: deadlift high pull, full_body
+    distance: 0.2062286138534546

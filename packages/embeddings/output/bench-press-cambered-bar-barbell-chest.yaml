@@ -1,0 +1,8 @@
+rp_embedding_name: bench press cambered bar, barbell, chest
+matches:
+  - hevy_embedding_name: bench press - close grip barbell, triceps, chest, shoulders
+    distance: 0.12192225456237793
+  - hevy_embedding_name: bench press barbell, chest, triceps, shoulders
+    distance: 0.12416565418243408
+  - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
+    distance: 0.1312057375907898

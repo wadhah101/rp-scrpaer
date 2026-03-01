@@ -1,0 +1,8 @@
+rp_embedding_name: barbell hip thrust, barbell, glutes
+matches:
+  - hevy_embedding_name: partial glute bridge barbell, glutes, hamstrings, adductors
+    distance: 0.21154826879501343
+  - hevy_embedding_name: hip thrust barbell, glutes, hamstrings, quadriceps, adductors
+    distance: 0.23043662309646606
+  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.2438756823539734

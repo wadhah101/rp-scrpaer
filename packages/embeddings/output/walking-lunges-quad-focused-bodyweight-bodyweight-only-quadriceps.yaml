@@ -1,0 +1,8 @@
+rp_embedding_name: walking lunges quad-focused, bodyweight, bodyweight-only, quadriceps
+matches:
+  - hevy_embedding_name: walking lunge, quadriceps, glutes, hamstrings
+    distance: 0.2152390480041504
+  - hevy_embedding_name: lunge, quadriceps, hamstrings, glutes
+    distance: 0.2416144609451294
+  - hevy_embedding_name: reverse lunge, quadriceps, hamstrings, glutes
+    distance: 0.24702972173690796

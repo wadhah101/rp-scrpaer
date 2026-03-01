@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell spider curl, dumbbell, biceps
+matches:
+  - hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.09962129592895508
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.17526930570602417
+  - hevy_embedding_name: spider curl barbell, biceps
+    distance: 0.18372416496276855

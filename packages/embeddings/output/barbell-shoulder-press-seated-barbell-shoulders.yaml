@@ -1,0 +1,8 @@
+rp_embedding_name: barbell shoulder press seated, barbell, shoulders
+matches:
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.09630399942398071
+  - hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
+    distance: 0.1317104697227478
+  - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
+    distance: 0.14715737104415894

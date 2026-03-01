@@ -1,0 +1,8 @@
+rp_embedding_name: cable triceps pushdown single-arm, cable, triceps
+matches:
+  - hevy_embedding_name: single arm triceps pushdown cable, triceps
+    distance: 0.07877832651138306
+  - hevy_embedding_name: triceps kickback cable, triceps
+    distance: 0.1545763611793518
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.1740543246269226

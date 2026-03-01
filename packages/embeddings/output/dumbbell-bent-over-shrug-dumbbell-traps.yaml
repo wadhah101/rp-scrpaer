@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell bent over shrug, dumbbell, traps
+matches:
+  - hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.1331866979598999
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.25559544563293457
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.29571598768234253

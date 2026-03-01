@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine skullcrusher, smith-machine, triceps
+matches:
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.33920931816101074
+  - hevy_embedding_name: skullcrusher dumbbell, triceps
+    distance: 0.3514106273651123
+  - hevy_embedding_name: skullcrusher barbell, triceps
+    distance: 0.37150126695632935

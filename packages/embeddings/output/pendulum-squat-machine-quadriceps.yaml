@@ -1,0 +1,8 @@
+rp_embedding_name: pendulum squat, machine, quadriceps
+matches:
+  - hevy_embedding_name: pendulum squat machine, quadriceps, glutes, hamstrings
+    distance: 0.09496474266052246
+  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
+    distance: 0.1910119652748108
+  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
+    distance: 0.20066004991531372

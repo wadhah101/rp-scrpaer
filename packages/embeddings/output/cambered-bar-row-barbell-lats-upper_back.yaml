@@ -1,0 +1,8 @@
+rp_embedding_name: cambered bar row, barbell, lats, upper_back
+matches:
+  - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
+    distance: 0.34381818771362305
+  - hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
+    distance: 0.3441629409790039
+  - hevy_embedding_name: kettlebell halo, shoulders, traps, upper_back
+    distance: 0.346818208694458

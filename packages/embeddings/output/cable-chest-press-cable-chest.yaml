@@ -1,0 +1,8 @@
+rp_embedding_name: cable chest press, cable, chest
+matches:
+  - hevy_embedding_name: seated chest flys cable, chest
+    distance: 0.3167188763618469
+  - hevy_embedding_name: single arm cable crossover, chest
+    distance: 0.3471403121948242
+  - hevy_embedding_name: chest press machine, chest, shoulders, triceps
+    distance: 0.3684489130973816

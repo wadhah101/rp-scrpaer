@@ -1,0 +1,8 @@
+rp_embedding_name: pushup deficit, bodyweight-only, chest
+matches:
+  - hevy_embedding_name: push up, chest, triceps, shoulders
+    distance: 0.14616930484771729
+  - hevy_embedding_name: push up weighted, chest, triceps, shoulders
+    distance: 0.14805155992507935
+  - hevy_embedding_name: plank pushup, chest, shoulders, triceps, abdominals
+    distance: 0.16665565967559814

@@ -1,0 +1,8 @@
+rp_embedding_name: pulldown wide grip, cable, lats, upper_back
+matches:
+  - hevy_embedding_name: reverse grip lat pulldown cable, lats, upper_back, biceps
+    distance: 0.2038448452949524
+  - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.2245774269104004
+  - hevy_embedding_name: seated cable row - bar wide grip, upper_back, lats, traps, biceps, forearms
+    distance: 0.2514287829399109

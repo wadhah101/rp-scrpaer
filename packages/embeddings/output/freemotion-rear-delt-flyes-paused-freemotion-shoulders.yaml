@@ -1,0 +1,8 @@
+rp_embedding_name: freemotion rear delt flyes paused, freemotion, shoulders
+matches:
+  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
+    distance: 0.37469202280044556
+  - hevy_embedding_name: chest fly suspension, chest
+    distance: 0.37745893001556396
+  - hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
+    distance: 0.3870294690132141

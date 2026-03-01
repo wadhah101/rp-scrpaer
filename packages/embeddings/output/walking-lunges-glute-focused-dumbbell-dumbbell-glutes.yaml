@@ -1,0 +1,8 @@
+rp_embedding_name: walking lunges glute-focused, dumbbell, dumbbell, glutes
+matches:
+  - hevy_embedding_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.2443828582763672
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.27357029914855957
+  - hevy_embedding_name: dumbbell step up, quadriceps, glutes, hamstrings
+    distance: 0.2807437777519226

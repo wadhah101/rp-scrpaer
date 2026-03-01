@@ -1,0 +1,8 @@
+rp_embedding_name: reverse hyper, machine, glutes
+matches:
+  - hevy_embedding_name: clamshell, glutes
+    distance: 0.4153650999069214
+  - hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.4789186716079712
+  - hevy_embedding_name: back extension machine, lower_back
+    distance: 0.5373435020446777

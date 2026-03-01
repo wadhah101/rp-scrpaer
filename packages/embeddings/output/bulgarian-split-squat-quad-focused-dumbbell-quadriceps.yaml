@@ -1,0 +1,8 @@
+rp_embedding_name: bulgarian split squat quad-focused, dumbbell, quadriceps
+matches:
+  - hevy_embedding_name: bulgarian split squat, quadriceps, glutes, hamstrings
+    distance: 0.1704578995704651
+  - hevy_embedding_name: sissy squat weighted, quadriceps
+    distance: 0.20613479614257812
+  - hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
+    distance: 0.23543649911880493

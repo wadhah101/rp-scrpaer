@@ -1,0 +1,8 @@
+rp_embedding_name: nordic curl, bodyweight-only, hamstrings
+matches:
+  - hevy_embedding_name: nordic hamstrings curls, hamstrings, glutes
+    distance: 0.22566527128219604
+  - hevy_embedding_name: behind the back curl cable, biceps
+    distance: 0.2276785969734192
+  - hevy_embedding_name: lying leg curl machine, hamstrings, calves
+    distance: 0.23404347896575928

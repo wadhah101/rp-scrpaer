@@ -1,0 +1,8 @@
+rp_embedding_name: barbell squat narrow stance, barbell, quadriceps
+matches:
+  - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.13045543432235718
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.14294683933258057
+  - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
+    distance: 0.14342737197875977

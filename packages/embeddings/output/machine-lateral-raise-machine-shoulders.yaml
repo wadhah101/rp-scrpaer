@@ -1,0 +1,8 @@
+rp_embedding_name: machine lateral raise, machine, shoulders
+matches:
+  - hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.06106424331665039
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.22924989461898804
+  - hevy_embedding_name: single arm lateral raise cable, shoulders
+    distance: 0.2343754768371582

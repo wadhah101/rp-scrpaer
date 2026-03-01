@@ -1,0 +1,8 @@
+rp_embedding_name: reaching sit-up, bodyweight-only, abdominals
+matches:
+  - hevy_embedding_name: sit up, abdominals
+    distance: 0.16547363996505737
+  - hevy_embedding_name: sit up weighted, abdominals
+    distance: 0.1787334680557251
+  - hevy_embedding_name: plank pushup, chest, shoulders, triceps, abdominals
+    distance: 0.23027437925338745

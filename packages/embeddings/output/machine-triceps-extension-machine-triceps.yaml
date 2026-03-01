@@ -1,0 +1,8 @@
+rp_embedding_name: machine triceps extension, machine, triceps
+matches:
+  - hevy_embedding_name: triceps extension machine, triceps
+    distance: 0.11351048946380615
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.19460606575012207
+  - hevy_embedding_name: triceps extension suspension, triceps
+    distance: 0.19593113660812378

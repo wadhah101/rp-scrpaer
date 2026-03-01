@@ -1,0 +1,8 @@
+rp_embedding_name: reverse lunge barbell, barbell, glutes
+matches:
+  - hevy_embedding_name: partial glute bridge barbell, glutes, hamstrings, adductors
+    distance: 0.21812492609024048
+  - hevy_embedding_name: reverse lunge barbell, quadriceps, hamstrings, glutes
+    distance: 0.251667857170105
+  - hevy_embedding_name: lunge barbell, quadriceps, hamstrings, glutes
+    distance: 0.28233760595321655

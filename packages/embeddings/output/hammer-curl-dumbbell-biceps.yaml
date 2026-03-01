@@ -1,0 +1,8 @@
+rp_embedding_name: hammer curl, dumbbell, biceps
+matches:
+  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
+    distance: 0.04745984077453613
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.11498576402664185
+  - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.1243475079536438

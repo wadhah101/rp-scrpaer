@@ -1,0 +1,8 @@
+rp_embedding_name: front squat cross grip, barbell, quadriceps
+matches:
+  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
+    distance: 0.12536746263504028
+  - hevy_embedding_name: bench press - wide grip barbell, chest, shoulders, triceps
+    distance: 0.13103199005126953
+  - hevy_embedding_name: bench press - close grip barbell, triceps, chest, shoulders
+    distance: 0.13499081134796143

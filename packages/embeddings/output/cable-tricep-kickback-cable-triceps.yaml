@@ -1,0 +1,8 @@
+rp_embedding_name: cable tricep kickback, cable, triceps
+matches:
+  - hevy_embedding_name: triceps kickback cable, triceps
+    distance: 0.09550338983535767
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.22059768438339233
+  - hevy_embedding_name: overhead triceps extension cable, triceps
+    distance: 0.2398166060447693

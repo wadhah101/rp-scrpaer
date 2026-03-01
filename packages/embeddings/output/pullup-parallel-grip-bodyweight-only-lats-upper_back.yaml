@@ -1,0 +1,8 @@
+rp_embedding_name: pullup parallel grip, bodyweight-only, lats, upper_back
+matches:
+  - hevy_embedding_name: reverse grip lat pulldown cable, lats, upper_back, biceps
+    distance: 0.24501854181289673
+  - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.24867171049118042
+  - hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
+    distance: 0.2717210054397583

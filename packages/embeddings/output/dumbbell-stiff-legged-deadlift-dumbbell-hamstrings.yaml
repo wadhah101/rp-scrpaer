@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell stiff legged deadlift, dumbbell, hamstrings
+matches:
+  - hevy_embedding_name: dumbbell step up, quadriceps, glutes, hamstrings
+    distance: 0.14368122816085815
+  - hevy_embedding_name: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
+    distance: 0.16435164213180542
+  - hevy_embedding_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.16891688108444214

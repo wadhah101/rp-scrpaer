@@ -1,0 +1,8 @@
+rp_embedding_name: bayesian curl, cable, biceps
+matches:
+  - hevy_embedding_name: reverse curl cable, biceps, forearms
+    distance: 0.1700136661529541
+  - hevy_embedding_name: overhead curl cable, biceps
+    distance: 0.170782208442688
+  - hevy_embedding_name: bicep curl cable, biceps
+    distance: 0.19237303733825684

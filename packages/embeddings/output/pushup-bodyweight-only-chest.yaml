@@ -1,0 +1,8 @@
+rp_embedding_name: pushup, bodyweight-only, chest
+matches:
+  - hevy_embedding_name: push up weighted, chest, triceps, shoulders
+    distance: 0.1390184760093689
+  - hevy_embedding_name: push up, chest, triceps, shoulders
+    distance: 0.14298534393310547
+  - hevy_embedding_name: push up - close grip, chest, triceps, shoulders
+    distance: 0.1501612663269043

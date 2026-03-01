@@ -1,0 +1,8 @@
+rp_embedding_name: slant board sit-up weighted, bodyweight-loadable, abdominals
+matches:
+  - hevy_embedding_name: sit up weighted, abdominals
+    distance: 0.24250555038452148
+  - hevy_embedding_name: push up weighted, chest, triceps, shoulders
+    distance: 0.3394775986671448
+  - hevy_embedding_name: side bend dumbbell, abdominals
+    distance: 0.34030115604400635

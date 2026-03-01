@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell preacher curl single-arm, dumbbell, biceps
+matches:
+  - hevy_embedding_name: preacher curl dumbbell, biceps
+    distance: 0.060136497020721436
+  - hevy_embedding_name: bicep curl dumbbell, biceps
+    distance: 0.09489321708679199
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.10458654165267944

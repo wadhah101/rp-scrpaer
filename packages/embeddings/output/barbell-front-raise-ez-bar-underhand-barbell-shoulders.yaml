@@ -1,0 +1,8 @@
+rp_embedding_name: barbell front raise ez bar, underhand, barbell, shoulders
+matches:
+  - hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.1909131407737732
+  - hevy_embedding_name: kettlebell halo, shoulders, traps, upper_back
+    distance: 0.24695777893066406
+  - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
+    distance: 0.27791088819503784

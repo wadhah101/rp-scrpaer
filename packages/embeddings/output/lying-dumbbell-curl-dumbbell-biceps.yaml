@@ -1,0 +1,8 @@
+rp_embedding_name: lying dumbbell curl, dumbbell, biceps
+matches:
+  - hevy_embedding_name: bicep curl dumbbell, biceps
+    distance: 0.13612812757492065
+  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.1387549638748169
+  - hevy_embedding_name: seated incline curl dumbbell, biceps
+    distance: 0.16133081912994385

@@ -1,0 +1,8 @@
+rp_embedding_name: cable single arm rear delt raise, cable, shoulders
+matches:
+  - hevy_embedding_name: single arm lateral raise cable, shoulders
+    distance: 0.11926835775375366
+  - hevy_embedding_name: front raise cable, shoulders
+    distance: 0.13485729694366455
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.14032429456710815

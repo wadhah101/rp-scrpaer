@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell pullover, dumbbell, lats, upper_back
+matches:
+  - hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
+    distance: 0.26645445823669434
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.2869732975959778
+  - hevy_embedding_name: kettlebell halo, shoulders, traps, upper_back
+    distance: 0.2908075451850891

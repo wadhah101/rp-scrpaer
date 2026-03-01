@@ -1,0 +1,8 @@
+rp_embedding_name: dip triceps-focused, bodyweight-only, triceps
+matches:
+  - hevy_embedding_name: triceps dip weighted, triceps, chest, shoulders
+    distance: 0.14883023500442505
+  - hevy_embedding_name: triceps dip assisted, triceps, chest, shoulders
+    distance: 0.16793787479400635
+  - hevy_embedding_name: seated triceps press, triceps
+    distance: 0.18654048442840576

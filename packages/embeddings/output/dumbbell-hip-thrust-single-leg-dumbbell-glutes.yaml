@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell hip thrust single leg, dumbbell, glutes
+matches:
+  - hevy_embedding_name: single leg hip thrust dumbbell, glutes, hamstrings, quadriceps
+    distance: 0.15347522497177124
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.19328707456588745
+  - hevy_embedding_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.20655417442321777

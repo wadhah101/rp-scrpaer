@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell leaning shrug, dumbbell, traps
+matches:
+  - hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.12001663446426392
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.2561534643173218
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.3114969730377197

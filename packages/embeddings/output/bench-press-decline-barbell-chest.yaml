@@ -1,0 +1,8 @@
+rp_embedding_name: bench press decline, barbell, chest
+matches:
+  - hevy_embedding_name: decline bench press barbell, chest, shoulders, triceps
+    distance: 0.056437909603118896
+  - hevy_embedding_name: decline bench press dumbbell, chest, shoulders, triceps
+    distance: 0.08405005931854248
+  - hevy_embedding_name: decline bench press machine, chest, shoulders, triceps
+    distance: 0.1140977144241333

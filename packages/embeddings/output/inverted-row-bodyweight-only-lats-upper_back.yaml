@@ -1,0 +1,8 @@
+rp_embedding_name: inverted row, bodyweight-only, lats, upper_back
+matches:
+  - hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
+    distance: 0.2570922374725342
+  - hevy_embedding_name: squat row, full_body
+    distance: 0.27556413412094116
+  - hevy_embedding_name: low row suspension, upper_back, lats, biceps, forearms
+    distance: 0.32745134830474854

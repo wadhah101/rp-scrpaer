@@ -1,0 +1,8 @@
+rp_embedding_name: freemotion y-raises paused, freemotion, shoulders
+matches:
+  - hevy_embedding_name: jump shrug, full_body
+    distance: 0.46939146518707275
+  - hevy_embedding_name: front lever raise, full_body
+    distance: 0.47543591260910034
+  - hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.4926474690437317

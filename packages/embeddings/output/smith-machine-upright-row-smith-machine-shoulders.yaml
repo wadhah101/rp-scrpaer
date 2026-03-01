@@ -1,0 +1,8 @@
+rp_embedding_name: smith machine upright row, smith-machine, shoulders
+matches:
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.2902525067329407
+  - hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.32329273223876953
+  - hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.3314533829689026

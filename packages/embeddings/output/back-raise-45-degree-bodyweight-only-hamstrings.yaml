@@ -1,0 +1,8 @@
+rp_embedding_name: back raise 45 degree, bodyweight-only, hamstrings
+matches:
+  - hevy_embedding_name: full squat, quadriceps, hamstrings, glutes
+    distance: 0.25512659549713135
+  - hevy_embedding_name: reverse lunge barbell, quadriceps, hamstrings, glutes
+    distance: 0.25538378953933716
+  - hevy_embedding_name: back extension hyperextension, lower_back, hamstrings, glutes
+    distance: 0.25700145959854126

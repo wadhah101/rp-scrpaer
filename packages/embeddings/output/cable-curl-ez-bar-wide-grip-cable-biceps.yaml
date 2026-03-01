@@ -1,0 +1,8 @@
+rp_embedding_name: cable curl ez bar, wide grip, cable, biceps
+matches:
+  - hevy_embedding_name: overhead curl cable, biceps
+    distance: 0.13064193725585938
+  - hevy_embedding_name: rope cable curl, biceps, forearms
+    distance: 0.1378667950630188
+  - hevy_embedding_name: single arm curl cable, biceps
+    distance: 0.15404796600341797

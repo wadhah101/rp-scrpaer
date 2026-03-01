@@ -1,0 +1,8 @@
+rp_embedding_name: dumbbell overhead extension, dumbbell, triceps
+matches:
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.08621853590011597
+  - hevy_embedding_name: single arm tricep extension dumbbell, triceps
+    distance: 0.11912572383880615
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.12134289741516113

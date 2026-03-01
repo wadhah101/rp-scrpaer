@@ -1,0 +1,8 @@
+rp_embedding_name: assisted dip, machine-assistance, triceps
+matches:
+  - hevy_embedding_name: triceps dip assisted, triceps, chest, shoulders
+    distance: 0.21737319231033325
+  - hevy_embedding_name: seated dip machine, triceps, chest, shoulders
+    distance: 0.22240698337554932
+  - hevy_embedding_name: chest dip assisted, chest, triceps, shoulders
+    distance: 0.22758346796035767
