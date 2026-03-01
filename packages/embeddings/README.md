@@ -67,10 +67,7 @@ Hevy: "bench press barbell, chest, triceps, shoulders"
 Requires Python 3.12+. Install with [uv](https://docs.astral.sh/uv/):
 
 ```bash
-# macOS / Apple Silicon (MPS acceleration)
-uv sync
-
-# CPU-only
+# macOS / Apple Silicon (MPS acceleration) and CPU
 uv sync --extra cpu
 
 # CUDA 13.0
