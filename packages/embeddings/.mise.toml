@@ -10,4 +10,4 @@ UPDATE_OUTPUT = "true"
 
 
 [tasks.embed]
-run = "uv run src/embeddings/embed.py"
+run = "uv run python -m embeddings"
