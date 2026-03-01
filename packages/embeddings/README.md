@@ -1,6 +1,6 @@
 # Exercise Matching: RP to Hevy
 
-Semantic exercise matching system that maps exercises from the [RP Hypertrophy](https://rpstrength.com/) app to [Hevy](https://www.hevyapp.com/) using sentence-transformer embeddings and vector similarity search.
+Semantic exercise matching library that maps exercises from the [RP Hypertrophy](https://rpstrength.com/) app to [Hevy](https://www.hevyapp.com/) using embedding models and vector similarity search.
 
 ## Problem
 
@@ -20,21 +20,42 @@ Hybrid strategy: **semantic embeddings + muscle group filtering**.
 
 1. **Load & enrich** --- Build a rich text string per exercise combining name, equipment type, and muscle groups into a single lowercase sentence
 2. **Filter by muscle group** --- Join RP exercises with a muscle group mapping (`data/muscle_group_mapping.json`) so candidates are constrained to the same body part
-3. **Embed** --- Encode all enriched strings with `mixedbread-ai/mxbai-embed-large-v1` (1024-dim, Matryoshka support). This replaced the earlier `paraphrase-mpnet-base-v2` model and produces significantly better match quality --- fewer false positives on hard synonyms and equipment variants
-4. **Store & query** --- Index Hevy embeddings in an in-memory ChromaDB collection (HNSW, cosine distance). Query with RP embeddings to retrieve the top 3 Hevy matches per RP exercise
-5. **Export** --- Write one YAML file per RP exercise to the `output/` directory
+3. **Embed** --- Encode all enriched strings with an embedding model. Supports both local models via `sentence-transformers` and remote OpenAI-compatible APIs
+4. **Store & query** --- Index Hevy embeddings in a ChromaDB collection (HNSW, cosine distance). Query with RP embeddings to retrieve the top-N Hevy matches per RP exercise
+5. **Evaluate** --- Compute precision@1, precision@K, MRR, and confidence gap metrics
+6. **Export** --- Write one YAML file per RP exercise to the output directory
 
-The next step is moving to LLM-based embedding models (1.5B--8B parameters). These understand fitness vocabulary natively ("RDL" = "Romanian Deadlift", "Pullup Underhand Grip" = "Chin Up") and support task-specific instruction prompts, which should close the remaining accuracy gaps. See [FUTURE_WORK.md](./FUTURE_WORK.md) for details.
+### Embedding backends
+
+| Backend | Description |
+|---|---|
+| **Local** (`sentence-transformers`) | Loads model on-device (MPS, CUDA, or CPU). Default: `Qwen/Qwen3-Embedding-8B` |
+| **API** (OpenAI-compatible) | Calls a remote embeddings endpoint. Supports rate limiting and batching |
+
+Both backends implement the same `Embedder` protocol and are interchangeable. The local backend supports instruction prompts via `--rp-prompt` / `--hevy-prompt` for LLM-based models.
+
+## Current Results
+
+Using `Qwen/Qwen3-Embedding-8B` on 315 RP exercises matched against 433 Hevy exercises:
+
+| Metric | Value |
+|---|---|
+| Muscle group precision@1 | 91.75% |
+| Muscle group precision@K | 94.92% |
+| Top-1 mean cosine distance | 0.1035 |
+| High confidence matches (d < 0.15) | 277 / 315 |
+
+See [FUTURE_WORK.md](./FUTURE_WORK.md) for the model evaluation roadmap and pipeline improvements.
 
 ## Project Structure
 
 ```
 src/embeddings/
-  __init__.py    # Logging configuration
+  __init__.py    # Package exports and logging
   schemas.py     # Polars schemas and TypedDicts for RP, Hevy, and muscle group data
   df.py          # Data loading, normalization, joining, and rich text construction
-  db.py          # ChromaDB client and collection initialization
-  embed.py       # Model loading, encoding, similarity search, YAML export
+  db.py          # ChromaDB client modes (memory, persistent, HTTP) and collection init
+  embed.py       # Embedder protocol, LocalEmbedder, ApiEmbedder, similarity search, metrics
 
 data/
   rp/exercises.json             # 315 RP exercises
@@ -42,6 +63,7 @@ data/
   muscle_group_mapping.json     # RP muscleGroupId -> Hevy primary_muscle_group
 
 output/                         # ~314 per-exercise YAML match files (generated)
+metrics.yaml                    # Latest evaluation metrics
 ```
 
 ## Data Shapes
@@ -74,21 +96,36 @@ uv sync --extra cpu
 
 # CUDA 13.0
 uv sync --extra cu130
+
+# Remote API backend (adds openai dependency)
+uv sync --extra api
 ```
 
 ## Usage
 
-Requires the `MONOREPO_ROOT` environment variable pointing to the repository root.
+The embeddings package is used through the CLI package's `embedding` command group:
 
 ```bash
-# Using mise task runner
-mise run embed
+# Embed exercises into persistent ChromaDB
+mise //packages/cli:cli embedding embd \
+  --backend local --model-name Qwen/Qwen3-Embedding-8B \
+  --chroma-mode persistent --chroma-path ./chroma_data
 
-# Or directly
-uv run python -m embeddings.embed
+# Run similarity search on already-embedded exercises
+mise //packages/cli:cli embedding run-rp-similarity-search \
+  --chroma-mode persistent --chroma-path ./chroma_data \
+  --metrics-output metrics.yaml --exercise-output-dir output/
 ```
 
-Each RP exercise produces a separate YAML file in `output/`, named after the normalized exercise string:
+Or run the standalone entrypoint:
+
+```bash
+mise //packages/embeddings:embed
+```
+
+### Output format
+
+Each RP exercise produces a separate YAML file:
 
 ```yaml
 # output/ab-wheel-bodyweight-only-abdominals.yaml
@@ -108,13 +145,13 @@ Lower distance = better match (cosine distance, 0.0 = identical).
 
 | Library | Role |
 |---|---|
-| `sentence-transformers` | Embedding model (`mixedbread-ai/mxbai-embed-large-v1`) |
-| `chromadb` | In-memory vector store with HNSW index |
+| `sentence-transformers` | Embedding models (local backend) |
+| `chromadb` | Vector store with HNSW index (memory, persistent, or HTTP mode) |
 | `polars` | DataFrame loading, joins, and transformations |
 | `torch` | Tensor backend (MPS / CPU / CUDA) |
 | `pydantic` | Data validation schemas |
-| `aiohttp` / `aiohttp-retry` | Async HTTP (planned) |
+| `openai` | Remote API backend (optional, via `api` extra) |
 
 ## Hardware
 
-Automatically uses Apple Silicon GPU (MPS) when available, falls back to CPU. The dataset is small (~750 exercises total), so a full run completes in under a minute on most machines.
+Automatically uses Apple Silicon GPU (MPS) when available, falls back to CPU. The dataset is small (~750 exercises total), so a full run completes in under a minute on most machines. Larger models (8B) require 16+ GB memory.

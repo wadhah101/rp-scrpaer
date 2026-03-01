@@ -23,7 +23,7 @@ Run every model/config change against this ground truth to catch regressions.
 
 ## Model Upgrades: LLM-Based Embedding Models
 
-The pipeline currently uses `mixedbread-ai/mxbai-embed-large-v1` (335M params, 1024-dim, ~0.7 GB). This was a major improvement over the original `paraphrase-mpnet-base-v2` --- better precision on hard synonyms and equipment-variant matching. The next frontier is LLM-based embedding models.
+The default model is now `Qwen/Qwen3-Embedding-8B` (8B params, 4096-dim). This replaced `mixedbread-ai/mxbai-embed-large-v1` (335M params, 1024-dim) which itself replaced the original `paraphrase-mpnet-base-v2`. An OpenAI-compatible API backend is also available via `--backend api`. The remaining frontier is evaluating smaller LLM-based models to find the best quality/cost tradeoff.
 
 ### Why LLM-based models
 
@@ -91,9 +91,9 @@ Export the medium-confidence band to a separate file for manual verification.
 
 The muscle group join happens at the DataFrame level but is not enforced during the ChromaDB query. All Hevy exercises are searched regardless of muscle group. Implementing per-muscle-group collections (or ChromaDB metadata filtering with `where={"primary_muscle_group": ...}`) would reduce false positives --- a "Press" in chest won't match a "Press" in shoulders.
 
-### Persistent vector store
+### ~~Persistent vector store~~ (Done)
 
-ChromaDB currently runs in-memory and is rebuilt on every run. Switch to persistent storage (`chromadb.PersistentClient(path="./chroma_db")`) so embeddings only need to be recomputed when the exercise data changes.
+~~ChromaDB currently runs in-memory and is rebuilt on every run. Switch to persistent storage (`chromadb.PersistentClient(path="./chroma_db")`) so embeddings only need to be recomputed when the exercise data changes.~~ --- Done: `db.py` supports `memory`, `persistent`, and `http` modes via the `ClientMode` enum. The CLI defaults to `persistent`.
 
 ### Many-to-one handling
 
@@ -120,6 +120,6 @@ This is the "nuclear option" --- only worth pursuing after confirming that zero-
 ## Code Quality
 
 - Move YAML export out of `embed.py` into a dedicated output module
-- Add a CLI entrypoint (e.g., with `argparse` or `click`) to configure model name, threshold, n_results, and output format
+- ~~Add a CLI entrypoint (e.g., with `argparse` or `click`) to configure model name, threshold, n_results, and output format~~ --- Done: `packages/cli` has full `embedding embd` and `embedding run-rp-similarity-search` commands
 - Add type annotations to DataFrame pipeline return values
 - Write integration tests that run on a small fixture dataset
