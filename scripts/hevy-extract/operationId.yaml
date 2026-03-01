@@ -1,0 +1,65 @@
+description: Recommended rules for a high quality specification.
+documentationUrl: https://quobix.com/vacuum/rulesets/recommended
+rules:
+  operation-operationId:
+    category:
+      description: Operations are the core of the contract, they define paths and HTTP methods. These rules check operations have been well constructed, looks for operationId, parameter, schema and return types in depth.
+      id: operations
+      name: Operations
+    description: Every operation must contain an `operationId`.
+    formats:
+      - oas3
+      - oas3_1
+      - oas3_2
+      - oas2
+    given: $
+    howToFix: Every single operation needs an operationId. It's a critical requirement to be able to identify each individual operation uniquely. Please add an operationId to the operation.
+    id: operation-operationId
+    recommended: true
+    severity: error
+    then:
+      function: oasOpId
+    type: validation
+  operation-operationId-unique:
+    category:
+      description: Operations are the core of the contract, they define paths and HTTP methods. These rules check operations have been well constructed, looks for operationId, parameter, schema and return types in depth.
+      id: operations
+      name: Operations
+    description: Every operation must have unique `operationId`.
+    formats:
+      - oas3
+      - oas3_1
+      - oas3_2
+      - oas2
+    given: $.paths
+    howToFix: An operationId needs to be unique, there can't be any duplicates in the document, you can't re-use them. Make sure the ID used for this operation is unique.
+    id: operation-operationId-unique
+    recommended: true
+    resolved: true
+    severity: error
+    then:
+      function: oasOpIdUnique
+    type: validation
+  operation-operationId-valid-in-url:
+    category:
+      description: Operations are the core of the contract, they define paths and HTTP methods. These rules check operations have been well constructed, looks for operationId, parameter, schema and return types in depth.
+      id: operations
+      name: Operations
+    description: OperationId must use URL friendly characters
+    formats:
+      - oas3
+      - oas3_1
+      - oas3_2
+      - oas2
+    given: $.paths[*][*]
+    howToFix: An operationId is critical to correct code generation and operation identification. The operationId should really be designed in a way to make it friendly when used as part of a URL. Remove non-standard URL characters.
+    id: operation-operationId-valid-in-url
+    recommended: true
+    resolved: true
+    severity: error
+    then:
+      field: operationId
+      function: pattern
+      functionOptions:
+        match: ^[A-Za-z0-9-._~:/?#\[\]@!\$&'()*+,;=]*$
+    type: validation

@@ -1,0 +1,64 @@
+[settings]
+pipx.uvx = true
+auto_install = true
+
+[tools]
+java = "openjdk-21"
+"npm:@openapitools/openapi-generator-cli" = "2.30.0"
+"node" = "latest"
+"bun" = "latest"
+"npm:@redocly/cli" = "2.20.0"
+
+[env]
+HEVY_API_BASE_URL = "https://api.hevyapp.com"
+RP_APP_BASE_URL = "https://training.rpstrength.com/api"
+RP_APP_VERSION = "1.1.13"
+
+[tasks.test]
+run = "echo 'No tests defined'"
+
+[tasks.generate-models-hevy]
+depends = "//scripts/hevy-extract:export"
+description = "Generate Python SDK from OpenAPI spec"
+run = """
+openapi-generator-cli generate \
+  -i openapi/hevy.openapi.yaml \
+  -g python \
+  -o src \
+  --package-name hevy_api_service \
+  --additional-properties=generateSourceCodeOnly=true \
+  --additional-properties=library=asyncio
+"""
+
+[tasks.generate-models-rp]
+description = "Generate Python SDK from OpenAPI spec"
+run = """
+openapi-generator-cli generate \
+  -i openapi/rp.openapi.yaml \
+  -g python \
+  -o src \
+  --package-name api_service_rp \
+  --additional-properties=generateSourceCodeOnly=true \
+  --additional-properties=library=asyncio
+"""
+
+
+[tasks.compile-openai-hevy]
+depends = "//scripts/hevy-extract:export"
+run = "redocly build-docs openapi/hevy.openapi.yaml --output website/docs/hevy/index.html"
+description = "Compile OpenAPI docs"
+
+[tasks.serve-openapi-hevy]
+depends = ["compile-openai-hevy"]
+run = "python -m http.server --directory website/docs/hevy"
+description = "Serve OpenAPI docs"
+
+
+[tasks.compile-openai-rp]
+run = "redocly build-docs openapi/rp.openapi.yaml --output website/docs/rp/index.html"
+description = "Compile OpenAPI docs"
+
+[tasks.serve-openapi-rp]
+depends = ["compile-openai-rp"]
+run = "python -m http.server --directory website/docs/rp"
+description = "Serve OpenAPI docs"

@@ -1,5 +1,6 @@
-amends "package://github.com/jdx/hk/releases/download/v1.36.0/hk@1.36.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.36.0/hk@1.36.0#/Builtins.pkl"
+// Download from https://github.com/jdx/hk/releases/download/v1.36.0/hk@1.36.0.zip to reduce reliance on GitHub
+amends "hk@1.36.0/Config.pkl"
+import "hk@1.36.0/Builtins.pkl"
 
 // --- Python ---
 local python_linters = new Mapping<String, Step> {
@@ -8,9 +9,28 @@ local python_linters = new Mapping<String, Step> {
   // Fast Python formatter (black replacement)
   ["ruff-format"] = Builtins.ruff_format
   // Validates Python files parse without syntax errors
-  ["python-check-ast"] = Builtins.python_check_ast
+  ["python-check-ast"] = (Builtins.python_check_ast) {
+    exclude =
+      List(
+        "**/.venv/**",
+        "**/__pycache__/**",
+        "packages/api-service/**",
+      )
+  }
   // Detects leftover breakpoint()/pdb statements
   ["python-debug-statements"] = Builtins.python_debug_statements
+}
+
+local javascript_linters = new Mapping<String, Step> {
+  // Fast JavaScript linter (eslint replacement)
+  ["biome"] = (Builtins.biome) {
+    glob = List("*.js", "*.ts") // Override file patterns
+    fix = "biome check --write --unsafe --no-errors-on-unmatched {{ files }}"
+  }
+}
+
+local openapi_linters = new Mapping<String, Step> {
+  ["vacuum"] = Builtins.vacuum
 }
 
 // --- Config files ---
@@ -23,6 +43,8 @@ local config_linters = new Mapping<String, Step> {
   ["taplo-format"] = Builtins.taplo_format
   // Formats YAML files consistently
   ["yamlfmt"] = Builtins.yamlfmt
+  ["pkl"] = Builtins.pkl
+  ["pkl-format"] = Builtins.pkl_format
 }
 
 // --- GitHub Actions ---
@@ -42,6 +64,8 @@ local all_linters = new Mapping<String, Step> {
   ...config_linters
   ...gh_actions_linters
   ...containers_linters
+  ...javascript_linters
+  ...openapi_linters
 }
 
 fail_fast = false

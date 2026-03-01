@@ -3,14 +3,14 @@ experimental_monorepo_root = true
 [env]
 DOCKER_BUILDKIT = 1
 RP_AUTH_TOKEN = ""
-
+MONOREPO_ROOT = "{{config_root}}"
 
 [monorepo]
-config_roots = ["packages/*"]
+config_roots = ["packages/*", "scripts/*"]
 
 [settings]
 experimental = true
-lockfile = true
+auto_install = true
 
 [tools]
 python = "3.12"
@@ -24,8 +24,18 @@ pinact = "latest"
 zizmor = "latest"
 github-cli = "latest"
 hadolint = "latest"
+watchexec = "latest"
+"npm:@quobix/vacuum" = "latest"
+"npm:@biomejs/biome" = "latest"
+
+[tasks.pre-commit]
+run = "hk pre-commit -a"
+
+[tasks.format]
+run = "hk fix -a"
+
 [tasks.lint]
-run = "hk run pre-commit"
+run = "hk check -a"
 
 [prepare.uv]
 run = "uv sync --all-packages"

@@ -21,7 +21,6 @@ ENV MISE_YES=1 \
 # Install Python and uv via mise (versions from root .mise.toml)
 WORKDIR /app
 COPY .mise.toml ./
-COPY mise.lock ./
 COPY packages/pipeline/.mise.toml packages/pipeline/.mise.toml
 
 WORKDIR /app/packages/pipeline

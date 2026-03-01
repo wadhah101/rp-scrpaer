@@ -1,0 +1,20 @@
+[tools]
+"yq" = "latest"
+"bun" = "latest"
+"jq" = "latest"
+
+[tasks.export]
+description = "Extract Hevy OpenAPI spec and export as YAML to packages/api-service/openapi/"
+run = [
+  "bun run extract.ts extract -o openapi.json",
+  'yq -p json -o yaml . openapi.json > "$MONOREPO_ROOT/packages/api-service/openapi/hevy.openapi.yaml"',
+  'echo "Exported to packages/api-service/openapi/hevy.openapi.yaml"',
+]
+
+[tasks.report]
+depends = ["export"]
+description = "Vacuum the Hevy OpenAPI spec"
+run = [
+  "vacuum  spectral-report openapi.json",
+  "jq '[.[] | select(.severity == 0)]' vacuum-spectral-report.json > vacuum-severity-0.json",
+]

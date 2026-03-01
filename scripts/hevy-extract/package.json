@@ -1,0 +1,19 @@
+{
+  "name": "hevy-extract",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "bun run extract.ts extract",
+    "lint": "bun run --bun tsc --noEmit",
+    "check": "bun run lint",
+    "build": "bun build ./extract.ts --compile --bytecode --minify --outfile=dist/hevy-extract"
+  },
+  "dependencies": {
+    "@bunli/core": "^0.7.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.9",
+    "bun-types": "^1.3.10",
+    "typescript": "^5.9.3"
+  }
+}

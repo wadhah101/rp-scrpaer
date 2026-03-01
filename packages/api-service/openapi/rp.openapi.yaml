@@ -1,0 +1,1497 @@
+openapi: 3.0.3
+info:
+  title: RP Strength Training API
+  version: 1.0.0
+  description: RP Strength Training API for workout data, user profiles, subscriptions, and training management.
+servers:
+  - url: https://training.rpstrength.com/api
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        displayName:
+          type: string
+        photoUrl:
+          type: string
+        googleId:
+          type: string
+          nullable: true
+        appleId:
+          type: string
+          nullable: true
+        facebookId:
+          type: string
+          nullable: true
+        roleId:
+          type: integer
+        stripeId:
+          type: string
+          nullable: true
+        klaviyoId:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        firstSeenAt:
+          type: string
+          format: date-time
+        attributes:
+          $ref: "#/components/schemas/UserAttributes"
+    UserAttributes:
+      type: object
+      properties:
+        BIRTHDATE:
+          type: string
+        SEX:
+          type: string
+        TRAINING_YEARS:
+          type: string
+        TRAINING_PREFERENCE_EXERCISE_TYPES:
+          type: string
+          description: JSON-encoded string
+        ATTRIBUTION_SURVEY:
+          type: string
+        CREATED_ON_PLATFORM:
+          type: string
+        TRAINING_FEATURE_AUTO_APPLY_WEIGHTS:
+          type: boolean
+        TRAINING_APPLY_EXERCISE_TYPES:
+          type: boolean
+    ActiveSubscription:
+      type: object
+      properties:
+        platform:
+          type: string
+        iapId:
+          type: integer
+        iapPurchaseType:
+          type: string
+        iapPlatformId:
+          type: string
+        iapName:
+          type: string
+        isFreeTrial:
+          type: boolean
+        isIntroPriced:
+          type: boolean
+        referralId:
+          type: integer
+          nullable: true
+        referralCode:
+          type: string
+          nullable: true
+        referralType:
+          type: string
+          nullable: true
+        purchaseDate:
+          type: string
+          format: date-time
+        expirationDate:
+          type: string
+          format: date-time
+        cancellationDate:
+          type: string
+          format: date-time
+          nullable: true
+        access:
+          type: array
+          items:
+            type: string
+        subscriptionId:
+          type: string
+    ConsumedIap:
+      type: object
+      properties:
+        platform:
+          type: string
+        purchaseType:
+          type: string
+        platformId:
+          type: string
+        subscriptionGroupId:
+          type: string
+        subscriptionGroupKey:
+          type: string
+        access:
+          type: array
+          items:
+            type: string
+        accessEndsAt:
+          type: string
+          format: date-time
+    UserSubscriptions:
+      type: object
+      properties:
+        activeSubscriptions:
+          type: array
+          items:
+            $ref: "#/components/schemas/ActiveSubscription"
+        consumedIaps:
+          type: array
+          items:
+            $ref: "#/components/schemas/ConsumedIap"
+        stripeIds:
+          type: array
+          items:
+            type: string
+        trainingLastAccessAddedAt:
+          type: string
+          format: date-time
+    ExerciseSet:
+      type: object
+      properties:
+        id:
+          type: integer
+        dayExerciseId:
+          type: integer
+        position:
+          type: integer
+        setType:
+          type: string
+        weight:
+          type: number
+          nullable: true
+        weightTarget:
+          type: number
+          nullable: true
+        weightTargetMin:
+          type: number
+          nullable: true
+        weightTargetMax:
+          type: number
+          nullable: true
+        reps:
+          type: integer
+          nullable: true
+        repsTarget:
+          type: integer
+          nullable: true
+        bodyweight:
+          type: number
+          nullable: true
+        unit:
+          type: string
+        finishedAt:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+    DayExercise:
+      type: object
+      properties:
+        id:
+          type: integer
+        dayId:
+          type: integer
+        exerciseId:
+          type: integer
+        position:
+          type: integer
+        jointPain:
+          type: integer
+          nullable: true
+        muscleGroupId:
+          type: integer
+        sourceDayExerciseId:
+          type: integer
+          nullable: true
+        status:
+          type: string
+        sets:
+          type: array
+          items:
+            $ref: "#/components/schemas/ExerciseSet"
+    Day:
+      type: object
+      properties:
+        id:
+          type: integer
+        mesoId:
+          type: integer
+        week:
+          type: integer
+        position:
+          type: integer
+        bodyweight:
+          type: number
+          nullable: true
+        bodyweightAt:
+          type: string
+          format: date-time
+          nullable: true
+        unit:
+          type: string
+        label:
+          type: string
+        finishedAt:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+        notes:
+          type: array
+          items:
+            type: object
+        muscleGroups:
+          type: array
+          items:
+            type: object
+        exercises:
+          type: array
+          items:
+            $ref: "#/components/schemas/DayExercise"
+    Week:
+      type: object
+      properties:
+        days:
+          type: array
+          items:
+            $ref: "#/components/schemas/Day"
+    MuscleGroupPriority:
+      type: object
+      properties:
+        id:
+          type: integer
+        muscleGroupId:
+          type: integer
+        mgPriorityType:
+          type: string
+    MesocycleSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        name:
+          type: string
+        days:
+          type: integer
+        weeks:
+          type: integer
+        unit:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    Mesocycle:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        userId:
+          type: integer
+        name:
+          type: string
+        days:
+          type: integer
+        unit:
+          type: string
+        weekCount:
+          type: integer
+          description: Number of weeks in the mesocycle
+        sourceTemplateId:
+          type: integer
+          nullable: true
+        sourceMesoId:
+          type: integer
+          nullable: true
+        microRirs:
+          type: integer
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        finishedAt:
+          type: string
+          format: date-time
+          nullable: true
+        deletedAt:
+          type: string
+          format: date-time
+          nullable: true
+        firstSetCompletedAt:
+          type: string
+          format: date-time
+          nullable: true
+        lastWorkoutFinishedAt:
+          type: string
+          format: date-time
+          nullable: true
+        priorities:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/MuscleGroupPriority"
+        notes:
+          type: array
+          items:
+            type: object
+        status:
+          type: string
+        generatedFrom:
+          type: string
+          nullable: true
+        weeks:
+          type: array
+          items:
+            $ref: "#/components/schemas/Week"
+    Exercise:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        muscleGroupId:
+          type: integer
+        mgSubType:
+          type: string
+          nullable: true
+          description: e.g. "vertical"
+        exerciseType:
+          type: string
+        youtubeId:
+          type: string
+          nullable: true
+        userId:
+          type: integer
+          nullable: true
+          description: null for built-in, user ID for custom
+        notes:
+          type: array
+          items:
+            type: object
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        deletedAt:
+          type: string
+          format: date-time
+          nullable: true
+    ExerciseHistorySet:
+      type: object
+      properties:
+        id:
+          type: integer
+        dayExerciseId:
+          type: integer
+        position:
+          type: integer
+        setType:
+          type: string
+        weight:
+          type: number
+          nullable: true
+        weightTarget:
+          type: number
+          nullable: true
+        weightTargetMin:
+          type: number
+          nullable: true
+        weightTargetMax:
+          type: number
+          nullable: true
+        reps:
+          type: integer
+          nullable: true
+        repsTarget:
+          type: integer
+          nullable: true
+        bodyweight:
+          type: number
+          nullable: true
+        unit:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        finishedAt:
+          type: string
+          format: date-time
+          nullable: true
+        week:
+          type: integer
+        day:
+          type: integer
+    ExerciseHistory:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: Mesocycle name
+          key:
+            type: string
+            description: Mesocycle key
+          setGroups:
+            type: array
+            items:
+              type: array
+              items:
+                $ref: "#/components/schemas/ExerciseHistorySet"
+    Template:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        name:
+          type: string
+        emphasis:
+          type: string
+        sex:
+          type: string
+        frequency:
+          type: integer
+    BootstrapResponse:
+      type: object
+      description: Full exercise catalog + all mesocycles (summary) + current mesocycle with complete weeks/days/exercises/sets (~235KB)
+    SecondMesoMeta:
+      type: object
+      properties:
+        key:
+          type: string
+        startedAt:
+          type: string
+          format: date-time
+paths:
+  /user/profile:
+    get:
+      tags:
+        - User
+      summary: Get user profile
+      description: Profile data (email, name, photo, Google/Apple/Facebook IDs, role, attributes, preferences)
+      operationId: getUserProfile
+      responses:
+        "200":
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+  /user/subscriptions:
+    get:
+      tags:
+        - User
+      summary: Get user subscriptions
+      description: Active subscriptions, purchase history, Stripe customer IDs, consumed IAPs
+      operationId: getUserSubscriptions
+      responses:
+        "200":
+          description: User subscriptions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserSubscriptions"
+  /user/{id}:
+    put:
+      tags:
+        - User
+      summary: Update user profile
+      operationId: updateUserProfile
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated user
+  /training/bootstrap:
+    get:
+      tags:
+        - Training Data
+      summary: Get bootstrap data
+      description: Full exercise catalog + all mesocycles (summary) + current mesocycle with complete weeks/days/exercises/sets (~235KB)
+      operationId: getBootstrap
+      responses:
+        "200":
+          description: Bootstrap data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BootstrapResponse"
+  /training/exercises:
+    get:
+      tags:
+        - Training Data
+      summary: Get all exercises
+      description: Full exercise catalog (315 exercises with name, muscleGroupId, youtubeId, exerciseType, mgSubType)
+      operationId: getExercises
+      responses:
+        "200":
+          description: Exercise catalog
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Exercise"
+    post:
+      tags:
+        - Training
+      summary: Create a custom exercise
+      operationId: createExercise
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created exercise
+  /training/exercises/{id}:
+    put:
+      tags:
+        - Training
+      summary: Update an exercise
+      operationId: updateExercise
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated exercise
+    delete:
+      tags:
+        - Training
+      summary: Delete a custom exercise
+      operationId: deleteExercise
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/exercises/{id}/history:
+    get:
+      tags:
+        - Training Data
+      summary: Get exercise history
+      description: Set history for a specific exercise across all mesocycles (grouped by meso, includes weight, reps, targets, week, day)
+      operationId: getExerciseHistory
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Exercise history
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExerciseHistory"
+  /training/exercises/{exerciseId}/notes:
+    post:
+      tags:
+        - Training
+      summary: Add a note to an exercise
+      operationId: addExerciseNote
+      parameters:
+        - name: exerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created note
+  /training/exercises/{exerciseId}/notes/{noteId}:
+    put:
+      tags:
+        - Training
+      summary: Update an exercise note
+      operationId: updateExerciseNote
+      parameters:
+        - name: exerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated note
+    delete:
+      tags:
+        - Training
+      summary: Delete an exercise note
+      operationId: deleteExerciseNote
+      parameters:
+        - name: exerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/mesocycles:
+    get:
+      tags:
+        - Training Data
+      summary: List all mesocycles
+      description: List of all mesocycles (summary - id, key, name, days, weeks, unit, timestamps)
+      operationId: getMesocycles
+      responses:
+        "200":
+          description: Mesocycle summaries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MesocycleSummary"
+    post:
+      tags:
+        - Training
+      summary: Create a new mesocycle
+      operationId: createMesocycle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created mesocycle
+  /training/mesocycles/{key}:
+    get:
+      tags:
+        - Training Data
+      summary: Get full mesocycle detail
+      description: Full mesocycle detail (~150-185KB) - weeks > days > exercises > sets with weight, reps, targets, bodyweight, timestamps
+      operationId: getMesocycle
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Full mesocycle
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Mesocycle"
+    put:
+      tags:
+        - Training
+      summary: Update mesocycle metadata
+      operationId: updateMesocycle
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated mesocycle
+    delete:
+      tags:
+        - Training
+      summary: Delete a mesocycle
+      operationId: deleteMesocycle
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/mesocycles/{key}/add-micro:
+    post:
+      tags:
+        - Training
+      summary: Add a micro-cycle (week) to a mesocycle
+      operationId: addMicroCycle
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Added micro-cycle
+  /training/mesocycles/{key}/remove-micro:
+    delete:
+      tags:
+        - Training
+      summary: Remove a micro-cycle (week)
+      operationId: removeMicroCycle
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Removed
+  /training/mesocycles/{key}/day-exercises/delete:
+    post:
+      tags:
+        - Training
+      summary: Bulk delete exercises from mesocycle days
+      operationId: bulkDeleteDayExercises
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Deleted exercises
+  /training/mesocycles/{key}/priorities:
+    put:
+      tags:
+        - Training
+      summary: Update muscle group priorities
+      operationId: updateMesoPriorities
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated priorities
+  /training/mesocycles/{key}/notes:
+    post:
+      tags:
+        - Training
+      summary: Add a note to a mesocycle
+      operationId: addMesoNote
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created note
+  /training/mesocycles/{key}/notes/{noteId}:
+    put:
+      tags:
+        - Training
+      summary: Update a mesocycle note
+      operationId: updateMesoNote
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated note
+    delete:
+      tags:
+        - Training
+      summary: Delete a mesocycle note
+      operationId: deleteMesoNote
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/days/{dayId}:
+    put:
+      tags:
+        - Training
+      summary: Update a training day
+      operationId: updateDay
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated day
+  /training/days/{dayId}/bodyweight:
+    put:
+      tags:
+        - Training
+      summary: Update bodyweight for a day
+      operationId: updateDayBodyweight
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated bodyweight
+  /training/days/{dayId}/label:
+    put:
+      tags:
+        - Training
+      summary: Update day label
+      operationId: updateDayLabel
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated label
+  /training/days/{dayId}/exercises:
+    post:
+      tags:
+        - Training
+      summary: Add an exercise to a training day
+      operationId: addDayExercise
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Added exercise
+  /training/days/{dayId}/exercises/{dayExerciseId}:
+    put:
+      tags:
+        - Training
+      summary: Update a day exercise
+      operationId: updateDayExercise
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: dayExerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated exercise
+  /training/days/{dayId}/exercises/{dayExerciseId}/move:
+    put:
+      tags:
+        - Training
+      summary: Move exercise position within a day
+      operationId: moveDayExercise
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: dayExerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Moved exercise
+  /training/days/{dayId}/exercises/{dayExerciseId}/sets:
+    post:
+      tags:
+        - Training
+      summary: Add sets to an exercise
+      operationId: addSets
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: dayExerciseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Added sets
+  /training/days/{dayId}/notes:
+    post:
+      tags:
+        - Training
+      summary: Add a note to a training day
+      operationId: addDayNote
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created note
+  /training/days/{dayId}/notes/{noteId}:
+    delete:
+      tags:
+        - Training
+      summary: Delete a day note
+      operationId: deleteDayNote
+      parameters:
+        - name: dayId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: noteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/sets/{setId}:
+    put:
+      tags:
+        - Training
+      summary: Update a set (weight, reps, etc.)
+      operationId: updateSet
+      parameters:
+        - name: setId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated set
+    delete:
+      tags:
+        - Training
+      summary: Delete a set
+      operationId: deleteSet
+      parameters:
+        - name: setId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/templates:
+    get:
+      tags:
+        - Training Data
+      summary: Get all templates
+      description: All training templates (113 templates with id, key, name, emphasis, sex, frequency)
+      operationId: getTemplates
+      responses:
+        "200":
+          description: Templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Template"
+    post:
+      tags:
+        - Training
+      summary: Create a training template
+      operationId: createTemplate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "201":
+          description: Created template
+  /training/templates/{id}:
+    get:
+      tags:
+        - Training Data
+      summary: Get a specific template
+      operationId: getTemplate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Template detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Template"
+    put:
+      tags:
+        - Training
+      summary: Update a template
+      operationId: updateTemplate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated template
+    delete:
+      tags:
+        - Training
+      summary: Delete a template
+      operationId: deleteTemplate
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /training/track:
+    post:
+      tags:
+        - Training
+      summary: Track/log a training event
+      operationId: trackTraining
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Tracked
+  /training/user-attributes:
+    post:
+      tags:
+        - Training
+      summary: Update user attributes
+      operationId: updateUserAttributes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Updated
+  /training/user-exercise-history:
+    get:
+      tags:
+        - Training Data
+      summary: Get user exercise history
+      description: Map of exerciseId to last performed timestamp
+      operationId: getUserExerciseHistory
+      responses:
+        "200":
+          description: Exercise history map
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+                  format: date-time
+  /training/meta/second-meso:
+    get:
+      tags:
+        - Training Data
+      summary: Get second mesocycle meta info
+      description: Meta info about second mesocycle (key, startedAt)
+      operationId: getSecondMesoMeta
+      responses:
+        "200":
+          description: Second meso meta
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecondMesoMeta"
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Login
+      operationId: login
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Login response
+  /login/link:
+    post:
+      tags:
+        - Auth
+      summary: Magic link login
+      operationId: magicLinkLogin
+      security: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Magic link sent
+  /user:
+    post:
+      tags:
+        - Auth
+      summary: Create/update user
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: User created/updated
+  /userReview:
+    get:
+      tags:
+        - App
+      summary: Get user review data
+      operationId: getUserReview
+      responses:
+        "200":
+          description: User review data
+    post:
+      tags:
+        - App
+      summary: Submit user review
+      operationId: submitUserReview
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Review submitted
+  /apps/training/rp/{version}/config.json:
+    get:
+      tags:
+        - App
+      summary: Get app config
+      description: App config, version changelog, feature flags, latest client version
+      operationId: getAppConfig
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: v
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: App config
+  /products.json:
+    get:
+      tags:
+        - App
+      summary: Get product catalog
+      description: Subscription product/pricing catalog (Stripe product IDs, prices, billing periods)
+      operationId: getProducts
+      parameters:
+        - name: apps
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Product catalog
+  /training/app.webmanifest:
+    get:
+      tags:
+        - App
+      summary: Get PWA web manifest
+      operationId: getWebManifest
+      parameters:
+        - name: v
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Web manifest
+  /apps/training/{platform}/verifyTransactions:
+    post:
+      tags:
+        - Purchases
+      summary: Verify IAP transactions
+      operationId: verifyTransactions
+      parameters:
+        - name: platform
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Verification result
+  /purchase/checkout:
+    post:
+      tags:
+        - Purchases
+      summary: Start checkout flow
+      operationId: startCheckout
+      parameters:
+        - name: redirect
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Checkout started
+  /purchase/complete/{id}:
+    post:
+      tags:
+        - Purchases
+      summary: Complete a purchase
+      operationId: completePurchase
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Purchase completed
+  /referrals/enter/{code}:
+    post:
+      tags:
+        - Purchases
+      summary: Enter a referral code
+      operationId: enterReferral
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: isUserEntry
+          in: query
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+        - name: associateOnly
+          in: query
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: Referral applied

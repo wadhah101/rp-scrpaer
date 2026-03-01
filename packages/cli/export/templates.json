@@ -1,0 +1,906 @@
+[
+  {
+    "id": 1,
+    "key": "whole-body-daily-male-2x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 2,
+    "key": "whole-body-daily-female-2x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 3,
+    "key": "upper-body-male-2x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 4,
+    "key": "upper-body-female-2x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 5,
+    "key": "lower-body-male-2x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 6,
+    "key": "lower-body-female-2x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 7,
+    "key": "chest-back-male-2x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 8,
+    "key": "chest-back-female-2x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 9,
+    "key": "arms-shoulders-male-2x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 10,
+    "key": "arms-shoulders-female-2x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 11,
+    "key": "back-biceps-male-2x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 12,
+    "key": "back-biceps-female-2x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 13,
+    "key": "chest-triceps-male-2x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 14,
+    "key": "chest-triceps-female-2x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 15,
+    "key": "glutes-abs-male-2x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 16,
+    "key": "glutes-abs-female-2x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 17,
+    "key": "whole-body-daily-male-3x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 18,
+    "key": "whole-body-daily-female-3x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 19,
+    "key": "upper-body-male-3x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 20,
+    "key": "upper-body-female-3x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 21,
+    "key": "lower-body-male-3x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 22,
+    "key": "lower-body-female-3x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 23,
+    "key": "chest-and-back-male-3x",
+    "name": "Chest and Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 24,
+    "key": "chest-and-back-female-3x",
+    "name": "Chest and Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 25,
+    "key": "arms-shoulders-male-3x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 26,
+    "key": "arms-shoulders-female-3x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 27,
+    "key": "back-biceps-male-3x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 28,
+    "key": "back-biceps-female-3x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 29,
+    "key": "chest-triceps-male-3x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 30,
+    "key": "chest-triceps-female-3x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 31,
+    "key": "glutes-abs-male-3x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 32,
+    "key": "glutes-abs-female-3x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 33,
+    "key": "whole-body-split-male-4x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 34,
+    "key": "whole-body-split-female-4x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 35,
+    "key": "whole-body-daily-male-4x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 36,
+    "key": "whole-body-daily-female-4x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 37,
+    "key": "upper-body-male-4x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 38,
+    "key": "upper-body-female-4x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 39,
+    "key": "lower-body-male-4x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 40,
+    "key": "lower-body-female-4x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 41,
+    "key": "chest-back-male-4x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 42,
+    "key": "chest-back-female-4x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 43,
+    "key": "arms-shoulders-male-4x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 44,
+    "key": "arms-shoulders-female-4x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 45,
+    "key": "back-biceps-male-4x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 46,
+    "key": "back-biceps-female-4x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 47,
+    "key": "chest-triceps-male-4x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 48,
+    "key": "chest-triceps-female-4x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 49,
+    "key": "glutes-abs-male-4x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 50,
+    "key": "glutes-abs-female-4x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 51,
+    "key": "whole-body-split-male-5x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 52,
+    "key": "whole-body-split-female-5x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 53,
+    "key": "whole-body-daily-male-5x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 54,
+    "key": "whole-body-daily-female-5x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 55,
+    "key": "upper-body-male-5x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 56,
+    "key": "upper-body-female-5x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 57,
+    "key": "lower-body-male-5x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 58,
+    "key": "lower-body-female-5x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 59,
+    "key": "chest-back-male-5x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 60,
+    "key": "chest-back-female-5x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 61,
+    "key": "arms-shoulders-male-5x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 62,
+    "key": "arms-shoulders-female-5x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 63,
+    "key": "back-biceps-male-5x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 64,
+    "key": "back-biceps-female-5x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 65,
+    "key": "chest-triceps-male-5x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 66,
+    "key": "chest-triceps-female-5x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 67,
+    "key": "glutes-abs-male-5x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 68,
+    "key": "glutes-abs-female-5x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 69,
+    "key": "whole-body-split-male-6x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 70,
+    "key": "whole-body-split-female-6x",
+    "name": "Whole Body Split",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 71,
+    "key": "whole-body-daily-male-6x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 72,
+    "key": "whole-body-daily-female-6x",
+    "name": "Whole Body Daily",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 73,
+    "key": "upper-body-male-6x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 74,
+    "key": "upper-body-female-6x",
+    "name": "Upper Body Emphasis",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 75,
+    "key": "lower-body-male-6x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 76,
+    "key": "lower-body-female-6x",
+    "name": "Lower Body Emphasis",
+    "emphasis": "Lower Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 77,
+    "key": "chest-back-male-6x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 78,
+    "key": "chest-back-female-6x",
+    "name": "Chest & Back Emphasis",
+    "emphasis": "Chest & Back",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 79,
+    "key": "arms-shoulders-male-6x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 80,
+    "key": "arms-shoulders-female-6x",
+    "name": "Arms & Shoulders Emphasis",
+    "emphasis": "Arms & Shoulders",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 81,
+    "key": "back-biceps-male-6x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 82,
+    "key": "back-biceps-female-6x",
+    "name": "Back & Biceps Emphasis",
+    "emphasis": "Back & Biceps",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 83,
+    "key": "chest-triceps-male-6x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 84,
+    "key": "chest-triceps-female-6x",
+    "name": "Chest & Triceps Emphasis",
+    "emphasis": "Chest & Triceps",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 85,
+    "key": "glutes-abs-male-6x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 86,
+    "key": "glutes-abs-female-6x",
+    "name": "Glutes & Abs Emphasis",
+    "emphasis": "Glutes & Abs",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 87,
+    "key": "dr-mike-favorite-male-6x",
+    "name": "Dr. Mike’s Favorite",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 88,
+    "key": "dr-mike-favorite-female-6x",
+    "name": "Dr. Mike’s Favorite",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 89,
+    "key": "jared-feather-favorite-male-6x",
+    "name": "Jared Feather’s Favorite",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 90,
+    "key": "jared-feather-favorite-female-6x",
+    "name": "Jared Feather’s Favorite",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 6
+  },
+  {
+    "id": 16909,
+    "key": "vcpphbkf862f",
+    "name": "Thor Workout",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 16910,
+    "key": "4bwysbvdnxm6",
+    "name": "Superman Workout",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 81572,
+    "key": "nllszletdf4g",
+    "name": "The Black Adam Workout",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 96639,
+    "key": "h257mmvx3xxz",
+    "name": "2x Weekly BJJ Lifting Template",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 2
+  },
+  {
+    "id": 96641,
+    "key": "zm74v6xi5anb",
+    "name": "2x Weekly BJJ Lifting Template",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 2
+  },
+  {
+    "id": 96984,
+    "key": "e7d7v8p4ga92",
+    "name": "3x Weekly BJJ Lifting Template",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 96985,
+    "key": "yibcehre9r2l",
+    "name": "3x Weekly BJJ Lifting Template ",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 3
+  },
+  {
+    "id": 96986,
+    "key": "pjft3cxom74f",
+    "name": "4x Weekly BJJ Lifting Template ",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 96988,
+    "key": "okzux0nwc0xj",
+    "name": "4x Weekly BJJ Lifting Template ",
+    "emphasis": "Upper Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 98933,
+    "key": "h3q1e2hoi5xn",
+    "name": "4x Weekly Time Saver",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 99184,
+    "key": "1ltlouclti0t",
+    "name": "4x Weekly Time Saver",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 4
+  },
+  {
+    "id": 107970,
+    "key": "nqogle4n4nks",
+    "name": "The Black Adam Workout",
+    "emphasis": "Chest & Back",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 162371,
+    "key": "mnihvxzie9hj",
+    "name": "Big Arms Now",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 164228,
+    "key": "itbei1n4bm83",
+    "name": "Hard training 5/7",
+    "emphasis": "Upper Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 176394,
+    "key": "e9a4rujdp610",
+    "name": "Mr. Nick Shaw’s Favorite",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 177952,
+    "key": "trm25qhozrcy",
+    "name": "Casey Kelly’s Ultimate Optimal Program",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 180609,
+    "key": "gnuemk3wd57o",
+    "name": "Casey Kelly All Levels of Natty Training Video",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 3
+  },
+  {
+    "id": 186494,
+    "key": "8tdh863ri7ew",
+    "name": "Mike’s 2025 Transformation",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  },
+  {
+    "id": 186498,
+    "key": "cn9qh8b4b7mc",
+    "name": "Drop-In Arm Specialization",
+    "emphasis": "Arms & Shoulders",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 187085,
+    "key": "voqatlo9z2p1",
+    "name": "Lauralie Chapados - Project DB 2026",
+    "emphasis": "Whole Body",
+    "sex": "female",
+    "frequency": 5
+  },
+  {
+    "id": 190044,
+    "key": "jgidutqndp3f",
+    "name": "Regan Grimes Training Plan 2026",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 191245,
+    "key": "e31xswq4kc2s",
+    "name": "Kim Angel Low Volume Arnold Classic",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 5
+  },
+  {
+    "id": 191308,
+    "key": "5e2vmxzadqzv",
+    "name": "Get Photoshoot Ready 2026",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 6
+  }
+]

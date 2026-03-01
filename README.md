@@ -63,7 +63,6 @@ mise is the **single entry point** for all developer tooling. It replaces pyenv,
 
 The root `.mise.toml` declares every tool the project needs:
 
-
 `mise install` provisions **all of these** in one shot — no brew, no pip install, no manual downloads. Versions with `"latest"` resolve at install time and get pinned in `mise.lock` with SHA-256 checksums for reproducibility.
 
 ### How Python versions flow from mise to containers
@@ -175,8 +174,6 @@ Three GitHub Actions workflows, all driven by mise:
 | **build** | Docker build for every package | `mise //...:build`                |
 
 All workflows use `jdx/mise-action` to install mise from the **same `.mise.toml` + `mise.lock`**, which then provisions all other tools. No manual tool installation steps in CI — the same single source of truth applies here too.
-
-
 
 ## References
 
