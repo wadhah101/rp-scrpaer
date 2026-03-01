@@ -1,8 +1,8 @@
 rp_embedding_name: rogers good morning, machine, hamstrings
 matches:
   - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.3197314143180847
-  - hevy_embedding_name: lying leg curl machine, hamstrings, calves
-    distance: 0.3423205614089966
-  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.34831351041793823
+    distance: 0.24937403202056885
+  - hevy_embedding_name: nordic hamstrings curls, hamstrings, glutes
+    distance: 0.3193385601043701
+  - hevy_embedding_name: rear kick machine, glutes, hamstrings
+    distance: 0.3206307888031006

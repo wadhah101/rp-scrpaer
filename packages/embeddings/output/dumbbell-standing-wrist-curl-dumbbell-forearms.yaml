@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell standing wrist curl, dumbbell, forearms
 matches:
-  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.1189078688621521
+  - hevy_embedding_name: seated palms up wrist curl, forearms
+    distance: 0.10561925172805786
   - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.12072783708572388
-  - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
-    distance: 0.12376374006271362
+    distance: 0.12219560146331787
+  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
+    distance: 0.1240808367729187

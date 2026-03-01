@@ -1,8 +1,8 @@
 rp_embedding_name: cable bent over shrug, cable, traps
 matches:
   - hevy_embedding_name: shrug cable, traps, neck
-    distance: 0.15164679288864136
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.22851324081420898
-  - hevy_embedding_name: cable twist up to down, abdominals
-    distance: 0.23572790622711182
+    distance: 0.12430804967880249
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.18751180171966553
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.19252920150756836

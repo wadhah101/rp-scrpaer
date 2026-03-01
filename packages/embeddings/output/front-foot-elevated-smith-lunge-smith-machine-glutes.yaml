@@ -1,8 +1,8 @@
 rp_embedding_name: front foot elevated smith lunge, smith-machine, glutes
 matches:
-  - hevy_embedding_name: hip thrust smith machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.1816328763961792
-  - hevy_embedding_name: lunge, quadriceps, hamstrings, glutes
-    distance: 0.18429815769195557
-  - hevy_embedding_name: walking lunge, quadriceps, glutes, hamstrings
-    distance: 0.1852736473083496
+  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
+    distance: 0.1790482997894287
+  - hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.1914692521095276
+  - hevy_embedding_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.20200109481811523

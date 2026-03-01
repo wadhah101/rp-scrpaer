@@ -1,8 +1,8 @@
 rp_embedding_name: standing calf raise, machine, calves
 matches:
   - hevy_embedding_name: standing calf raise machine, calves
-    distance: 0.02695012092590332
-  - hevy_embedding_name: single leg standing calf raise machine, calves
-    distance: 0.06081455945968628
+    distance: 0.02159172296524048
   - hevy_embedding_name: standing calf raise, calves
-    distance: 0.07416296005249023
+    distance: 0.05675697326660156
+  - hevy_embedding_name: single leg standing calf raise machine, calves
+    distance: 0.06239086389541626

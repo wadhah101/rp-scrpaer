@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell lateral raise, dumbbell, shoulders
 matches:
   - hevy_embedding_name: lateral raise dumbbell, shoulders
-    distance: 0.014601469039916992
+    distance: 0.02989119291305542
   - hevy_embedding_name: seated lateral raise dumbbell, shoulders
-    distance: 0.10157215595245361
-  - hevy_embedding_name: lateral raise machine, shoulders
-    distance: 0.1156151294708252
+    distance: 0.07239699363708496
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.1185268759727478

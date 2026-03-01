@@ -1,8 +1,8 @@
 rp_embedding_name: cable lateral raise single-arm, cable, shoulders
 matches:
   - hevy_embedding_name: single arm lateral raise cable, shoulders
-    distance: 0.028929054737091064
+    distance: 0.019251227378845215
   - hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.05216622352600098
-  - hevy_embedding_name: front raise cable, shoulders
-    distance: 0.11358457803726196
+    distance: 0.034616708755493164
+  - hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.118935227394104

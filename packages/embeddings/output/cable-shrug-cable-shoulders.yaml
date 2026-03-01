@@ -1,8 +1,8 @@
 rp_embedding_name: cable shrug, cable, shoulders
 matches:
   - hevy_embedding_name: shrug cable, traps, neck
-    distance: 0.12645137310028076
+    distance: 0.11464780569076538
   - hevy_embedding_name: front raise cable, shoulders
-    distance: 0.14756536483764648
+    distance: 0.14159351587295532
   - hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.18272161483764648
+    distance: 0.17858177423477173

@@ -1,8 +1,8 @@
 rp_embedding_name: cable shrug, cable, traps
 matches:
   - hevy_embedding_name: shrug cable, traps, neck
-    distance: 0.10558712482452393
+    distance: 0.08312380313873291
+  - hevy_embedding_name: upright row cable, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.16995227336883545
   - hevy_embedding_name: shrug machine, traps, neck
-    distance: 0.25845640897750854
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.269122838973999
+    distance: 0.17537033557891846

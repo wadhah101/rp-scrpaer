@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar overhead triceps extension, barbell, triceps
 matches:
   - hevy_embedding_name: triceps extension barbell, triceps
-    distance: 0.11828678846359253
-  - hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.1594843864440918
-  - hevy_embedding_name: overhead press barbell, shoulders, triceps, abdominals
-    distance: 0.17021065950393677
+    distance: 0.07938170433044434
+  - hevy_embedding_name: overhead triceps extension cable, triceps
+    distance: 0.10519963502883911
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.12052476406097412

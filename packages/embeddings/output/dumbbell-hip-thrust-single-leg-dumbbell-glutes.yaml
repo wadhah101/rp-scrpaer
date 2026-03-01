@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell hip thrust single leg, dumbbell, glutes
 matches:
   - hevy_embedding_name: single leg hip thrust dumbbell, glutes, hamstrings, quadriceps
-    distance: 0.026967167854309082
+    distance: 0.047478675842285156
   - hevy_embedding_name: single leg hip thrust, glutes, hamstrings, quadriceps
-    distance: 0.07086527347564697
-  - hevy_embedding_name: hip thrust barbell, glutes, hamstrings, quadriceps, adductors
-    distance: 0.12147247791290283
+    distance: 0.12725508213043213
+  - hevy_embedding_name: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
+    distance: 0.1703249216079712

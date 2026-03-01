@@ -1,8 +1,8 @@
 rp_embedding_name: cable pullover, cable, lats, upper_back
 matches:
   - hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
-    distance: 0.11366033554077148
-  - hevy_embedding_name: straight arm lat pulldown cable, lats, triceps
-    distance: 0.1351402997970581
+    distance: 0.14888930320739746
   - hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
-    distance: 0.14495301246643066
+    distance: 0.16364240646362305
+  - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.17271697521209717

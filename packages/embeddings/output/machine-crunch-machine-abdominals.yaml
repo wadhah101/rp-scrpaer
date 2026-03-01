@@ -1,8 +1,8 @@
 rp_embedding_name: machine crunch, machine, abdominals
 matches:
   - hevy_embedding_name: crunch machine, abdominals
-    distance: 0.03949558734893799
+    distance: 0.03757429122924805
   - hevy_embedding_name: crunch, abdominals
-    distance: 0.1390274167060852
+    distance: 0.09752202033996582
   - hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.1513296365737915
+    distance: 0.12699204683303833

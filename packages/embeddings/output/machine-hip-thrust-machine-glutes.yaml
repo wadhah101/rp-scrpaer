@@ -1,8 +1,8 @@
 rp_embedding_name: machine hip thrust, machine, glutes
 matches:
   - hevy_embedding_name: hip thrust machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.06484174728393555
+    distance: 0.1141631007194519
   - hevy_embedding_name: hip thrust smith machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.08587062358856201
-  - hevy_embedding_name: hip thrust, glutes, hamstrings, quadriceps
-    distance: 0.12067985534667969
+    distance: 0.12037265300750732
+  - hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.1378040909767151

@@ -9,4 +9,18 @@ description = "Build the CLI Docker image"
 
 [tasks.cli]
 description = "Run CLI"
-run = "uv run ./src/rp_to_strong_cli/main.py"
+run = "uv run python -m rp_to_strong_cli"
+
+[tasks.export-hevy-local]
+run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates -o exports/hevy/exercises.json"
+
+[tasks.export-hevy-s3]
+env = { BUCKET_NAME = { required = true } }
+run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates --output s3://$BUCKET_NAME/exports/hevy/exercises.json"
+
+[tasks.export-rp-local]
+run = "uv run python -m rp_to_strong_cli rp export --all --output exports/rp"
+
+[tasks.export-rp-s3]
+env = { BUCKET_NAME = { required = true } }
+run = "uv run python -m rp_to_strong_cli rp export --type all --output s3://$BUCKET_NAME/exports/rp"

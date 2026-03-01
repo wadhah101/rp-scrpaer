@@ -1,8 +1,8 @@
 rp_embedding_name: cable flye seated, cable, chest
 matches:
   - hevy_embedding_name: seated chest flys cable, chest
-    distance: 0.06645596027374268
-  - hevy_embedding_name: single arm cable crossover, chest
-    distance: 0.20258492231369019
-  - hevy_embedding_name: low cable fly crossovers, chest
-    distance: 0.20419585704803467
+    distance: 0.051561713218688965
+  - hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.0952690839767456
+  - hevy_embedding_name: chest fly machine, chest
+    distance: 0.14228498935699463

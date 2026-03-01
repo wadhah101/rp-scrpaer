@@ -13,11 +13,14 @@ from embeddings.df import (
 )
 from embeddings.embed import (
     DEFAULT_N_RESULTS,
+    ApiEmbedder,
+    Embedder,
+    RateLimitConfig,
     build_match_results,
     compute_metrics,
+    create_local_embedder,
     detect_device,
     encode_and_store,
-    load_model,
     query_matches,
 )
 
@@ -38,8 +41,37 @@ def main(
     hevy_path: str = "data/hevy/exercises.json",
     mappings_path: str = "data/muscle_group_mapping.json",
     metrics_path: str = "metrics.yaml",
+    backend: str = "local",
+    api_base_url: str | None = None,
+    api_key: str | None = None,
+    api_model: str | None = None,
+    api_dimensions: int | None = None,
+    api_max_rpm: int = 60,
+    api_batch_size: int = 100,
 ) -> None:
     device = detect_device()
+
+    # Build embedder
+    embedder: Embedder
+    if backend == "api":
+        if not api_base_url or not api_key or not api_model:
+            raise ValueError(
+                "api_base_url, api_key, and api_model are required when backend='api'"
+            )
+        embedder = ApiEmbedder(
+            base_url=api_base_url,
+            api_key=api_key,
+            model=api_model,
+            dimensions=api_dimensions,
+            rate_limit=RateLimitConfig(
+                max_requests_per_minute=api_max_rpm,
+                batch_size=api_batch_size,
+            ),
+        )
+        logger.info("Using API backend: %s (%s)", api_base_url, api_model)
+    else:
+        embedder = create_local_embedder(model_name, device)
+        logger.info("Using local backend: %s on %s", model_name, device)
 
     # Load and prepare data
     rp_raw = load_rp_exercises(rp_path)
@@ -54,9 +86,6 @@ def main(
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 
-    # Load model
-    model = load_model(model_name, device)
-
     # Encode and store hevy exercises
     hevy_docs = hevy_df["rich_text_representation"].to_list()
     hevy_ids = hevy_df["hevy_id"].to_list()
@@ -65,7 +94,7 @@ def main(
         for mg in hevy_df["hevy_primary_muscle_group"].to_list()
     ]
     encode_and_store(
-        model,
+        embedder,
         hevy_collection,
         hevy_docs,
         hevy_ids,
@@ -77,7 +106,7 @@ def main(
     rp_docs = rp_df["rich_text_representation"].to_list()
     rp_ids = rp_df["rp_id"].cast(str).to_list()
     rp_embeddings = encode_and_store(
-        model,
+        embedder,
         rp_collection,
         rp_docs,
         rp_ids,
@@ -133,4 +162,14 @@ def main(
 
 
 if __name__ == "__main__":
-    main()
+    main(
+        backend=os.environ.get("EMBEDDING_BACKEND", "local"),
+        api_base_url=os.environ.get("EMBEDDING_API_BASE_URL"),
+        api_key=os.environ.get("EMBEDDING_API_KEY"),
+        api_model=os.environ.get("EMBEDDING_API_MODEL"),
+        api_dimensions=int(os.environ["EMBEDDING_API_DIMENSIONS"])
+        if "EMBEDDING_API_DIMENSIONS" in os.environ
+        else None,
+        api_max_rpm=int(os.environ.get("EMBEDDING_API_MAX_RPM", "60")),
+        api_batch_size=int(os.environ.get("EMBEDDING_API_BATCH_SIZE", "100")),
+    )

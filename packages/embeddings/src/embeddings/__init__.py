@@ -7,8 +7,13 @@ from embeddings.df import (
     prepare_rp_exercises,
 )
 from embeddings.embed import (
+    ApiEmbedder,
+    Embedder,
+    LocalEmbedder,
+    RateLimitConfig,
     build_match_results,
     compute_metrics,
+    create_local_embedder,
     detect_device,
     encode_and_store,
     load_model,
@@ -22,12 +27,17 @@ from embeddings.schemas import (
 )
 
 __all__ = [
+    "ApiEmbedder",
     "ClientMode",
+    "Embedder",
+    "LocalEmbedder",
     "MuscleGroupMapping",
+    "RateLimitConfig",
     "build_match_results",
     "compute_metrics",
     "create_client",
     "create_collection",
+    "create_local_embedder",
     "detect_device",
     "encode_and_store",
     "hevy_schema",

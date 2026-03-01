@@ -1,10 +1,10 @@
 experimental_monorepo_root = true
 
 [env]
+'_'.file = { path = ".env" }
 DOCKER_BUILDKIT = 1
 RP_AUTH_TOKEN = ""
 MONOREPO_ROOT = "{{config_root}}"
-'_'.file = { path = ".env" }
 [monorepo]
 config_roots = ["packages/*", "scripts/*"]
 

@@ -1,8 +1,8 @@
 rp_embedding_name: grip roller, machine, forearms
 matches:
   - hevy_embedding_name: wrist roller, forearms, shoulders
-    distance: 0.0982787013053894
-  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.1669098138809204
-  - hevy_embedding_name: vertical traction machine, lats, upper_back, biceps, forearms
-    distance: 0.18124526739120483
+    distance: 0.23754233121871948
+  - hevy_embedding_name: bicep curl machine, biceps
+    distance: 0.2902706265449524
+  - hevy_embedding_name: rope cable curl, biceps, forearms
+    distance: 0.29080700874328613

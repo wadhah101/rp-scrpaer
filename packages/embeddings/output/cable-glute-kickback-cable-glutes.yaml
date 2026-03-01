@@ -1,8 +1,8 @@
 rp_embedding_name: cable glute kickback, cable, glutes
 matches:
   - hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings
-    distance: 0.07017189264297485
-  - hevy_embedding_name: glute kickback on floor, glutes, hamstrings
-    distance: 0.13335609436035156
+    distance: 0.07349079847335815
   - hevy_embedding_name: glute kickback machine, glutes, hamstrings
-    distance: 0.16151845455169678
+    distance: 0.10982275009155273
+  - hevy_embedding_name: glute kickback on floor, glutes, hamstrings
+    distance: 0.14104223251342773

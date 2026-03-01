@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell twist curl, dumbbell, biceps
 matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.0491865873336792
-  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.07691258192062378
-  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.08355402946472168
+    distance: 0.07990610599517822
+  - hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.13821285963058472
+  - hevy_embedding_name: bicep curl barbell, biceps
+    distance: 0.14715981483459473

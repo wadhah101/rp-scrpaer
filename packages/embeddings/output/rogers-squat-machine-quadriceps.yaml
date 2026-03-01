@@ -1,8 +1,8 @@
 rp_embedding_name: rogers squat, machine, quadriceps
 matches:
   - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.11291640996932983
-  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
-    distance: 0.1212959885597229
-  - hevy_embedding_name: pendulum squat machine, quadriceps, glutes, hamstrings
-    distance: 0.14845097064971924
+    distance: 0.15677136182785034
+  - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
+    distance: 0.18048524856567383
+  - hevy_embedding_name: hack squat machine, quadriceps, glutes, hamstrings
+    distance: 0.19661134481430054

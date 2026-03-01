@@ -1,8 +1,8 @@
 rp_embedding_name: lying cable curl, cable, biceps
 matches:
   - hevy_embedding_name: bicep curl cable, biceps
-    distance: 0.06528997421264648
-  - hevy_embedding_name: rope cable curl, biceps, forearms
-    distance: 0.07127171754837036
+    distance: 0.0478060245513916
+  - hevy_embedding_name: single arm curl cable, biceps
+    distance: 0.07710456848144531
   - hevy_embedding_name: overhead curl cable, biceps
-    distance: 0.0851515531539917
+    distance: 0.0952255129814148

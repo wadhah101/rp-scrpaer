@@ -1,8 +1,8 @@
 rp_embedding_name: cable bent over shrug, cable, shoulders
 matches:
-  - hevy_embedding_name: shrug cable, traps, neck
-    distance: 0.16550910472869873
   - hevy_embedding_name: front raise cable, shoulders
-    distance: 0.16895806789398193
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.17921841144561768
+    distance: 0.13921654224395752
+  - hevy_embedding_name: shrug cable, traps, neck
+    distance: 0.1442226767539978
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.2006036639213562

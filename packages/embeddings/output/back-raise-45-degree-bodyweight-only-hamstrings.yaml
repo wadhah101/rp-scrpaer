@@ -1,8 +1,8 @@
 rp_embedding_name: back raise 45 degree, bodyweight-only, hamstrings
 matches:
-  - hevy_embedding_name: straight leg deadlift, hamstrings, glutes, lower_back, upper_back, lats, traps
-    distance: 0.24251538515090942
-  - hevy_embedding_name: reverse hyperextension, glutes, hamstrings, lower_back
-    distance: 0.2438199520111084
-  - hevy_embedding_name: glute ham raise, hamstrings, glutes
-    distance: 0.25485122203826904
+  - hevy_embedding_name: single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.19420289993286133
+  - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.19537901878356934
+  - hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
+    distance: 0.19788825511932373

@@ -1,8 +1,8 @@
 rp_embedding_name: barbell row to chest, barbell, lats, upper_back
 matches:
-  - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.0779229998588562
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.08936828374862671
+    distance: 0.1147390604019165
   - hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.09500652551651001
+    distance: 0.166418194770813
+  - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
+    distance: 0.1705753207206726

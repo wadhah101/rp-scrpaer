@@ -1,8 +1,8 @@
 rp_embedding_name: modified candlestick, bodyweight-only, abdominals
 matches:
-  - hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.2729305624961853
   - hevy_embedding_name: sit up weighted, abdominals
-    distance: 0.27427488565444946
-  - hevy_embedding_name: russian twist weighted, abdominals
-    distance: 0.2761154770851135
+    distance: 0.19502657651901245
+  - hevy_embedding_name: crunch weighted, abdominals
+    distance: 0.1972866654396057
+  - hevy_embedding_name: decline crunch weighted, abdominals
+    distance: 0.2081366777420044

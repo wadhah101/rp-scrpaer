@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell bench wrist curl, dumbbell, forearms
 matches:
-  - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.1161959171295166
-  - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
-    distance: 0.1277981996536255
+  - hevy_embedding_name: seated palms up wrist curl, forearms
+    distance: 0.1040077805519104
   - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.12914150953292847
+    distance: 0.12325268983840942
+  - hevy_embedding_name: waiter curl dumbbell, biceps, forearms
+    distance: 0.12498462200164795

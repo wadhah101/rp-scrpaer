@@ -1,8 +1,8 @@
 rp_embedding_name: hammer machine chest press decline, machine, chest
 matches:
   - hevy_embedding_name: bench presshammer machine, chest, triceps
-    distance: 0.12526720762252808
-  - hevy_embedding_name: chest press machine, chest, shoulders, triceps
-    distance: 0.1268671751022339
-  - hevy_embedding_name: decline bench press smith machine, chest, shoulders, triceps
-    distance: 0.13490039110183716
+    distance: 0.12155580520629883
+  - hevy_embedding_name: decline bench press machine, chest, shoulders, triceps
+    distance: 0.12342184782028198
+  - hevy_embedding_name: incline chest press machine, chest, shoulders, triceps
+    distance: 0.1477055549621582

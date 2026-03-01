@@ -1,8 +1,8 @@
 rp_embedding_name: freemotion rear delt flyes, freemotion, shoulders
 matches:
-  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
-    distance: 0.15297287702560425
-  - hevy_embedding_name: rear delt reverse fly one hand machine, upper_back, shoulders
-    distance: 0.15963029861450195
   - hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
-    distance: 0.17895668745040894
+    distance: 0.14670556783676147
+  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
+    distance: 0.1585589051246643
+  - hevy_embedding_name: rear delt reverse fly one hand machine, upper_back, shoulders
+    distance: 0.1589297652244568

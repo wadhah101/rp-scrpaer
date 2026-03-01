@@ -1,8 +1,8 @@
 rp_embedding_name: barbell good morning safety bar, barbell, hamstrings
 matches:
   - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.10305291414260864
-  - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.209367573261261
-  - hevy_embedding_name: lunge barbell, quadriceps, hamstrings, glutes
-    distance: 0.21984702348709106
+    distance: 0.1667795181274414
+  - hevy_embedding_name: thruster barbell, full_body
+    distance: 0.2526407241821289
+  - hevy_embedding_name: single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
+    distance: 0.27073079347610474

@@ -1,8 +1,8 @@
 rp_embedding_name: bench press incline, medium grip, barbell, chest
 matches:
   - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
-    distance: 0.0799553394317627
+    distance: 0.10089379549026489
   - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
-    distance: 0.08811146020889282
-  - hevy_embedding_name: bench press - close grip barbell, triceps, chest, shoulders
-    distance: 0.09384363889694214
+    distance: 0.14043200016021729
+  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
+    distance: 0.14088302850723267

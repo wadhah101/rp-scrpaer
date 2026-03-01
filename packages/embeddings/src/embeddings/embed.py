@@ -1,7 +1,9 @@
 import logging
 import statistics
+import time
+from dataclasses import dataclass
 from datetime import UTC, datetime
-from typing import Any
+from typing import Any, Protocol, runtime_checkable
 
 import chromadb
 import numpy as np
@@ -11,6 +13,88 @@ from sentence_transformers import SentenceTransformer
 logger = logging.getLogger(__name__)
 
 DEFAULT_N_RESULTS = 3
+
+
+@runtime_checkable
+class Embedder(Protocol):
+    def encode(self, texts: list[str], *, prompt: str = "") -> np.ndarray: ...
+
+
+class LocalEmbedder(Embedder):
+    """Wraps ``SentenceTransformer`` to satisfy the :class:`Embedder` protocol."""
+
+    def __init__(self, model: SentenceTransformer) -> None:
+        self.model = model
+
+    def encode(self, texts: list[str], *, prompt: str = "") -> np.ndarray:
+        return self.model.encode(texts, prompt=prompt)
+
+
+def create_local_embedder(model_name: str, device: str | None = None) -> LocalEmbedder:
+    model = load_model(model_name, device)
+    return LocalEmbedder(model)
+
+
+@dataclass
+class RateLimitConfig:
+    max_requests_per_minute: int = 60
+    batch_size: int = 100
+
+
+class ApiEmbedder(Embedder):
+    """Calls an OpenAI-compatible embeddings API."""
+
+    def __init__(
+        self,
+        *,
+        base_url: str,
+        api_key: str,
+        model: str,
+        dimensions: int | None = None,
+        rate_limit: RateLimitConfig | None = None,
+    ) -> None:
+        from openai import OpenAI
+
+        self._client = OpenAI(base_url=base_url, api_key=api_key)
+        self._model = model
+        self._dimensions = dimensions
+        self._rate_limit = rate_limit or RateLimitConfig()
+        self._request_timestamps: list[float] = []
+
+    # -- rate limiting helpers ------------------------------------------------
+
+    def _wait_if_needed(self) -> None:
+        now = time.monotonic()
+        window = 60.0
+        self._request_timestamps = [
+            t for t in self._request_timestamps if now - t < window
+        ]
+        if len(self._request_timestamps) >= self._rate_limit.max_requests_per_minute:
+            sleep_for = window - (now - self._request_timestamps[0])
+            if sleep_for > 0:
+                logger.debug("Rate-limit: sleeping %.2fs", sleep_for)
+                time.sleep(sleep_for)
+        self._request_timestamps.append(time.monotonic())
+
+    def encode(self, texts: list[str], *, prompt: str = "") -> np.ndarray:
+        if prompt:
+            texts = [prompt + t for t in texts]
+
+        all_embeddings: list[list[float]] = []
+        batch_size = self._rate_limit.batch_size
+
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i : i + batch_size]
+            self._wait_if_needed()
+
+            kwargs: dict[str, Any] = {"input": batch, "model": self._model}
+            if self._dimensions is not None:
+                kwargs["dimensions"] = self._dimensions
+
+            response = self._client.embeddings.create(**kwargs)
+            all_embeddings.extend([d.embedding for d in response.data])
+
+        return np.array(all_embeddings, dtype=np.float32)
 
 
 def detect_device() -> str:
@@ -27,7 +111,7 @@ def load_model(model_name: str, device: str | None = None) -> SentenceTransforme
 
 
 def encode_and_store(
-    model: SentenceTransformer,
+    embedder: Embedder,
     collection: chromadb.Collection,
     docs: list[str],
     ids: list[str],
@@ -35,7 +119,7 @@ def encode_and_store(
     metadatas: list[dict[str, Any]] | None = None,
 ) -> np.ndarray:
     logger.info("Encoding %d documents", len(docs))
-    embeddings = model.encode(docs, prompt=prompt)
+    embeddings = embedder.encode(docs, prompt=prompt)
     logger.debug("Embeddings shape: %s, dtype: %s", embeddings.shape, embeddings.dtype)
 
     add_kwargs: dict[str, Any] = {

@@ -1,8 +1,8 @@
 rp_embedding_name: cable tricep kickback, cable, triceps
 matches:
   - hevy_embedding_name: triceps kickback cable, triceps
-    distance: 0.04396533966064453
-  - hevy_embedding_name: single arm triceps pushdown cable, triceps
-    distance: 0.1524512767791748
+    distance: 0.03200054168701172
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.09205120801925659
   - hevy_embedding_name: triceps kickback dumbbell, triceps
-    distance: 0.15639889240264893
+    distance: 0.1052665114402771

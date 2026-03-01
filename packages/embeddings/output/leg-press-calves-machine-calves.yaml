@@ -1,8 +1,8 @@
 rp_embedding_name: leg press calves, machine, calves
 matches:
   - hevy_embedding_name: calf press machine, calves
-    distance: 0.06416976451873779
-  - hevy_embedding_name: leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.0962224006652832
-  - hevy_embedding_name: calf extension machine, calves
-    distance: 0.11791515350341797
+    distance: 0.0508497953414917
+  - hevy_embedding_name: single leg standing calf raise machine, calves
+    distance: 0.09196430444717407
+  - hevy_embedding_name: standing calf raise machine, calves
+    distance: 0.09569311141967773

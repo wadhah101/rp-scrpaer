@@ -1,8 +1,8 @@
 rp_embedding_name: cable flexion row, cable, lats, upper_back
 matches:
-  - hevy_embedding_name: seated cable row - v grip cable, upper_back, lats, biceps, forearms
-    distance: 0.1252145767211914
-  - hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
-    distance: 0.13287603855133057
   - hevy_embedding_name: single arm cable row, upper_back, lats, biceps, forearms
-    distance: 0.138016939163208
+    distance: 0.11981761455535889
+  - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms
+    distance: 0.1405198574066162
+  - hevy_embedding_name: seated cable row - bar wide grip, upper_back, lats, traps, biceps, forearms
+    distance: 0.14400124549865723

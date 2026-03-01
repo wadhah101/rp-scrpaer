@@ -1,8 +1,8 @@
 rp_embedding_name: cable front raise overhand, cable, shoulders
 matches:
-  - hevy_embedding_name: front raise cable, shoulders
-    distance: 0.06132543087005615
   - hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.10930043458938599
+    distance: 0.11248785257339478
+  - hevy_embedding_name: front raise cable, shoulders
+    distance: 0.11440408229827881
   - hevy_embedding_name: single arm lateral raise cable, shoulders
-    distance: 0.12484675645828247
+    distance: 0.13376861810684204

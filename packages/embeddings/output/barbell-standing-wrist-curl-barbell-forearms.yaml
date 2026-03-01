@@ -1,8 +1,8 @@
 rp_embedding_name: barbell standing wrist curl, barbell, forearms
 matches:
   - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
-    distance: 0.10396897792816162
-  - hevy_embedding_name: plate curl, biceps, forearms
-    distance: 0.1345987319946289
-  - hevy_embedding_name: reverse curl barbell, biceps, forearms
-    distance: 0.135217547416687
+    distance: 0.1048436164855957
+  - hevy_embedding_name: seated palms up wrist curl, forearms
+    distance: 0.11345463991165161
+  - hevy_embedding_name: seated wrist extension barbell, forearms
+    distance: 0.11412572860717773

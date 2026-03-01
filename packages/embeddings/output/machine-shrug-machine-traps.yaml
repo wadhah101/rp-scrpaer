@@ -1,8 +1,8 @@
 rp_embedding_name: machine shrug, machine, traps
 matches:
   - hevy_embedding_name: shrug machine, traps, neck
-    distance: 0.10673028230667114
+    distance: 0.15401136875152588
   - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.12300312519073486
-  - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.23037350177764893
+    distance: 0.18928414583206177
+  - hevy_embedding_name: rowing machine, cardio
+    distance: 0.22414261102676392

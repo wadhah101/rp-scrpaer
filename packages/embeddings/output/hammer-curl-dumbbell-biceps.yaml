@@ -1,8 +1,8 @@
 rp_embedding_name: hammer curl, dumbbell, biceps
 matches:
   - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.034872353076934814
-  - hevy_embedding_name: hammer curl cable, biceps, forearms
-    distance: 0.08051145076751709
+    distance: 0.04355698823928833
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.08606690168380737
+    distance: 0.09279006719589233
+  - hevy_embedding_name: hammer curl band, biceps, forearms
+    distance: 0.1018303632736206

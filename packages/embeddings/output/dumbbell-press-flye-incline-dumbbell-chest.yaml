@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell press flye incline, dumbbell, chest
 matches:
   - hevy_embedding_name: incline chest fly dumbbell, chest
-    distance: 0.07875186204910278
-  - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
-    distance: 0.09477823972702026
-  - hevy_embedding_name: floor press dumbbell, chest, shoulders, triceps
-    distance: 0.11855179071426392
+    distance: 0.04708516597747803
+  - hevy_embedding_name: decline chest fly dumbbell, chest
+    distance: 0.09957695007324219
+  - hevy_embedding_name: chest fly dumbbell, chest
+    distance: 0.11973327398300171

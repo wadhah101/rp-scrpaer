@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell bent over shrug, dumbbell, traps
 matches:
   - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.07400757074356079
+    distance: 0.11476600170135498
   - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.10363656282424927
-  - hevy_embedding_name: shrug machine, traps, neck
-    distance: 0.1821376085281372
+    distance: 0.16351616382598877
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.18429625034332275

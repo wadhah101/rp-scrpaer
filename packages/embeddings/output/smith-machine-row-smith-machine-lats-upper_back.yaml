@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine row, smith-machine, lats, upper_back
 matches:
-  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.1589016318321228
   - hevy_embedding_name: seated row machine, upper_back, lats, biceps, forearms
-    distance: 0.15932315587997437
-  - hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.19427359104156494
+    distance: 0.15511775016784668
+  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
+    distance: 0.16086935997009277
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.1690874695777893

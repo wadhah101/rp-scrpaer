@@ -1,8 +1,8 @@
 rp_embedding_name: barbell squat high bar, barbell, quadriceps
 matches:
   - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.07471227645874023
+    distance: 0.12647420167922974
   - hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.10431116819381714
-  - hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.12001818418502808
+    distance: 0.14083290100097656
+  - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
+    distance: 0.14183896780014038

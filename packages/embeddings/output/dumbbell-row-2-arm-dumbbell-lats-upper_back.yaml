@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell row 2-arm, dumbbell, lats, upper_back
 matches:
   - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.07868903875350952
+    distance: 0.08862638473510742
   - hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.10083717107772827
-  - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.10221856832504272
+    distance: 0.11965030431747437
+  - hevy_embedding_name: renegade row dumbbell, upper_back, lats, biceps, forearms
+    distance: 0.13773256540298462

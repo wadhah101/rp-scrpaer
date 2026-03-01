@@ -1,8 +1,8 @@
 rp_embedding_name: machine glute kickback, machine, glutes
 matches:
   - hevy_embedding_name: glute kickback machine, glutes, hamstrings
-    distance: 0.05085211992263794
+    distance: 0.04916340112686157
   - hevy_embedding_name: rear kick machine, glutes, hamstrings
-    distance: 0.09557157754898071
+    distance: 0.11072814464569092
   - hevy_embedding_name: glute kickback on floor, glutes, hamstrings
-    distance: 0.11874336004257202
+    distance: 0.13510173559188843

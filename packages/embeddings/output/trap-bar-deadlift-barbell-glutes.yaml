@@ -1,8 +1,8 @@
 rp_embedding_name: trap bar deadlift, barbell, glutes
 matches:
   - hevy_embedding_name: deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.08312082290649414
+    distance: 0.10562878847122192
   - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.10380935668945312
-  - hevy_embedding_name: straight leg deadlift, hamstrings, glutes, lower_back, upper_back, lats, traps
-    distance: 0.13180208206176758
+    distance: 0.13357722759246826
+  - hevy_embedding_name: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.15936851501464844

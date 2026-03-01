@@ -1,8 +1,8 @@
 rp_embedding_name: t-bar row, machine, lats, upper_back
 matches:
   - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
-    distance: 0.13808858394622803
-  - hevy_embedding_name: seated row machine, upper_back, lats, biceps, forearms
-    distance: 0.18800640106201172
-  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.1933017373085022
+    distance: 0.08836710453033447
+  - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.16826748847961426
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.1706816554069519

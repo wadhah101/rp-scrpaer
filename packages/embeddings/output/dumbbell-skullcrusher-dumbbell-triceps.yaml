@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell skullcrusher, dumbbell, triceps
 matches:
   - hevy_embedding_name: skullcrusher dumbbell, triceps
-    distance: 0.021694839000701904
+    distance: 0.044201672077178955
   - hevy_embedding_name: skullcrusher barbell, triceps
-    distance: 0.049747467041015625
-  - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.17835789918899536
+    distance: 0.10841840505599976
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.11840933561325073

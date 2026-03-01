@@ -1,8 +1,8 @@
 rp_embedding_name: machine triceps pushdown, machine, triceps
 matches:
-  - hevy_embedding_name: triceps pushdown, triceps
-    distance: 0.09411764144897461
-  - hevy_embedding_name: shoulder press machine plates, shoulders, triceps
-    distance: 0.12945544719696045
   - hevy_embedding_name: triceps extension machine, triceps
-    distance: 0.1442028284072876
+    distance: 0.08499664068222046
+  - hevy_embedding_name: triceps pushdown, triceps
+    distance: 0.08948999643325806
+  - hevy_embedding_name: triceps pressdown, triceps
+    distance: 0.10666424036026001

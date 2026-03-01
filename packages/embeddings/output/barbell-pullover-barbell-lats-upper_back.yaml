@@ -1,8 +1,8 @@
 rp_embedding_name: barbell pullover, barbell, lats, upper_back
 matches:
-  - hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
-    distance: 0.06337147951126099
-  - hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
-    distance: 0.09032225608825684
-  - hevy_embedding_name: lat pulldown band, lats, upper_back, biceps, forearms
-    distance: 0.11628979444503784
+  - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.15194523334503174
+  - hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
+    distance: 0.1803884506225586
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.1889825463294983

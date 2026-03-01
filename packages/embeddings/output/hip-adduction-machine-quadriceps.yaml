@@ -1,8 +1,8 @@
 rp_embedding_name: hip adduction, machine, quadriceps
 matches:
   - hevy_embedding_name: hip adduction machine, adductors
-    distance: 0.08984702825546265
-  - hevy_embedding_name: hip thrust machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.11757814884185791
-  - hevy_embedding_name: hip thrust smith machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.13640832901000977
+    distance: 0.09335947036743164
+  - hevy_embedding_name: hip abduction machine, abductors
+    distance: 0.14123934507369995
+  - hevy_embedding_name: leg extension machine, quadriceps
+    distance: 0.1574442982673645

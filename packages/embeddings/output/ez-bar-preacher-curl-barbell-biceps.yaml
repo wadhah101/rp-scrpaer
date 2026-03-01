@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar preacher curl, barbell, biceps
 matches:
   - hevy_embedding_name: preacher curl barbell, biceps
-    distance: 0.06155043840408325
+    distance: 0.06384795904159546
   - hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.0929306149482727
+    distance: 0.09250873327255249
   - hevy_embedding_name: preacher curl dumbbell, biceps
-    distance: 0.10172617435455322
+    distance: 0.11493247747421265

@@ -1,8 +1,8 @@
 rp_embedding_name: cable rope crunch, cable, abdominals
 matches:
   - hevy_embedding_name: cable crunch, abdominals
-    distance: 0.06775534152984619
-  - hevy_embedding_name: cable twist up to down, abdominals
-    distance: 0.11415773630142212
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.12002331018447876
+    distance: 0.0656365156173706
+  - hevy_embedding_name: oblique crunch, abdominals
+    distance: 0.19123810529708862
+  - hevy_embedding_name: crunch machine, abdominals
+    distance: 0.19214242696762085

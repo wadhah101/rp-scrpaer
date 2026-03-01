@@ -1,8 +1,8 @@
 rp_embedding_name: single leg press, machine, quadriceps
 matches:
   - hevy_embedding_name: single leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.037670791149139404
+    distance: 0.05977898836135864
   - hevy_embedding_name: leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.08934557437896729
-  - hevy_embedding_name: leg press horizontal machine, quadriceps, hamstrings, glutes
-    distance: 0.11499321460723877
+    distance: 0.13596606254577637
+  - hevy_embedding_name: single leg extensions, quadriceps
+    distance: 0.14136558771133423

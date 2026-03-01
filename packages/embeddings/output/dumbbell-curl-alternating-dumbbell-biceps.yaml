@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell curl alternating, dumbbell, biceps
 matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.05616492033004761
-  - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.08737856149673462
+    distance: 0.07633799314498901
+  - hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.13824260234832764
   - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.09656429290771484
+    distance: 0.14618653059005737

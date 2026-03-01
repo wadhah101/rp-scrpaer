@@ -1,8 +1,8 @@
 rp_embedding_name: barbell curl normal grip, barbell, biceps
 matches:
   - hevy_embedding_name: bicep curl barbell, biceps
-    distance: 0.1046857237815857
+    distance: 0.08609986305236816
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.14383536577224731
-  - hevy_embedding_name: 21s bicep curl, biceps
-    distance: 0.14943915605545044
+    distance: 0.13665932416915894
+  - hevy_embedding_name: bicep curl cable, biceps
+    distance: 0.14691054821014404

@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine shrug, smith-machine, traps
 matches:
   - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.07831889390945435
+    distance: 0.07526391744613647
   - hevy_embedding_name: shrug machine, traps, neck
-    distance: 0.1479027271270752
-  - hevy_embedding_name: bench press smith machine, chest, shoulders, triceps
-    distance: 0.245416522026062
+    distance: 0.1365753412246704
+  - hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.16847681999206543

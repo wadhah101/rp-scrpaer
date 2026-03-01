@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar row underhand, barbell, lats, upper_back
 matches:
-  - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.09511798620223999
-  - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
-    distance: 0.097881019115448
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.10080260038375854
+    distance: 0.15970975160598755
+  - hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
+    distance: 0.18430936336517334
+  - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
+    distance: 0.19103699922561646

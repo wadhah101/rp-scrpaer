@@ -1,8 +1,8 @@
 rp_embedding_name: cable chest press, cable, chest
 matches:
-  - hevy_embedding_name: bench press cable, chest, shoulders, triceps
-    distance: 0.1173200011253357
-  - hevy_embedding_name: cable core palloff press, abdominals, chest, shoulders, triceps
-    distance: 0.147771954536438
   - hevy_embedding_name: seated chest flys cable, chest
-    distance: 0.16496491432189941
+    distance: 0.10987269878387451
+  - hevy_embedding_name: bench press cable, chest, shoulders, triceps
+    distance: 0.11236041784286499
+  - hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.139049232006073

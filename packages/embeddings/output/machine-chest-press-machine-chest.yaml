@@ -1,8 +1,8 @@
 rp_embedding_name: machine chest press, machine, chest
 matches:
+  - hevy_embedding_name: chest fly machine, chest
+    distance: 0.10968929529190063
   - hevy_embedding_name: chest press machine, chest, shoulders, triceps
-    distance: 0.059170424938201904
-  - hevy_embedding_name: bench presshammer machine, chest, triceps
-    distance: 0.1049160361289978
+    distance: 0.11051154136657715
   - hevy_embedding_name: incline chest press machine, chest, shoulders, triceps
-    distance: 0.10745233297348022
+    distance: 0.12670594453811646

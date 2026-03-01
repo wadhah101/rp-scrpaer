@@ -1,8 +1,8 @@
 rp_embedding_name: back extension, bodyweight-loadable, lats, upper_back
 matches:
-  - hevy_embedding_name: rack pull, upper_back, glutes, hamstrings, lower_back, lats, traps
-    distance: 0.1534174084663391
+  - hevy_embedding_name: back extension machine, lower_back
+    distance: 0.13950461149215698
   - hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
-    distance: 0.1634986400604248
+    distance: 0.1683335304260254
   - hevy_embedding_name: back extension hyperextension, lower_back, hamstrings, glutes
-    distance: 0.17024773359298706
+    distance: 0.1948278546333313

@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar curl narrow grip, barbell, biceps
 matches:
   - hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.0652090311050415
+    distance: 0.09995687007904053
   - hevy_embedding_name: bicep curl barbell, biceps
-    distance: 0.12120550870895386
+    distance: 0.13962852954864502
   - hevy_embedding_name: spider curl barbell, biceps
-    distance: 0.1504298448562622
+    distance: 0.15933459997177124

@@ -1,8 +1,8 @@
 rp_embedding_name: cable rope facepull kneeling, cable, shoulders
 matches:
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.21900177001953125
-  - hevy_embedding_name: cable twist up to down, abdominals
-    distance: 0.22433334589004517
-  - hevy_embedding_name: rope cable curl, biceps, forearms
-    distance: 0.23139458894729614
+  - hevy_embedding_name: front raise cable, shoulders
+    distance: 0.19966167211532593
+  - hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.2084248661994934
+  - hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
+    distance: 0.21112769842147827

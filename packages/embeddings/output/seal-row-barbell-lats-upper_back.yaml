@@ -1,8 +1,8 @@
 rp_embedding_name: seal row, barbell, lats, upper_back
 matches:
-  - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.10411602258682251
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.11080729961395264
-  - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.11108577251434326
+    distance: 0.13838118314743042
+  - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms
+    distance: 0.16322791576385498
+  - hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
+    distance: 0.16445523500442505

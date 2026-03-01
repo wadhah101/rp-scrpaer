@@ -1,8 +1,8 @@
 rp_embedding_name: hammer machine row low, machine, lats, upper_back
 matches:
-  - hevy_embedding_name: seated row machine, upper_back, lats, biceps, forearms
-    distance: 0.14241516590118408
+  - hevy_embedding_name: low row suspension, upper_back, lats, biceps, forearms
+    distance: 0.19105303287506104
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.19141149520874023
   - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.15016120672225952
-  - hevy_embedding_name: bench presshammer machine, chest, triceps
-    distance: 0.1533837914466858
+    distance: 0.19227349758148193

@@ -1,8 +1,8 @@
 rp_embedding_name: belt squat calves, machine, calves
 matches:
-  - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
-    distance: 0.12545710802078247
-  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.16354548931121826
-  - hevy_embedding_name: belt squat, quadriceps, hamstrings
-    distance: 0.16440242528915405
+  - hevy_embedding_name: calf press machine, calves
+    distance: 0.08702296018600464
+  - hevy_embedding_name: calf extension machine, calves
+    distance: 0.09147042036056519
+  - hevy_embedding_name: standing calf raise machine, calves
+    distance: 0.09520173072814941

@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell lateral raise top hold, dumbbell, shoulders
 matches:
   - hevy_embedding_name: lateral raise dumbbell, shoulders
-    distance: 0.049982666969299316
-  - hevy_embedding_name: front raise dumbbell, shoulders
-    distance: 0.11462777853012085
+    distance: 0.046896159648895264
   - hevy_embedding_name: seated lateral raise dumbbell, shoulders
-    distance: 0.12449699640274048
+    distance: 0.08097827434539795
+  - hevy_embedding_name: front raise dumbbell, shoulders
+    distance: 0.11184340715408325

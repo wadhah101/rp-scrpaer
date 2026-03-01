@@ -1,8 +1,8 @@
 rp_embedding_name: machine pullover, machine, lats, upper_back
 matches:
   - hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
-    distance: 0.04643219709396362
+    distance: 0.08970832824707031
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.1263577938079834
+    distance: 0.17982959747314453
   - hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
-    distance: 0.1418101191520691
+    distance: 0.2005212903022766

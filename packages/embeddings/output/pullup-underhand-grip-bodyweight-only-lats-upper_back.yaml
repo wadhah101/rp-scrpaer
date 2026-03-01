@@ -1,8 +1,8 @@
 rp_embedding_name: pullup underhand grip, bodyweight-only, lats, upper_back
 matches:
-  - hevy_embedding_name: single arm lat pulldown, lats, upper_back, biceps, forearms
-    distance: 0.17641621828079224
+  - hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
+    distance: 0.1359427571296692
+  - hevy_embedding_name: pull up, lats, upper_back, biceps, forearms
+    distance: 0.13829690217971802
   - hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
-    distance: 0.18023115396499634
-  - hevy_embedding_name: kipping pull up, lats, upper_back, biceps, forearms
-    distance: 0.18952810764312744
+    distance: 0.140375018119812

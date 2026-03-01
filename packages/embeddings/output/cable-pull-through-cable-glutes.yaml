@@ -1,8 +1,8 @@
 rp_embedding_name: cable pull through, cable, glutes
 matches:
   - hevy_embedding_name: cable pull through, glutes, hamstrings, lower_back
-    distance: 0.05367559194564819
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.16115456819534302
-  - hevy_embedding_name: cable twist up to down, abdominals
-    distance: 0.16239386796951294
+    distance: 0.09652352333068848
+  - hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings
+    distance: 0.1623247265815735
+  - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.23752856254577637

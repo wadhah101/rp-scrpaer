@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine split squat, smith-machine, glutes
 matches:
   - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
-    distance: 0.0758521556854248
-  - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.13381022214889526
-  - hevy_embedding_name: hip thrust smith machine, glutes, hamstrings, quadriceps, adductors
-    distance: 0.14596247673034668
+    distance: 0.11155343055725098
+  - hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
+    distance: 0.1537749171257019
+  - hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.18900901079177856

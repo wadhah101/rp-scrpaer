@@ -1,8 +1,8 @@
 rp_embedding_name: inverted row, bodyweight-only, lats, upper_back
 matches:
   - hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
-    distance: 0.10299408435821533
-  - hevy_embedding_name: rear delt reverse fly dumbbell, shoulders, upper_back
-    distance: 0.17377793788909912
-  - hevy_embedding_name: squat row, full_body
-    distance: 0.18178999423980713
+    distance: 0.054619550704956055
+  - hevy_embedding_name: iso-lateral low row, upper_back, lats, biceps, forearms
+    distance: 0.17764723300933838
+  - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.1824076771736145

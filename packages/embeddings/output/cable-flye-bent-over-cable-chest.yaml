@@ -1,8 +1,8 @@
 rp_embedding_name: cable flye bent over, cable, chest
 matches:
+  - hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.1373266577720642
   - hevy_embedding_name: seated chest flys cable, chest
-    distance: 0.16182005405426025
-  - hevy_embedding_name: cable twist down to up, abdominals
-    distance: 0.2116917371749878
-  - hevy_embedding_name: single arm cable crossover, chest
-    distance: 0.22285544872283936
+    distance: 0.14029991626739502
+  - hevy_embedding_name: low cable fly crossovers, chest
+    distance: 0.15558189153671265

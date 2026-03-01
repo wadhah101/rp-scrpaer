@@ -1,8 +1,8 @@
 rp_embedding_name: goblet squat, dumbbell, quadriceps
 matches:
   - hevy_embedding_name: goblet squat, quadriceps, hamstrings, glutes
-    distance: 0.04683375358581543
+    distance: 0.10908716917037964
   - hevy_embedding_name: kettlebell goblet squat, quadriceps, glutes, hamstrings
-    distance: 0.061803579330444336
+    distance: 0.13344532251358032
   - hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.10291391611099243
+    distance: 0.13505160808563232

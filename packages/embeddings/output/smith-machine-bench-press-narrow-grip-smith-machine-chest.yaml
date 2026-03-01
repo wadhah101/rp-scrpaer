@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine bench press narrow grip, smith-machine, chest
 matches:
   - hevy_embedding_name: bench press smith machine, chest, shoulders, triceps
-    distance: 0.11405515670776367
-  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
-    distance: 0.13767558336257935
+    distance: 0.12382173538208008
   - hevy_embedding_name: decline bench press smith machine, chest, shoulders, triceps
-    distance: 0.1649501919746399
+    distance: 0.13763493299484253
+  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
+    distance: 0.13905978202819824

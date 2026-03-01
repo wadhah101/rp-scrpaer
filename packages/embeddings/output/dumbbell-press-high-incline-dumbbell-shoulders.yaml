@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell press high incline, dumbbell, shoulders
 matches:
-  - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
-    distance: 0.08934175968170166
   - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.11552411317825317
-  - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
-    distance: 0.11609399318695068
+    distance: 0.14506655931472778
+  - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
+    distance: 0.15967202186584473
+  - hevy_embedding_name: front raise dumbbell, shoulders
+    distance: 0.1654607653617859

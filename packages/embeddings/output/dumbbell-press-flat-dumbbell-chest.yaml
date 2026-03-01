@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell press flat, dumbbell, chest
 matches:
-  - hevy_embedding_name: dumbbell squeeze press, chest, shoulders, triceps
-    distance: 0.10993534326553345
+  - hevy_embedding_name: incline chest fly dumbbell, chest
+    distance: 0.12958866357803345
+  - hevy_embedding_name: chest fly dumbbell, chest
+    distance: 0.13333958387374878
   - hevy_embedding_name: floor press dumbbell, chest, shoulders, triceps
-    distance: 0.11600327491760254
-  - hevy_embedding_name: bench press dumbbell, chest, triceps, shoulders
-    distance: 0.12345528602600098
+    distance: 0.1401510238647461

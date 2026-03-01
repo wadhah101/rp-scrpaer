@@ -1,8 +1,8 @@
 rp_embedding_name: barbell facepull, barbell, shoulders
 matches:
-  - hevy_embedding_name: face pull, shoulders, biceps
-    distance: 0.1369916796684265
-  - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.16751128435134888
   - hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.1685013771057129
+    distance: 0.1706591248512268
+  - hevy_embedding_name: face pull, shoulders, biceps
+    distance: 0.17728430032730103
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.2073330283164978

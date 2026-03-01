@@ -1,8 +1,8 @@
 rp_embedding_name: pushup weighted, narrow grip, bodyweight-loadable, chest
 matches:
   - hevy_embedding_name: push up weighted, chest, triceps, shoulders
-    distance: 0.13118785619735718
+    distance: 0.14238017797470093
   - hevy_embedding_name: push up - close grip, chest, triceps, shoulders
-    distance: 0.13218677043914795
-  - hevy_embedding_name: push up, chest, triceps, shoulders
-    distance: 0.16727930307388306
+    distance: 0.14903664588928223
+  - hevy_embedding_name: incline chest fly dumbbell, chest
+    distance: 0.17402023077011108

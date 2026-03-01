@@ -1,8 +1,8 @@
 rp_embedding_name: machine triceps extension, machine, triceps
 matches:
   - hevy_embedding_name: triceps extension machine, triceps
-    distance: 0.037476956844329834
-  - hevy_embedding_name: leg extension machine, quadriceps
-    distance: 0.1486647129058838
+    distance: 0.024226486682891846
   - hevy_embedding_name: triceps extension barbell, triceps
-    distance: 0.15475857257843018
+    distance: 0.11810803413391113
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.11864304542541504

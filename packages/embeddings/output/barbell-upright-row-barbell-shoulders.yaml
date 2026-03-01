@@ -1,8 +1,8 @@
 rp_embedding_name: barbell upright row, barbell, shoulders
 matches:
   - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.060065627098083496
+    distance: 0.09796428680419922
   - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.08051657676696777
-  - hevy_embedding_name: upright row cable, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.11969608068466187
+    distance: 0.14245158433914185
+  - hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.14861667156219482

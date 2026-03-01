@@ -1,8 +1,8 @@
 rp_embedding_name: barbell front raise ez bar, underhand, barbell, shoulders
 matches:
   - hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.07215791940689087
+    distance: 0.12443047761917114
   - hevy_embedding_name: front raise dumbbell, shoulders
-    distance: 0.11347270011901855
-  - hevy_embedding_name: bench press barbell, chest, triceps, shoulders
-    distance: 0.15142273902893066
+    distance: 0.17621934413909912
+  - hevy_embedding_name: plate front raise, shoulders
+    distance: 0.18469512462615967

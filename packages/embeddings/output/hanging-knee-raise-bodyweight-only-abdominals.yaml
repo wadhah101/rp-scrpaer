@@ -1,8 +1,8 @@
 rp_embedding_name: hanging knee raise, bodyweight-only, abdominals
 matches:
   - hevy_embedding_name: hanging knee raise, abdominals, forearms
-    distance: 0.12556177377700806
-  - hevy_embedding_name: knee raise parallel bars, abdominals
-    distance: 0.1576099991798401
+    distance: 0.10845071077346802
   - hevy_embedding_name: lying knee raise, abdominals
-    distance: 0.16498976945877075
+    distance: 0.14562326669692993
+  - hevy_embedding_name: hanging leg raise, abdominals, forearms
+    distance: 0.15516233444213867

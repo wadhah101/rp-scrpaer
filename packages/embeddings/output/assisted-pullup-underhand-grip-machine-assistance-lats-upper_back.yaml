@@ -1,8 +1,8 @@
 rp_embedding_name: assisted pullup underhand grip, machine-assistance, lats, upper_back
 matches:
   - hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
-    distance: 0.12612926959991455
+    distance: 0.1473851203918457
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.1469469666481018
-  - hevy_embedding_name: scapular pull ups, upper_back, lats, forearms
-    distance: 0.17823255062103271
+    distance: 0.1625320315361023
+  - hevy_embedding_name: wide pull up, lats, upper_back, biceps, forearms
+    distance: 0.1971917748451233

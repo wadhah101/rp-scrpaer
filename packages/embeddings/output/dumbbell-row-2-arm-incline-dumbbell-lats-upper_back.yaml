@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell row 2-arm, incline, dumbbell, lats, upper_back
 matches:
   - hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.1000138521194458
+    distance: 0.09964919090270996
   - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.10221058130264282
-  - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.10738629102706909
+    distance: 0.12229865789413452
+  - hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
+    distance: 0.13903933763504028

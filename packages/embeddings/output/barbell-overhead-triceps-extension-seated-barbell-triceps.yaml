@@ -1,8 +1,8 @@
 rp_embedding_name: barbell overhead triceps extension seated, barbell, triceps
 matches:
   - hevy_embedding_name: triceps extension barbell, triceps
-    distance: 0.09666121006011963
-  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
-    distance: 0.10600090026855469
-  - hevy_embedding_name: overhead press barbell, shoulders, triceps, abdominals
-    distance: 0.14064818620681763
+    distance: 0.06895166635513306
+  - hevy_embedding_name: overhead triceps extension cable, triceps
+    distance: 0.0971861481666565
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.11243206262588501

@@ -1,8 +1,8 @@
 rp_embedding_name: decline dumbbell curl, dumbbell, biceps
 matches:
-  - hevy_embedding_name: decline bench press dumbbell, chest, shoulders, triceps
-    distance: 0.1256026029586792
-  - hevy_embedding_name: decline bench press barbell, chest, shoulders, triceps
-    distance: 0.1280667781829834
-  - hevy_embedding_name: decline bench press machine, chest, shoulders, triceps
-    distance: 0.135084867477417
+  - hevy_embedding_name: bicep curl dumbbell, biceps
+    distance: 0.08313268423080444
+  - hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.14770346879959106
+  - hevy_embedding_name: seated incline curl dumbbell, biceps
+    distance: 0.15045559406280518

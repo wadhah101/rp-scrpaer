@@ -1,26 +1,26 @@
 config:
-  model: mixedbread-ai/mxbai-embed-large-v1
+  model: Qwen/Qwen3-Embedding-8B
   rp_prompt: ''
   hevy_prompt: ''
   n_results: 3
   device: mps
   n_rp_exercises: 315
   n_hevy_exercises: 433
-  timestamp: '2026-03-01T18:16:13.059776+00:00'
+  timestamp: '2026-03-01T20:19:38.247446+00:00'
 distance:
-  top1_mean: 0.098
-  top1_median: 0.0917
-  top1_stdev: 0.0477
-  top1_min: 0.0146
-  top1_max: 0.3197
+  top1_mean: 0.1035
+  top1_median: 0.1048
+  top1_stdev: 0.042
+  top1_min: 0.0128
+  top1_max: 0.2494
 muscle_group_precision:
-  precision_at_1: 0.8698
-  precision_at_k: 0.9333
-  top1_correct: 274
-  topk_correct: 294
+  precision_at_1: 0.9175
+  precision_at_k: 0.9492
+  top1_correct: 289
+  topk_correct: 299
   total: 315
 confidence:
-  mean_gap: 0.0326
-  median_gap: 0.0271
-  high_confidence_count: 272
-  low_confidence_count: 1
+  mean_gap: 0.0336
+  median_gap: 0.0264
+  high_confidence_count: 277
+  low_confidence_count: 0
