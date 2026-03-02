@@ -51,7 +51,7 @@ depends = ["//:registry-login"]
 [task_templates.build]
 env = { '_'.source = { path = "./github-token.env.sh" } }
 usage = 'arg "[tag]" default="local" help="Image tag to use"'
-run = "docker buildx build --load --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t $IMAGE_NAME:${usage_tag} ../.."
+run = "docker buildx build --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t $IMAGE_NAME:${usage_tag} ../.."
 description = "Build the CLI Docker image"
 
 # We use `--load` + separate `docker push` instead of the faster `buildx build --push`.
