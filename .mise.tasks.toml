@@ -33,7 +33,7 @@ run = 'echo "${REGISTRY_PASSWORD}" | docker login "${REGISTRY_URL}" -u "${REGIST
 [task_templates.scan-docker]
 description = "Scan Docker image for leaked secrets with TruffleHog"
 run = """
-trufflehog docker --image docker://$IMAGE_NAME --results=verified --fail --json > scan-results.json
+trufflehog docker --image docker://$IMAGE_NAME:local --results=verified --fail --json > scan-results.json
 """
 
 [task_templates.push]
@@ -51,16 +51,15 @@ depends = ["//:registry-login"]
 [task_templates.build]
 env = { '_'.source = { path = "./github-token.env.sh" } }
 usage = 'arg "[tag]" default="local" help="Image tag to use"'
-run = "docker buildx build --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t $IMAGE_NAME:${usage_tag} ../.."
+run = "docker buildx build --load --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t $IMAGE_NAME:${usage_tag} ../.."
 description = "Build the CLI Docker image"
 
 [task_templates.build-push-local]
 env = { '_'.source = { path = "./git-diff-hash.sh" } }
-description = "Build and auto push Docker image to registry with current git branch and hash along local changes"
 usage = 'arg "[tag]" var=#true help="Image tags to push"'
+description = "Build and auto push Docker image to registry with current git branch and hash along local changes"
 run = [
   { task = "build" },
   { task = "scan-docker" },
-  'echo pushing $IMAGE_NAME:${usage_tag:-"$GIT_SHA_SHORT-$GIT_DIFF_HASH"}',
   'mise run push ${usage_tag:-"$GIT_SHA_SHORT-$GIT_DIFF_HASH"}',
 ]
