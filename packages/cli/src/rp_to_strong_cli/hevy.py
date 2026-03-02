@@ -18,6 +18,8 @@ HEVY_EXPORT_TYPES = [
     "exercise-templates",
 ]
 
+HEVY_API_BASE_URL = os.environ.get("HEVY_API_BASE_URL")
+
 
 async def _fetch_all_exercise_templates(
     templates_api: ExerciseTemplatesApi, api_key: UUID
@@ -40,7 +42,7 @@ async def _hevy_export(
     api_key: str, export_type: str, output: Path | CloudPath
 ) -> None:
     key = UUID(api_key)
-    config = HevyConfiguration(host="https://api.hevyapp.com")
+    config = HevyConfiguration(host=HEVY_API_BASE_URL)
     async with HevyApiClient(config) as client:
         templates_api = ExerciseTemplatesApi(client)
 

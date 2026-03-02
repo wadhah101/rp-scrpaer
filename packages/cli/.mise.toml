@@ -1,5 +1,7 @@
 [env]
 RP_APP_BASE_URL = "https://training.rpstrength.com/api"
+HEVY_API_BASE_URL = "https://api.hevyapp.com"
+
 RP_APP_VERSION = "1.1.13"
 
 
@@ -12,10 +14,11 @@ description = "Run CLI"
 run = "uv run python -m rp_to_strong_cli"
 
 [tasks.export-hevy-local]
+env = { HEVY_API_KEY = { required = true } }
 run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates -o exports/hevy/exercises.json"
 
 [tasks.export-hevy-s3]
-env = { BUCKET_NAME = { required = true } }
+env = { BUCKET_NAME = { required = true }, HEVY_API_KEY = { required = true } }
 run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates --output s3://$BUCKET_NAME/exports/hevy/exercises.json"
 
 [tasks.export-rp-local]
