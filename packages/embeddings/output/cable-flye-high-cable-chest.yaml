@@ -1,5 +1,5 @@
 rp_embedding_name: cable flye high, cable, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: cable fly crossovers, chest
     distance: 0.15064668655395508
   - hevy_embedding_name: chest fly suspension, chest

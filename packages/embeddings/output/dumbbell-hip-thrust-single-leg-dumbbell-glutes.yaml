@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell hip thrust single leg, dumbbell, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: single leg hip thrust dumbbell, glutes, hamstrings, quadriceps
     distance: 0.047478675842285156
   - hevy_embedding_name: single leg hip thrust, glutes, hamstrings, quadriceps

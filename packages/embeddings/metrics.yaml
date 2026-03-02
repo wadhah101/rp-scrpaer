@@ -6,7 +6,7 @@ config:
   device: mps
   n_rp_exercises: 315
   n_hevy_exercises: 433
-  timestamp: '2026-03-01T20:19:38.247446+00:00'
+  timestamp: '2026-03-02T08:14:43.167947+00:00'
 distance:
   top1_mean: 0.1035
   top1_median: 0.1048

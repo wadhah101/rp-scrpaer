@@ -1,5 +1,5 @@
 rp_embedding_name: barbell squat narrow stance, barbell, quadriceps
-matches:
+semantic_matches:
   - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
     distance: 0.16310864686965942
   - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings

@@ -1,5 +1,5 @@
 rp_embedding_name: belt squat calves, machine, calves
-matches:
+semantic_matches:
   - hevy_embedding_name: calf press machine, calves
     distance: 0.08702296018600464
   - hevy_embedding_name: calf extension machine, calves

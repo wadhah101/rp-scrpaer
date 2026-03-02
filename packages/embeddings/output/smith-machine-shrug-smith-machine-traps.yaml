@@ -1,5 +1,5 @@
 rp_embedding_name: smith machine shrug, smith-machine, traps
-matches:
+semantic_matches:
   - hevy_embedding_name: shrug smith machine, traps, neck
     distance: 0.07526391744613647
   - hevy_embedding_name: shrug machine, traps, neck

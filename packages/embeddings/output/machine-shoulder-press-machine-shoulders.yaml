@@ -1,5 +1,5 @@
 rp_embedding_name: machine shoulder press, machine, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: seated shoulder press machine, shoulders, triceps
     distance: 0.09595882892608643
   - hevy_embedding_name: shoulder press machine plates, shoulders, triceps

@@ -1,5 +1,5 @@
 rp_embedding_name: machine flye, machine, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: chest fly machine, chest
     distance: 0.07236123085021973
   - hevy_embedding_name: chest fly suspension, chest

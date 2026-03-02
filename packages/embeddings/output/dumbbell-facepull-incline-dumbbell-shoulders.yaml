@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell facepull incline, dumbbell, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: front raise dumbbell, shoulders
     distance: 0.16814446449279785
   - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders

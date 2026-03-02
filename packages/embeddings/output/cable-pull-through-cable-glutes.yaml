@@ -1,5 +1,5 @@
 rp_embedding_name: cable pull through, cable, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: cable pull through, glutes, hamstrings, lower_back
     distance: 0.09652352333068848
   - hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings

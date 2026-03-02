@@ -1,5 +1,5 @@
 rp_embedding_name: hanging knee raise, bodyweight-only, abdominals
-matches:
+semantic_matches:
   - hevy_embedding_name: hanging knee raise, abdominals, forearms
     distance: 0.10845071077346802
   - hevy_embedding_name: lying knee raise, abdominals

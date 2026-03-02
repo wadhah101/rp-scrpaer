@@ -1,5 +1,5 @@
 rp_embedding_name: pulldown parallel grip, cable, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
     distance: 0.08830457925796509
   - hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms

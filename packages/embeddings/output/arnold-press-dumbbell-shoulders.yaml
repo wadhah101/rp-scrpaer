@@ -1,5 +1,5 @@
 rp_embedding_name: arnold press, dumbbell, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: arnold press dumbbell, shoulders, triceps
     distance: 0.05595695972442627
   - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps

@@ -1,5 +1,5 @@
 rp_embedding_name: barbell bent over shrug, barbell, traps
-matches:
+semantic_matches:
   - hevy_embedding_name: shrug barbell, traps, neck
     distance: 0.111228346824646
   - hevy_embedding_name: shrug dumbbell, traps, neck

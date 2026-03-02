@@ -1,5 +1,5 @@
 rp_embedding_name: dip weighted, chest-focused, bodyweight-loadable, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: chest dip weighted, chest, triceps, shoulders
     distance: 0.09434497356414795
   - hevy_embedding_name: chest dip assisted, chest, triceps, shoulders

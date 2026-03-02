@@ -1,5 +1,5 @@
 rp_embedding_name: machine pulldown, machine, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
     distance: 0.08408457040786743
   - hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms

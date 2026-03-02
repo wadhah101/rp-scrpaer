@@ -1,5 +1,5 @@
 rp_embedding_name: freemotion curl facing machine, freemotion, biceps
-matches:
+semantic_matches:
   - hevy_embedding_name: bicep curl machine, biceps
     distance: 0.14491987228393555
   - hevy_embedding_name: preacher curl machine, biceps

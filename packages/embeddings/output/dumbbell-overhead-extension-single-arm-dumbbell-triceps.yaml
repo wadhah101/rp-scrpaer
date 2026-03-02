@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell overhead extension single-arm, dumbbell, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: single arm tricep extension dumbbell, triceps
     distance: 0.053576767444610596
   - hevy_embedding_name: triceps extension dumbbell, triceps

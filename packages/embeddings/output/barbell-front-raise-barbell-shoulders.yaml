@@ -1,5 +1,5 @@
 rp_embedding_name: barbell front raise, barbell, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: front raise barbell, shoulders
     distance: 0.052874088287353516
   - hevy_embedding_name: front raise dumbbell, shoulders

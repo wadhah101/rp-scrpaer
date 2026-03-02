@@ -1,5 +1,5 @@
 rp_embedding_name: t-bar row, machine, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
     distance: 0.08836710453033447
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms

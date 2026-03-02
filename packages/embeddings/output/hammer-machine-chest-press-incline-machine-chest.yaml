@@ -1,5 +1,5 @@
 rp_embedding_name: hammer machine chest press incline, machine, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: bench presshammer machine, chest, triceps
     distance: 0.1200980544090271
   - hevy_embedding_name: incline chest press machine, chest, shoulders, triceps

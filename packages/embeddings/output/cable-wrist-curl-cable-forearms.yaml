@@ -1,5 +1,5 @@
 rp_embedding_name: cable wrist curl, cable, forearms
-matches:
+semantic_matches:
   - hevy_embedding_name: reverse curl cable, biceps, forearms
     distance: 0.09741204977035522
   - hevy_embedding_name: hammer curl cable, biceps, forearms
