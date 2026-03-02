@@ -130,10 +130,21 @@ Requires **Python >= 3.12**.
 ## Docker
 
 ```bash
+# Build only
 mise //packages/cli:build
+
+# Build + TruffleHog scan + push to registry
+mise //packages/cli:build-push
 ```
 
-Multi-stage build (debian:trixie-slim runtime). Runs as non-root `app` user with a `bash` entrypoint.
+3-stage build (mise → builder → `debian:trixie-slim` runtime):
+
+- **BuildKit secret mounts** for `GITHUB_TOKEN` — never baked into image layers
+- **`uv sync --frozen --compile-bytecode`** — reproducible installs with pre-compiled `.pyc` for fast startup
+- **TruffleHog secret scan** gates every push — images are built locally (`--load`), scanned, then pushed only if clean
+- **Pinned base image digest** (`debian:trixie-slim@sha256:...`) with pinned apt versions for deterministic builds
+- **Non-root runtime** — runs as `app` user
+- **Flat `/app/packages/` source copy** — all workspace `src/` dirs copied to a single directory with `PYTHONPATH` resolution
 
 ## Environment Variables
 

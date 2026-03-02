@@ -18,9 +18,9 @@ Three specific problems make this project necessary:
 
 ## The Core Idea: One Source of Truth, Everywhere
 
-The defining principle of this repo is that **`.mise.toml` + `mise.lock` are the single source of truth** for every tool version — on your laptop, in Docker, and in CI. There is no second place where Python 3.12 or uv 0.10.7 is declared. Every environment reads the same two files:
+The defining principle of this repo is that **`.mise.tools.toml` is the single source of truth** for every tool version — on your laptop, in Docker, and in CI. There is no second place where Python 3.12 or uv 0.10.7 is declared. The root `.miserc.toml` is the entrypoint — it loads three split config files: `.mise.env.toml` (environment, monorepo settings), `.mise.tools.toml` (tool versions), and `.mise.tasks.toml` (tasks). Every environment reads these same files.
 
-Change `python = "3.13"` in `.mise.toml` and **every developer machine, every Docker image, and every CI run** picks it up. Zero drift, zero duplication.
+Change `python = "3.12"` in `.mise.tools.toml` and **every developer machine, every Docker image, and every CI run** picks it up. Zero drift, zero duplication.
 
 ## Monorepo Architecture
 
@@ -101,33 +101,37 @@ mise is the **single entry point** for all developer tooling. It replaces pyenv,
 
 ### Tool management
 
-The root `.mise.toml` declares every tool the project needs:
+The root `.mise.tools.toml` declares every tool the project needs (loaded via `.miserc.toml` → `env`, `tools`, `tasks` split):
 
-`mise install` provisions **all of these** in one shot — no brew, no pip install, no manual downloads. Versions with `"latest"` resolve at install time and get pinned in `mise.lock` with SHA-256 checksums for reproducibility.
+`mise install` provisions **all of these** in one shot — no brew, no pip install, no manual downloads. Every version is pinned explicitly in `.mise.tools.toml` for reproducibility.
 
 ### How Python versions flow from mise to containers
 
 This is the key design: **mise is the single source of truth for the Python version**, both locally and in Docker. There is no `.python-version` file, no hardcoded `FROM python:3.12` image tag, no separate version matrix in CI.
 
 ```
-.mise.toml (root)          mise.lock
-  python = "3.12"    -->    python 3.12.12 (pinned with checksum)
-       |                         |
-       v                         v
-  Local dev                 Dockerfile
-  `mise install`            COPY .mise.toml ./
-                            COPY mise.lock ./
-                            RUN mise install python uv
+.mise.tools.toml (root)
+  python = "3.12"
+       |
+       ├──> Local dev
+       │    `mise install`
+       │
+       ├──> Dockerfile
+       │    COPY .miserc.toml .mise.env.toml .mise.tools.toml ./
+       │    RUN mise install python uv
+       │
+       └──> CI
+            jdx/mise-action reads .miserc.toml → .mise.tools.toml
 ```
 
 Inside each Dockerfile, the builder stage:
 
 1. Copies the `jdxcode/mise` binary from its official image
-2. Copies the **root** `.mise.toml` and `mise.lock` into the container
-3. Runs `mise install python uv` — which reads the exact same version constraints and checksums
+2. Copies the **root** `.miserc.toml`, `.mise.env.toml`, and `.mise.tools.toml` into the container
+3. Runs `mise install python uv` — which reads the exact same pinned versions
 4. Extracts the installed Python to `/opt/python` for the runtime stage
 
-The same flow applies in CI: `jdx/mise-action` reads `.mise.toml` + `mise.lock` and installs identical tool versions. **One file to bump, three environments updated.**
+The same flow applies in CI: `jdx/mise-action` reads `.miserc.toml` (which loads `.mise.tools.toml`) and installs identical tool versions. **One file to bump, three environments updated.**
 
 ### Monorepo task routing
 
@@ -168,7 +172,7 @@ run = "uv sync --all-packages"
 
 ## Docker Builds
 
-Packages with a Dockerfile use multi-stage builds following the same pattern:
+Packages with a Dockerfile use 3-stage builds following the same pattern:
 
 ```
 Stage 1: mise          Grab the mise binary from jdxcode/mise:2026.2.23
@@ -176,19 +180,20 @@ Stage 2: builder       Install Python+uv via mise, uv sync, copy source
 Stage 3: runtime       Minimal debian:trixie-slim with just Python + .venv
 ```
 
-The critical detail is in stage 2 — the builder **does not hardcode any tool versions**. It copies `.mise.toml` and `mise.lock` from the repo root and runs `mise install`, so the container always matches local dev:
+The critical detail is in stage 2 — the builder **does not hardcode any tool versions**. It copies the split mise config from the repo root and runs `mise install`, so the container always matches local dev:
 
 ```dockerfile
-COPY .mise.toml ./
-COPY mise.lock ./
+COPY .miserc.toml .mise.env.toml .mise.tools.toml ./
 RUN mise install python uv
 ```
 
 Other techniques used:
 
 - **`syntax=docker/dockerfile:1.13-labs`** — enables `COPY --parents` for preserving directory structure when copying `pyproject.toml` files
-- **`uv sync --frozen --package <name> --no-editable`** — installs only the target package's dependencies from the locked `uv.lock`, no editable installs (production mode)
-- **`--mount=type=secret,id=GITHUB_TOKEN`** — securely passes GitHub tokens for private dependency resolution without baking them into layers
+- **`uv sync --frozen --package <name> --no-editable --compile-bytecode`** — installs only the target package's dependencies from the locked `uv.lock`, no editable installs (production mode), and pre-compiles `.pyc` files for faster startup
+- **`PYTHONDONTWRITEBYTECODE=1`** — since bytecode is already compiled at build time, the runtime container is fully immutable (no `.pyc` written at runtime)
+- **Flat `/app/packages/` copy** — all workspace package `src/` directories are copied to a single flat directory, with `PYTHONPATH` set to resolve imports. This avoids copying full package directories with their own `pyproject.toml`, tests, and configs into the runtime image
+- **`--mount=type=secret,id=GITHUB_TOKEN`** — BuildKit secret mounts pass GitHub tokens for private dependency resolution without baking them into layers
 - **Non-root runtime** — `useradd -r app` + `USER app` for security
 - **Pinned base images** — `debian:trixie-slim@sha256:...` with pinned `apt` package versions for reproducible builds
 
@@ -200,7 +205,9 @@ mise //...:build
 
 # Build a specific package
 mise //packages/cli:build
-mise //packages/api-service:build
+
+# Build + TruffleHog scan + push to registry
+mise //packages/cli:build-push
 ```
 
 ## [scripts/hevy-extract](scripts/hevy-extract/README.md): OpenAPI Spec Extraction
@@ -243,9 +250,25 @@ Three GitHub Actions workflows, all driven by mise:
 | --------- | ------------------------------ | --------------------------------- |
 | **lint**  | hk check on all files          | `hk check --all`                  |
 | **test**  | Tests in every package         | `mise prepare && mise //...:test` |
-| **build** | Docker build for every package | `mise //...:build`                |
+| **build** | Docker build + scan + push     | `mise run build-push`             |
 
-All workflows use `jdx/mise-action` to install mise from the **same `.mise.toml` + `mise.lock`**, which then provisions all other tools. No manual tool installation steps in CI — the same single source of truth applies here too.
+All workflows use `jdx/mise-action` to install mise from the **same `.miserc.toml` → `.mise.tools.toml`**, which then provisions all other tools. No manual tool installation steps in CI, no version matrices, no cache configuration — the same single source of truth applies here too.
+
+### What makes this pipeline interesting
+
+- **ARM-native builds** — The build workflow runs on Blacksmith 4-vCPU ARM runners (`blacksmith-4vcpu-ubuntu-2404-arm`), producing native ARM Docker images with zero QEMU emulation overhead.
+
+- **Build → Scan → Push gating** — Every image is built locally (`docker buildx build --load`), scanned by [TruffleHog](https://github.com/trufflesecurity/trufflehog) for leaked secrets, and only pushed to the registry if the scan passes. The `--load` + separate push adds ~30-60s vs `buildx --push`, but guarantees no secret ever reaches the registry. This is defined in the `build-push` task template in `.mise.tasks.toml`.
+
+- **Intelligent image tagging** — Tags combine `GIT_SHA_SHORT` (short commit hash) + `GIT_DIFF_HASH` (SHA-1 of `git diff HEAD`). The `master` branch normalizes to `latest`. Non-alphanumeric branch characters become hyphens. This means every build — even with uncommitted local changes — gets a unique, traceable tag. CI additionally passes `$GIT_SHA_SHORT` and `$GIT_BRANCH_NORM` as explicit tags.
+
+- **Generated code drift detection** — The `generate-no-diff` job in the lint workflow re-runs all code generation (`mise "//...:generate-libs*"`), formats the output, then asserts `git status --porcelain` is empty. This catches stale generated code that someone forgot to commit.
+
+- **Minimal CI config** — All 3 workflows delegate to `mise` commands. No tool installation steps, no version matrices, no cache configuration — `jdx/mise-action` reads `.miserc.toml` → `.mise.tools.toml` and handles everything.
+
+- **Local CI simulation** — `mise all-ci` runs the full pipeline locally: generate → format → lint + build + test in parallel. The same commands CI runs, on your machine.
+
+- **Security hardening** — BuildKit secret mounts for tokens (never baked into layers), non-root containers (`USER app`), pinned base image digests with SHA-256, and pinned apt package versions.
 
 ## References
 
