@@ -7,7 +7,7 @@ import click
 from api_service_rp import ApiClient, Configuration, TrainingDataApi, UserApi
 from cloudpathlib import AnyPath, CloudPath
 
-from ._utils import _read_token, _write_json
+from rp_to_strong_cli.utils import read_token, write_json
 
 EXPORT_TYPES = [
     "all",
@@ -65,12 +65,12 @@ async def _export(token: str, export_type: str, output: Path | CloudPath) -> Non
         if export_type == "all":
             data = await _fetch_all(user_api, training_api)
             if output.suffix == ".json":
-                _write_json(data, output)
+                write_json(data, output)
             else:
                 if isinstance(output, Path):
                     output.mkdir(parents=True, exist_ok=True)
                 for key, value in data.items():
-                    _write_json(value, output / f"{key}.json")
+                    write_json(value, output / f"{key}.json")
             return
 
         fetchers = {
@@ -81,7 +81,7 @@ async def _export(token: str, export_type: str, output: Path | CloudPath) -> Non
             "templates": training_api.get_templates,
             "exercise-history": training_api.get_user_exercise_history,
         }
-        _write_json(await fetchers[export_type](), output)
+        write_json(await fetchers[export_type](), output)
 
 
 @click.group()
@@ -108,7 +108,7 @@ def rp():
 )
 def export(token_file: str, export_type: str, output: str | None):
     """Export personal data from RP Hypertrophy to JSON."""
-    token = _read_token(token_file)
+    token = read_token(token_file)
 
     if output is None:
         output_path = AnyPath(

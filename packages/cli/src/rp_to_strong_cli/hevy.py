@@ -11,7 +11,7 @@ from hevy_api_service import ApiClient as HevyApiClient
 from hevy_api_service import Configuration as HevyConfiguration
 from hevy_api_service import ExerciseTemplatesApi
 
-from ._utils import _write_json
+from rp_to_strong_cli.utils import write_json
 
 HEVY_EXPORT_TYPES = [
     "all",
@@ -46,7 +46,7 @@ async def _hevy_export(
 
         if export_type == "exercise-templates":
             data = await _fetch_all_exercise_templates(templates_api, key)
-            _write_json(data, output)
+            write_json(data, output)
             return
 
         # all
@@ -56,12 +56,12 @@ async def _hevy_export(
             ),
         }
         if output.suffix == ".json":
-            _write_json(data, output)
+            write_json(data, output)
         else:
             if isinstance(output, Path):
                 output.mkdir(parents=True, exist_ok=True)
             for name, value in data.items():
-                _write_json(value, output / f"{name}.json")
+                write_json(value, output / f"{name}.json")
 
 
 @click.group()
