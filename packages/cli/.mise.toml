@@ -4,10 +4,31 @@ HEVY_API_BASE_URL = "https://api.hevyapp.com"
 
 RP_APP_VERSION = "1.1.13"
 
+IMAGE_NAME = "rp-to-strong-cli"
+
 
 [tasks.build]
-run = "GITHUB_TOKEN=${GITHUB_TOKEN:-$(gh auth token)} docker build --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t rp-to-strong-cli ../.."
+run = "GITHUB_TOKEN=${GITHUB_TOKEN:-$(gh auth token)} docker build --secret id=GITHUB_TOKEN,env=GITHUB_TOKEN -f Dockerfile -t $IMAGE_NAME ../.."
 description = "Build the CLI Docker image"
+
+[tasks.push]
+env = { REGISTRY_PASSWORD = { required = true }, REGISTRY_URL = { required = true }, REGISTRY_USERNAME = { required = true } }
+description = "Push Docker image to registry"
+usage = 'arg "<tag>" var=#true var_min=1 help="Image tags to push"'
+run = """
+FULL_IMAGE="${REGISTRY_URL}/${REGISTRY_USERNAME}/${IMAGE_NAME}"
+echo "${REGISTRY_PASSWORD}" | docker login "${REGISTRY_URL}" -u "${REGISTRY_USERNAME}" --password-stdin
+for tag in ${usage_tag}; do
+  docker tag "${IMAGE_NAME}" "${FULL_IMAGE}:${tag}"
+  docker push "${FULL_IMAGE}:${tag}"
+done
+"""
+
+[tasks.build-push]
+description = "Build and push Docker image to registry"
+usage = 'arg "<tag>" var=#true var_min=1 help="Image tags to push"'
+env = { REGISTRY_PASSWORD = { required = true }, REGISTRY_URL = { required = true }, REGISTRY_USERNAME = { required = true } }
+run = [{ task = "build" }, "mise run push ${usage_tag}"]
 
 [tasks.cli]
 description = "Run CLI"
