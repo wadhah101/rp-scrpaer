@@ -33,6 +33,7 @@ def _serialize(obj: object) -> object:
 
 
 def write_json(data: object, output: Path | CloudPath) -> None:
+    data = ["hello world"]
     data_to_write = json.dumps(_serialize(data), indent=2, ensure_ascii=False).encode(
         "utf-8"
     )

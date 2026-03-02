@@ -8,22 +8,11 @@ tasks:
       - echo "S3 file change detected in bucket {{ envs.bucket_name }}"
 
 triggers:
-  - id: s3_changes_hevy
+  - id: s3_changes
     type: io.kestra.plugin.aws.s3.Trigger
     bucket: rp-to-hevy-data
     action: NONE
-    prefix: exports/hevy/exercises.json
-    on: CREATE_OR_UPDATE
-    interval: PT10S
-    logLevel: WARN
-    failOnTriggerError: true
-    logToFile: false
-
-  - id: s3_changes_rp
-    type: io.kestra.plugin.aws.s3.Trigger
-    bucket: rp-to-hevy-data
-    action: NONE
-    prefix: exports/rp/exercises.json
+    prefix: exports/exercises
     on: CREATE_OR_UPDATE
     interval: PT10S
     logLevel: WARN
