@@ -1,5 +1,5 @@
 rp_embedding_name: lying biceps dumbbell curl, dumbbell, biceps
-matches:
+semantic_matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
     distance: 0.053151726722717285
   - hevy_embedding_name: bicep curl barbell, biceps

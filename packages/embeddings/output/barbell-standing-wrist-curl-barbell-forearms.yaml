@@ -1,5 +1,5 @@
 rp_embedding_name: barbell standing wrist curl, barbell, forearms
-matches:
+semantic_matches:
   - hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
     distance: 0.1048436164855957
   - hevy_embedding_name: seated palms up wrist curl, forearms

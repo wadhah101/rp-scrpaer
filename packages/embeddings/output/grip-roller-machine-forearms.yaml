@@ -1,5 +1,5 @@
 rp_embedding_name: grip roller, machine, forearms
-matches:
+semantic_matches:
   - hevy_embedding_name: wrist roller, forearms, shoulders
     distance: 0.23754233121871948
   - hevy_embedding_name: bicep curl machine, biceps

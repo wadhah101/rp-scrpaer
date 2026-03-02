@@ -1,5 +1,5 @@
 rp_embedding_name: cable flexion row, cable, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: single arm cable row, upper_back, lats, biceps, forearms
     distance: 0.11981761455535889
   - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms

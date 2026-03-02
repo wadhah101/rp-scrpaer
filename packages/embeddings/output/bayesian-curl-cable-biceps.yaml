@@ -1,5 +1,5 @@
 rp_embedding_name: bayesian curl, cable, biceps
-matches:
+semantic_matches:
   - hevy_embedding_name: bicep curl cable, biceps
     distance: 0.1189776062965393
   - hevy_embedding_name: drag curl, biceps

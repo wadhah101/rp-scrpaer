@@ -1,5 +1,5 @@
 rp_embedding_name: rogers squat, machine, quadriceps
-matches:
+semantic_matches:
   - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
     distance: 0.15677136182785034
   - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings

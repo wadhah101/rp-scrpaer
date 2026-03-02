@@ -1,5 +1,5 @@
 rp_embedding_name: bench press incline, medium grip, barbell, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
     distance: 0.10089379549026489
   - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders

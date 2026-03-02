@@ -1,5 +1,5 @@
 rp_embedding_name: meadows row, barbell, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: meadows rows barbell, upper_back, lats, biceps, forearms
     distance: 0.05381643772125244
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms

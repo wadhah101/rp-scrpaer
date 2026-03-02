@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell bent over shrug, dumbbell, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: front raise dumbbell, shoulders
     distance: 0.1260485053062439
   - hevy_embedding_name: shrug dumbbell, traps, neck

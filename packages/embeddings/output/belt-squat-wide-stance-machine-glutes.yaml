@@ -1,5 +1,5 @@
 rp_embedding_name: belt squat wide stance, machine, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
     distance: 0.11832159757614136
   - hevy_embedding_name: glute kickback machine, glutes, hamstrings

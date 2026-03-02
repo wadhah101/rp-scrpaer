@@ -1,5 +1,5 @@
 rp_embedding_name: jm press, barbell, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: jm press barbell, triceps, chest, shoulders
     distance: 0.041556477546691895
   - hevy_embedding_name: bench press - close grip barbell, triceps, chest, shoulders

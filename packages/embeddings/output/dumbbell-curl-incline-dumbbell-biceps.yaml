@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell curl incline, dumbbell, biceps
-matches:
+semantic_matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
     distance: 0.0845634937286377
   - hevy_embedding_name: seated incline curl dumbbell, biceps

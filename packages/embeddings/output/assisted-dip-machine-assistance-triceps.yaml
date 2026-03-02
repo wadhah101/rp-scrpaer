@@ -1,5 +1,5 @@
 rp_embedding_name: assisted dip, machine-assistance, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: triceps dip assisted, triceps, chest, shoulders
     distance: 0.11002475023269653
   - hevy_embedding_name: chest dip assisted, chest, triceps, shoulders

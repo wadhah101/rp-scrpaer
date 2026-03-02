@@ -1,5 +1,5 @@
 rp_embedding_name: cable bent over shrug, cable, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: front raise cable, shoulders
     distance: 0.13921654224395752
   - hevy_embedding_name: shrug cable, traps, neck

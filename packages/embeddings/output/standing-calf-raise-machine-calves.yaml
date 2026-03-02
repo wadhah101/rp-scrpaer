@@ -1,5 +1,5 @@
 rp_embedding_name: standing calf raise, machine, calves
-matches:
+semantic_matches:
   - hevy_embedding_name: standing calf raise machine, calves
     distance: 0.02159172296524048
   - hevy_embedding_name: standing calf raise, calves

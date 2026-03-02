@@ -1,5 +1,5 @@
 rp_embedding_name: hammer machine row low, machine, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: low row suspension, upper_back, lats, biceps, forearms
     distance: 0.19105303287506104
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms

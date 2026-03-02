@@ -1,5 +1,5 @@
 rp_embedding_name: modified candlestick, bodyweight-only, abdominals
-matches:
+semantic_matches:
   - hevy_embedding_name: sit up weighted, abdominals
     distance: 0.19502657651901245
   - hevy_embedding_name: crunch weighted, abdominals

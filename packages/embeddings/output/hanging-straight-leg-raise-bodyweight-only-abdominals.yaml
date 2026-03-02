@@ -1,5 +1,5 @@
 rp_embedding_name: hanging straight leg raise, bodyweight-only, abdominals
-matches:
+semantic_matches:
   - hevy_embedding_name: lying leg raise, abdominals
     distance: 0.13436108827590942
   - hevy_embedding_name: hanging leg raise, abdominals, forearms

@@ -1,5 +1,5 @@
 rp_embedding_name: cable shrug, cable, traps
-matches:
+semantic_matches:
   - hevy_embedding_name: shrug cable, traps, neck
     distance: 0.08312380313873291
   - hevy_embedding_name: upright row cable, shoulders, traps, upper_back, biceps, forearms

@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell skullcrusher, dumbbell, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: skullcrusher dumbbell, triceps
     distance: 0.044201672077178955
   - hevy_embedding_name: skullcrusher barbell, triceps

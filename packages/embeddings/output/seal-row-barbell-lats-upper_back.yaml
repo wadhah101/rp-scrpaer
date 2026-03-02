@@ -1,5 +1,5 @@
 rp_embedding_name: seal row, barbell, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
     distance: 0.13838118314743042
   - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms

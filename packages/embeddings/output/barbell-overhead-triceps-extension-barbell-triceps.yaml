@@ -1,5 +1,5 @@
 rp_embedding_name: barbell overhead triceps extension, barbell, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: triceps extension barbell, triceps
     distance: 0.0683167576789856
   - hevy_embedding_name: overhead triceps extension cable, triceps

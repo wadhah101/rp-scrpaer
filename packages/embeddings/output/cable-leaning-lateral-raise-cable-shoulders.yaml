@@ -1,5 +1,5 @@
 rp_embedding_name: cable leaning lateral raise, cable, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: lateral raise cable, shoulders
     distance: 0.03215432167053223
   - hevy_embedding_name: single arm lateral raise cable, shoulders

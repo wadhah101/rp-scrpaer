@@ -1,5 +1,5 @@
 rp_embedding_name: barbell curl narrow grip, barbell, biceps
-matches:
+semantic_matches:
   - hevy_embedding_name: bicep curl barbell, biceps
     distance: 0.09197086095809937
   - hevy_embedding_name: bicep curl cable, biceps

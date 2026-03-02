@@ -1,5 +1,5 @@
 rp_embedding_name: machine pullover, machine, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
     distance: 0.08970832824707031
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms

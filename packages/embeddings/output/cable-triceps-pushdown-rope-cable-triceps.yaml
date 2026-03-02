@@ -1,5 +1,5 @@
 rp_embedding_name: cable triceps pushdown rope, cable, triceps
-matches:
+semantic_matches:
   - hevy_embedding_name: triceps rope pushdown, triceps
     distance: 0.07621461153030396
   - hevy_embedding_name: single arm triceps pushdown cable, triceps

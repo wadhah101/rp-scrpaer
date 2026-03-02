@@ -1,5 +1,5 @@
 rp_embedding_name: barbell upright row, barbell, shoulders
-matches:
+semantic_matches:
   - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
     distance: 0.09796428680419922
   - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms

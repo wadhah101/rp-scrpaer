@@ -1,5 +1,5 @@
 rp_embedding_name: barbell hip thrust, barbell, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: hip thrust barbell, glutes, hamstrings, quadriceps, adductors
     distance: 0.13771331310272217
   - hevy_embedding_name: single leg hip thrust dumbbell, glutes, hamstrings, quadriceps

@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell split squat, dumbbell, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
     distance: 0.08223795890808105
   - hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes

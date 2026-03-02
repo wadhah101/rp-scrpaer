@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell shrug, dumbbell, traps
-matches:
+semantic_matches:
   - hevy_embedding_name: shrug dumbbell, traps, neck
     distance: 0.09218710660934448
   - hevy_embedding_name: shrug barbell, traps, neck

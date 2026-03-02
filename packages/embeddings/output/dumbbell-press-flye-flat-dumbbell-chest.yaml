@@ -1,5 +1,5 @@
 rp_embedding_name: dumbbell press flye flat, dumbbell, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: decline chest fly dumbbell, chest
     distance: 0.08191043138504028
   - hevy_embedding_name: incline chest fly dumbbell, chest

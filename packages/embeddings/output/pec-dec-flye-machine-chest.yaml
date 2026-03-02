@@ -1,5 +1,5 @@
 rp_embedding_name: pec dec flye, machine, chest
-matches:
+semantic_matches:
   - hevy_embedding_name: chest fly machine, chest
     distance: 0.11269420385360718
   - hevy_embedding_name: chest fly suspension, chest

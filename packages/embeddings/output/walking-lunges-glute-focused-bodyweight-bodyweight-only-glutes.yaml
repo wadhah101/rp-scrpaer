@@ -1,5 +1,5 @@
 rp_embedding_name: walking lunges glute-focused, bodyweight, bodyweight-only, glutes
-matches:
+semantic_matches:
   - hevy_embedding_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
     distance: 0.14203041791915894
   - hevy_embedding_name: walking lunge, quadriceps, glutes, hamstrings

@@ -1,5 +1,5 @@
 rp_embedding_name: pulldown upright torso to abs, cable, lats, upper_back
-matches:
+semantic_matches:
   - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
     distance: 0.13270092010498047
   - hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
