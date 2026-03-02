@@ -77,13 +77,16 @@ hooks {
   ["pinact"] {
     fix = true
     steps = pinact
+    stash = false
   }
   ["fix"] {
     fix = true
     steps = all_linters
+    stash = false
   }
   ["check"] {
     steps = all_linters
+    stash = false
   }
   ["pre-commit"] {
     fix = true
