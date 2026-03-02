@@ -30,10 +30,6 @@ ENV PATH="/opt/python/bin:$PATH"
 WORKDIR /app
 COPY --parents **/pyproject.toml uv.lock ./
 
-# copy packages that cli depends on
-COPY packages/api-service/src packages/api-service/src/
-COPY packages/embeddings/src packages/embeddings/src/
-
 RUN uv sync --frozen --package rp-to-strong-cli --no-editable --compile-bytecode
 
 FROM debian:trixie-slim@sha256:1d3c811171a08a5adaa4a163fbafd96b61b87aa871bbc7aa15431ac275d3d430
@@ -48,13 +44,13 @@ COPY --from=builder /opt/python /opt/python
 COPY --from=builder /app/.venv /app/.venv
 
 ENV PATH="/app/.venv/bin:/opt/python/bin:$PATH" \
-    PYTHONPATH="/app/packages/cli/src:/app/.venv" \
+    PYTHONPATH="/app/packages:/app/.venv" \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 USER app
 
-COPY packages/cli/src /app/packages/cli/src
+COPY packages/cli/src packages/api-service/src packages/embeddings/src /app/packages/
 
-WORKDIR /app/packages/cli
-CMD ["python", "src/rp_to_strong_cli/__main__.py"]
+WORKDIR /app/packages
+CMD ["python", "rp_to_strong_cli/__main__.py"]
