@@ -31,11 +31,8 @@ WORKDIR /app
 COPY --parents **/pyproject.toml uv.lock ./
 
 # copy packages that cli depends on
-COPY packages/api-service/ packages/api-service/
-COPY packages/embeddings/ packages/embeddings/
-
-# Copy package, bad for cache, might do better in the future
-COPY packages/cli/ packages/cli/
+COPY packages/api-service/src packages/api-service/src/
+COPY packages/embeddings/src packages/embeddings/src/
 
 RUN uv sync --frozen --package rp-to-strong-cli --no-editable --compile-bytecode
 
@@ -51,10 +48,13 @@ COPY --from=builder /opt/python /opt/python
 COPY --from=builder /app/.venv /app/.venv
 
 ENV PATH="/app/.venv/bin:/opt/python/bin:$PATH" \
+    PYTHONPATH="/app/packages/cli/src:/app/.venv" \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
+
 USER app
 
-WORKDIR /app/packages/cli
+COPY packages/cli/src /app/packages/cli/src
 
-CMD ["rp-to-strong-cli"]
+WORKDIR /app/packages/cli
+CMD ["python", "src/rp_to_strong_cli/__main__.py"]
