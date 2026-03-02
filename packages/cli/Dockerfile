@@ -34,8 +34,9 @@ COPY --parents **/pyproject.toml uv.lock ./
 COPY packages/api-service/ packages/api-service/
 COPY packages/embeddings/ packages/embeddings/
 
-# copy package, bad for cache, might do better in the future
+# Copy package, bad for cache, might do better in the future
 COPY packages/cli/ packages/cli/
+
 RUN uv sync --frozen --package rp-to-strong-cli --no-editable --compile-bytecode
 
 FROM debian:trixie-slim@sha256:1d3c811171a08a5adaa4a163fbafd96b61b87aa871bbc7aa15431ac275d3d430
@@ -49,10 +50,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=builder /opt/python /opt/python
 COPY --from=builder /app/.venv /app/.venv
 
-WORKDIR /app
 ENV PATH="/app/.venv/bin:/opt/python/bin:$PATH" \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 USER app
 
-ENTRYPOINT ["rp-to-strong-cli"]
+WORKDIR /app/packages/cli
+
+CMD ["rp-to-strong-cli"]
