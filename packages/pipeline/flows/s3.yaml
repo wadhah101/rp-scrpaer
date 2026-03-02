@@ -1,0 +1,38 @@
+id: marten_101385
+namespace: company.team
+
+tasks:
+  - id: execute_bash
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - echo "S3 file change detected in bucket {{ env.BUCKET_NAME }}"
+
+triggers:
+  - id: watch_s3_changes
+    type: io.kestra.plugin.aws.s3.Trigger
+    bucket: "{{ env.BUCKET_NAME }}"
+    action: NONE
+    prefix: exports/hevy/
+    on: CREATE_OR_UPDATE
+    interval: PT1M
+
+    # watch for a file changing inside a bucket , the bucket name is configured through env , trigger a bash command when content changes
+
+
+id: hevy_file_change_s3
+namespace: rp_to_hevy.hevy
+
+tasks:
+  - id: execute_bash
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - echo "S3 file change detected in bucket {{ envs.bucket_name }}"
+
+triggers:
+  - id: watch_s3_changes
+    type: io.kestra.plugin.aws.s3.Trigger
+    bucket: "{{ envs.bucket_name }}"
+    action: NONE
+    prefix: exports/hevy/
+    on: CREATE_OR_UPDATE
+    interval: PT1M

@@ -1,0 +1,64 @@
+name: kestra-stack
+
+services:
+  kestra:
+    image: kestra/kestra:latest
+    pull_policy: always
+    restart: unless-stopped # Better than 'always' as it won't restart if manually stopped
+    
+    user: root 
+
+    env_file:
+      - path: .env
+    
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+
+    volumes:
+      - type: volume
+        source: kestra_data
+        target: /app/storage
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: false
+      - type: bind
+        source: /tmp
+        target: /tmp
+      - type: bind
+        source: packages/pipeline/flows
+        target: /app/flows
+      - type: bind
+        source: packages/pipeline/application.yml
+        target: /app/confs/application.yml
+
+    command: server local --config /app/confs/application.yml
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    # develop:
+    #   watch:
+    #     - action: sync
+    #       source: packages/pipeline/workflows
+    #       target: /app/workflows
+
+volumes:
+  kestra_data:
+    name: kestra_persistence
+    labels:
+      description: "Persistent storage for Kestra flows and executions"
