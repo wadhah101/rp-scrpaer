@@ -1,5 +1,5 @@
 [project]
-name = "rp-to-strong-cli"
+name = "rp-to-hevy-cli"
 version = "0.1.0"
 description = "CLI frontend for RP to STRONG workout data exporter"
 requires-python = ">=3.12"
@@ -13,4 +13,4 @@ dependencies = [
 ]
 
 [project.scripts]
-rp-to-strong-cli = "rp_to_strong_cli.__main__:cli"
+rp-to-hevy-cli = "rp_to_hevy_cli.__main__:cli"

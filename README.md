@@ -48,7 +48,7 @@ The only prerequisite is [mise](https://mise.jdx.dev/) — it installs all other
 
 ```bash
 curl https://mise.run | sh            # install mise
-git clone <repo-url> && cd rp-to-strong
+git clone <repo-url> && cd rp-to-hevy
 mise install                          # provision all tools
 mise prepare                          # uv sync --all-packages
 mise lint                             # hk check -a

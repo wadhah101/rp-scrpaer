@@ -18,27 +18,27 @@ extends = "build-push"
 
 [tasks.cli]
 description = "Run CLI"
-run = "uv run python -m rp_to_strong_cli"
+run = "uv run python -m rp_to_hevy_cli"
 
 [tasks.export-hevy-local]
 env = { HEVY_API_KEY = { required = true } }
-run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates -o exports/hevy/exercises.json"
+run = "uv run python -m rp_to_hevy_cli hevy export --type exercise-templates -o exports/hevy/exercises.json"
 
 [tasks.export-hevy-s3]
 env = { BUCKET_NAME = { required = true }, HEVY_API_KEY = { required = true } }
-run = "uv run python -m rp_to_strong_cli hevy export --type exercise-templates --output s3://$BUCKET_NAME/exports/exercises/hevy-exercises.json"
+run = "uv run python -m rp_to_hevy_cli hevy export --type exercise-templates --output s3://$BUCKET_NAME/exports/exercises/hevy-exercises.json"
 
 [tasks.export-rp-local]
-run = "uv run python -m rp_to_strong_cli rp export --all --output exports/rp"
+run = "uv run python -m rp_to_hevy_cli rp export --all --output exports/rp"
 
 [tasks.export-rp-s3]
 env = { BUCKET_NAME = { required = true } }
-run = "uv run python -m rp_to_strong_cli rp export --type all --output s3://$BUCKET_NAME/exports/exercises/rp-exercises.json"
+run = "uv run python -m rp_to_hevy_cli rp export --type all --output s3://$BUCKET_NAME/exports/exercises/rp-exercises.json"
 
 [tasks.embed-ollama]
 description = "Embed exercises using local Ollama"
 run = """
-uv run python -m rp_to_strong_cli embedding embd \
+uv run python -m rp_to_hevy_cli embedding embd \
   --api-base-url "${OLLAMA_BASE_URL}/v1" \
   --api-key ollama \
   --api-model "$OLLAMA_MODEL" \

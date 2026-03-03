@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import atexit
 import functools
+import os
 import tempfile
 from pathlib import Path
 
@@ -147,6 +149,7 @@ def _resolve_input(path_str: str) -> str:
         tmp = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
         tmp.write(path.read_bytes())
         tmp.close()
+        atexit.register(os.unlink, tmp.name)
         return tmp.name
     return path_str
 

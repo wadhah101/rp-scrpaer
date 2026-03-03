@@ -11,14 +11,12 @@ from hevy_api_service import ApiClient as HevyApiClient
 from hevy_api_service import Configuration as HevyConfiguration
 from hevy_api_service import ExerciseTemplatesApi
 
-from rp_to_strong_cli.utils import write_json
+from rp_to_hevy_cli.utils import write_json
 
 HEVY_EXPORT_TYPES = [
     "all",
     "exercise-templates",
 ]
-
-HEVY_API_BASE_URL = os.environ.get("HEVY_API_BASE_URL")
 
 
 async def _fetch_all_exercise_templates(
@@ -42,7 +40,7 @@ async def _hevy_export(
     api_key: str, export_type: str, output: Path | CloudPath
 ) -> None:
     key = UUID(api_key)
-    config = HevyConfiguration(host=HEVY_API_BASE_URL)
+    config = HevyConfiguration(host=os.environ.get("HEVY_API_BASE_URL"))
     async with HevyApiClient(config) as client:
         templates_api = ExerciseTemplatesApi(client)
 

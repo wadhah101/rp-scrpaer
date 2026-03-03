@@ -1,4 +1,4 @@
-# rp-to-strong-cli
+# rp-to-hevy-cli
 
 Command-line tool for exporting workout data from the [RP Hypertrophy](https://rpstrength.com/) and [Hevy](https://www.hevyapp.com/) apps to JSON, plus semantic exercise matching via embeddings. Built with [Click](https://click.palletsprojects.com/) and powered by the workspace packages `api-service` and `embeddings`.
 
@@ -96,7 +96,7 @@ mise //packages/cli:cli hevy export -o s3://my-bucket/exports/hevy/exercises.jso
 
 | Task | Description |
 | --- | --- |
-| `cli` | Run the CLI (`uv run python -m rp_to_strong_cli`) |
+| `cli` | Run the CLI (`uv run python -m rp_to_hevy_cli`) |
 | `export-rp-local` | Export all RP data to `exports/rp/` |
 | `export-rp-s3` | Export all RP data to S3 (requires `BUCKET_NAME`) |
 | `export-hevy-local` | Export Hevy exercises to `exports/hevy/` |
@@ -106,7 +106,7 @@ mise //packages/cli:cli hevy export -o s3://my-bucket/exports/hevy/exercises.jso
 ## Package Structure
 
 ```
-src/rp_to_strong_cli/
+src/rp_to_hevy_cli/
   __main__.py      # Click group: rp, hevy, embedding
   rp.py            # RP Hypertrophy export commands
   hevy.py          # Hevy export commands

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import click
 
-from rp_to_strong_cli.embedding import embedding
-from rp_to_strong_cli.hevy import hevy
-from rp_to_strong_cli.rp import rp
+from rp_to_hevy_cli.embedding import embedding
+from rp_to_hevy_cli.hevy import hevy
+from rp_to_hevy_cli.rp import rp
 
 
 @click.group()

@@ -32,7 +32,7 @@ WORKDIR /app
 COPY --parents **/pyproject.toml uv.lock ./
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --package rp-to-strong-cli --no-editable --compile-bytecode
+    uv sync --frozen --package rp-to-hevy-cli --no-editable --compile-bytecode
 
 FROM debian:trixie-slim@sha256:1d3c811171a08a5adaa4a163fbafd96b61b87aa871bbc7aa15431ac275d3d430
 
@@ -56,4 +56,4 @@ USER app
 COPY packages/cli/src packages/api-service/src packages/embeddings/src /app/packages/
 
 WORKDIR /app/packages
-CMD ["python", "rp_to_strong_cli/__main__.py"]
+CMD ["python", "rp_to_hevy_cli/__main__.py"]

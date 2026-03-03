@@ -1,4 +1,4 @@
-# rp-to-strong-pipeline
+# rp-to-hevy-pipeline
 
 Kestra-based orchestration pipeline for automated workout data extraction, transformation, and export. This package handles the same data flow as the [CLI](../cli/README.md) but runs on a schedule with event-driven triggers, failure handling, retries, and user notifications.
 

@@ -30,4 +30,4 @@ packages/cli/export/subscriptions.json
 packages/cli/export/profile.json
 scan-results.json
 chroma_data/
-.env.sh
+scripts/ci/env.sh

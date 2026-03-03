@@ -7,7 +7,7 @@ import click
 from api_service_rp import ApiClient, Configuration, TrainingDataApi, UserApi
 from cloudpathlib import AnyPath, CloudPath
 
-from rp_to_strong_cli.utils import read_token, write_json
+from rp_to_hevy_cli.utils import read_token, write_json
 
 EXPORT_TYPES = [
     "all",
