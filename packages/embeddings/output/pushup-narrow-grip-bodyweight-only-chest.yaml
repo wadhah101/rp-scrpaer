@@ -1,8 +1,8 @@
 rp_embedding_name: pushup narrow grip, bodyweight-only, chest
 semantic_matches:
   - hevy_embedding_name: push up - close grip, chest, triceps, shoulders
-    distance: 0.15620195865631104
+    distance: 0.15
   - hevy_embedding_name: one arm push up, chest, shoulders, triceps
-    distance: 0.16276079416275024
+    distance: 0.16
   - hevy_embedding_name: clap push ups, chest, triceps, shoulders
-    distance: 0.1671527624130249
+    distance: 0.17

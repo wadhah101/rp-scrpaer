@@ -1,8 +1,8 @@
 rp_embedding_name: cable single arm side shrug, cable, traps
 semantic_matches:
   - hevy_embedding_name: single arm lateral raise cable, shoulders
-    distance: 0.12433397769927979
+    distance: 0.13
   - hevy_embedding_name: upright row cable, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.147691011428833
+    distance: 0.16
   - hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.15230774879455566
+    distance: 0.16

@@ -1,8 +1,8 @@
 rp_embedding_name: cable hammer curl rope, cable, biceps
 semantic_matches:
-  - hevy_embedding_name: rope cable curl, biceps, forearms
-    distance: 0.08145862817764282
   - hevy_embedding_name: hammer curl cable, biceps, forearms
-    distance: 0.08372366428375244
+    distance: 0.08
+  - hevy_embedding_name: rope cable curl, biceps, forearms
+    distance: 0.08
   - hevy_embedding_name: bicep curl cable, biceps
-    distance: 0.09071612358093262
+    distance: 0.09

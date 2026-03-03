@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine jm press, smith-machine, triceps
 semantic_matches:
   - hevy_embedding_name: bench press smith machine, chest, shoulders, triceps
-    distance: 0.09762680530548096
-  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
-    distance: 0.13724380731582642
+    distance: 0.11
   - hevy_embedding_name: overhead press smith machine, shoulders, triceps
-    distance: 0.14059734344482422
+    distance: 0.15
+  - hevy_embedding_name: decline bench press smith machine, chest, shoulders, triceps
+    distance: 0.16

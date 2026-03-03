@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell press low incline, dumbbell, chest
 semantic_matches:
   - hevy_embedding_name: incline chest fly dumbbell, chest
-    distance: 0.14107364416122437
+    distance: 0.12
   - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
-    distance: 0.14151936769485474
+    distance: 0.15
   - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
-    distance: 0.1834629774093628
+    distance: 0.18

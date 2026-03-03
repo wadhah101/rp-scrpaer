@@ -1,8 +1,8 @@
 rp_embedding_name: chest supported row, machine, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: seated row machine, upper_back, lats, biceps, forearms
-    distance: 0.1332937479019165
+    distance: 0.15
   - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.14085334539413452
+    distance: 0.15
   - hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.14985424280166626
+    distance: 0.15

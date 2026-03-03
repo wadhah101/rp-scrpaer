@@ -1,8 +1,8 @@
 rp_embedding_name: lying dumbbell curl, dumbbell, biceps
 semantic_matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.052680015563964844
+    distance: 0.06
   - hevy_embedding_name: spider curl dumbbell, biceps
-    distance: 0.11999338865280151
+    distance: 0.13
   - hevy_embedding_name: bicep curl barbell, biceps
-    distance: 0.12890702486038208
+    distance: 0.13

@@ -1,8 +1,8 @@
 rp_embedding_name: machine crunch, machine, abdominals
 semantic_matches:
   - hevy_embedding_name: crunch machine, abdominals
-    distance: 0.04144936800003052
+    distance: 0.04
   - hevy_embedding_name: crunch, abdominals
-    distance: 0.10746955871582031
+    distance: 0.1
   - hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.14222019910812378
+    distance: 0.13

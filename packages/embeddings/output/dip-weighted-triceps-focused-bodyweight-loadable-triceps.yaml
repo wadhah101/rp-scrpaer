@@ -1,8 +1,8 @@
 rp_embedding_name: dip weighted, triceps-focused, bodyweight-loadable, triceps
 semantic_matches:
   - hevy_embedding_name: triceps dip weighted, triceps, chest, shoulders
-    distance: 0.0855974555015564
+    distance: 0.08
   - hevy_embedding_name: triceps dip assisted, triceps, chest, shoulders
-    distance: 0.12530362606048584
+    distance: 0.11
   - hevy_embedding_name: floor triceps dip, triceps, shoulders
-    distance: 0.14716029167175293
+    distance: 0.13

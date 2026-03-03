@@ -1,8 +1,8 @@
 rp_embedding_name: barbell shoulder press standing, barbell, shoulders
 semantic_matches:
   - hevy_embedding_name: standing military press barbell, shoulders, triceps
-    distance: 0.09193038940429688
+    distance: 0.09
   - hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.12955451011657715
-  - hevy_embedding_name: seated overhead press barbell, shoulders, triceps
-    distance: 0.13921278715133667
+    distance: 0.13
+  - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
+    distance: 0.13

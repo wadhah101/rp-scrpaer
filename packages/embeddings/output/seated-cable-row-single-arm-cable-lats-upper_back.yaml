@@ -1,8 +1,8 @@
 rp_embedding_name: seated cable row single-arm, cable, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: single arm cable row, upper_back, lats, biceps, forearms
-    distance: 0.06905066967010498
+    distance: 0.07
   - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms
-    distance: 0.08262056112289429
-  - hevy_embedding_name: seated cable row - v grip cable, upper_back, lats, biceps, forearms
-    distance: 0.09144669771194458
+    distance: 0.08
+  - hevy_embedding_name: seated cable row - bar wide grip, upper_back, lats, traps, biceps, forearms
+    distance: 0.09

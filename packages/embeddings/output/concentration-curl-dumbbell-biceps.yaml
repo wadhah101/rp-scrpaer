@@ -1,8 +1,8 @@
 rp_embedding_name: concentration curl, dumbbell, biceps
 semantic_matches:
   - hevy_embedding_name: concentration curl, biceps
-    distance: 0.039594829082489014
+    distance: 0.04
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.09434932470321655
+    distance: 0.1
   - hevy_embedding_name: spider curl dumbbell, biceps
-    distance: 0.12491625547409058
+    distance: 0.13

@@ -1,8 +1,8 @@
 rp_embedding_name: cable rope twist curl, cable, biceps
 semantic_matches:
   - hevy_embedding_name: bicep curl cable, biceps
-    distance: 0.08217084407806396
+    distance: 0.08
   - hevy_embedding_name: rope cable curl, biceps, forearms
-    distance: 0.08555412292480469
+    distance: 0.09
   - hevy_embedding_name: single arm curl cable, biceps
-    distance: 0.11409217119216919
+    distance: 0.12

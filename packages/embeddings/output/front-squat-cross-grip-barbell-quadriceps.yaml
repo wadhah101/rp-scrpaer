@@ -1,8 +1,8 @@
 rp_embedding_name: front squat cross grip, barbell, quadriceps
 semantic_matches:
   - hevy_embedding_name: front squat, quadriceps, hamstrings, glutes
-    distance: 0.11685824394226074
+    distance: 0.13
   - hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.16525304317474365
+    distance: 0.19
   - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
-    distance: 0.17659270763397217
+    distance: 0.2

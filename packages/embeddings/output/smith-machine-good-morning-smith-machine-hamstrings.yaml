@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine good morning, smith-machine, hamstrings
 semantic_matches:
   - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.1599554419517517
+    distance: 0.15
+  - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
+    distance: 0.18
   - hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.16808509826660156
-  - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.17335999011993408
+    distance: 0.18

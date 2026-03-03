@@ -1,8 +1,8 @@
 rp_embedding_name: bodyweight squat 2/3, bodyweight-only, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat bodyweight, quadriceps, hamstrings, glutes
-    distance: 0.09997701644897461
+    distance: 0.1
   - hevy_embedding_name: sissy squat weighted, quadriceps
-    distance: 0.1381845474243164
-  - hevy_embedding_name: front squat, quadriceps, hamstrings, glutes
-    distance: 0.17285281419754028
+    distance: 0.15
+  - hevy_embedding_name: belt squat, quadriceps, hamstrings
+    distance: 0.19

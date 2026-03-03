@@ -1,8 +1,8 @@
 rp_embedding_name: pendulum squat, machine, quadriceps
 semantic_matches:
   - hevy_embedding_name: pendulum squat machine, quadriceps, glutes, hamstrings
-    distance: 0.05227184295654297
+    distance: 0.05
   - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.13758015632629395
+    distance: 0.14
   - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
-    distance: 0.14549148082733154
+    distance: 0.16

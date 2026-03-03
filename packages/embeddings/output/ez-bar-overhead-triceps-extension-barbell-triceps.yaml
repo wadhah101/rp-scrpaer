@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar overhead triceps extension, barbell, triceps
 semantic_matches:
   - hevy_embedding_name: triceps extension barbell, triceps
-    distance: 0.08896327018737793
+    distance: 0.08
   - hevy_embedding_name: overhead triceps extension cable, triceps
-    distance: 0.1184040904045105
-  - hevy_embedding_name: triceps extension suspension, triceps
-    distance: 0.13603460788726807
+    distance: 0.11
+  - hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.12

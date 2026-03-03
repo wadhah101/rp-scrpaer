@@ -1,8 +1,8 @@
 rp_embedding_name: barbell good morning high bar, barbell, hamstrings
 semantic_matches:
   - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.11862897872924805
+    distance: 0.13
   - hevy_embedding_name: single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.2315453290939331
+    distance: 0.23
   - hevy_embedding_name: romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.23957377672195435
+    distance: 0.24

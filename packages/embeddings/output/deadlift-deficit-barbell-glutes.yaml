@@ -1,8 +1,8 @@
 rp_embedding_name: deadlift deficit, barbell, glutes
 semantic_matches:
-  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.17073094844818115
   - hevy_embedding_name: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.1774194836616516
+    distance: 0.17
+  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.17
   - hevy_embedding_name: deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.1822250485420227
+    distance: 0.18

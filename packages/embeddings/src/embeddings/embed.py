@@ -174,7 +174,7 @@ def build_match_results(
             {
                 "rp_embedding_name": rp_doc,
                 "semantic_matches": [
-                    {"hevy_embedding_name": m, "distance": d}
+                    {"hevy_embedding_name": m, "distance": round(d, 2)}
                     for m, d in zip(matches, distances, strict=True)
                 ],
             }

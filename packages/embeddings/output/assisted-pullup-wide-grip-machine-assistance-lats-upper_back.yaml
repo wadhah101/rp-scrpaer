@@ -1,8 +1,8 @@
 rp_embedding_name: assisted pullup wide grip, machine-assistance, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: wide pull up, lats, upper_back, biceps, forearms
-    distance: 0.12485003471374512
-  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.14640796184539795
+    distance: 0.13
   - hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
-    distance: 0.15370339155197144
+    distance: 0.16
+  - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.16

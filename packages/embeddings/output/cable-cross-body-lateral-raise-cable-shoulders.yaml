@@ -1,8 +1,8 @@
 rp_embedding_name: cable cross body lateral raise, cable, shoulders
 semantic_matches:
   - hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.05270195007324219
+    distance: 0.05
   - hevy_embedding_name: single arm lateral raise cable, shoulders
-    distance: 0.07633495330810547
+    distance: 0.06
   - hevy_embedding_name: lateral raise machine, shoulders
-    distance: 0.13699334859848022
+    distance: 0.13

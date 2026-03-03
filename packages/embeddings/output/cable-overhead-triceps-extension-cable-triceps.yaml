@@ -1,8 +1,8 @@
 rp_embedding_name: cable overhead triceps extension, cable, triceps
 semantic_matches:
   - hevy_embedding_name: overhead triceps extension cable, triceps
-    distance: 0.02109605073928833
+    distance: 0.02
   - hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.0489276647567749
+    distance: 0.05
   - hevy_embedding_name: triceps kickback cable, triceps
-    distance: 0.10865515470504761
+    distance: 0.11

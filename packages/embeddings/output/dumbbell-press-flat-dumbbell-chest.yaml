@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell press flat, dumbbell, chest
 semantic_matches:
+  - hevy_embedding_name: incline chest fly dumbbell, chest
+    distance: 0.13
   - hevy_embedding_name: chest fly dumbbell, chest
-    distance: 0.13055241107940674
-  - hevy_embedding_name: bench press dumbbell, chest, triceps, shoulders
-    distance: 0.13189691305160522
+    distance: 0.14
   - hevy_embedding_name: floor press dumbbell, chest, shoulders, triceps
-    distance: 0.13777071237564087
+    distance: 0.14

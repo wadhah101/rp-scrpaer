@@ -1,8 +1,8 @@
 rp_embedding_name: cambered bar row, barbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.15005314350128174
+    distance: 0.14
   - hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
-    distance: 0.16134297847747803
-  - hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
-    distance: 0.17723721265792847
+    distance: 0.17
+  - hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms
+    distance: 0.18

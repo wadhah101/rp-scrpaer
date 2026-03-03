@@ -1,8 +1,8 @@
 rp_embedding_name: arnold press, dumbbell, shoulders
 semantic_matches:
   - hevy_embedding_name: arnold press dumbbell, shoulders, triceps
-    distance: 0.0535506010055542
+    distance: 0.06
   - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.13090896606445312
-  - hevy_embedding_name: overhead press dumbbell, shoulders, triceps
-    distance: 0.16026973724365234
+    distance: 0.13
+  - hevy_embedding_name: front raise dumbbell, shoulders
+    distance: 0.17

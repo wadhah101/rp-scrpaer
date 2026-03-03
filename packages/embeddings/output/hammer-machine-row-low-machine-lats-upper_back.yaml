@@ -1,8 +1,8 @@
 rp_embedding_name: hammer machine row low, machine, lats, upper_back
 semantic_matches:
-  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.17340779304504395
-  - hevy_embedding_name: iso-lateral high row machine, lats, upper_back, biceps, forearms
-    distance: 0.17483967542648315
+  - hevy_embedding_name: low row suspension, upper_back, lats, biceps, forearms
+    distance: 0.19
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.17883813381195068
+    distance: 0.19
+  - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
+    distance: 0.19

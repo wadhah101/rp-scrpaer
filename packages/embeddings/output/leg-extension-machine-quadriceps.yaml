@@ -1,8 +1,8 @@
 rp_embedding_name: leg extension, machine, quadriceps
 semantic_matches:
   - hevy_embedding_name: leg extension machine, quadriceps
-    distance: 0.012588798999786377
+    distance: 0.01
   - hevy_embedding_name: single leg extensions, quadriceps
-    distance: 0.13127630949020386
+    distance: 0.13
   - hevy_embedding_name: leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.14999443292617798
+    distance: 0.17

@@ -1,8 +1,8 @@
 rp_embedding_name: inverted skullcrusher, bodyweight-only, triceps
 semantic_matches:
   - hevy_embedding_name: skullcrusher dumbbell, triceps
-    distance: 0.13590949773788452
+    distance: 0.14
   - hevy_embedding_name: skullcrusher barbell, triceps
-    distance: 0.1398046612739563
-  - hevy_embedding_name: triceps extension suspension, triceps
-    distance: 0.19529765844345093
+    distance: 0.15
+  - hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.18

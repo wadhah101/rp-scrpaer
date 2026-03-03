@@ -1,8 +1,8 @@
 rp_embedding_name: cable bent over shrug, cable, traps
 semantic_matches:
   - hevy_embedding_name: shrug cable, traps, neck
-    distance: 0.12185436487197876
+    distance: 0.12
   - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.17692559957504272
+    distance: 0.19
   - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.18540984392166138
+    distance: 0.19

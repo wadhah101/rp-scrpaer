@@ -1,8 +1,8 @@
 rp_embedding_name: hip adduction, machine, quadriceps
 semantic_matches:
   - hevy_embedding_name: hip adduction machine, adductors
-    distance: 0.09121328592300415
+    distance: 0.09
   - hevy_embedding_name: hip abduction machine, abductors
-    distance: 0.13565278053283691
+    distance: 0.14
   - hevy_embedding_name: leg extension machine, quadriceps
-    distance: 0.14234137535095215
+    distance: 0.16

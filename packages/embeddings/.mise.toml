@@ -9,7 +9,7 @@ auto_install = true
 UPDATE_OUTPUT = "true"
 EMBEDDING_BACKEND = "api"
 EMBEDDING_API_BASE_URL = "http://localhost:11434/v1/"
-EMBEDDING_API_MODEL = "qwen3-embedding:8b"
+EMBEDDING_API_MODEL = "qwen3-embedding:8b-fp16"
 EMBEDDING_API_KEY = "none"
 
 

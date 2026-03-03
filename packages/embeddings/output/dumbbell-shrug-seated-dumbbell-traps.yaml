@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell shrug seated, dumbbell, traps
 semantic_matches:
   - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.12190067768096924
+    distance: 0.12
+  - hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.18
   - hevy_embedding_name: seated lateral raise dumbbell, shoulders
-    distance: 0.17345935106277466
-  - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.1756104826927185
+    distance: 0.18

@@ -1,8 +1,8 @@
 rp_embedding_name: barbell pullover, barbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.15633922815322876
+    distance: 0.15
   - hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
-    distance: 0.1564725637435913
+    distance: 0.18
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.16473013162612915
+    distance: 0.19

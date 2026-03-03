@@ -1,8 +1,8 @@
 rp_embedding_name: v-up weighted, bodyweight-loadable, abdominals
 semantic_matches:
   - hevy_embedding_name: v up, abdominals
-    distance: 0.09659773111343384
+    distance: 0.09
   - hevy_embedding_name: sit up weighted, abdominals
-    distance: 0.10310882329940796
+    distance: 0.1
   - hevy_embedding_name: russian twist weighted, abdominals
-    distance: 0.14268851280212402
+    distance: 0.15

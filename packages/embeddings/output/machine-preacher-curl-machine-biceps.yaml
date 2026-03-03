@@ -1,8 +1,8 @@
 rp_embedding_name: machine preacher curl, machine, biceps
 semantic_matches:
   - hevy_embedding_name: preacher curl machine, biceps
-    distance: 0.06102663278579712
+    distance: 0.06
   - hevy_embedding_name: bicep curl machine, biceps
-    distance: 0.11191219091415405
+    distance: 0.12
   - hevy_embedding_name: preacher curl barbell, biceps
-    distance: 0.13859981298446655
+    distance: 0.14

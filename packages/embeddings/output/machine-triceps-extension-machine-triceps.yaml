@@ -1,8 +1,8 @@
 rp_embedding_name: machine triceps extension, machine, triceps
 semantic_matches:
   - hevy_embedding_name: triceps extension machine, triceps
-    distance: 0.026937782764434814
-  - hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.11969900131225586
+    distance: 0.02
   - hevy_embedding_name: triceps extension barbell, triceps
-    distance: 0.1263190507888794
+    distance: 0.12
+  - hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.12

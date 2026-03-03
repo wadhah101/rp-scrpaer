@@ -1,8 +1,8 @@
 rp_embedding_name: reverse lunge barbell, barbell, glutes
 semantic_matches:
   - hevy_embedding_name: reverse lunge barbell, quadriceps, hamstrings, glutes
-    distance: 0.07917642593383789
+    distance: 0.08
   - hevy_embedding_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
-    distance: 0.12980502843856812
+    distance: 0.13
   - hevy_embedding_name: lunge barbell, quadriceps, hamstrings, glutes
-    distance: 0.15235406160354614
+    distance: 0.16

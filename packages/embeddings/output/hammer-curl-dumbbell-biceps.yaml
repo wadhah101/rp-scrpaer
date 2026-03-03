@@ -1,8 +1,8 @@
 rp_embedding_name: hammer curl, dumbbell, biceps
 semantic_matches:
   - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.040115416049957275
+    distance: 0.04
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.08811026811599731
+    distance: 0.09
   - hevy_embedding_name: hammer curl band, biceps, forearms
-    distance: 0.10351324081420898
+    distance: 0.1

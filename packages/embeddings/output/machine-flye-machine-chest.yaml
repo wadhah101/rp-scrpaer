@@ -1,8 +1,8 @@
 rp_embedding_name: machine flye, machine, chest
 semantic_matches:
   - hevy_embedding_name: chest fly machine, chest
-    distance: 0.06828165054321289
+    distance: 0.07
   - hevy_embedding_name: chest fly suspension, chest
-    distance: 0.16807305812835693
-  - hevy_embedding_name: chest fly dumbbell, chest
-    distance: 0.18538141250610352
+    distance: 0.17
+  - hevy_embedding_name: chest fly band, chest
+    distance: 0.18

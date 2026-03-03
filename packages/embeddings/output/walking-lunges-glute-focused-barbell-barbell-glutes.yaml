@@ -1,8 +1,8 @@
 rp_embedding_name: walking lunges glute-focused, barbell, barbell, glutes
 semantic_matches:
   - hevy_embedding_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
-    distance: 0.13217854499816895
+    distance: 0.14
   - hevy_embedding_name: walking lunge, quadriceps, glutes, hamstrings
-    distance: 0.15737199783325195
+    distance: 0.16
   - hevy_embedding_name: lunge barbell, quadriceps, hamstrings, glutes
-    distance: 0.16151028871536255
+    distance: 0.17

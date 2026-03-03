@@ -1,8 +1,8 @@
 rp_embedding_name: donkey calf raise, machine, calves
 semantic_matches:
   - hevy_embedding_name: standing calf raise machine, calves
-    distance: 0.12948745489120483
+    distance: 0.13
+  - hevy_embedding_name: single leg standing calf raise machine, calves
+    distance: 0.14
   - hevy_embedding_name: calf press machine, calves
-    distance: 0.1376308798789978
-  - hevy_embedding_name: calf extension machine, calves
-    distance: 0.14025497436523438
+    distance: 0.14

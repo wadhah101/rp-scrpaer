@@ -1,8 +1,8 @@
 rp_embedding_name: deadlift sumo stance, barbell, glutes
 semantic_matches:
   - hevy_embedding_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
-    distance: 0.14939606189727783
-  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.18869751691818237
+    distance: 0.15
   - hevy_embedding_name: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.19123321771621704
+    distance: 0.17
+  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.18

@@ -1,8 +1,8 @@
 rp_embedding_name: barbell squat safety bar, barbell, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.1419382095336914
+    distance: 0.14
   - hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.14232099056243896
-  - hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
-    distance: 0.16189950704574585
+    distance: 0.16
+  - hevy_embedding_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
+    distance: 0.17

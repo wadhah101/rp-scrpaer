@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell leaning shrug, dumbbell, traps
 semantic_matches:
   - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.10991394519805908
+    distance: 0.11
   - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.16659629344940186
-  - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.17075908184051514
+    distance: 0.16
+  - hevy_embedding_name: shrug smith machine, traps, neck
+    distance: 0.17

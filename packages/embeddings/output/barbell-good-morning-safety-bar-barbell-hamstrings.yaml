@@ -1,8 +1,8 @@
 rp_embedding_name: barbell good morning safety bar, barbell, hamstrings
 semantic_matches:
   - hevy_embedding_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.16481900215148926
+    distance: 0.17
   - hevy_embedding_name: thruster barbell, full_body
-    distance: 0.25531166791915894
-  - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.2697371244430542
+    distance: 0.25
+  - hevy_embedding_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
+    distance: 0.27

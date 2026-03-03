@@ -1,8 +1,8 @@
 rp_embedding_name: barbell front raise ez bar, underhand, barbell, shoulders
 semantic_matches:
   - hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.12423419952392578
+    distance: 0.12
   - hevy_embedding_name: front raise dumbbell, shoulders
-    distance: 0.17845302820205688
+    distance: 0.18
   - hevy_embedding_name: plate front raise, shoulders
-    distance: 0.18125230073928833
+    distance: 0.19

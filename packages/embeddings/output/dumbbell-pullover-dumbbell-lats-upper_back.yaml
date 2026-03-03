@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell pullover, dumbbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
-    distance: 0.11616212129592896
+    distance: 0.13
   - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.16523456573486328
+    distance: 0.17
   - hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.1675478219985962
+    distance: 0.18

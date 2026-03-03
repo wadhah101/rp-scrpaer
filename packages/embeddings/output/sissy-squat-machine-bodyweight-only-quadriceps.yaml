@@ -1,8 +1,8 @@
 rp_embedding_name: sissy squat machine, bodyweight-only, quadriceps
 semantic_matches:
   - hevy_embedding_name: sissy squat weighted, quadriceps
-    distance: 0.06947100162506104
+    distance: 0.07
   - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.16052627563476562
+    distance: 0.17
   - hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
-    distance: 0.16490375995635986
+    distance: 0.18

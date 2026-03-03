@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine row, smith-machine, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: seated row machine, upper_back, lats, biceps, forearms
-    distance: 0.14510339498519897
+    distance: 0.15
   - hevy_embedding_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-    distance: 0.14734143018722534
+    distance: 0.16
   - hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.16015863418579102
+    distance: 0.17

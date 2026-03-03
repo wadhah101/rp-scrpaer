@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell bench wrist curl, dumbbell, forearms
 semantic_matches:
   - hevy_embedding_name: seated palms up wrist curl, forearms
-    distance: 0.10692185163497925
+    distance: 0.1
   - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.11450916528701782
+    distance: 0.12
   - hevy_embedding_name: hammer curl dumbbell, biceps, forearms
-    distance: 0.12357240915298462
+    distance: 0.13

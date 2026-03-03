@@ -1,8 +1,8 @@
 rp_embedding_name: leg press, machine, quadriceps
 semantic_matches:
   - hevy_embedding_name: leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.057528555393218994
+    distance: 0.07
   - hevy_embedding_name: leg press horizontal machine, quadriceps, hamstrings, glutes
-    distance: 0.07714289426803589
+    distance: 0.09
   - hevy_embedding_name: single leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.10064870119094849
+    distance: 0.11

@@ -1,8 +1,8 @@
 rp_embedding_name: barbell squat sumo stance, barbell, glutes
 semantic_matches:
   - hevy_embedding_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
-    distance: 0.11564397811889648
+    distance: 0.11
   - hevy_embedding_name: sumo squat dumbbell, quadriceps, glutes, adductors, hamstrings
-    distance: 0.14993596076965332
+    distance: 0.15
   - hevy_embedding_name: sumo squat kettlebell, quadriceps, glutes, adductors, hamstrings
-    distance: 0.1607622504234314
+    distance: 0.16
