@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   build:
-    runs-on: blacksmith-4vcpu-ubuntu-2404-arm
+    runs-on: ubuntu-latest
     name: build
     env:
       MISE_AUTO_INSTALL: false
@@ -19,12 +19,22 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
+      - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
         with:
           install: false
           cache: false
           version: 2026.3.0
-      - uses: useblacksmith/setup-docker-builder@ef12d5b165b596e3aa44ea8198d8fde563eab402 # v1.4.0
+      - name: Tailscale
+        uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4.1.1
+        with:
+          authkey: ${{ secrets.TALSCALE_KEY }}
+      - name: Setup remote builder
+        run: |
+          docker buildx create \
+            --name remote-builder \
+            --driver remote \
+            tcp://${{ secrets.REMOTE_BUILDER_ADDRESS }}:${{ secrets.REMOTE_BUILDER_PORT }}
+          docker buildx use remote-builder
       - name: build
         working-directory: packages/${{ matrix.project }}
         run: mise run build

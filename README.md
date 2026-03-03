@@ -256,7 +256,7 @@ All workflows use `jdx/mise-action` to install mise from the **same `.miserc.tom
 
 ### What makes this pipeline interesting
 
-- **ARM-native builds** — The build workflow runs on Blacksmith 4-vCPU ARM runners (`blacksmith-4vcpu-ubuntu-2404-arm`), producing native ARM Docker images with zero QEMU emulation overhead.
+- **Remote Docker builds over Tailscale** — A persistent [BuildKit](https://github.com/moby/buildkit) daemon runs on a dedicated build server, reachable over [Tailscale](https://tailscale.com/). The CI workflow connects directly using the buildx `remote` driver (`tcp://$HOST:$PORT`) — no SSH tunneling, no ephemeral containers. Because the daemon is long-lived, build cache and `--mount=type=cache` layers persist across CI runs, making repeat builds significantly faster. The builder supports both `linux/amd64` and `linux/arm64` platforms via QEMU binfmt emulation. Tailscale ACLs restrict access to port 1234 to authorized machines only.
 
 - **Build → Scan → Push gating** — Every image is built locally (`docker buildx build --load`), scanned by [TruffleHog](https://github.com/trufflesecurity/trufflehog) for leaked secrets, and only pushed to the registry if the scan passes. The `--load` + separate push adds ~30-60s vs `buildx --push`, but guarantees no secret ever reaches the registry. This is defined in the `build-push` task template in `.mise.tasks.toml`.
 
