@@ -21,7 +21,6 @@ COPY packages/cli/.mise.toml packages/cli/.mise.toml
 
 WORKDIR /app/packages/cli
 RUN --mount=type=secret,id=GITHUB_TOKEN \
-    --mount=type=cache,target=/opt/mise \
     GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN 2>/dev/null || true) \
     mise install python uv \
     && cp -a "$(mise where python)" /opt/python \
