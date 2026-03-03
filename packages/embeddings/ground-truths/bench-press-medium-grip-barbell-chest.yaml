@@ -1,0 +1,8 @@
+file: bench-press-medium-grip-barbell-chest.yaml
+rp_exercise: "bench press medium grip, barbell, chest"
+candidates:
+  - "bench press - wide grip barbell, chest, shoulders, triceps"
+  - "bench press barbell, chest, triceps, shoulders"
+  - "bench press - close grip barbell, triceps, chest, shoulders"
+best_match: "bench press barbell, chest, triceps, shoulders"
+confidence: high

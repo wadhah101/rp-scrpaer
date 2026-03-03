@@ -1,0 +1,8 @@
+file: dumbbell-leaning-shrug-dumbbell-traps.yaml
+rp_exercise: "dumbbell leaning shrug, dumbbell, traps"
+candidates:
+  - "shrug dumbbell, traps, neck"
+  - "shrug barbell, traps, neck"
+  - "upright row dumbbell, shoulders, traps, upper_back, biceps, forearms"
+best_match: "shrug dumbbell, traps, neck"
+confidence: high

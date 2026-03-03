@@ -1,0 +1,8 @@
+file: cable-leaning-lateral-raise-cable-shoulders.yaml
+rp_exercise: "cable leaning lateral raise, cable, shoulders"
+candidates:
+  - "lateral raise cable, shoulders"
+  - "single arm lateral raise cable, shoulders"
+  - "lateral raise dumbbell, shoulders"
+best_match: "lateral raise cable, shoulders"
+confidence: medium

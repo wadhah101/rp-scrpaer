@@ -1,0 +1,8 @@
+file: assisted-dip-machine-assistance-triceps.yaml
+rp_exercise: "assisted dip, machine-assistance, triceps"
+candidates:
+  - "triceps dip assisted, triceps, chest, shoulders"
+  - "chest dip assisted, chest, triceps, shoulders"
+  - "seated dip machine, triceps, chest, shoulders"
+best_match: "triceps dip assisted"
+confidence: high

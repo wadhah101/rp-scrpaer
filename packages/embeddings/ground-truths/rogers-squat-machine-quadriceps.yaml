@@ -1,0 +1,8 @@
+file: rogers-squat-machine-quadriceps.yaml
+rp_exercise: "rogers squat, machine, quadriceps"
+candidates:
+  - "squat machine, quadriceps, hamstrings, glutes"
+  - "belt squat machine, quadriceps, glutes, hamstrings"
+  - "hack squat machine, quadriceps, glutes, hamstrings"
+best_match: "none"
+confidence: high

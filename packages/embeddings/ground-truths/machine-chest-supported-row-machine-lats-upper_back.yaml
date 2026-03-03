@@ -1,0 +1,8 @@
+file: machine-chest-supported-row-machine-lats-upper_back.yaml
+rp_exercise: "machine chest supported row, machine, lats, upper_back"
+candidates:
+  - "iso-lateral row machine, upper_back, lats, biceps, forearms"
+  - "seated row machine, upper_back, lats, biceps, forearms"
+  - "lat pulldown machine, lats, upper_back, biceps, forearms"
+best_match: "seated row machine"
+confidence: medium

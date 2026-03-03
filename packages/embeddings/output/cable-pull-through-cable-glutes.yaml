@@ -1,8 +1,8 @@
 rp_embedding_name: cable pull through, cable, glutes
 semantic_matches:
   - hevy_embedding_name: cable pull through, glutes, hamstrings, lower_back
-    distance: 0.09652352333068848
+    distance: 0.09887117147445679
   - hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings
-    distance: 0.1623247265815735
-  - hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
-    distance: 0.23752856254577637
+    distance: 0.15473288297653198
+  - hevy_embedding_name: glute kickback on floor, glutes, hamstrings
+    distance: 0.22711902856826782

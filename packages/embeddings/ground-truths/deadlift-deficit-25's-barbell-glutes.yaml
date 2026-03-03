@@ -1,0 +1,8 @@
+file: deadlift-deficit-25's-barbell-glutes.yaml
+rp_exercise: "deadlift deficit 25's, barbell, glutes"
+candidates:
+  - "deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+best_match: "deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+confidence: high

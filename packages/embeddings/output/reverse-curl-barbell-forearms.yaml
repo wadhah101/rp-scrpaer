@@ -1,8 +1,8 @@
 rp_embedding_name: reverse curl, barbell, forearms
 semantic_matches:
   - hevy_embedding_name: reverse curl barbell, biceps, forearms
-    distance: 0.031951963901519775
-  - hevy_embedding_name: reverse curl cable, biceps, forearms
-    distance: 0.05649453401565552
+    distance: 0.03814268112182617
   - hevy_embedding_name: reverse curl dumbbell, biceps, forearms
-    distance: 0.0568389892578125
+    distance: 0.06393086910247803
+  - hevy_embedding_name: reverse curl cable, biceps, forearms
+    distance: 0.06827694177627563

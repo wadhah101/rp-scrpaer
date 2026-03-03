@@ -1,0 +1,8 @@
+file: pulldown-narrow-grip-cable-lats-upper_back.yaml
+rp_exercise: "pulldown narrow grip, cable, lats, upper_back"
+candidates:
+  - "lat pulldown - close grip cable, lats, upper_back, biceps, forearms"
+  - "lat pulldown cable, lats, upper_back, biceps, forearms"
+  - "reverse grip lat pulldown cable, lats, upper_back, biceps"
+best_match: "lat pulldown - close grip cable"
+confidence: high

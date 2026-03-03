@@ -1,0 +1,8 @@
+file: dumbbell-press-flye-incline-dumbbell-chest.yaml
+rp_exercise: "dumbbell press flye incline, dumbbell, chest"
+candidates:
+  - "incline chest fly dumbbell, chest"
+  - "decline chest fly dumbbell, chest"
+  - "chest fly dumbbell, chest"
+best_match: "incline chest fly dumbbell, chest"
+confidence: high

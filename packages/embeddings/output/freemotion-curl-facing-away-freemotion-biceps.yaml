@@ -1,8 +1,8 @@
 rp_embedding_name: freemotion curl facing away, freemotion, biceps
 semantic_matches:
   - hevy_embedding_name: drag curl, biceps
-    distance: 0.19420766830444336
+    distance: 0.19295012950897217
   - hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.1949717402458191
-  - hevy_embedding_name: bicep curl cable, biceps
-    distance: 0.20121389627456665
+    distance: 0.2124367356300354
+  - hevy_embedding_name: behind the back curl cable, biceps
+    distance: 0.2139555811882019

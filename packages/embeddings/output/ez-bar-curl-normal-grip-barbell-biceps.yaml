@@ -1,8 +1,8 @@
 rp_embedding_name: ez bar curl normal grip, barbell, biceps
 semantic_matches:
   - hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.08413863182067871
+    distance: 0.0866592526435852
   - hevy_embedding_name: bicep curl barbell, biceps
-    distance: 0.1395355463027954
+    distance: 0.126414954662323
   - hevy_embedding_name: spider curl barbell, biceps
-    distance: 0.1639208197593689
+    distance: 0.15746456384658813

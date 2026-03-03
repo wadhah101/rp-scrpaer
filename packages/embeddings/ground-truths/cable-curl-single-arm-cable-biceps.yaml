@@ -1,0 +1,8 @@
+file: cable-curl-single-arm-cable-biceps.yaml
+rp_exercise: "cable curl single-arm, cable, biceps"
+candidates:
+  - "single arm curl cable, biceps"
+  - "bicep curl cable, biceps"
+  - "overhead curl cable, biceps"
+best_match: "single arm curl cable, biceps"
+confidence: high

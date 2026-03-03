@@ -1,0 +1,8 @@
+file: freemotion-curl-single-arm-freemotion-biceps.yaml
+rp_exercise: "freemotion curl single-arm, freemotion, biceps"
+candidates:
+  - "single arm curl cable, biceps"
+  - "drag curl, biceps"
+  - "bicep curl cable, biceps"
+best_match: "single arm curl cable, biceps"
+confidence: high

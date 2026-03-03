@@ -1,0 +1,8 @@
+file: reverse-hyper-machine-glutes.yaml
+rp_exercise: "reverse hyper, machine, glutes"
+candidates:
+  - "glute kickback machine, glutes, hamstrings"
+  - "reverse hyperextension, glutes, hamstrings, lower_back"
+  - "rear kick machine, glutes, hamstrings"
+best_match: "reverse hyperextension, glutes, hamstrings, lower_back"
+confidence: high

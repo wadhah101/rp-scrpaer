@@ -1,0 +1,8 @@
+file: freemotion-rear-delt-flyes-paused-freemotion-shoulders.yaml
+rp_exercise: "freemotion rear delt flyes paused, freemotion, shoulders"
+candidates:
+  - "rear delt reverse fly cable, shoulders, upper_back"
+  - "rear delt reverse fly dumbbell, shoulders, upper_back"
+  - "rear delt reverse fly one hand machine, upper_back, shoulders"
+best_match: "rear delt reverse fly cable"
+confidence: medium

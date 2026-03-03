@@ -1,8 +1,8 @@
 rp_embedding_name: stiff-legged deadlift, barbell, hamstrings
 semantic_matches:
   - hevy_embedding_name: single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats
-    distance: 0.15957897901535034
+    distance: 0.16308557987213135
   - hevy_embedding_name: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
-    distance: 0.1776370406150818
+    distance: 0.18218421936035156
   - hevy_embedding_name: straight leg deadlift, hamstrings, glutes, lower_back, upper_back, lats, traps
-    distance: 0.18526893854141235
+    distance: 0.18313759565353394

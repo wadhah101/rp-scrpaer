@@ -1,0 +1,8 @@
+file: cable-front-raise-underhand-cable-shoulders.yaml
+rp_exercise: "cable front raise underhand, cable, shoulders"
+candidates:
+  - "front raise cable, shoulders"
+  - "lateral raise cable, shoulders"
+  - "single arm lateral raise cable, shoulders"
+best_match: "front raise cable, shoulders"
+confidence: high

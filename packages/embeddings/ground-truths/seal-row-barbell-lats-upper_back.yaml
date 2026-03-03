@@ -1,0 +1,8 @@
+file: seal-row-barbell-lats-upper_back.yaml
+rp_exercise: "seal row, barbell, lats, upper_back"
+candidates:
+  - "bent over row barbell, upper_back, lats, biceps, forearms"
+  - "pendlay row barbell, upper_back, lats, biceps, forearms"
+  - "inverted row, upper_back, lats, biceps, forearms"
+best_match: "bent over row barbell, upper_back, lats, biceps, forearms"
+confidence: medium

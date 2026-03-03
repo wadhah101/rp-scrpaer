@@ -1,0 +1,8 @@
+file: cable-flye-bent-over-cable-chest.yaml
+rp_exercise: "cable flye bent over, cable, chest"
+candidates:
+  - "seated chest flys cable, chest"
+  - "cable fly crossovers, chest"
+  - "low cable fly crossovers, chest"
+best_match: "cable fly crossovers, chest"
+confidence: medium

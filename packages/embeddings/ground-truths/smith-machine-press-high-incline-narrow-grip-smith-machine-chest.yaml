@@ -1,0 +1,8 @@
+file: smith-machine-press-high-incline-narrow-grip-smith-machine-chest.yaml
+rp_exercise: "smith machine press high incline, narrow grip, smith-machine, chest"
+candidates:
+  - "incline bench press smith machine, chest, shoulders, triceps"
+  - "bench press smith machine, chest, shoulders, triceps"
+  - "incline chest press machine, chest, shoulders, triceps"
+best_match: "incline bench press smith machine, chest, shoulders, triceps"
+confidence: high

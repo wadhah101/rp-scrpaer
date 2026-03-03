@@ -1,0 +1,8 @@
+file: dumbbell-twist-curl-dumbbell-biceps.yaml
+rp_exercise: "dumbbell twist curl, dumbbell, biceps"
+candidates:
+  - "bicep curl dumbbell, biceps"
+  - "spider curl dumbbell, biceps"
+  - "pinwheel curl dumbbell, biceps, forearms"
+best_match: "bicep curl dumbbell, biceps"
+confidence: medium

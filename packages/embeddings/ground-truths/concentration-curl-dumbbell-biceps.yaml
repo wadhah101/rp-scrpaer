@@ -1,0 +1,8 @@
+file: concentration-curl-dumbbell-biceps.yaml
+rp_exercise: "concentration curl, dumbbell, biceps"
+candidates:
+  - "concentration curl, biceps"
+  - "bicep curl dumbbell, biceps"
+  - "spider curl dumbbell, biceps"
+best_match: "concentration curl, biceps"
+confidence: high

@@ -1,0 +1,8 @@
+file: barbell-squat-high-bar-barbell-quadriceps.yaml
+rp_exercise: "barbell squat high bar, barbell, quadriceps"
+candidates:
+  - "box squat barbell, quadriceps, hamstrings, glutes"
+  - "squat barbell, quadriceps, hamstrings, glutes"
+  - "pause squat barbell, quadriceps, glutes, hamstrings"
+best_match: "squat barbell, quadriceps, hamstrings, glutes"
+confidence: high

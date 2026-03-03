@@ -1,0 +1,8 @@
+file: barbell-bent-over-shrug-barbell-shoulders.yaml
+rp_exercise: "barbell bent over shrug, barbell, shoulders"
+candidates:
+  - "front raise barbell, shoulders"
+  - "shrug barbell, traps, neck"
+  - "front raise dumbbell, shoulders"
+best_match: "shrug barbell, traps, neck"
+confidence: medium

@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell preacher curl single-arm, dumbbell, biceps
 semantic_matches:
   - hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.1124151349067688
-  - hevy_embedding_name: single arm curl cable, biceps
-    distance: 0.12254250049591064
+    distance: 0.11834877729415894
   - hevy_embedding_name: preacher curl dumbbell, biceps
-    distance: 0.12451416254043579
+    distance: 0.12320274114608765
+  - hevy_embedding_name: single arm curl cable, biceps
+    distance: 0.12676620483398438

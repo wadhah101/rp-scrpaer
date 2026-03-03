@@ -1,0 +1,8 @@
+file: reaching-sit-up-bodyweight-only-abdominals.yaml
+rp_exercise: "reaching sit-up, bodyweight-only, abdominals"
+candidates:
+  - "sit up, abdominals"
+  - "sit up weighted, abdominals"
+  - "jackknife sit up, abdominals"
+best_match: "sit up, abdominals"
+confidence: medium

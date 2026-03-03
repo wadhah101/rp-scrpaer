@@ -1,0 +1,8 @@
+file: cable-lateral-raise-single-arm-cable-shoulders.yaml
+rp_exercise: "cable lateral raise single-arm, cable, shoulders"
+candidates:
+  - "single arm lateral raise cable, shoulders"
+  - "lateral raise cable, shoulders"
+  - "lateral raise machine, shoulders"
+best_match: "single arm lateral raise cable, shoulders"
+confidence: high

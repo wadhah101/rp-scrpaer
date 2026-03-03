@@ -1,0 +1,8 @@
+file: back-raise-glute-ham-deck-bodyweight-only-hamstrings.yaml
+rp_exercise: "back raise glute ham deck, bodyweight-only, hamstrings"
+candidates:
+  - "glute ham raise, hamstrings, glutes"
+  - "back extension weighted hyperextension, lower_back, hamstrings, glutes"
+  - "glute kickback on floor, glutes, hamstrings"
+best_match: "glute ham raise, hamstrings, glutes"
+confidence: high

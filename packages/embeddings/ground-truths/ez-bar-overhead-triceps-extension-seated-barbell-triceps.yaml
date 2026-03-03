@@ -1,0 +1,8 @@
+file: ez-bar-overhead-triceps-extension-seated-barbell-triceps.yaml
+rp_exercise: "ez bar overhead triceps extension seated, barbell, triceps"
+candidates:
+  - "triceps extension barbell, triceps"
+  - "overhead triceps extension cable, triceps"
+  - "triceps extension suspension, triceps"
+best_match: "triceps extension barbell, triceps"
+confidence: medium

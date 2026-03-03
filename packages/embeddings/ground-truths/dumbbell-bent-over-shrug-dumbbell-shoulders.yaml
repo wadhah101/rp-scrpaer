@@ -1,0 +1,8 @@
+file: dumbbell-bent-over-shrug-dumbbell-shoulders.yaml
+rp_exercise: "dumbbell bent over shrug, dumbbell, shoulders"
+candidates:
+  - "front raise dumbbell, shoulders"
+  - "shrug dumbbell, traps, neck"
+  - "lateral raise dumbbell, shoulders"
+best_match: "shrug dumbbell, traps, neck"
+confidence: medium

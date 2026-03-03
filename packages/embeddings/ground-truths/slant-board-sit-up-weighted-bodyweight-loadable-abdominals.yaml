@@ -1,0 +1,8 @@
+file: slant-board-sit-up-weighted-bodyweight-loadable-abdominals.yaml
+rp_exercise: "slant board sit-up weighted, bodyweight-loadable, abdominals"
+candidates:
+  - "sit up weighted, abdominals"
+  - "sit up, abdominals"
+  - "russian twist weighted, abdominals"
+best_match: "sit up weighted, abdominals"
+confidence: medium
