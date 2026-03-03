@@ -14,7 +14,15 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
+      - name: Cache mise tools
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.local/share/mise
+          key: mise-lint-${{ hashFiles('.mise.*.toml', '.miserc.toml') }}
+          restore-keys: mise-lint-
       - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
+        with:
+          cache: false
       - name: Run hk check
         run: hk check --all
         env:
@@ -26,17 +34,25 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
+      - name: Cache mise tools
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.local/share/mise
+          key: mise-generate-no-diff-${{ hashFiles('**/.mise.toml', '.mise.*.toml', '.miserc.toml') }}
+          restore-keys: mise-generate-no-diff-
       - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
+        with:
+          cache: false
       - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
         with:
           working_directory: packages/api-service
-          cache_key_prefix: api-service
+          cache: false
       - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
         with:
           working_directory: scripts/hevy-extract
-          cache_key_prefix: hevy-extract
-      - name: mise prepare
-        run: mise prepare
+          cache: false
+      - name: Install Dependencies
+        run: bun install
         working-directory: scripts/hevy-extract
       - name: mise generate
         run: mise "//...:generate-libs*"
