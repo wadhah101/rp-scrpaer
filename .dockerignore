@@ -1,17 +1,21 @@
-.git
-.venv
-venv
-__pycache__
-*.py[cod]
-*.egg-info
-dist
-build
-.eggs
-storage
-.env
-.env.local
-.DS_Store
-.idea
-.vscode
-node_modules
-token.txt
+# Start by ignoring everything, then allowlist what the Dockerfile needs
+*
+
+# Mise config (COPY'd in builder stage)
+!.miserc.toml
+!.mise.env.toml
+!.mise.tools.toml
+!packages/cli/.mise.toml
+
+# Dependency resolution (COPY'd for uv sync)
+!uv.lock
+!pyproject.toml
+!packages/**/pyproject.toml
+
+# Application source (COPY'd in final stage)
+!packages/cli/src
+!packages/cli/src/**
+!packages/api-service/src
+!packages/api-service/src/**
+!packages/embeddings/src
+!packages/embeddings/src/**
