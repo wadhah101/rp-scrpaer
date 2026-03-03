@@ -1,0 +1,8 @@
+file: walking-lunges-quad-focused-bodyweight-bodyweight-only-quadriceps.yaml
+rp_exercise: "walking lunges quad-focused, bodyweight, bodyweight-only, quadriceps"
+candidates:
+  - "walking lunge, quadriceps, glutes, hamstrings"
+  - "walking lunge dumbbell, quadriceps, glutes, hamstrings"
+  - "lunge, quadriceps, hamstrings, glutes"
+best_match: "walking lunge"
+confidence: high

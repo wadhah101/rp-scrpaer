@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine squat feet forward, smith-machine, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
-    distance: 0.12856173515319824
+    distance: 0.13
   - hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.2156226634979248
-  - hevy_embedding_name: front squat, quadriceps, hamstrings, glutes
-    distance: 0.22843456268310547
+    distance: 0.21
+  - hevy_embedding_name: hack squat machine, quadriceps, glutes, hamstrings
+    distance: 0.22

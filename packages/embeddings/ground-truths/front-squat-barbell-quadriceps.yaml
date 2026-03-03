@@ -1,0 +1,8 @@
+file: front-squat-barbell-quadriceps.yaml
+rp_exercise: "front squat, barbell, quadriceps"
+candidates:
+  - "front squat, quadriceps, hamstrings, glutes"
+  - "box squat barbell, quadriceps, hamstrings, glutes"
+  - "pause squat barbell, quadriceps, glutes, hamstrings"
+best_match: "front squat, quadriceps, hamstrings, glutes"
+confidence: high

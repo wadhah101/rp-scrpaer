@@ -1,8 +1,8 @@
 rp_embedding_name: machine shrug, machine, traps
 semantic_matches:
   - hevy_embedding_name: shrug machine, traps, neck
-    distance: 0.15401136875152588
+    distance: 0.16
   - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.18928414583206177
+    distance: 0.19
   - hevy_embedding_name: rowing machine, cardio
-    distance: 0.22414261102676392
+    distance: 0.23

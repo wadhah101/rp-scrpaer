@@ -1,0 +1,8 @@
+file: reverse-lunge-dumbbell-dumbbell-glutes.yaml
+rp_exercise: "reverse lunge dumbbell, dumbbell, glutes"
+candidates:
+  - "reverse lunge dumbbell, quadriceps, glutes, hamstrings"
+  - "walking lunge dumbbell, quadriceps, glutes, hamstrings"
+  - "lunge dumbbell, quadriceps, hamstrings, glutes"
+best_match: "reverse lunge dumbbell, quadriceps, glutes, hamstrings"
+confidence: high

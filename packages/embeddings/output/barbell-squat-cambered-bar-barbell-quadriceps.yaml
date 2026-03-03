@@ -1,8 +1,8 @@
 rp_embedding_name: barbell squat cambered bar, barbell, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.14775210618972778
+    distance: 0.14
   - hevy_embedding_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
-    distance: 0.16453778743743896
+    distance: 0.16
   - hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.1674826741218567
+    distance: 0.16

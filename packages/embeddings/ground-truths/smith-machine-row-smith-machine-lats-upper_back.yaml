@@ -1,0 +1,8 @@
+file: smith-machine-row-smith-machine-lats-upper_back.yaml
+rp_exercise: "smith machine row, smith-machine, lats, upper_back"
+candidates:
+  - "seated row machine, upper_back, lats, biceps, forearms"
+  - "iso-lateral row machine, upper_back, lats, biceps, forearms"
+  - "lat pulldown machine, lats, upper_back, biceps, forearms"
+best_match: "none"
+confidence: high

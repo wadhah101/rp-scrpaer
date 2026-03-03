@@ -1,8 +1,8 @@
 rp_embedding_name: barbell bent over row, barbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.049336016178131104
+    distance: 0.05
   - hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.10993999242782593
+    distance: 0.11
   - hevy_embedding_name: bent over row band, upper_back, lats, biceps, forearms
-    distance: 0.13480103015899658
+    distance: 0.14

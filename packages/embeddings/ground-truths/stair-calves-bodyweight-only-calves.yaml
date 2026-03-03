@@ -1,0 +1,8 @@
+file: stair-calves-bodyweight-only-calves.yaml
+rp_exercise: "stair calves, bodyweight-only, calves"
+candidates:
+  - "seated calf raise, calves"
+  - "single leg standing calf raise, calves"
+  - "single leg standing calf raise dumbbell, calves"
+best_match: "single leg standing calf raise"
+confidence: medium

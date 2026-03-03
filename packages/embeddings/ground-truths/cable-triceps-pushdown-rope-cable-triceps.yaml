@@ -1,0 +1,8 @@
+file: cable-triceps-pushdown-rope-cable-triceps.yaml
+rp_exercise: "cable triceps pushdown rope, cable, triceps"
+candidates:
+  - "triceps rope pushdown, triceps"
+  - "single arm triceps pushdown cable, triceps"
+  - "triceps extension cable, triceps"
+best_match: "triceps rope pushdown, triceps"
+confidence: high

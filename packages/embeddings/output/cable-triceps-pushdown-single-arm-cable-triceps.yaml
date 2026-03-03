@@ -1,8 +1,8 @@
 rp_embedding_name: cable triceps pushdown single-arm, cable, triceps
 semantic_matches:
   - hevy_embedding_name: single arm triceps pushdown cable, triceps
-    distance: 0.019443809986114502
+    distance: 0.02
   - hevy_embedding_name: triceps pushdown, triceps
-    distance: 0.0898013710975647
+    distance: 0.09
   - hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.10337525606155396
+    distance: 0.1

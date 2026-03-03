@@ -1,0 +1,8 @@
+file: barbell-skullcrusher-barbell-triceps.yaml
+rp_exercise: "barbell skullcrusher, barbell, triceps"
+candidates:
+  - "skullcrusher barbell, triceps"
+  - "skullcrusher dumbbell, triceps"
+  - "triceps extension barbell, triceps"
+best_match: "skullcrusher barbell, triceps"
+confidence: high

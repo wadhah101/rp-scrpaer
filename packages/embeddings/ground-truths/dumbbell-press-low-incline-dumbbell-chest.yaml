@@ -1,0 +1,8 @@
+file: dumbbell-press-low-incline-dumbbell-chest.yaml
+rp_exercise: "dumbbell press low incline, dumbbell, chest"
+candidates:
+  - "incline chest fly dumbbell, chest"
+  - "incline bench press dumbbell, chest, triceps, shoulders"
+  - "incline bench press barbell, chest, triceps, shoulders"
+best_match: "incline bench press dumbbell, chest, triceps, shoulders"
+confidence: high

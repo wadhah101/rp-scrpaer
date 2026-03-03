@@ -1,0 +1,8 @@
+file: cable-flexion-row-cable-lats-upper_back.yaml
+rp_exercise: "cable flexion row, cable, lats, upper_back"
+candidates:
+  - "single arm cable row, upper_back, lats, biceps, forearms"
+  - "seated cable row - bar grip, upper_back, lats, biceps, forearms"
+  - "seated cable row - v grip cable, upper_back, lats, biceps, forearms"
+best_match: "seated cable row - v grip cable"
+confidence: medium

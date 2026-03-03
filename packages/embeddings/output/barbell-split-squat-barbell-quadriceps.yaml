@@ -1,8 +1,8 @@
 rp_embedding_name: barbell split squat, barbell, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.1327837109565735
+    distance: 0.13
   - hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.13627630472183228
+    distance: 0.14
   - hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
-    distance: 0.14432626962661743
+    distance: 0.14

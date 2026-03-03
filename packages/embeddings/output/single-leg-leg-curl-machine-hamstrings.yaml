@@ -1,8 +1,8 @@
 rp_embedding_name: single-leg leg curl, machine, hamstrings
 semantic_matches:
   - hevy_embedding_name: seated leg curl machine, hamstrings, calves
-    distance: 0.11335903406143188
+    distance: 0.12
   - hevy_embedding_name: lying leg curl machine, hamstrings, calves
-    distance: 0.11891895532608032
+    distance: 0.12
   - hevy_embedding_name: single leg press machine, quadriceps, glutes, hamstrings
-    distance: 0.18037259578704834
+    distance: 0.18

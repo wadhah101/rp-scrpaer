@@ -34,3 +34,20 @@ run = "uv run python -m rp_to_strong_cli rp export --all --output exports/rp"
 [tasks.export-rp-s3]
 env = { BUCKET_NAME = { required = true } }
 run = "uv run python -m rp_to_strong_cli rp export --type all --output s3://$BUCKET_NAME/exports/exercises/rp-exercises.json"
+
+[tasks.embed-ollama]
+description = "Embed exercises using local Ollama"
+run = """
+uv run python -m rp_to_strong_cli embedding embd \
+  --api-base-url "${OLLAMA_BASE_URL}/v1" \
+  --api-key ollama \
+  --api-model "$OLLAMA_MODEL" \
+  --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
+  --hevy-path "$MONOREPO_ROOT/packages/cli/exports/hevy/exercises.json" \
+  --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json" \
+  --chroma-mode persistent
+"""
+
+[tasks.embed-ollama.env]
+OLLAMA_BASE_URL = "http://localhost:11434"
+OLLAMA_MODEL = "qwen3-embedding:8b"

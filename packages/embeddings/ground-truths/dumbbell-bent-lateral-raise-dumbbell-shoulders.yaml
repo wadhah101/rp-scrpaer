@@ -1,0 +1,8 @@
+file: dumbbell-bent-lateral-raise-dumbbell-shoulders.yaml
+rp_exercise: "dumbbell bent lateral raise, dumbbell, shoulders"
+candidates:
+  - "lateral raise dumbbell, shoulders"
+  - "seated lateral raise dumbbell, shoulders"
+  - "lateral raise cable, shoulders"
+best_match: "lateral raise dumbbell, shoulders"
+confidence: medium

@@ -1,0 +1,8 @@
+file: machine-crunch-machine-abdominals.yaml
+rp_exercise: "machine crunch, machine, abdominals"
+candidates:
+  - "crunch machine, abdominals"
+  - "crunch, abdominals"
+  - "crunch weighted, abdominals"
+best_match: "crunch machine, abdominals"
+confidence: high

@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine upright row, smith-machine, shoulders
 semantic_matches:
   - hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.15872621536254883
+    distance: 0.16
   - hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.1599218249320984
+    distance: 0.16
   - hevy_embedding_name: overhead press smith machine, shoulders, triceps
-    distance: 0.17213386297225952
+    distance: 0.17

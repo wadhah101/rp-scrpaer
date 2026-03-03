@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine press incline, wide grip, smith-machine, chest
 semantic_matches:
   - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
-    distance: 0.10581600666046143
+    distance: 0.11
   - hevy_embedding_name: bench press smith machine, chest, shoulders, triceps
-    distance: 0.14234274625778198
+    distance: 0.15
   - hevy_embedding_name: incline chest press machine, chest, shoulders, triceps
-    distance: 0.15439748764038086
+    distance: 0.16

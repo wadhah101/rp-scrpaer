@@ -1,0 +1,8 @@
+file: cable-single-arm-side-shrug-cable-traps.yaml
+rp_exercise: "cable single arm side shrug, cable, traps"
+candidates:
+  - "single arm lateral raise cable, shoulders"
+  - "upright row cable, shoulders, traps, upper_back, biceps, forearms"
+  - "lateral raise cable, shoulders"
+best_match: "none"
+confidence: high

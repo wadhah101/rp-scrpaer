@@ -1,8 +1,8 @@
 rp_embedding_name: reaching sit-up, bodyweight-only, abdominals
 semantic_matches:
   - hevy_embedding_name: sit up, abdominals
-    distance: 0.1255512833595276
+    distance: 0.13
   - hevy_embedding_name: sit up weighted, abdominals
-    distance: 0.13154441118240356
+    distance: 0.13
   - hevy_embedding_name: jackknife sit up, abdominals
-    distance: 0.17224878072738647
+    distance: 0.17

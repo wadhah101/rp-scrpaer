@@ -1,0 +1,8 @@
+file: cable-hammer-curl-rope-cable-biceps.yaml
+rp_exercise: "cable hammer curl rope, cable, biceps"
+candidates:
+  - "rope cable curl, biceps, forearms"
+  - "hammer curl cable, biceps, forearms"
+  - "bicep curl cable, biceps"
+best_match: "hammer curl cable"
+confidence: high

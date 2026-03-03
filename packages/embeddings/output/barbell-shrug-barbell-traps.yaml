@@ -1,8 +1,8 @@
 rp_embedding_name: barbell shrug, barbell, traps
 semantic_matches:
   - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.08697855472564697
+    distance: 0.09
   - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.14772170782089233
+    distance: 0.15
   - hevy_embedding_name: shrug smith machine, traps, neck
-    distance: 0.15915697813034058
+    distance: 0.16

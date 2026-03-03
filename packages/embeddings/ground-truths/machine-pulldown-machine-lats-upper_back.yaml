@@ -1,0 +1,8 @@
+file: machine-pulldown-machine-lats-upper_back.yaml
+rp_exercise: "machine pulldown, machine, lats, upper_back"
+candidates:
+  - "lat pulldown machine, lats, upper_back, biceps, forearms"
+  - "lat pulldown cable, lats, upper_back, biceps, forearms"
+  - "vertical traction machine, lats, upper_back, biceps, forearms"
+best_match: "lat pulldown machine"
+confidence: high

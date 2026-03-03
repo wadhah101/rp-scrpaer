@@ -1,0 +1,8 @@
+file: v-up-weighted-bodyweight-loadable-abdominals.yaml
+rp_exercise: "v-up weighted, bodyweight-loadable, abdominals"
+candidates:
+  - "v up, abdominals"
+  - "sit up weighted, abdominals"
+  - "russian twist weighted, abdominals"
+best_match: "v up, abdominals"
+confidence: high

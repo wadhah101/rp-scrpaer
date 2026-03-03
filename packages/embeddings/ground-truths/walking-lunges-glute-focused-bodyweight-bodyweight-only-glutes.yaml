@@ -1,0 +1,8 @@
+file: walking-lunges-glute-focused-bodyweight-bodyweight-only-glutes.yaml
+rp_exercise: "walking lunges glute-focused, bodyweight, bodyweight-only, glutes"
+candidates:
+  - "walking lunge dumbbell, quadriceps, glutes, hamstrings"
+  - "walking lunge, quadriceps, glutes, hamstrings"
+  - "lunge dumbbell, quadriceps, hamstrings, glutes"
+best_match: "walking lunge"
+confidence: high

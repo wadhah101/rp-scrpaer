@@ -1,0 +1,8 @@
+file: dumbbell-bench-wrist-curl-dumbbell-forearms.yaml
+rp_exercise: "dumbbell bench wrist curl, dumbbell, forearms"
+candidates:
+  - "seated palms up wrist curl, forearms"
+  - "reverse curl dumbbell, biceps, forearms"
+  - "waiter curl dumbbell, biceps, forearms"
+best_match: "seated palms up wrist curl, forearms"
+confidence: high

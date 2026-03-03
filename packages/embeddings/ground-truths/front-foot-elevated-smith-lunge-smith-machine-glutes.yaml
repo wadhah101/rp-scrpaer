@@ -1,0 +1,8 @@
+file: front-foot-elevated-smith-lunge-smith-machine-glutes.yaml
+rp_exercise: "front foot elevated smith lunge, smith-machine, glutes"
+candidates:
+  - "deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "squat smith machine, quadriceps, hamstrings, glutes"
+  - "hip thrust smith machine, glutes, hamstrings, quadriceps, adductors"
+best_match: "none"
+confidence: high

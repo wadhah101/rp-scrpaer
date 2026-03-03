@@ -1,0 +1,8 @@
+file: cable-shrug-cable-traps.yaml
+rp_exercise: "cable shrug, cable, traps"
+candidates:
+  - "shrug cable, traps, neck"
+  - "upright row cable, shoulders, traps, upper_back, biceps, forearms"
+  - "shrug dumbbell, traps, neck"
+best_match: "shrug cable, traps, neck"
+confidence: high

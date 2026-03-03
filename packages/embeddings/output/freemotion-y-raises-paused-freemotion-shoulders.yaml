@@ -1,8 +1,8 @@
 rp_embedding_name: freemotion y-raises paused, freemotion, shoulders
 semantic_matches:
   - hevy_embedding_name: front raise cable, shoulders
-    distance: 0.21217578649520874
+    distance: 0.22
   - hevy_embedding_name: front raise band, shoulders
-    distance: 0.2215147614479065
+    distance: 0.23
   - hevy_embedding_name: front raise dumbbell, shoulders
-    distance: 0.234683096408844
+    distance: 0.24

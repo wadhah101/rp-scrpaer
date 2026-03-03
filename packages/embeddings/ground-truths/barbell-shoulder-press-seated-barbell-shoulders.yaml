@@ -1,0 +1,8 @@
+file: barbell-shoulder-press-seated-barbell-shoulders.yaml
+rp_exercise: "barbell shoulder press seated, barbell, shoulders"
+candidates:
+  - "seated overhead press barbell, shoulders, triceps"
+  - "seated shoulder press machine, shoulders, triceps"
+  - "seated overhead press dumbbell, shoulders, triceps"
+best_match: "seated overhead press barbell, shoulders, triceps"
+confidence: high

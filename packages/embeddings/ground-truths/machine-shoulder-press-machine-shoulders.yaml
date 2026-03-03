@@ -1,0 +1,8 @@
+file: machine-shoulder-press-machine-shoulders.yaml
+rp_exercise: "machine shoulder press, machine, shoulders"
+candidates:
+  - "seated shoulder press machine, shoulders, triceps"
+  - "shoulder press machine plates, shoulders, triceps"
+  - "lateral raise machine, shoulders"
+best_match: "seated shoulder press machine, shoulders, triceps"
+confidence: medium

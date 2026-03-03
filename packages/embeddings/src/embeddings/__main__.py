@@ -52,7 +52,7 @@ def main(
     # Build embedder
     embedder: Embedder
     if backend == "api":
-        if not api_base_url or not api_key or not api_model:
+        if not api_base_url or not api_model:
             raise ValueError(
                 "api_base_url, api_key, and api_model are required when backend='api'"
             )
@@ -117,7 +117,14 @@ def main(
     results = query_matches(hevy_collection, rp_embeddings, n_results)
 
     # Compute and write metrics
+    monorepo_root = os.environ.get("MONOREPO_ROOT")
     rp_expected_muscles = rp_df["hevy_primary"].to_list()
+    ground_truths_dir = None
+    if monorepo_root:
+        gt_path = f"{monorepo_root}/packages/embeddings/ground-truths"
+        if os.path.isdir(gt_path):
+            ground_truths_dir = gt_path
+
     metrics = compute_metrics(
         model_name=model_name,
         rp_prompt=rp_prompt,
@@ -128,6 +135,7 @@ def main(
         hevy_docs=hevy_docs,
         rp_expected_muscles=rp_expected_muscles,
         results=results,
+        ground_truths_dir=ground_truths_dir,
     )
 
     with open(metrics_path, "w") as f:
@@ -135,7 +143,6 @@ def main(
     logger.info("Metrics written to %s", metrics_path)
 
     # Optionally write per-exercise output
-    monorepo_root = os.environ.get("MONOREPO_ROOT")
     update_output = os.environ.get("UPDATE_OUTPUT", "false").lower() == "true"
 
     if not update_output:
@@ -170,6 +177,6 @@ if __name__ == "__main__":
         api_dimensions=int(os.environ["EMBEDDING_API_DIMENSIONS"])
         if "EMBEDDING_API_DIMENSIONS" in os.environ
         else None,
-        api_max_rpm=int(os.environ.get("EMBEDDING_API_MAX_RPM", "60")),
-        api_batch_size=int(os.environ.get("EMBEDDING_API_BATCH_SIZE", "100")),
+        api_max_rpm=int(os.environ.get("EMBEDDING_API_MAX_RPM", "600")),
+        api_batch_size=int(os.environ.get("EMBEDDING_API_BATCH_SIZE", "1000")),
     )

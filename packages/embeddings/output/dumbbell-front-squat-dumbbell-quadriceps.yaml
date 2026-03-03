@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell front squat, dumbbell, quadriceps
 semantic_matches:
   - hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.13757646083831787
+    distance: 0.14
   - hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.1595662236213684
+    distance: 0.16
   - hevy_embedding_name: sumo squat dumbbell, quadriceps, glutes, adductors, hamstrings
-    distance: 0.16918766498565674
+    distance: 0.17

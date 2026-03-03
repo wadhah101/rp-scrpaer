@@ -1,8 +1,8 @@
 rp_embedding_name: landmine row, barbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: landmine row, upper_back, lats, biceps, forearms
-    distance: 0.05361223220825195
+    distance: 0.05
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.15228289365768433
+    distance: 0.16
   - hevy_embedding_name: landmine 180, abdominals, shoulders, chest, upper_back, traps, biceps, forearms
-    distance: 0.1746004819869995
+    distance: 0.17

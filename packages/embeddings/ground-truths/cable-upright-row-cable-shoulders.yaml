@@ -1,0 +1,8 @@
+file: cable-upright-row-cable-shoulders.yaml
+rp_exercise: "cable upright row, cable, shoulders"
+candidates:
+  - "upright row cable, shoulders, traps, upper_back, biceps, forearms"
+  - "lateral raise cable, shoulders"
+  - "single arm lateral raise cable, shoulders"
+best_match: "upright row cable"
+confidence: high

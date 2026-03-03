@@ -1,0 +1,8 @@
+file: assisted-pullup-wide-grip-machine-assistance-lats-upper_back.yaml
+rp_exercise: "assisted pullup wide grip, machine-assistance, lats, upper_back"
+candidates:
+  - "wide pull up, lats, upper_back, biceps, forearms"
+  - "lat pulldown machine, lats, upper_back, biceps, forearms"
+  - "pull up assisted, lats, upper_back, biceps, forearms"
+best_match: "pull up assisted"
+confidence: high

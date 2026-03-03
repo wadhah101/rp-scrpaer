@@ -1,0 +1,8 @@
+file: smith-machine-upright-row-smith-machine-shoulders.yaml
+rp_exercise: "smith machine upright row, smith-machine, shoulders"
+candidates:
+  - "upright row barbell, shoulders, traps, upper_back, biceps, forearms"
+  - "upright row dumbbell, shoulders, traps, upper_back, biceps, forearms"
+  - "shrug smith machine, traps, neck"
+best_match: "upright row barbell"
+confidence: medium

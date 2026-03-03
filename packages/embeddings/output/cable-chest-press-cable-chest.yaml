@@ -1,8 +1,8 @@
 rp_embedding_name: cable chest press, cable, chest
 semantic_matches:
   - hevy_embedding_name: seated chest flys cable, chest
-    distance: 0.10987269878387451
+    distance: 0.11
   - hevy_embedding_name: bench press cable, chest, shoulders, triceps
-    distance: 0.11236041784286499
+    distance: 0.11
   - hevy_embedding_name: cable fly crossovers, chest
-    distance: 0.139049232006073
+    distance: 0.14

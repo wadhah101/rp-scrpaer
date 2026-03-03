@@ -1,8 +1,8 @@
 rp_embedding_name: inverted row, bodyweight-only, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
-    distance: 0.054619550704956055
+    distance: 0.05
   - hevy_embedding_name: iso-lateral low row, upper_back, lats, biceps, forearms
-    distance: 0.17764723300933838
+    distance: 0.18
   - hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
-    distance: 0.1824076771736145
+    distance: 0.19
