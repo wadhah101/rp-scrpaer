@@ -1,8 +1,8 @@
 rp_embedding_name: machine triceps pushdown, machine, triceps
 semantic_matches:
   - hevy_embedding_name: triceps extension machine, triceps
-    distance: 0.08499664068222046
+    distance: 0.08059114217758179
   - hevy_embedding_name: triceps pushdown, triceps
-    distance: 0.08948999643325806
+    distance: 0.09987461566925049
   - hevy_embedding_name: triceps pressdown, triceps
-    distance: 0.10666424036026001
+    distance: 0.11576521396636963

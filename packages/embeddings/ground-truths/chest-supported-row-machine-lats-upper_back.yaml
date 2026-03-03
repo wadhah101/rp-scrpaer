@@ -1,0 +1,8 @@
+file: chest-supported-row-machine-lats-upper_back.yaml
+rp_exercise: "chest supported row, machine, lats, upper_back"
+candidates:
+  - "seated row machine, upper_back, lats, biceps, forearms"
+  - "iso-lateral row machine, upper_back, lats, biceps, forearms"
+  - "chest supported incline row dumbbell, upper_back, lats, biceps, forearms"
+best_match: "chest supported incline row dumbbell"
+confidence: medium

@@ -1,0 +1,8 @@
+file: goblet-squat-dumbbell-quadriceps.yaml
+rp_exercise: "goblet squat, dumbbell, quadriceps"
+candidates:
+  - "goblet squat, quadriceps, hamstrings, glutes"
+  - "kettlebell goblet squat, quadriceps, glutes, hamstrings"
+  - "squat dumbbell, quadriceps, hamstrings, glutes"
+best_match: "goblet squat, quadriceps, hamstrings, glutes"
+confidence: high

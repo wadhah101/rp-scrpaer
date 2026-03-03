@@ -1,0 +1,8 @@
+file: machine-flye-machine-chest.yaml
+rp_exercise: "machine flye, machine, chest"
+candidates:
+  - "chest fly machine, chest"
+  - "chest fly suspension, chest"
+  - "chest fly dumbbell, chest"
+best_match: "chest fly machine, chest"
+confidence: high

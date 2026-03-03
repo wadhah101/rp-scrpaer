@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell row single-arm, supported, dumbbell, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
-    distance: 0.13398343324661255
+    distance: 0.12913233041763306
   - hevy_embedding_name: single arm cable row, upper_back, lats, biceps, forearms
-    distance: 0.13551092147827148
-  - hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.1517677903175354
+    distance: 0.13864219188690186
+  - hevy_embedding_name: renegade row dumbbell, upper_back, lats, biceps, forearms
+    distance: 0.13926124572753906

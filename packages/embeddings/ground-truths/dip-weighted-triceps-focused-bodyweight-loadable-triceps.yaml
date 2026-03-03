@@ -1,0 +1,8 @@
+file: dip-weighted-triceps-focused-bodyweight-loadable-triceps.yaml
+rp_exercise: "dip weighted, triceps-focused, bodyweight-loadable, triceps"
+candidates:
+  - "triceps dip weighted, triceps, chest, shoulders"
+  - "triceps dip assisted, triceps, chest, shoulders"
+  - "floor triceps dip, triceps, shoulders"
+best_match: "triceps dip weighted"
+confidence: high

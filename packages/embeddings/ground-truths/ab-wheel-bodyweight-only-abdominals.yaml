@@ -1,0 +1,8 @@
+file: ab-wheel-bodyweight-only-abdominals.yaml
+rp_exercise: "ab wheel, bodyweight-only, abdominals"
+candidates:
+  - "ab wheel, abdominals"
+  - "sit up weighted, abdominals"
+  - "russian twist bodyweight, abdominals"
+best_match: "ab wheel, abdominals"
+confidence: high

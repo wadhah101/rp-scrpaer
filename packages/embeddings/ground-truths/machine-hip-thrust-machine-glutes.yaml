@@ -1,0 +1,8 @@
+file: machine-hip-thrust-machine-glutes.yaml
+rp_exercise: "machine hip thrust, machine, glutes"
+candidates:
+  - "hip thrust machine, glutes, hamstrings, quadriceps, adductors"
+  - "hip thrust smith machine, glutes, hamstrings, quadriceps, adductors"
+  - "glute kickback machine, glutes, hamstrings"
+best_match: "hip thrust machine"
+confidence: high

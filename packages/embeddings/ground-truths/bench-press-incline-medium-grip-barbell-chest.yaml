@@ -1,0 +1,8 @@
+file: bench-press-incline-medium-grip-barbell-chest.yaml
+rp_exercise: "bench press incline, medium grip, barbell, chest"
+candidates:
+  - "incline bench press barbell, chest, triceps, shoulders"
+  - "incline bench press dumbbell, chest, triceps, shoulders"
+  - "incline bench press smith machine, chest, shoulders, triceps"
+best_match: "incline bench press barbell, chest, triceps, shoulders"
+confidence: high

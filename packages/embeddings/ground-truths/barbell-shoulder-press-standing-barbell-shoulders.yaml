@@ -1,0 +1,8 @@
+file: barbell-shoulder-press-standing-barbell-shoulders.yaml
+rp_exercise: "barbell shoulder press standing, barbell, shoulders"
+candidates:
+  - "standing military press barbell, shoulders, triceps"
+  - "front raise barbell, shoulders"
+  - "seated overhead press barbell, shoulders, triceps"
+best_match: "standing military press barbell, shoulders, triceps"
+confidence: high

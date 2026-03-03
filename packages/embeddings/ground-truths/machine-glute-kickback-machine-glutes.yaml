@@ -1,0 +1,8 @@
+file: machine-glute-kickback-machine-glutes.yaml
+rp_exercise: "machine glute kickback, machine, glutes"
+candidates:
+  - "glute kickback machine, glutes, hamstrings"
+  - "rear kick machine, glutes, hamstrings"
+  - "glute kickback on floor, glutes, hamstrings"
+best_match: "glute kickback machine, glutes, hamstrings"
+confidence: high

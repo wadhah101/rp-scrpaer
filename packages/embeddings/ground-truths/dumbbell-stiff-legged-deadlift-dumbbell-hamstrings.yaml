@@ -1,0 +1,8 @@
+file: dumbbell-stiff-legged-deadlift-dumbbell-hamstrings.yaml
+rp_exercise: "dumbbell stiff legged deadlift, dumbbell, hamstrings"
+candidates:
+  - "single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back"
+  - "deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats"
+best_match: "romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats"
+confidence: high

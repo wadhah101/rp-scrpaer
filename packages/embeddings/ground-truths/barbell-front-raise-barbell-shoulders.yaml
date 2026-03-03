@@ -1,0 +1,8 @@
+file: barbell-front-raise-barbell-shoulders.yaml
+rp_exercise: "barbell front raise, barbell, shoulders"
+candidates:
+  - "front raise barbell, shoulders"
+  - "front raise dumbbell, shoulders"
+  - "plate front raise, shoulders"
+best_match: "front raise barbell, shoulders"
+confidence: high

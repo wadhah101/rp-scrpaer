@@ -1,0 +1,8 @@
+file: dumbbell-row-2-arm-dumbbell-lats-upper_back.yaml
+rp_exercise: "dumbbell row 2-arm, dumbbell, lats, upper_back"
+candidates:
+  - "dumbbell row, lats, upper_back, biceps, forearms"
+  - "bent over row dumbbell, upper_back, lats, biceps, forearms"
+  - "renegade row dumbbell, upper_back, lats, biceps, forearms"
+best_match: "bent over row dumbbell"
+confidence: medium

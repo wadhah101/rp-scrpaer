@@ -1,0 +1,8 @@
+file: cable-bent-over-shrug-cable-traps.yaml
+rp_exercise: "cable bent over shrug, cable, traps"
+candidates:
+  - "shrug cable, traps, neck"
+  - "shrug smith machine, traps, neck"
+  - "shrug barbell, traps, neck"
+best_match: "shrug cable, traps, neck"
+confidence: high

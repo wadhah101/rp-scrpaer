@@ -1,8 +1,8 @@
 rp_embedding_name: freemotion curl single-arm, freemotion, biceps
 semantic_matches:
   - hevy_embedding_name: single arm curl cable, biceps
-    distance: 0.11697274446487427
-  - hevy_embedding_name: bicep curl cable, biceps
-    distance: 0.15007585287094116
+    distance: 0.12024933099746704
   - hevy_embedding_name: drag curl, biceps
-    distance: 0.1585787534713745
+    distance: 0.1438191533088684
+  - hevy_embedding_name: bicep curl cable, biceps
+    distance: 0.15392142534255981

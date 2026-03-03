@@ -1,8 +1,8 @@
 rp_embedding_name: dumbbell shoulder press standing, dumbbell, shoulders
 semantic_matches:
   - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.0765886902809143
+    distance: 0.085793137550354
   - hevy_embedding_name: front raise dumbbell, shoulders
-    distance: 0.10580617189407349
+    distance: 0.11243700981140137
   - hevy_embedding_name: overhead press dumbbell, shoulders, triceps
-    distance: 0.13490325212478638
+    distance: 0.12575089931488037

@@ -1,0 +1,8 @@
+file: single-leg-press-machine-quadriceps.yaml
+rp_exercise: "single leg press, machine, quadriceps"
+candidates:
+  - "single leg press machine, quadriceps, glutes, hamstrings"
+  - "leg press machine, quadriceps, glutes, hamstrings"
+  - "leg press horizontal machine, quadriceps, hamstrings, glutes"
+best_match: "single leg press machine, quadriceps, glutes, hamstrings"
+confidence: high

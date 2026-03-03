@@ -1,0 +1,8 @@
+file: dumbbell-lateral-raise-super-rom-dumbbell-shoulders.yaml
+rp_exercise: "dumbbell lateral raise super rom, dumbbell, shoulders"
+candidates:
+  - "lateral raise dumbbell, shoulders"
+  - "seated lateral raise dumbbell, shoulders"
+  - "front raise dumbbell, shoulders"
+best_match: "lateral raise dumbbell, shoulders"
+confidence: medium

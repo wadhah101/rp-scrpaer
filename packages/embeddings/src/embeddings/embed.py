@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import statistics
 import time
 from dataclasses import dataclass
@@ -181,6 +182,38 @@ def build_match_results(
     return final
 
 
+def _load_ground_truths(ground_truths_dir: str) -> dict[str, dict[str, str]]:
+    """Load ground truth YAML files into a dict keyed by rp_exercise name."""
+    import glob
+
+    import yaml
+
+    truths: dict[str, dict[str, str]] = {}
+    for path in glob.glob(os.path.join(ground_truths_dir, "*.yaml")):
+        with open(path) as f:
+            data = yaml.safe_load(f)
+        if data and "rp_exercise" in data and "best_match" in data:
+            truths[data["rp_exercise"]] = data
+    return truths
+
+
+def _gt_matches(hevy_name: str, best_match: str) -> bool:
+    """Check if a hevy embedding name matches the ground truth best_match.
+
+    Ground truths may store a prefix (e.g. "shrug barbell") while the full
+    hevy name includes muscle groups (e.g. "shrug barbell, traps, neck").
+    """
+    return hevy_name == best_match or hevy_name.startswith(best_match + ",")
+
+
+def _confidence_weight(confidence: str) -> float:
+    if confidence == "high":
+        return 1.0
+    if confidence == "medium":
+        return 0.5
+    return 0.0
+
+
 def compute_metrics(
     *,
     model_name: str,
@@ -192,6 +225,7 @@ def compute_metrics(
     hevy_docs: list[str],
     rp_expected_muscles: list[list[str]],
     results: chromadb.QueryResult,
+    ground_truths_dir: str | None = None,
 ) -> dict[str, Any]:
     top1_distances: list[float] = []
     confidence_gaps: list[float] = []
@@ -216,7 +250,7 @@ def compute_metrics(
 
     n_rp = len(rp_docs)
 
-    return {
+    metrics: dict[str, Any] = {
         "config": {
             "model": model_name,
             "rp_prompt": rp_prompt,
@@ -251,4 +285,78 @@ def compute_metrics(
             "high_confidence_count": sum(1 for d in top1_distances if d < 0.15),
             "low_confidence_count": sum(1 for d in top1_distances if d > 0.3),
         },
+    }
+
+    # Ground truth accuracy (when ground truth files are available)
+    if ground_truths_dir:
+        gt = _load_ground_truths(ground_truths_dir)
+        if gt:
+            metrics["ground_truth"] = _compute_ground_truth_metrics(
+                rp_docs, results, gt
+            )
+
+    return metrics
+
+
+def _compute_ground_truth_metrics(
+    rp_docs: list[str],
+    results: chromadb.QueryResult,
+    gt: dict[str, dict[str, str]],
+) -> dict[str, Any]:
+    top1_score = 0.0
+    topk_score = 0.0
+    none_correct_score = 0.0
+    evaluated = 0
+    none_total = 0
+    mismatches: list[dict[str, str]] = []
+
+    for rp_doc, matches in zip(rp_docs, results["documents"], strict=True):
+        if rp_doc not in gt:
+            continue
+
+        truth = gt[rp_doc]
+        best_match = truth["best_match"]
+        weight = _confidence_weight(truth.get("confidence", "high"))
+        evaluated += 1
+
+        if best_match == "none":
+            # Ground truth says none of the candidates match — any top-k
+            # result that ISN'T in the candidate list is fine, but if the
+            # embedding returns a candidate that was explicitly rejected,
+            # that's a miss.  For "none" truths we just track them separately.
+            none_total += 1
+            none_correct_score += weight
+            continue
+
+        # Check top-1
+        if _gt_matches(matches[0], best_match):
+            top1_score += weight
+        else:
+            mismatches.append(
+                {
+                    "rp_exercise": rp_doc,
+                    "expected": best_match,
+                    "got": matches[0],
+                    "confidence": truth.get("confidence", "high"),
+                }
+            )
+
+        # Check top-k
+        if any(_gt_matches(m, best_match) for m in matches):
+            topk_score += weight
+
+    n_matchable = evaluated - none_total
+    return {
+        "evaluated": evaluated,
+        "matchable": n_matchable,
+        "none_total": none_total,
+        "weighted_accuracy_at_1": round(top1_score / n_matchable, 4)
+        if n_matchable
+        else 0,
+        "weighted_accuracy_at_k": round(topk_score / n_matchable, 4)
+        if n_matchable
+        else 0,
+        "weighted_top1_correct": round(top1_score, 2),
+        "weighted_topk_correct": round(topk_score, 2),
+        "mismatches": mismatches,
     }

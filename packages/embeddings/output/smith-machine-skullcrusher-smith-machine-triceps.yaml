@@ -1,8 +1,8 @@
 rp_embedding_name: smith machine skullcrusher, smith-machine, triceps
 semantic_matches:
-  - hevy_embedding_name: skullcrusher dumbbell, triceps
-    distance: 0.11190652847290039
   - hevy_embedding_name: skullcrusher barbell, triceps
-    distance: 0.12135577201843262
+    distance: 0.11852073669433594
+  - hevy_embedding_name: skullcrusher dumbbell, triceps
+    distance: 0.12075680494308472
   - hevy_embedding_name: bench press smith machine, chest, shoulders, triceps
-    distance: 0.14983636140823364
+    distance: 0.13345152139663696

@@ -1,0 +1,8 @@
+file: dumbbell-overhead-extension-dumbbell-triceps.yaml
+rp_exercise: "dumbbell overhead extension, dumbbell, triceps"
+candidates:
+  - "triceps extension dumbbell, triceps"
+  - "single arm tricep extension dumbbell, triceps"
+  - "overhead triceps extension cable, triceps"
+best_match: "triceps extension dumbbell, triceps"
+confidence: high

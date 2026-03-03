@@ -1,0 +1,8 @@
+file: machine-triceps-extension-machine-triceps.yaml
+rp_exercise: "machine triceps extension, machine, triceps"
+candidates:
+  - "triceps extension machine, triceps"
+  - "triceps extension cable, triceps"
+  - "triceps extension barbell, triceps"
+best_match: "triceps extension machine, triceps"
+confidence: high

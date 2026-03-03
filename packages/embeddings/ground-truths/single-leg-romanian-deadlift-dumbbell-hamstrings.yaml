@@ -1,0 +1,8 @@
+file: single-leg-romanian-deadlift-dumbbell-hamstrings.yaml
+rp_exercise: "single leg romanian deadlift, dumbbell, hamstrings"
+candidates:
+  - "single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back"
+  - "single leg romanian deadlift barbell, hamstrings, glutes, lower_back, upper_back, lats"
+  - "romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats"
+best_match: "single leg romanian deadlift dumbbell"
+confidence: high

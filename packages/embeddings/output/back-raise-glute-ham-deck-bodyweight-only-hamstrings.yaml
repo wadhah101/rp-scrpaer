@@ -1,8 +1,8 @@
 rp_embedding_name: back raise glute ham deck, bodyweight-only, hamstrings
 semantic_matches:
   - hevy_embedding_name: glute ham raise, hamstrings, glutes
-    distance: 0.12531650066375732
+    distance: 0.11922377347946167
   - hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
-    distance: 0.15711885690689087
-  - hevy_embedding_name: reverse hyperextension, glutes, hamstrings, lower_back
-    distance: 0.16849243640899658
+    distance: 0.1601959466934204
+  - hevy_embedding_name: glute kickback on floor, glutes, hamstrings
+    distance: 0.166043221950531

@@ -1,0 +1,8 @@
+file: machine-shrug-machine-traps.yaml
+rp_exercise: "machine shrug, machine, traps"
+candidates:
+  - "shrug machine, traps, neck"
+  - "shrug smith machine, traps, neck"
+  - "rowing machine, cardio"
+best_match: "shrug machine, traps, neck"
+confidence: high

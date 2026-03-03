@@ -1,0 +1,8 @@
+file: deadlift-barbell-glutes.yaml
+rp_exercise: "deadlift, barbell, glutes"
+candidates:
+  - "deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+  - "deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+best_match: "deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps"
+confidence: high

@@ -1,0 +1,8 @@
+file: grip-roller-machine-forearms.yaml
+rp_exercise: "grip roller, machine, forearms"
+candidates:
+  - "wrist roller, forearms, shoulders"
+  - "seated palms up wrist curl, forearms"
+  - "rope cable curl, biceps, forearms"
+best_match: "wrist roller, forearms, shoulders"
+confidence: high

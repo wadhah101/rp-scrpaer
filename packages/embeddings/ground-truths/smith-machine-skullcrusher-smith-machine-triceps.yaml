@@ -1,0 +1,8 @@
+file: smith-machine-skullcrusher-smith-machine-triceps.yaml
+rp_exercise: "smith machine skullcrusher, smith-machine, triceps"
+candidates:
+  - "skullcrusher barbell, triceps"
+  - "skullcrusher dumbbell, triceps"
+  - "bench press smith machine, chest, shoulders, triceps"
+best_match: "skullcrusher barbell, triceps"
+confidence: medium

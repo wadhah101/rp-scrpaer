@@ -1,8 +1,8 @@
 rp_embedding_name: pullup normal grip, bodyweight-only, lats, upper_back
 semantic_matches:
   - hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
-    distance: 0.10259842872619629
-  - hevy_embedding_name: wide pull up, lats, upper_back, biceps, forearms
-    distance: 0.10994404554367065
+    distance: 0.1113937497138977
   - hevy_embedding_name: pull up, lats, upper_back, biceps, forearms
-    distance: 0.11408960819244385
+    distance: 0.11881387233734131
+  - hevy_embedding_name: wide pull up, lats, upper_back, biceps, forearms
+    distance: 0.12307673692703247

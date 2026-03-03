@@ -1,0 +1,8 @@
+file: leg-press-calves-machine-calves.yaml
+rp_exercise: "leg press calves, machine, calves"
+candidates:
+  - "calf press machine, calves"
+  - "standing calf raise machine, calves"
+  - "single leg standing calf raise machine, calves"
+best_match: "calf press machine, calves"
+confidence: high
