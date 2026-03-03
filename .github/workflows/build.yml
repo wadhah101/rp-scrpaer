@@ -36,7 +36,6 @@ jobs:
             tcp://${{ secrets.REMOTE_BUILDER_ADDRESS }}:${{ secrets.REMOTE_BUILDER_PORT }}
           docker buildx use remote-builder
       - name: build
-        working-directory: 
         run: mise //packages/${{ matrix.project }}:build
         env:
           GITHUB_TOKEN: ${{ github.token }}
