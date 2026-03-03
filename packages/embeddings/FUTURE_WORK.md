@@ -2,22 +2,11 @@
 
 Improvements and evaluation strategies for the exercise matching pipeline.
 
-## Evaluation
+## ~~Evaluation~~ (Done)
 
-There is currently no quantitative evaluation. Before changing models or logic, build a ground truth and measure against it.
+~~There is currently no quantitative evaluation. Before changing models or logic, build a ground truth and measure against it.~~ --- Done: see [README.md § Evaluation](./README.md#evaluation).
 
-### Build a ground truth dataset
-
-Manually label 100-200 RP-to-Hevy pairs as correct/incorrect. Include easy matches ("Barbell Curl" -> "Bicep Curl (Barbell)"), hard synonyms ("Pullup Underhand Grip" -> "Chin Up"), and known non-matches. Store as a simple CSV.
-
-### Metrics
-
-- **Precision@1** --- Is the top match correct?
-- **Precision@3** --- Is the correct match in the top 3?
-- **Mean Reciprocal Rank (MRR)** --- Where does the correct match rank on average?
-- **Unmatched rate** --- How many RP exercises have no valid Hevy match above the confidence threshold?
-
-Run every model/config change against this ground truth to catch regressions.
+A 100-exercise ground truth dataset was built using LLM-as-a-judge (Claude Sonnet), with confidence-weighted accuracy metrics computed on every pipeline run. The ground truth covers easy matches, hard synonyms, and known non-matches. Metrics include weighted precision@1, precision@K, and a detailed mismatch report for debugging regressions.
 
 ---
 
