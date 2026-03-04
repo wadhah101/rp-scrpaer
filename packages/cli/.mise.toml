@@ -71,7 +71,7 @@ run = """
 uv run python -m rp_to_hevy_cli embedding llm-judge \
   --api-base-url "https://openrouter.ai/api/v1" \
   --api-key "$OPENROUTER_API_KEY" \
-  --api-model "z-ai/glm-5" \
+  --api-model "google/gemini-3-flash-preview" \
   --input-dir "$MONOREPO_ROOT/data/embeddings/output" \
   --output "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
   --concurrency "200" \

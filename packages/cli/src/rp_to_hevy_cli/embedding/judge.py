@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import sys
 from enum import Enum
 from pathlib import Path
 
@@ -51,10 +52,24 @@ def _build_user_prompt(rp_name: str, candidates: list[str]) -> str:
     return f"RP Exercise: {rp_name}\n\nHevy Candidates:\n{lines}"
 
 
+class _Counter:
+    __slots__ = ("_done", "_total")
+
+    def __init__(self, total: int) -> None:
+        self._done = 0
+        self._total = total
+
+    def tick(self) -> None:
+        self._done += 1
+        sys.stderr.write(f"\r  {self._done}/{self._total}")
+        sys.stderr.flush()
+
+
 async def _judge_one(
     agent: Agent[None, JudgeResult],
     exercise: dict,
     sem: asyncio.Semaphore,
+    counter: _Counter,
     strict: bool = False,
 ) -> dict | None:
     """Judge a single exercise with retries."""
@@ -102,6 +117,7 @@ async def _judge_one(
             )
         idx = 0
 
+    counter.tick()
     chosen = matches[idx]
     return {
         "rp_id": rp_id,
@@ -152,8 +168,10 @@ async def _run(
         f"Processing {total} exercises with {api_model} (concurrency={concurrency})..."
     )
 
-    tasks = [_judge_one(agent, ex, sem, strict) for ex in exercises]
+    counter = _Counter(total)
+    tasks = [_judge_one(agent, ex, sem, counter, strict) for ex in exercises]
     raw_results = await asyncio.gather(*tasks)
+    click.echo(err=True)  # newline after progress
 
     results = [r for r in raw_results if r is not None]
     results.sort(key=lambda r: int(r["rp_id"]))
