@@ -87,8 +87,7 @@ env = { HEVY_API_KEY = { required = true } }
 run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
-  --mesocycles "$MONOREPO_ROOT/packages/cli/exports/rp/mesocycles.json" \
-  --start-date 2024-01-01
+  --start-date 2026-02-28
 """
 
 [tasks.port-rp-workout-to-hevy-dry-run]
@@ -97,7 +96,6 @@ env = { HEVY_API_KEY = { required = true } }
 run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
-  --mesocycles "$MONOREPO_ROOT/packages/cli/exports/rp/mesocycles.json" \
   --start-date 2026-01-01 \
   --dry-run
 """

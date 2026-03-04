@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import asyncio
-import json
 import os
 import re
 from dataclasses import dataclass
@@ -10,6 +9,9 @@ from pathlib import Path
 from uuid import UUID
 
 import click
+from api_service_rp import ApiClient as RpApiClient
+from api_service_rp import Configuration as RpConfiguration
+from api_service_rp import TrainingDataApi
 from api_service_rp.models.day import Day
 from api_service_rp.models.mesocycle import Mesocycle
 from hevy_api_service import ApiClient as HevyApiClient
@@ -28,12 +30,12 @@ from hevy_api_service.models.post_workouts_request_set import PostWorkoutsReques
 from ruamel.yaml import YAML
 
 from rp_to_hevy_cli.hevy import _fetch_all_workouts
+from rp_to_hevy_cli.utils import read_token
 
 yaml = YAML()
 yaml.width = 4096
 
 DEFAULT_MATCHES_PATH = Path("data/embeddings/llm-matches.yaml")
-DEFAULT_MESOCYCLES_PATH = Path("packages/cli/exports/rp/mesocycles.json")
 
 IMPORT_TAG = "#import-from-rp"
 RP_DAY_ID_PATTERN = re.compile(r"rp-day-id:(\d+)")
@@ -55,9 +57,14 @@ def _load_matches(path: Path) -> list[ExerciseMatch]:
     return [ExerciseMatch(**item) for item in data]
 
 
-def _load_mesocycles(path: Path) -> list[Mesocycle]:
-    raw = json.loads(path.read_text())
-    return [Mesocycle.from_dict(m) for m in raw]
+async def _fetch_mesocycles(token: str) -> list[Mesocycle]:
+    config = RpConfiguration(access_token=token)
+    async with RpApiClient(config) as client:
+        api = TrainingDataApi(client)
+        summaries = await api.get_mesocycles()
+        return list(
+            await asyncio.gather(*(api.get_mesocycle(m.key) for m in summaries))
+        )
 
 
 def _make_description(day_id: int) -> str:
@@ -176,11 +183,9 @@ def _build_hevy_workout(
     help="Path to llm-matches.yaml file.",
 )
 @click.option(
-    "--mesocycles",
-    "mesocycles_path",
-    type=click.Path(exists=True, path_type=Path),
-    default=DEFAULT_MESOCYCLES_PATH,
-    help="Path to mesocycles.json file.",
+    "--token-file",
+    default="token.txt",
+    help="Path to file containing RP bearer token.",
 )
 @click.option(
     "--dry-run",
@@ -202,32 +207,33 @@ def _build_hevy_workout(
 )
 def port_rp_workout_to_hevy(
     matches_path: Path,
-    mesocycles_path: Path,
+    token_file: str,
     dry_run: bool,
     start_date: datetime | None,
     upsert: bool,
 ):
     asyncio.run(
-        _port_rp_workout_to_hevy(
-            matches_path, mesocycles_path, dry_run, start_date, upsert
-        )
+        _port_rp_workout_to_hevy(matches_path, token_file, dry_run, start_date, upsert)
     )
 
 
 async def _port_rp_workout_to_hevy(
     matches_path: Path,
-    mesocycles_path: Path,
+    token_file: str,
     dry_run: bool,
     start_date: datetime | None,
     upsert: bool = False,
 ) -> None:
     """Port RP workout data to Hevy format."""
 
-    # Phase 1: Load data
+    # Phase 1: Load matches + fetch mesocycles from RP
     matches = _load_matches(matches_path)
-    mesocycles = _load_mesocycles(mesocycles_path)
     click.echo(f"Loaded {len(matches)} exercise matches")
-    click.echo(f"Loaded {len(mesocycles)} mesocycles")
+
+    rp_token = read_token(token_file)
+    click.echo("Fetching mesocycles from RP...")
+    mesocycles = await _fetch_mesocycles(rp_token)
+    click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
     # Phase 2: Validate
     api_key_str = os.environ.get("HEVY_API_KEY")
