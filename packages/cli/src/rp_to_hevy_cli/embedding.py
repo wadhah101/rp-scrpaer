@@ -351,7 +351,7 @@ def run_rp_similarity_search(
         match_results = build_match_results(rp_docs, results)
         for item in match_results:
             normalized = (
-                item["rp_embedding_name"]
+                item["rp_id"]
                 .replace(" ", "-")
                 .replace(",", "")
                 .replace("/", "")
