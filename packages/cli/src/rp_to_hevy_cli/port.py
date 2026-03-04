@@ -59,7 +59,7 @@ def _load_mesocycles(path: Path) -> list[Mesocycle]:
 
 
 def _make_description(day_id: int) -> str:
-    return f"{IMPORT_TAG} rp_day_id:{day_id}"
+    return f"{IMPORT_TAG}\nrp_day_id:{day_id}"
 
 
 def _parse_existing_workout_dates(workouts: list) -> set[date]:
