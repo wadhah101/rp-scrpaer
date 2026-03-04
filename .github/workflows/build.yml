@@ -10,14 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: build
-    outputs:
-      use_blacksmith: ${{ steps.check-builder.outputs.use_blacksmith }}
     strategy:
       matrix:
         project: [cli]
     env:
       MISE_AUTO_INSTALL: false
     steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Cache mise tools
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.local/share/mise
+          key: mise-build-${{ matrix.project }}-${{ hashFiles('**/.mise.toml', '.mise.*.toml', '.miserc.toml') }}
+          restore-keys: mise-build-${{ matrix.project }}-
+      - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
+        with:
+          install: false
+          cache: false
+          version: 2026.3.0
       - name: Tailscale
         uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4.1.1
         with:
@@ -30,68 +42,19 @@ jobs:
           if [ -n "$ADDR" ] && [ -n "$PORT" ] && \
              timeout 15 bash -c "cat < /dev/null > /dev/tcp/$ADDR/$PORT" 2>/dev/null; then
             echo "Remote builder reachable at $ADDR:$PORT"
-            echo "use_blacksmith=false" >> "$GITHUB_OUTPUT"
+            echo "available=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Remote builder not available, delegating to Blacksmith"
-            echo "use_blacksmith=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::Remote builder not available, falling back to local docker buildx"
+            echo "available=false" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        if: steps.check-builder.outputs.use_blacksmith != 'true'
-        with:
-          persist-credentials: false
-      - name: Cache mise tools
-        if: steps.check-builder.outputs.use_blacksmith != 'true'
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: ~/.local/share/mise
-          key: mise-build-${{ matrix.project }}-${{ hashFiles('**/.mise.toml', '.mise.*.toml', '.miserc.toml') }}
-          restore-keys: mise-build-${{ matrix.project }}-
-      - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
-        if: steps.check-builder.outputs.use_blacksmith != 'true'
-        with:
-          install: false
-          cache: false
-          version: 2026.3.0
       - name: Setup remote builder
-        if: steps.check-builder.outputs.use_blacksmith != 'true'
+        if: steps.check-builder.outputs.available == 'true'
         run: |
           docker buildx create \
             --name remote-builder \
             --driver remote \
             tcp://${{ secrets.REMOTE_BUILDER_ADDRESS }}:${{ secrets.REMOTE_BUILDER_PORT }}
           docker buildx use remote-builder
-      - name: build
-        if: steps.check-builder.outputs.use_blacksmith != 'true'
-        run: mise //packages/${{ matrix.project }}:build
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-  blacksmith-build:
-    needs: build
-    if: needs.build.outputs.use_blacksmith == 'true'
-    runs-on: blacksmith-2vcpu-ubuntu-2404
-    name: blacksmith-build
-    env:
-      MISE_AUTO_INSTALL: false
-    strategy:
-      matrix:
-        project: [cli]
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-      - name: Cache mise tools
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
-        with:
-          path: ~/.local/share/mise
-          key: mise-build-${{ matrix.project }}-${{ hashFiles('**/.mise.toml', '.mise.*.toml', '.miserc.toml') }}
-          restore-keys: mise-build-${{ matrix.project }}-
-      - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
-        with:
-          install: false
-          cache: false
-          version: 2026.3.0
-      - name: Setup Docker builder
-        uses: useblacksmith/setup-docker-builder@ef12d5b165b596e3aa44ea8198d8fde563eab402 # v1.4.0
       - name: build
         run: mise //packages/${{ matrix.project }}:build
         env:
