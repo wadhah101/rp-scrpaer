@@ -60,6 +60,6 @@ uv run python -m rp_to_hevy_cli embedding run-rp-similarity-search \
   --exercise-output-dir "$MONOREPO_ROOT/data/embeddings/output" \
   --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
   --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json" \
-  --metrics-output "$MONOREPO_ROOT/packages/embeddings/metrics.yaml" \
+  --metrics-output "$MONOREPO_ROOT/data/embeddings/metrics.yaml" \
   --ground-truths-dir "$MONOREPO_ROOT/data/embeddings/ground-truths"
 """
