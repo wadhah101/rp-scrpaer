@@ -34,7 +34,7 @@ Rules:
 - Don't justify your choice for me
 - Return ONLY the candidate number (1, 2, 3, etc.)."""
 
-_MAX_RETRIES = 3
+_MAX_RETRIES = 10
 
 
 class Confidence(str, Enum):
@@ -232,7 +232,7 @@ async def _run(
 @click.option(
     "--timeout",
     type=float,
-    default=30.0,
+    default=120.0,
     help="Per-request timeout in seconds.",
 )
 @click.option(
