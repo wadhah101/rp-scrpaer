@@ -1,0 +1,12 @@
+rp_id: '535961'
+rp_embedding_name: lying cable curl, cable, biceps
+semantic_matches:
+  - hevy_id: ADA8623C
+    hevy_embedding_name: bicep curl cable, biceps
+    distance: 0.05
+  - hevy_id: B33B526E
+    hevy_embedding_name: single arm curl cable, biceps
+    distance: 0.08
+  - hevy_id: 582ADA23
+    hevy_embedding_name: overhead curl cable, biceps
+    distance: 0.1

@@ -1,0 +1,12 @@
+rp_id: '535968'
+rp_embedding_name: hip adduction, machine, quadriceps
+semantic_matches:
+  - hevy_id: 8BEBFED6
+    hevy_embedding_name: hip adduction machine, adductors
+    distance: 0.09
+  - hevy_id: F4B4C6EE
+    hevy_embedding_name: hip abduction machine, abductors
+    distance: 0.14
+  - hevy_id: 75A4F6C4
+    hevy_embedding_name: leg extension machine, quadriceps
+    distance: 0.16

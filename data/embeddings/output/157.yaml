@@ -1,0 +1,12 @@
+rp_id: '157'
+rp_embedding_name: barbell squat close stance, feet forward, barbell, quadriceps
+semantic_matches:
+  - hevy_id: D04AC939
+    hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.17
+  - hevy_id: 38FC1AB9
+    hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.18
+  - hevy_id: CE1054CE
+    hevy_embedding_name: pause squat barbell, quadriceps, glutes, hamstrings
+    distance: 0.19

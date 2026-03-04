@@ -1,0 +1,12 @@
+rp_id: '535946'
+rp_embedding_name: concentration curl, dumbbell, biceps
+semantic_matches:
+  - hevy_id: 724CDE60
+    hevy_embedding_name: concentration curl, biceps
+    distance: 0.04
+  - hevy_id: 37FCC2BB
+    hevy_embedding_name: bicep curl dumbbell, biceps
+    distance: 0.1
+  - hevy_id: 90427D4A
+    hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.13

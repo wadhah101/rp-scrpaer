@@ -1,8 +1,0 @@
-rp_embedding_name: slant board sit-up weighted, bodyweight-loadable, abdominals
-semantic_matches:
-  - hevy_embedding_name: sit up weighted, abdominals
-    distance: 0.1
-  - hevy_embedding_name: sit up, abdominals
-    distance: 0.16
-  - hevy_embedding_name: russian twist weighted, abdominals
-    distance: 0.17

@@ -138,7 +138,7 @@ def encode_and_store(
     if metadatas is not None:
         add_kwargs["metadatas"] = metadatas
 
-    collection.add(**add_kwargs)
+    collection.upsert(**add_kwargs)
     logger.info(
         "Stored %d embeddings, collection count: %d", len(ids), collection.count()
     )
@@ -160,22 +160,28 @@ def query_matches(
 
 
 def build_match_results(
-    rp_docs: list[str],
+    rp_docs: list[dict[str, str]],
     results: chromadb.QueryResult,
 ) -> list[dict[str, Any]]:
     final = []
-    for rp_doc, matches, distances in zip(
+    for rp_doc, matches, distances, hevy_ids in zip(
         rp_docs,
         results["documents"],
         results["distances"],
+        results["ids"],
         strict=True,
     ):
         final.append(
             {
-                "rp_embedding_name": rp_doc,
+                "rp_id": rp_doc["id"],
+                "rp_embedding_name": rp_doc["name"],
                 "semantic_matches": [
-                    {"hevy_embedding_name": m, "distance": round(d, 2)}
-                    for m, d in zip(matches, distances, strict=True)
+                    {
+                        "hevy_id": hid,
+                        "hevy_embedding_name": m,
+                        "distance": round(d, 2),
+                    }
+                    for hid, m, d in zip(hevy_ids, matches, distances, strict=True)
                 ],
             }
         )

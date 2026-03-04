@@ -1,0 +1,12 @@
+rp_id: '181'
+rp_embedding_name: machine glute kickback, machine, glutes
+semantic_matches:
+  - hevy_id: CBA02382
+    hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.05
+  - hevy_id: 1ADF8723
+    hevy_embedding_name: rear kick machine, glutes, hamstrings
+    distance: 0.11
+  - hevy_id: 987234AB
+    hevy_embedding_name: glute kickback on floor, glutes, hamstrings
+    distance: 0.14

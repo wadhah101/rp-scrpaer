@@ -1,0 +1,12 @@
+rp_id: '110'
+rp_embedding_name: cable cross body lateral raise, cable, shoulders
+semantic_matches:
+  - hevy_id: BE289E45
+    hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.05
+  - hevy_id: DE68C825
+    hevy_embedding_name: single arm lateral raise cable, shoulders
+    distance: 0.06
+  - hevy_id: D5D0354D
+    hevy_embedding_name: lateral raise machine, shoulders
+    distance: 0.13

@@ -1,0 +1,12 @@
+rp_id: '218'
+rp_embedding_name: grip roller, machine, forearms
+semantic_matches:
+  - hevy_id: 0E4523F4
+    hevy_embedding_name: wrist roller, forearms, shoulders
+    distance: 0.24
+  - hevy_id: AF328E3D
+    hevy_embedding_name: bicep curl machine, biceps
+    distance: 0.29
+  - hevy_id: 234897AB
+    hevy_embedding_name: rope cable curl, biceps, forearms
+    distance: 0.29

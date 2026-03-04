@@ -1,0 +1,12 @@
+rp_id: '216'
+rp_embedding_name: dumbbell bench wrist curl, dumbbell, forearms
+semantic_matches:
+  - hevy_id: 1006DF48
+    hevy_embedding_name: seated palms up wrist curl, forearms
+    distance: 0.1
+  - hevy_id: B567DD46
+    hevy_embedding_name: reverse curl dumbbell, biceps, forearms
+    distance: 0.12
+  - hevy_id: 7E3BC8B6
+    hevy_embedding_name: hammer curl dumbbell, biceps, forearms
+    distance: 0.13

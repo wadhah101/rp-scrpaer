@@ -1,0 +1,12 @@
+rp_id: '212'
+rp_embedding_name: dumbbell shrug, dumbbell, traps
+semantic_matches:
+  - hevy_id: ABEC557F
+    hevy_embedding_name: shrug dumbbell, traps, neck
+    distance: 0.09
+  - hevy_id: 0B841777
+    hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.15
+  - hevy_id: 878CD1D0
+    hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
+    distance: 0.17

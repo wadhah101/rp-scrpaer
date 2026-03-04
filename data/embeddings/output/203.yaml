@@ -1,0 +1,12 @@
+rp_id: '203'
+rp_embedding_name: belt squat calves, machine, calves
+semantic_matches:
+  - hevy_id: 91237BDD
+    hevy_embedding_name: calf press machine, calves
+    distance: 0.09
+  - hevy_id: 47B9DF13
+    hevy_embedding_name: calf extension machine, calves
+    distance: 0.09
+  - hevy_id: E05C2C38
+    hevy_embedding_name: standing calf raise machine, calves
+    distance: 0.1

@@ -1,0 +1,12 @@
+rp_id: '535963'
+rp_embedding_name: cable chest press, cable, chest
+semantic_matches:
+  - hevy_id: 6B4C797E
+    hevy_embedding_name: seated chest flys cable, chest
+    distance: 0.11
+  - hevy_id: 99C1F2AD
+    hevy_embedding_name: bench press cable, chest, shoulders, triceps
+    distance: 0.11
+  - hevy_id: 651F844C
+    hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.14

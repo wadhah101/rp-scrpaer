@@ -1,0 +1,12 @@
+rp_id: '16'
+rp_embedding_name: cable flye underhand, cable, chest
+semantic_matches:
+  - hevy_id: 651F844C
+    hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.14
+  - hevy_id: 6B4C797E
+    hevy_embedding_name: seated chest flys cable, chest
+    distance: 0.14
+  - hevy_id: 293483AD
+    hevy_embedding_name: low cable fly crossovers, chest
+    distance: 0.15

@@ -1,36 +1,36 @@
 config:
-  model: Qwen/Qwen3-Embedding-8B
+  model: ''
   rp_prompt: ''
   hevy_prompt: ''
   n_results: 3
-  device: api
+  device: ''
   n_rp_exercises: 315
   n_hevy_exercises: 433
-  timestamp: '2026-03-03T15:21:08.042265+00:00'
+  timestamp: '2026-03-04T10:03:39.029569+00:00'
 distance:
-  top1_mean: 0.1045
-  top1_median: 0.1049
-  top1_stdev: 0.0422
-  top1_min: 0.0125
-  top1_max: 0.2429
+  top1_mean: 0.1027
+  top1_median: 0.1
+  top1_stdev: 0.0412
+  top1_min: 0.0126
+  top1_max: 0.2501
 muscle_group_precision:
-  precision_at_1: 0.9175
+  precision_at_1: 0.9238
   precision_at_k: 0.9492
-  top1_correct: 289
+  top1_correct: 291
   topk_correct: 299
   total: 315
 confidence:
-  mean_gap: 0.0332
-  median_gap: 0.0263
+  mean_gap: 0.0319
+  median_gap: 0.0248
   high_confidence_count: 273
   low_confidence_count: 0
 ground_truth:
   evaluated: 100
   matchable: 95
   none_total: 5
-  weighted_accuracy_at_1: 0.7474
+  weighted_accuracy_at_1: 0.6947
   weighted_accuracy_at_k: 0.8842
-  weighted_top1_correct: 71.0
+  weighted_top1_correct: 66.0
   weighted_topk_correct: 84.0
   mismatches:
     - rp_exercise: bench press medium grip, barbell, chest
@@ -41,13 +41,17 @@ ground_truth:
       expected: bench press - close grip barbell, triceps, chest, shoulders
       got: bench press - wide grip barbell, chest, shoulders, triceps
       confidence: high
+    - rp_exercise: cable flye bent over, cable, chest
+      expected: cable fly crossovers, chest
+      got: seated chest flys cable, chest
+      confidence: medium
     - rp_exercise: cable flye underhand, cable, chest
       expected: low cable fly crossovers, chest
-      got: cable fly crossovers, chest
+      got: seated chest flys cable, chest
       confidence: medium
     - rp_exercise: dumbbell press flye flat, dumbbell, chest
       expected: chest fly dumbbell, chest
-      got: decline chest fly dumbbell, chest
+      got: incline chest fly dumbbell, chest
       confidence: high
     - rp_exercise: dumbbell press medium incline, dumbbell, chest
       expected: incline bench press dumbbell, chest, triceps, shoulders
@@ -56,6 +60,10 @@ ground_truth:
     - rp_exercise: dumbbell press low incline, dumbbell, chest
       expected: incline bench press dumbbell, chest, triceps, shoulders
       got: incline chest fly dumbbell, chest
+      confidence: high
+    - rp_exercise: hammer machine chest press decline, machine, chest
+      expected: decline bench press machine, chest, shoulders, triceps
+      got: bench presshammer machine, chest, triceps
       confidence: high
     - rp_exercise: dumbbell row 2-arm, dumbbell, lats, upper_back
       expected: bent over row dumbbell
@@ -73,27 +81,43 @@ ground_truth:
       expected: pull up assisted
       got: wide pull up, lats, upper_back, biceps, forearms
       confidence: high
-    - rp_exercise: smith machine skullcrusher, smith-machine, triceps
-      expected: skullcrusher barbell, triceps
-      got: skullcrusher dumbbell, triceps
-      confidence: medium
+    - rp_exercise: cable hammer curl rope, cable, biceps
+      expected: hammer curl cable
+      got: rope cable curl, biceps, forearms
+      confidence: high
     - rp_exercise: cable cross body lateral raise, cable, shoulders
       expected: single arm lateral raise cable, shoulders
       got: lateral raise cable, shoulders
+      confidence: high
+    - rp_exercise: barbell bent over shrug, barbell, shoulders
+      expected: shrug barbell, traps, neck
+      got: front raise barbell, shoulders
+      confidence: medium
+    - rp_exercise: barbell shrug, barbell, shoulders
+      expected: shrug barbell, traps, neck
+      got: front raise barbell, shoulders
       confidence: high
     - rp_exercise: dumbbell bent over shrug, dumbbell, shoulders
       expected: shrug dumbbell, traps, neck
       got: front raise dumbbell, shoulders
       confidence: medium
+    - rp_exercise: barbell squat high bar, barbell, quadriceps
+      expected: squat barbell, quadriceps, hamstrings, glutes
+      got: box squat barbell, quadriceps, hamstrings, glutes
+      confidence: high
     - rp_exercise: deadlift deficit 25's, barbell, glutes
       expected: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
       got: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
       confidence: high
-    - rp_exercise: walking lunges glute-focused, bodyweight, bodyweight-only, glutes
-      expected: walking lunge
-      got: walking lunge dumbbell, quadriceps, glutes, hamstrings
+    - rp_exercise: reverse hyper, machine, glutes
+      expected: reverse hyperextension, glutes, hamstrings, lower_back
+      got: glute kickback machine, glutes, hamstrings
       confidence: high
     - rp_exercise: dumbbell stiff legged deadlift, dumbbell, hamstrings
       expected: romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats
       got: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
       confidence: high
+    - rp_exercise: stair calves, bodyweight-only, calves
+      expected: single leg standing calf raise
+      got: seated calf raise, calves
+      confidence: medium

@@ -1,8 +1,0 @@
-rp_embedding_name: barbell shrug, barbell, shoulders
-semantic_matches:
-  - hevy_embedding_name: shrug barbell, traps, neck
-    distance: 0.11
-  - hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.12
-  - hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.17

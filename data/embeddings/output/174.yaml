@@ -1,0 +1,12 @@
+rp_id: '174'
+rp_embedding_name: cable pull through, cable, glutes
+semantic_matches:
+  - hevy_id: 8C331CD8
+    hevy_embedding_name: cable pull through, glutes, hamstrings, lower_back
+    distance: 0.1
+  - hevy_id: ACB2751D
+    hevy_embedding_name: standing cable glute kickbacks, glutes, hamstrings
+    distance: 0.16
+  - hevy_id: 4E5257DE
+    hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.24

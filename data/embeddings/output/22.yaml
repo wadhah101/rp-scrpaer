@@ -1,0 +1,12 @@
+rp_id: '22'
+rp_embedding_name: dumbbell press flye incline, dumbbell, chest
+semantic_matches:
+  - hevy_id: D3E2AB55
+    hevy_embedding_name: incline chest fly dumbbell, chest
+    distance: 0.05
+  - hevy_id: A351AED7
+    hevy_embedding_name: decline chest fly dumbbell, chest
+    distance: 0.1
+  - hevy_id: '12017185'
+    hevy_embedding_name: chest fly dumbbell, chest
+    distance: 0.12

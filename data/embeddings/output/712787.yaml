@@ -1,0 +1,12 @@
+rp_id: '712787'
+rp_embedding_name: back extension flexion, bodyweight-loadable, lats, upper_back
+semantic_matches:
+  - hevy_id: A05C064D
+    hevy_embedding_name: back extension machine, lower_back
+    distance: 0.15
+  - hevy_id: 091737FA
+    hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
+    distance: 0.17
+  - hevy_id: 4F5866F8
+    hevy_embedding_name: back extension hyperextension, lower_back, hamstrings, glutes
+    distance: 0.18

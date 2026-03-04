@@ -10,6 +10,7 @@ dependencies = [
   "cloudpathlib[s3]",
   "embeddings[api]",
   "pyyaml>=6.0",
+  "ruamel-yaml>=0.19.1",
 ]
 
 [project.scripts]

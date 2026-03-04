@@ -1,0 +1,12 @@
+rp_id: '34'
+rp_embedding_name: barbell bent over row, barbell, lats, upper_back
+semantic_matches:
+  - hevy_id: 55E6546F
+    hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.05
+  - hevy_id: '23E92538'
+    hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
+    distance: 0.11
+  - hevy_id: EA820646
+    hevy_embedding_name: bent over row band, upper_back, lats, biceps, forearms
+    distance: 0.14

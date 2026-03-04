@@ -1,0 +1,12 @@
+rp_id: '35'
+rp_embedding_name: barbell row to chest, barbell, lats, upper_back
+semantic_matches:
+  - hevy_id: 55E6546F
+    hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.12
+  - hevy_id: 914F3A96
+    hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
+    distance: 0.17
+  - hevy_id: 018ADC12
+    hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
+    distance: 0.17

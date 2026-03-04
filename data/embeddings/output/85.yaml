@@ -1,0 +1,12 @@
+rp_id: '85'
+rp_embedding_name: ez bar overhead triceps extension seated, barbell, triceps
+semantic_matches:
+  - hevy_id: 2F8D3067
+    hevy_embedding_name: triceps extension barbell, triceps
+    distance: 0.08
+  - hevy_id: B5EFBF9C
+    hevy_embedding_name: overhead triceps extension cable, triceps
+    distance: 0.1
+  - hevy_id: 3765684D
+    hevy_embedding_name: triceps extension dumbbell, triceps
+    distance: 0.12

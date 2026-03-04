@@ -1,0 +1,12 @@
+rp_id: '535941'
+rp_embedding_name: hip abduction machine, machine, glutes
+semantic_matches:
+  - hevy_id: F4B4C6EE
+    hevy_embedding_name: hip abduction machine, abductors
+    distance: 0.05
+  - hevy_id: 8BEBFED6
+    hevy_embedding_name: hip adduction machine, adductors
+    distance: 0.12
+  - hevy_id: CBA02382
+    hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.14

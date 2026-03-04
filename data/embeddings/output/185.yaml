@@ -1,0 +1,12 @@
+rp_id: '185'
+rp_embedding_name: belt squat wide stance, machine, glutes
+semantic_matches:
+  - hevy_id: 3D1CDC75
+    hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
+    distance: 0.12
+  - hevy_id: CBA02382
+    hevy_embedding_name: glute kickback machine, glutes, hamstrings
+    distance: 0.18
+  - hevy_id: CC35A01F
+    hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
+    distance: 0.18

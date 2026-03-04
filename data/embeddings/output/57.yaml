@@ -1,0 +1,12 @@
+rp_id: '57'
+rp_embedding_name: machine pullover, machine, lats, upper_back
+semantic_matches:
+  - hevy_id: B123DD01
+    hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
+    distance: 0.09
+  - hevy_id: 473CF5B8
+    hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.18
+  - hevy_id: '67280085'
+    hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
+    distance: 0.2

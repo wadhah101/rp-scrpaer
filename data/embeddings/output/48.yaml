@@ -1,0 +1,12 @@
+rp_id: '48'
+rp_embedding_name: t-bar row, machine, lats, upper_back
+semantic_matches:
+  - hevy_id: 08A2974E
+    hevy_embedding_name: t bar row, upper_back, lats, biceps, forearms
+    distance: 0.09
+  - hevy_id: 473CF5B8
+    hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
+    distance: 0.17
+  - hevy_id: 55E6546F
+    hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
+    distance: 0.17

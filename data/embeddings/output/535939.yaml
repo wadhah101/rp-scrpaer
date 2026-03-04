@@ -1,0 +1,12 @@
+rp_id: '535939'
+rp_embedding_name: cable pullover, cable, lats, upper_back
+semantic_matches:
+  - hevy_id: 6A6C31A5
+    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
+    distance: 0.15
+  - hevy_id: B123DD01
+    hevy_embedding_name: pullover machine, lats, upper_back, chest, triceps
+    distance: 0.16
+  - hevy_id: 4E5257DE
+    hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.18

@@ -1,0 +1,12 @@
+rp_id: '109'
+rp_embedding_name: barbell upright row, barbell, shoulders
+semantic_matches:
+  - hevy_id: 7AB9A362
+    hevy_embedding_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.1
+  - hevy_id: 797F0782
+    hevy_embedding_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
+    distance: 0.14
+  - hevy_id: BD86EFD5
+    hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.15

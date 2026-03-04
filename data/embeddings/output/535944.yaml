@@ -1,0 +1,12 @@
+rp_id: '535944'
+rp_embedding_name: nordic curl, bodyweight-only, hamstrings
+semantic_matches:
+  - hevy_id: 108D7A14
+    hevy_embedding_name: nordic hamstrings curls, hamstrings, glutes
+    distance: 0.11
+  - hevy_id: 6120CAAB
+    hevy_embedding_name: standing leg curls, hamstrings, calves
+    distance: 0.24
+  - hevy_id: 9694DA61
+    hevy_embedding_name: squat bodyweight, quadriceps, hamstrings, glutes
+    distance: 0.25

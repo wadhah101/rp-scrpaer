@@ -50,4 +50,16 @@ uv run python -m rp_to_hevy_cli embedding embd \
 
 [tasks.embed-ollama.env]
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen3-embedding:8b"
+OLLAMA_MODEL = "qwen3-embedding:8b-fp16"
+
+[tasks.run-rp-similarity-search]
+description = "Run similarity search on embedded exercises"
+run = """
+uv run python -m rp_to_hevy_cli embedding run-rp-similarity-search \
+  --chroma-mode persistent \
+  --exercise-output-dir "$MONOREPO_ROOT/data/embeddings/output" \
+  --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
+  --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json" \
+  --metrics-output "$MONOREPO_ROOT/data/embeddings/metrics.yaml" \
+  --ground-truths-dir "$MONOREPO_ROOT/data/embeddings/ground-truths"
+"""

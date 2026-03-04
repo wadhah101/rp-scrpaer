@@ -1,0 +1,12 @@
+rp_id: '125'
+rp_embedding_name: cable single arm rear delt raise, cable, shoulders
+semantic_matches:
+  - hevy_id: C315DC2A
+    hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
+    distance: 0.11
+  - hevy_id: DE68C825
+    hevy_embedding_name: single arm lateral raise cable, shoulders
+    distance: 0.11
+  - hevy_id: BE289E45
+    hevy_embedding_name: lateral raise cable, shoulders
+    distance: 0.13

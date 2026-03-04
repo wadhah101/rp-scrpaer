@@ -1,0 +1,12 @@
+rp_id: '142'
+rp_embedding_name: smith machine shoulder press seated, smith-machine, shoulders
+semantic_matches:
+  - hevy_id: B09A1304
+    hevy_embedding_name: overhead press smith machine, shoulders, triceps
+    distance: 0.12
+  - hevy_id: 9237BAD1
+    hevy_embedding_name: seated shoulder press machine, shoulders, triceps
+    distance: 0.13
+  - hevy_id: 059E835D
+    hevy_embedding_name: shoulder press machine plates, shoulders, triceps
+    distance: 0.13

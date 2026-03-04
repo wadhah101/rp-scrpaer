@@ -1,0 +1,12 @@
+rp_id: '4'
+rp_embedding_name: hammer machine chest press incline, machine, chest
+semantic_matches:
+  - hevy_id: 98f23dd1-b0d5-45ad-afc8-54bfdeb78b84
+    hevy_embedding_name: bench presshammer machine, chest, triceps
+    distance: 0.12
+  - hevy_id: FBF92739
+    hevy_embedding_name: incline chest press machine, chest, shoulders, triceps
+    distance: 0.13
+  - hevy_id: '78683336'
+    hevy_embedding_name: chest fly machine, chest
+    distance: 0.16

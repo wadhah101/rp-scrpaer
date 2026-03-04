@@ -1,0 +1,12 @@
+rp_id: '159'
+rp_embedding_name: front squat, barbell, quadriceps
+semantic_matches:
+  - hevy_id: 5046D0A9
+    hevy_embedding_name: front squat, quadriceps, hamstrings, glutes
+    distance: 0.1
+  - hevy_id: D04AC939
+    hevy_embedding_name: squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.17
+  - hevy_id: 38FC1AB9
+    hevy_embedding_name: box squat barbell, quadriceps, hamstrings, glutes
+    distance: 0.17

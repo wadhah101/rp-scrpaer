@@ -1,0 +1,12 @@
+rp_id: '712799'
+rp_embedding_name: rogers reverse lunge, machine, glutes
+semantic_matches:
+  - hevy_id: 818BA121
+    hevy_embedding_name: reverse lunge barbell, quadriceps, hamstrings, glutes
+    distance: 0.2
+  - hevy_id: FFDA283B
+    hevy_embedding_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
+    distance: 0.2
+  - hevy_id: C284D923
+    hevy_embedding_name: reverse lunge, quadriceps, hamstrings, glutes
+    distance: 0.2

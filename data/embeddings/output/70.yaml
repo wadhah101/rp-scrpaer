@@ -1,0 +1,12 @@
+rp_id: '70'
+rp_embedding_name: barbell skullcrusher, barbell, triceps
+semantic_matches:
+  - hevy_id: 875F585F
+    hevy_embedding_name: skullcrusher barbell, triceps
+    distance: 0.04
+  - hevy_id: 68F8A292
+    hevy_embedding_name: skullcrusher dumbbell, triceps
+    distance: 0.1
+  - hevy_id: 2F8D3067
+    hevy_embedding_name: triceps extension barbell, triceps
+    distance: 0.14
