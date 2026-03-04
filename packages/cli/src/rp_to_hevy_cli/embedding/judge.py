@@ -46,28 +46,17 @@ class JudgeResult(BaseModel):
     confidence: Confidence
 
 
-def _build_user_prompt(
-    rp_name: str, candidates: list[str]
-) -> str:
-    numbered = "\n".join(
-        f"  {i}. {c}" for i, c in enumerate(candidates, 1)
-    )
-    return (
-        f"RP Exercise: {rp_name}\n\n"
-        f"Hevy Candidates:\n{numbered}"
-    )
+def _build_user_prompt(rp_name: str, candidates: list[str]) -> str:
+    numbered = "\n".join(f"  {i}. {c}" for i, c in enumerate(candidates, 1))
+    return f"RP Exercise: {rp_name}\n\nHevy Candidates:\n{numbered}"
 
 
-def _resolve_hevy_id(
-    name: str, matches: list[dict]
-) -> tuple[str | None, str]:
+def _resolve_hevy_id(name: str, matches: list[dict]) -> tuple[str | None, str]:
     """Map best_match name back to hevy_id and canonical name."""
     name_lower = name.lower().strip()
     for m in matches:
         candidate = m["hevy_embedding_name"]
-        if candidate == name or candidate.lower().startswith(
-            name_lower
-        ):
+        if candidate == name or candidate.lower().startswith(name_lower):
             return m["hevy_id"], candidate
 
     return None, name
@@ -112,9 +101,7 @@ async def _judge_one(
         hevy_id = None
         hevy_name = "none"
     else:
-        hevy_id, hevy_name = _resolve_hevy_id(
-            best_match, matches
-        )
+        hevy_id, hevy_name = _resolve_hevy_id(best_match, matches)
         if hevy_id is None:
             msg = (
                 f"rp_id={rp_id} — LLM returned "
@@ -154,14 +141,11 @@ async def _run(
     input_path = Path(input_dir)
     files = sorted(input_path.glob("*.yaml"))
     if not files:
-        raise click.ClickException(
-            f"No YAML files found in {input_dir}"
-        )
+        raise click.ClickException(f"No YAML files found in {input_dir}")
 
     if sample_size is not None:
         click.echo(
-            f"Warning: --sample-size={sample_size}, "
-            "results will be incomplete.",
+            f"Warning: --sample-size={sample_size}, results will be incomplete.",
             err=True,
         )
         files = files[:sample_size]
@@ -171,9 +155,7 @@ async def _run(
 
     model = OpenAIChatModel(
         api_model,
-        provider=OpenAIProvider(
-            base_url=api_base_url, api_key=api_key
-        ),
+        provider=OpenAIProvider(base_url=api_base_url, api_key=api_key),
     )
     agent = Agent(
         model,
@@ -183,14 +165,10 @@ async def _run(
     sem = asyncio.Semaphore(concurrency)
 
     click.echo(
-        f"Processing {total} exercises with {api_model} "
-        f"(concurrency={concurrency})..."
+        f"Processing {total} exercises with {api_model} (concurrency={concurrency})..."
     )
 
-    tasks = [
-        _judge_one(agent, ex, sem, strict)
-        for ex in exercises
-    ]
+    tasks = [_judge_one(agent, ex, sem, strict) for ex in exercises]
     raw_results = await asyncio.gather(*tasks)
 
     results = [r for r in raw_results if r is not None]
