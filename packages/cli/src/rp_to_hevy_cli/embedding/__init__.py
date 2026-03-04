@@ -3,6 +3,7 @@ from __future__ import annotations
 import click
 
 from rp_to_hevy_cli.embedding.embd import embd
+from rp_to_hevy_cli.embedding.judge import llm_judge
 from rp_to_hevy_cli.embedding.similarity_search import run_rp_similarity_search
 
 
@@ -12,4 +13,5 @@ def embedding():
 
 
 embedding.add_command(embd)
+embedding.add_command(llm_judge)
 embedding.add_command(run_rp_similarity_search)

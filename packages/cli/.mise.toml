@@ -63,3 +63,18 @@ uv run python -m rp_to_hevy_cli embedding run-rp-similarity-search \
   --metrics-output "$MONOREPO_ROOT/data/embeddings/metrics.yaml" \
   --ground-truths-dir "$MONOREPO_ROOT/data/embeddings/ground-truths"
 """
+
+[tasks.llm-judge]
+description = "Use LLM to pick the best Hevy match for each RP exercise"
+run = """
+uv run python -m rp_to_hevy_cli embedding llm-judge \
+  --api-base-url "https://openrouter.ai/api/v1" \
+  --api-key "$OPENROUTER_API_KEY" \
+  --api-model "${LLM_JUDGE_MODEL:-google/gemini-3-flash-preview}" \
+  --input-dir "$MONOREPO_ROOT/data/embeddings/output" \
+  --output "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
+  ${SAMPLE_SIZE:+--sample-size $SAMPLE_SIZE}
+"""
+
+[tasks.llm-judge.env]
+OPENROUTER_API_KEY = { required = true }

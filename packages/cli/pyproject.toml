@@ -9,6 +9,7 @@ dependencies = [
   "api-service",
   "cloudpathlib[s3]",
   "embeddings[api]",
+  "pydantic-ai[openai]",
   "pyyaml>=6.0",
   "ruamel-yaml>=0.19.1",
 ]
