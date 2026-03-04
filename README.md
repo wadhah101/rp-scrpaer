@@ -16,19 +16,19 @@
   └──────────────┬──────────────────────────┬────────────────┘
                  │                          │
        ┌─────────▼─────────┐    ┌──────────▼──────────┐
-       │   api-service      │    │   api-service        │
-       │  (RP SDK)          │    │  (Hevy SDK)          │
+       │   api-service     │    │   api-service       │
+       │  (RP SDK)         │    │  (Hevy SDK)         │
        └─────────┬─────────┘    └──────────┬──────────┘
                  │                          │
        ┌─────────▼──────────────────────────▼──────────┐
-       │                    cli                         │
-       │  rp export · hevy export · embedding commands  │
+       │                    cli                        │
+       │  rp export · hevy export · embedding commands │
        └─────────┬──────────────────────────┬──────────┘
                  │                          │
        ┌─────────▼─────────┐    ┌──────────▼──────────┐
-       │   embeddings       │    │   pipeline            │
-       │  Similarity search │    │  Kestra scheduled    │
-       │  ChromaDB + LLM    │    │  extraction + flows  │
+       │   embeddings      │    │   pipeline          │
+       │ Similarity search │    │ Kestra scheduled    │
+       │  ChromaDB  + LLM  │    │ extraction + flows. │
        └───────────────────┘    └─────────────────────┘
 ```
 
