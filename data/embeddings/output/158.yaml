@@ -4,9 +4,9 @@ semantic_matches:
   - hevy_id: DDCC3821
     hevy_embedding_name: squat smith machine, quadriceps, hamstrings, glutes
     distance: 0.13
-  - hevy_id: 1E42FD5F
-    hevy_embedding_name: hack squat machine, quadriceps, glutes, hamstrings
-    distance: 0.21
   - hevy_id: CC35A01F
     hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
+    distance: 0.21
+  - hevy_id: 1E42FD5F
+    hevy_embedding_name: hack squat machine, quadriceps, glutes, hamstrings
     distance: 0.22

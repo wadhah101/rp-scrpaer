@@ -1,11 +1,11 @@
 rp_id: '68'
 rp_embedding_name: pulldown upright torso to abs, cable, lats, upper_back
 semantic_matches:
-  - hevy_id: 6A6C31A5
-    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
-    distance: 0.13
   - hevy_id: 4E5257DE
     hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.13
+  - hevy_id: 6A6C31A5
+    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
     distance: 0.14
   - hevy_id: 473CF5B8
     hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms

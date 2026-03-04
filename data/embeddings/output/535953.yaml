@@ -3,10 +3,10 @@ rp_embedding_name: dip machine, machine, triceps
 semantic_matches:
   - hevy_id: 5122E7D9
     hevy_embedding_name: seated dip machine, triceps, chest, shoulders
-    distance: 0.11
+    distance: 0.12
   - hevy_id: 3092FADD
     hevy_embedding_name: triceps extension machine, triceps
+    distance: 0.13
+  - hevy_id: 4B4BF8C2
+    hevy_embedding_name: triceps dip assisted, triceps, chest, shoulders
     distance: 0.14
-  - hevy_id: 10347BAC
-    hevy_embedding_name: triceps dip weighted, triceps, chest, shoulders
-    distance: 0.15

@@ -1,12 +1,12 @@
 rp_id: '214'
 rp_embedding_name: barbell standing wrist curl, barbell, forearms
 semantic_matches:
-  - hevy_id: 9202CC23
-    hevy_embedding_name: seated wrist extension barbell, forearms
-    distance: 0.11
-  - hevy_id: 1006DF48
-    hevy_embedding_name: seated palms up wrist curl, forearms
-    distance: 0.11
   - hevy_id: DDB29047
     hevy_embedding_name: behind the back bicep wrist curl barbell, forearms
-    distance: 0.11
+    distance: 0.1
+  - hevy_id: 1006DF48
+    hevy_embedding_name: seated palms up wrist curl, forearms
+    distance: 0.12
+  - hevy_id: 9202CC23
+    hevy_embedding_name: seated wrist extension barbell, forearms
+    distance: 0.12

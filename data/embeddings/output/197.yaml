@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.11
   - hevy_id: B8127AD1
     hevy_embedding_name: lying leg curl machine, hamstrings, calves
-    distance: 0.13
+    distance: 0.12
   - hevy_id: 3FD83744
     hevy_embedding_name: single leg press machine, quadriceps, glutes, hamstrings
     distance: 0.18

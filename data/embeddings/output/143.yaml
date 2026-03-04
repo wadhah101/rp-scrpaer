@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.09
   - hevy_id: BD86EFD5
     hevy_embedding_name: front raise barbell, shoulders
+    distance: 0.12
+  - hevy_id: 878CD1D0
+    hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
     distance: 0.13
-  - hevy_id: 91AF29E0
-    hevy_embedding_name: seated overhead press barbell, shoulders, triceps
-    distance: 0.14

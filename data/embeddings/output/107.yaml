@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.19
   - hevy_id: 01A35BF9
     hevy_embedding_name: ez bar biceps curl, biceps
-    distance: 0.21
+    distance: 0.2
   - hevy_id: ADA8623C
     hevy_embedding_name: bicep curl cable, biceps
     distance: 0.21

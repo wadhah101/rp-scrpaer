@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.04
   - hevy_id: 875F585F
     hevy_embedding_name: skullcrusher barbell, triceps
-    distance: 0.1
+    distance: 0.11
   - hevy_id: 3765684D
     hevy_embedding_name: triceps extension dumbbell, triceps
-    distance: 0.1
+    distance: 0.12

@@ -3,7 +3,7 @@ rp_embedding_name: bulgarian split squat quad-focused, dumbbell, quadriceps
 semantic_matches:
   - hevy_id: B5D3A742
     hevy_embedding_name: bulgarian split squat, quadriceps, glutes, hamstrings
-    distance: 0.09
+    distance: 0.07
   - hevy_id: 20C1A3CB
     hevy_embedding_name: split squat dumbbell, quadriceps, hamstrings, glutes
     distance: 0.14

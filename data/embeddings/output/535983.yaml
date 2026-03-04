@@ -3,10 +3,10 @@ rp_embedding_name: hammer preacher curl, dumbbell, biceps
 semantic_matches:
   - hevy_id: FAB6EB2F
     hevy_embedding_name: preacher curl dumbbell, biceps
-    distance: 0.07
+    distance: 0.09
   - hevy_id: 4F942934
     hevy_embedding_name: preacher curl barbell, biceps
-    distance: 0.11
-  - hevy_id: 1E9A6B8E
-    hevy_embedding_name: preacher curl machine, biceps
-    distance: 0.14
+    distance: 0.13
+  - hevy_id: 7E3BC8B6
+    hevy_embedding_name: hammer curl dumbbell, biceps, forearms
+    distance: 0.15

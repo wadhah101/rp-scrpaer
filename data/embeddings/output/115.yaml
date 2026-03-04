@@ -9,4 +9,4 @@ semantic_matches:
     distance: 0.1
   - hevy_id: DE68C825
     hevy_embedding_name: single arm lateral raise cable, shoulders
-    distance: 0.11
+    distance: 0.12

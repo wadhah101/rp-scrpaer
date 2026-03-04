@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.12
   - hevy_id: 91237BDD
     hevy_embedding_name: calf press machine, calves
-    distance: 0.12
+    distance: 0.13
   - hevy_id: 47B9DF13
     hevy_embedding_name: calf extension machine, calves
     distance: 0.13

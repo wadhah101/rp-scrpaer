@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.14
   - hevy_id: 875F585F
     hevy_embedding_name: skullcrusher barbell, triceps
-    distance: 0.14
-  - hevy_id: 6182EE83
-    hevy_embedding_name: triceps extension suspension, triceps
-    distance: 0.2
+    distance: 0.15
+  - hevy_id: 6127A3AD
+    hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.18

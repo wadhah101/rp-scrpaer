@@ -4,9 +4,9 @@ semantic_matches:
   - hevy_id: B33B526E
     hevy_embedding_name: single arm curl cable, biceps
     distance: 0.12
-  - hevy_id: D950429E
-    hevy_embedding_name: drag curl, biceps
-    distance: 0.14
   - hevy_id: ADA8623C
     hevy_embedding_name: bicep curl cable, biceps
     distance: 0.15
+  - hevy_id: D950429E
+    hevy_embedding_name: drag curl, biceps
+    distance: 0.16

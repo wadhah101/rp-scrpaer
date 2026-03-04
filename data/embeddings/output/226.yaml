@@ -3,10 +3,10 @@ rp_embedding_name: v-up weighted, bodyweight-loadable, abdominals
 semantic_matches:
   - hevy_id: 6BE68B62
     hevy_embedding_name: v up, abdominals
-    distance: 0.1
+    distance: 0.09
   - hevy_id: 9237BA12
     hevy_embedding_name: sit up weighted, abdominals
     distance: 0.1
   - hevy_id: 2982AA23
     hevy_embedding_name: russian twist weighted, abdominals
-    distance: 0.14
+    distance: 0.15

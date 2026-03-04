@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.06
   - hevy_id: AF328E3D
     hevy_embedding_name: bicep curl machine, biceps
-    distance: 0.11
+    distance: 0.12
   - hevy_id: 4F942934
     hevy_embedding_name: preacher curl barbell, biceps
     distance: 0.14

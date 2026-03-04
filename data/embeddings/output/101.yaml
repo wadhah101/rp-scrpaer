@@ -3,10 +3,10 @@ rp_embedding_name: ez bar spider curl, barbell, biceps
 semantic_matches:
   - hevy_id: 2348AB72
     hevy_embedding_name: spider curl barbell, biceps
-    distance: 0.05
+    distance: 0.06
   - hevy_id: 01A35BF9
     hevy_embedding_name: ez bar biceps curl, biceps
     distance: 0.09
-  - hevy_id: A5AC6449
-    hevy_embedding_name: bicep curl barbell, biceps
-    distance: 0.11
+  - hevy_id: 90427D4A
+    hevy_embedding_name: spider curl dumbbell, biceps
+    distance: 0.12

@@ -4,9 +4,9 @@ semantic_matches:
   - hevy_id: 23A48484
     hevy_embedding_name: cable crunch, abdominals
     distance: 0.07
-  - hevy_id: EB43ADD4
-    hevy_embedding_name: crunch machine, abdominals
-    distance: 0.2
   - hevy_id: DBE341AA
     hevy_embedding_name: oblique crunch, abdominals
-    distance: 0.2
+    distance: 0.19
+  - hevy_id: B2398CD1
+    hevy_embedding_name: decline crunch weighted, abdominals
+    distance: 0.19

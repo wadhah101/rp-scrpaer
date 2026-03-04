@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.02
   - hevy_id: 93A552C6
     hevy_embedding_name: triceps pushdown, triceps
-    distance: 0.1
+    distance: 0.09
   - hevy_id: 21310F5F
     hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.11
+    distance: 0.1

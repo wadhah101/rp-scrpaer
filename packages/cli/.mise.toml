@@ -50,7 +50,7 @@ uv run python -m rp_to_hevy_cli embedding embd \
 
 [tasks.embed-ollama.env]
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen3-embedding:8b"
+OLLAMA_MODEL = "qwen3-embedding:8b-fp16"
 
 [tasks.run-rp-similarity-search]
 description = "Run similarity search on embedded exercises"

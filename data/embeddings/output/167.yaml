@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.07
   - hevy_id: CC35A01F
     hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
-    distance: 0.16
+    distance: 0.17
   - hevy_id: 3D1CDC75
     hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
-    distance: 0.17
+    distance: 0.18

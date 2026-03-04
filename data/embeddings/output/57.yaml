@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.09
   - hevy_id: 473CF5B8
     hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.21
+    distance: 0.18
   - hevy_id: '67280085'
     hevy_embedding_name: pullover dumbbell, lats, chest, upper_back, triceps
-    distance: 0.22
+    distance: 0.2

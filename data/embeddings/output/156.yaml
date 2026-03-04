@@ -3,10 +3,10 @@ rp_embedding_name: belt squat, machine, quadriceps
 semantic_matches:
   - hevy_id: 3D1CDC75
     hevy_embedding_name: belt squat machine, quadriceps, glutes, hamstrings
-    distance: 0.05
+    distance: 0.06
   - hevy_id: 3528e3e1-d7cc-4090-9221-464b1e607ec8
     hevy_embedding_name: belt squat, quadriceps, hamstrings
-    distance: 0.11
+    distance: 0.12
   - hevy_id: CC35A01F
     hevy_embedding_name: squat machine, quadriceps, hamstrings, glutes
     distance: 0.12

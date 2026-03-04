@@ -1,12 +1,12 @@
 rp_id: '145'
 rp_embedding_name: barbell bent over shrug, barbell, shoulders
 semantic_matches:
-  - hevy_id: BD86EFD5
-    hevy_embedding_name: front raise barbell, shoulders
-    distance: 0.13
   - hevy_id: 0B841777
     hevy_embedding_name: shrug barbell, traps, neck
+    distance: 0.13
+  - hevy_id: BD86EFD5
+    hevy_embedding_name: front raise barbell, shoulders
     distance: 0.14
-  - hevy_id: '8293E554'
-    hevy_embedding_name: front raise dumbbell, shoulders
+  - hevy_id: ABEC557F
+    hevy_embedding_name: shrug dumbbell, traps, neck
     distance: 0.19

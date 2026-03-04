@@ -3,7 +3,7 @@ rp_embedding_name: dumbbell shoulder press seated, dumbbell, shoulders
 semantic_matches:
   - hevy_id: 878CD1D0
     hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.09
+    distance: 0.08
   - hevy_id: 9930DF71
     hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
     distance: 0.1

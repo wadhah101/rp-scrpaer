@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.06
   - hevy_id: 9372FFAA
     hevy_embedding_name: seated lateral raise dumbbell, shoulders
-    distance: 0.09
+    distance: 0.1
   - hevy_id: '8293E554'
     hevy_embedding_name: front raise dumbbell, shoulders
     distance: 0.13

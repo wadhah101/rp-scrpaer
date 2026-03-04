@@ -9,4 +9,4 @@ semantic_matches:
     distance: 0.16
   - hevy_id: 20870ED5
     hevy_embedding_name: deadlift smith machine, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.17
+    distance: 0.19

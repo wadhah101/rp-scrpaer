@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.1
   - hevy_id: 018ADC12
     hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
-    distance: 0.14
+    distance: 0.15
   - hevy_id: '23E92538'
     hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-    distance: 0.16
+    distance: 0.17

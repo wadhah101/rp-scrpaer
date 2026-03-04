@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.06
   - hevy_id: 21310F5F
     hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.09
+    distance: 0.08
   - hevy_id: EC3B69A3
     hevy_embedding_name: triceps kickback cable, triceps
     distance: 0.14

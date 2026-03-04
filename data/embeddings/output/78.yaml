@@ -3,10 +3,10 @@ rp_embedding_name: machine triceps pushdown, machine, triceps
 semantic_matches:
   - hevy_id: 3092FADD
     hevy_embedding_name: triceps extension machine, triceps
-    distance: 0.08
+    distance: 0.09
   - hevy_id: 93A552C6
     hevy_embedding_name: triceps pushdown, triceps
-    distance: 0.1
+    distance: 0.09
   - hevy_id: CDC472B1
     hevy_embedding_name: triceps pressdown, triceps
-    distance: 0.12
+    distance: 0.11

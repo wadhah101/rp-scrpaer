@@ -1,12 +1,12 @@
 rp_id: '59'
 rp_embedding_name: pulldown normal grip, cable, lats, upper_back
 semantic_matches:
-  - hevy_id: 6A6C31A5
-    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
-    distance: 0.09
   - hevy_id: 4E5257DE
     hevy_embedding_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
+    distance: 0.09
+  - hevy_id: 6A6C31A5
+    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
     distance: 0.1
   - hevy_id: 046E25A2
     hevy_embedding_name: reverse grip lat pulldown cable, lats, upper_back, biceps
-    distance: 0.11
+    distance: 0.1

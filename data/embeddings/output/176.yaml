@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.18
   - hevy_id: C6272009
     hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.18
+    distance: 0.19
   - hevy_id: B923B230
     hevy_embedding_name: deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
     distance: 0.2

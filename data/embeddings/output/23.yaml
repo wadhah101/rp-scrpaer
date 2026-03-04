@@ -7,6 +7,6 @@ semantic_matches:
   - hevy_id: 720B0D70
     hevy_embedding_name: chest fly suspension, chest
     distance: 0.17
-  - hevy_id: '12017185'
-    hevy_embedding_name: chest fly dumbbell, chest
-    distance: 0.19
+  - hevy_id: DDB7C19F
+    hevy_embedding_name: chest fly band, chest
+    distance: 0.18

@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.08
   - hevy_id: DCFF3E9F
     hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.14
+    distance: 0.15
   - hevy_id: B537D09F
     hevy_embedding_name: lunge dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.18
+    distance: 0.19

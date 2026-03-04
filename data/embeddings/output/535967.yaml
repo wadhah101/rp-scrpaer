@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.11
   - hevy_id: 987234AB
     hevy_embedding_name: glute kickback on floor, glutes, hamstrings
-    distance: 0.16
+    distance: 0.17
   - hevy_id: CBA02382
     hevy_embedding_name: glute kickback machine, glutes, hamstrings
     distance: 0.18

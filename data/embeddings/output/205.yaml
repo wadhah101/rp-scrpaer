@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.09
   - hevy_id: ABEC557F
     hevy_embedding_name: shrug dumbbell, traps, neck
-    distance: 0.14
+    distance: 0.15
   - hevy_id: 742E5BD5
     hevy_embedding_name: shrug smith machine, traps, neck
     distance: 0.16

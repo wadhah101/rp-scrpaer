@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.1
   - hevy_id: 286C1D0B
     hevy_embedding_name: upright row cable, shoulders, traps, upper_back, biceps, forearms
-    distance: 0.15
+    distance: 0.16
   - hevy_id: BE289E45
     hevy_embedding_name: lateral raise cable, shoulders
-    distance: 0.16
+    distance: 0.17

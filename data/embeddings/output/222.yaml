@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.04
   - hevy_id: DCF3B31B
     hevy_embedding_name: crunch, abdominals
-    distance: 0.11
+    distance: 0.1
   - hevy_id: D928C232
     hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.14
+    distance: 0.13

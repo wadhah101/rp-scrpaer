@@ -7,6 +7,6 @@ semantic_matches:
   - hevy_id: 7C50F118
     hevy_embedding_name: wide pull up, lats, upper_back, biceps, forearms
     distance: 0.09
-  - hevy_id: 56808FD2
-    hevy_embedding_name: pull up band, lats, upper_back, biceps, forearms
-    distance: 0.13
+  - hevy_id: 1B2B1E7C
+    hevy_embedding_name: pull up, lats, upper_back, biceps, forearms
+    distance: 0.15

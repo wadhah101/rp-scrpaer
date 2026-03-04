@@ -3,10 +3,10 @@ rp_embedding_name: assisted pullup underhand grip, machine-assistance, lats, upp
 semantic_matches:
   - hevy_id: 2C37EC5E
     hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
-    distance: 0.14
+    distance: 0.15
   - hevy_id: 473CF5B8
     hevy_embedding_name: lat pulldown machine, lats, upper_back, biceps, forearms
-    distance: 0.15
-  - hevy_id: 6A6C31A5
-    hevy_embedding_name: lat pulldown cable, lats, upper_back, biceps, forearms
-    distance: 0.19
+    distance: 0.16
+  - hevy_id: 729237D1
+    hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
+    distance: 0.2

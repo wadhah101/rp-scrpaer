@@ -4,9 +4,9 @@ semantic_matches:
   - hevy_id: E05C2C38
     hevy_embedding_name: standing calf raise machine, calves
     distance: 0.02
-  - hevy_id: B05C2C29
-    hevy_embedding_name: single leg standing calf raise machine, calves
-    distance: 0.06
   - hevy_id: '06745E58'
     hevy_embedding_name: standing calf raise, calves
+    distance: 0.06
+  - hevy_id: B05C2C29
+    hevy_embedding_name: single leg standing calf raise machine, calves
     distance: 0.06

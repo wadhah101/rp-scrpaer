@@ -4,9 +4,9 @@ semantic_matches:
   - hevy_id: 55E6546F
     hevy_embedding_name: bent over row barbell, upper_back, lats, biceps, forearms
     distance: 0.14
+  - hevy_id: F1D60854
+    hevy_embedding_name: seated cable row - bar grip, upper_back, lats, biceps, forearms
+    distance: 0.16
   - hevy_id: 018ADC12
     hevy_embedding_name: pendlay row barbell, upper_back, lats, biceps, forearms
-    distance: 0.15
-  - hevy_id: 425805F4
-    hevy_embedding_name: inverted row, upper_back, lats, biceps, forearms
     distance: 0.16

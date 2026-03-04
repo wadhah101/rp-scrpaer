@@ -6,7 +6,7 @@ semantic_matches:
     distance: 0.11
   - hevy_id: A127DA73
     hevy_embedding_name: kettlebell goblet squat, quadriceps, glutes, hamstrings
-    distance: 0.12
+    distance: 0.13
   - hevy_id: DCFF3E9F
     hevy_embedding_name: squat dumbbell, quadriceps, hamstrings, glutes
-    distance: 0.13
+    distance: 0.14

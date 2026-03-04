@@ -3,10 +3,10 @@ rp_embedding_name: decline dumbbell curl, dumbbell, biceps
 semantic_matches:
   - hevy_id: 37FCC2BB
     hevy_embedding_name: bicep curl dumbbell, biceps
-    distance: 0.09
+    distance: 0.08
+  - hevy_id: A5AC6449
+    hevy_embedding_name: bicep curl barbell, biceps
+    distance: 0.15
   - hevy_id: 90427D4A
     hevy_embedding_name: spider curl dumbbell, biceps
-    distance: 0.15
-  - hevy_id: B567DD46
-    hevy_embedding_name: reverse curl dumbbell, biceps, forearms
     distance: 0.15
