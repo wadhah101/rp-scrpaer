@@ -262,7 +262,7 @@ async def _port_rp_workout_to_hevy(
                     stats["skipped_not_importable"] += 1
                     continue
 
-                if start_date and day.finished_at < start_date:
+                if start_date and day.finished_at.date() < start_date.date():
                     stats["skipped_before_start_date"] += 1
                     continue
 

@@ -83,8 +83,21 @@ OPENROUTER_API_KEY = { required = true }
 
 [tasks.port-rp-workout-to-hevy]
 description = "Port RP workout data to Hevy format"
+env = { HEVY_API_KEY = { required = true } }
 run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
-  --mesocycles "$MONOREPO_ROOT/packages/cli/exports/rp/mesocycles.json"
+  --mesocycles "$MONOREPO_ROOT/packages/cli/exports/rp/mesocycles.json" \
+  --start-date 2026-02-25
+"""
+
+[tasks.port-rp-workout-to-hevy-dry-run]
+description = "Dry run: preview RP workouts that would be imported to Hevy"
+env = { HEVY_API_KEY = { required = true } }
+run = """
+uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
+  --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
+  --mesocycles "$MONOREPO_ROOT/packages/cli/exports/rp/mesocycles.json" \
+  --start-date 2026-02-25 \
+  --dry-run
 """
