@@ -1,8 +1,12 @@
+rp_id: '535980'
 rp_embedding_name: cable tricep kickback, cable, triceps
 semantic_matches:
-  - hevy_embedding_name: triceps kickback cable, triceps
+  - hevy_id: EC3B69A3
+    hevy_embedding_name: triceps kickback cable, triceps
     distance: 0.03
-  - hevy_embedding_name: triceps extension cable, triceps
+  - hevy_id: 21310F5F
+    hevy_embedding_name: triceps extension cable, triceps
     distance: 0.09
-  - hevy_embedding_name: triceps kickback dumbbell, triceps
-    distance: 0.1
+  - hevy_id: 6127A3AD
+    hevy_embedding_name: triceps kickback dumbbell, triceps
+    distance: 0.12

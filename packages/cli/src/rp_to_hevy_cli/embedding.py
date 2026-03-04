@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import atexit
 import functools
+import io
 import os
 import tempfile
 from pathlib import Path
 
 import click
 import numpy as np
-import yaml
 from cloudpathlib import AnyPath, CloudPath
 from embeddings import (
     ApiEmbedder,
@@ -27,6 +27,11 @@ from embeddings import (
     query_matches,
 )
 from embeddings.embed import DEFAULT_N_RESULTS
+from ruamel.yaml import YAML
+
+yaml = YAML()
+yaml.indent(mapping=2, sequence=4, offset=2)
+
 
 # ---------------------------------------------------------------------------
 # Shared option decorators
@@ -155,13 +160,17 @@ def _resolve_input(path_str: str) -> str:
 
 
 def _write_yaml(data: object, output_path: str) -> None:
+
     path = AnyPath(output_path)
-    content = yaml.dump(data, sort_keys=False, default_flow_style=False)
+    string_stream = io.StringIO()
+    yaml.dump(data, string_stream)
+    yaml_string = string_stream.getvalue()
+
     if isinstance(path, CloudPath):
-        path.write_text(content)
+        path.write_text(yaml_string)
     else:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
-        Path(path).write_text(content)
+        Path(path).write_text(yaml_string)
     click.echo(f"Wrote {path}")
 
 
@@ -306,14 +315,16 @@ def run_rp_similarity_search(
 
     rp_data = rp_collection.get(include=["embeddings", "documents"])
     rp_embeddings = np.array(rp_data["embeddings"], dtype=np.float32)
-    rp_docs = rp_data["documents"]
+    rp_ids = rp_data["ids"]
+    rp_doc_names = rp_data["documents"]
+    rp_docs = [{"id": id_, "name": name} for id_, name in zip(rp_ids, rp_doc_names)]
 
     results = query_matches(hevy_collection, rp_embeddings, n_results)
 
     hevy_data = hevy_collection.get(include=["documents"])
     hevy_docs = hevy_data["documents"]
     click.echo(
-        f"Queried {len(rp_docs)} RP exercises against {len(hevy_docs)} Hevy exercises."
+        f"Queried {len(rp_doc_names)} RP exercises against {len(hevy_docs)} Hevy exercises."
     )
 
     if metrics_output:
@@ -327,7 +338,7 @@ def run_rp_similarity_search(
             hevy_prompt=hevy_prompt,
             n_results=n_results,
             device="",
-            rp_docs=rp_docs,
+            rp_docs=rp_doc_names,
             hevy_docs=hevy_docs,
             rp_expected_muscles=rp_expected_muscles,
             results=results,

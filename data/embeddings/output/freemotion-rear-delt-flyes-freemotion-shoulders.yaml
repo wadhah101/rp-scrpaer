@@ -1,8 +1,12 @@
+rp_id: '132'
 rp_embedding_name: freemotion rear delt flyes, freemotion, shoulders
 semantic_matches:
-  - hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
-    distance: 0.15
-  - hevy_embedding_name: rear delt reverse fly machine, shoulders, upper_back
+  - hevy_id: C315DC2A
+    hevy_embedding_name: rear delt reverse fly cable, shoulders, upper_back
+    distance: 0.14
+  - hevy_id: E5988A0A
+    hevy_embedding_name: rear delt reverse fly dumbbell, shoulders, upper_back
     distance: 0.16
-  - hevy_embedding_name: rear delt reverse fly dumbbell, shoulders, upper_back
+  - hevy_id: 2779cab9-b2cc-40bf-963a-9802608b53dc
+    hevy_embedding_name: rear delt reverse fly one hand machine, upper_back, shoulders
     distance: 0.16

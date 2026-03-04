@@ -1,8 +1,12 @@
+rp_id: '27'
 rp_embedding_name: bench press incline, medium grip, barbell, chest
 semantic_matches:
-  - hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
+  - hevy_id: 50DFDFAB
+    hevy_embedding_name: incline bench press barbell, chest, triceps, shoulders
     distance: 0.1
-  - hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
+  - hevy_id: 07B38369
+    hevy_embedding_name: incline bench press dumbbell, chest, triceps, shoulders
     distance: 0.14
-  - hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
+  - hevy_id: 3A6FA3D1
+    hevy_embedding_name: incline bench press smith machine, chest, shoulders, triceps
     distance: 0.14

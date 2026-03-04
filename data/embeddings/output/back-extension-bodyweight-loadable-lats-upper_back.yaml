@@ -1,8 +1,12 @@
+rp_id: '535982'
 rp_embedding_name: back extension, bodyweight-loadable, lats, upper_back
 semantic_matches:
-  - hevy_embedding_name: back extension machine, lower_back
-    distance: 0.14
-  - hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
+  - hevy_id: A05C064D
+    hevy_embedding_name: back extension machine, lower_back
+    distance: 0.15
+  - hevy_id: 091737FA
+    hevy_embedding_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
     distance: 0.17
-  - hevy_embedding_name: back extension hyperextension, lower_back, hamstrings, glutes
+  - hevy_id: 729237D1
+    hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
     distance: 0.19

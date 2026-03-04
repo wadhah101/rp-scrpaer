@@ -1,8 +1,12 @@
+rp_id: '75'
 rp_embedding_name: cable triceps pushdown rope, cable, triceps
 semantic_matches:
-  - hevy_embedding_name: triceps rope pushdown, triceps
-    distance: 0.08
-  - hevy_embedding_name: single arm triceps pushdown cable, triceps
+  - hevy_id: 94B7239B
+    hevy_embedding_name: triceps rope pushdown, triceps
     distance: 0.09
-  - hevy_embedding_name: triceps extension cable, triceps
-    distance: 0.12
+  - hevy_id: 552AB030
+    hevy_embedding_name: single arm triceps pushdown cable, triceps
+    distance: 0.11
+  - hevy_id: 21310F5F
+    hevy_embedding_name: triceps extension cable, triceps
+    distance: 0.13

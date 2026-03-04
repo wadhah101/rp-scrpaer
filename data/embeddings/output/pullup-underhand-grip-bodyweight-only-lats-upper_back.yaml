@@ -1,8 +1,12 @@
+rp_id: '65'
 rp_embedding_name: pullup underhand grip, bodyweight-only, lats, upper_back
 semantic_matches:
-  - hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
+  - hevy_id: 1B2B1E7C
+    hevy_embedding_name: pull up, lats, upper_back, biceps, forearms
+    distance: 0.13
+  - hevy_id: 729237D1
+    hevy_embedding_name: pull up weighted, lats, upper_back, biceps, forearms
     distance: 0.14
-  - hevy_embedding_name: pull up, lats, upper_back, biceps, forearms
-    distance: 0.14
-  - hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
+  - hevy_id: 2C37EC5E
+    hevy_embedding_name: pull up assisted, lats, upper_back, biceps, forearms
     distance: 0.14

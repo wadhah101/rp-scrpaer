@@ -1,8 +1,12 @@
+rp_id: '43'
 rp_embedding_name: dumbbell row 2-arm, incline, dumbbell, lats, upper_back
 semantic_matches:
-  - hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
+  - hevy_id: 914F3A96
+    hevy_embedding_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
     distance: 0.1
-  - hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
+  - hevy_id: F1E57334
+    hevy_embedding_name: dumbbell row, lats, upper_back, biceps, forearms
     distance: 0.12
-  - hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
+  - hevy_id: '23E92538'
+    hevy_embedding_name: bent over row dumbbell, upper_back, lats, biceps, forearms
     distance: 0.14

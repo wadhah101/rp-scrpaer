@@ -1,8 +1,12 @@
+rp_id: '199'
 rp_embedding_name: leg press calves, machine, calves
 semantic_matches:
-  - hevy_embedding_name: calf press machine, calves
-    distance: 0.05
-  - hevy_embedding_name: single leg standing calf raise machine, calves
-    distance: 0.09
-  - hevy_embedding_name: standing calf raise machine, calves
+  - hevy_id: 91237BDD
+    hevy_embedding_name: calf press machine, calves
+    distance: 0.06
+  - hevy_id: E05C2C38
+    hevy_embedding_name: standing calf raise machine, calves
     distance: 0.1
+  - hevy_id: B05C2C29
+    hevy_embedding_name: single leg standing calf raise machine, calves
+    distance: 0.11

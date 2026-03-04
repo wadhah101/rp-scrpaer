@@ -1,8 +1,12 @@
+rp_id: '87'
 rp_embedding_name: dumbbell curl 2-arm, dumbbell, biceps
 semantic_matches:
-  - hevy_embedding_name: bicep curl dumbbell, biceps
+  - hevy_id: 37FCC2BB
+    hevy_embedding_name: bicep curl dumbbell, biceps
     distance: 0.05
-  - hevy_embedding_name: bicep curl barbell, biceps
+  - hevy_id: A5AC6449
+    hevy_embedding_name: bicep curl barbell, biceps
     distance: 0.12
-  - hevy_embedding_name: spider curl dumbbell, biceps
+  - hevy_id: 90427D4A
+    hevy_embedding_name: spider curl dumbbell, biceps
     distance: 0.12

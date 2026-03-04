@@ -1,8 +1,12 @@
+rp_id: '712798'
 rp_embedding_name: deadlift sumo stance, deficit, barbell, glutes
 semantic_matches:
-  - hevy_embedding_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
-    distance: 0.17
-  - hevy_embedding_name: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-    distance: 0.19
-  - hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+  - hevy_id: D20D7BBE
+    hevy_embedding_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
+    distance: 0.16
+  - hevy_id: 5F4E6DD3
+    hevy_embedding_name: deadlift dumbbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
+    distance: 0.2
+  - hevy_id: C6272009
+    hevy_embedding_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
     distance: 0.2

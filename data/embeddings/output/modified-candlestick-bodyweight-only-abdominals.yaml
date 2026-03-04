@@ -1,8 +1,12 @@
+rp_id: '223'
 rp_embedding_name: modified candlestick, bodyweight-only, abdominals
 semantic_matches:
-  - hevy_embedding_name: sit up weighted, abdominals
+  - hevy_id: 9237BA12
+    hevy_embedding_name: sit up weighted, abdominals
     distance: 0.2
-  - hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.2
-  - hevy_embedding_name: ab wheel, abdominals
+  - hevy_id: B2398CD1
+    hevy_embedding_name: decline crunch weighted, abdominals
+    distance: 0.21
+  - hevy_id: D928C232
+    hevy_embedding_name: crunch weighted, abdominals
     distance: 0.21

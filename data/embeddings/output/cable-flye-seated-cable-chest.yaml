@@ -1,8 +1,12 @@
+rp_id: '535984'
 rp_embedding_name: cable flye seated, cable, chest
 semantic_matches:
-  - hevy_embedding_name: seated chest flys cable, chest
+  - hevy_id: 6B4C797E
+    hevy_embedding_name: seated chest flys cable, chest
     distance: 0.05
-  - hevy_embedding_name: cable fly crossovers, chest
-    distance: 0.09
-  - hevy_embedding_name: incline chest fly dumbbell, chest
+  - hevy_id: 651F844C
+    hevy_embedding_name: cable fly crossovers, chest
+    distance: 0.1
+  - hevy_id: D3E2AB55
+    hevy_embedding_name: incline chest fly dumbbell, chest
     distance: 0.14

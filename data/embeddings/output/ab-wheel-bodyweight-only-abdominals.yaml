@@ -1,8 +1,12 @@
+rp_id: '535940'
 rp_embedding_name: ab wheel, bodyweight-only, abdominals
 semantic_matches:
-  - hevy_embedding_name: ab wheel, abdominals
-    distance: 0.06
-  - hevy_embedding_name: sit up weighted, abdominals
+  - hevy_id: 99D5F10E
+    hevy_embedding_name: ab wheel, abdominals
+    distance: 0.07
+  - hevy_id: 9237BA12
+    hevy_embedding_name: sit up weighted, abdominals
     distance: 0.17
-  - hevy_embedding_name: crunch weighted, abdominals
-    distance: 0.18
+  - hevy_id: B2398CD1
+    hevy_embedding_name: decline crunch weighted, abdominals
+    distance: 0.19

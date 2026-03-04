@@ -1,8 +1,12 @@
+rp_id: '141'
 rp_embedding_name: dumbbell shoulder press seated, dumbbell, shoulders
 semantic_matches:
-  - hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
-    distance: 0.08
-  - hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
+  - hevy_id: 878CD1D0
+    hevy_embedding_name: shoulder press dumbbell, shoulders, triceps
+    distance: 0.09
+  - hevy_id: 9930DF71
+    hevy_embedding_name: seated overhead press dumbbell, shoulders, triceps
     distance: 0.1
-  - hevy_embedding_name: seated lateral raise dumbbell, shoulders
+  - hevy_id: 9372FFAA
+    hevy_embedding_name: seated lateral raise dumbbell, shoulders
     distance: 0.12
