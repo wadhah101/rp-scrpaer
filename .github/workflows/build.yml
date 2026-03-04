@@ -30,8 +30,28 @@ jobs:
           install: false
           cache: false
           version: 2026.3.0
-      # TODO: restore remote builder check + Tailscale after WarpBuild testing
-      - name: Setup WarpBuild builder
+      - name: Tailscale
+        uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4.1.1
+        with:
+          authkey: ${{ secrets.TALSCALE_KEY }}
+      - name: Check remote builder availability
+        id: check-builder
+        run: |
+          if docker buildx create \
+            --name remote-builder \
+            --driver remote \
+            tcp://${{ secrets.REMOTE_BUILDER_ADDRESS }}:${{ secrets.REMOTE_BUILDER_PORT }} && \
+            docker buildx inspect remote-builder --bootstrap; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Remote builder is unreachable, falling back to WarpBuild"
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Setup remote builder
+        if: steps.check-builder.outputs.available == 'true'
+        run: docker buildx use remote-builder
+      - name: Setup WarpBuild fallback builder
+        if: steps.check-builder.outputs.available != 'true'
         uses: Warpbuilds/docker-configure@v1
         with:
           api-key: ${{ secrets.WARP_BUILD_API_KEY }}
