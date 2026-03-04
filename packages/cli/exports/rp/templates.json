@@ -902,5 +902,21 @@
     "emphasis": "Whole Body",
     "sex": "male",
     "frequency": 6
+  },
+  {
+    "id": 192300,
+    "key": "qfro2h1a8idx",
+    "name": "Gerald Ernat’s Triple Threat Protocol",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 4
+  },
+  {
+    "id": 192301,
+    "key": "4pulyryoqgwp",
+    "name": "Gerald Ernat’s Army Fitness Test+ Plan",
+    "emphasis": "Whole Body",
+    "sex": "male",
+    "frequency": 3
   }
 ]

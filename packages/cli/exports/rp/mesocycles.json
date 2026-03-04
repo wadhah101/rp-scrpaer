@@ -11,11 +11,11 @@
     "sourceMesoId": 990513,
     "microRirs": 32108,
     "createdAt": "2026-02-10T10:43:23.941000Z",
-    "updatedAt": "2026-02-28T11:15:45.590000Z",
+    "updatedAt": "2026-03-04T16:40:46.780000Z",
     "finishedAt": null,
     "deletedAt": null,
     "firstSetCompletedAt": "2026-02-10T11:03:34.335000Z",
-    "lastWorkoutFinishedAt": "2026-02-28T11:15:47.157000Z",
+    "lastWorkoutFinishedAt": "2026-03-04T16:40:49.321000Z",
     "priorities": {
       "1": {
         "id": 8366099,
@@ -6222,33 +6222,33 @@
             "bodyweightAt": "2026-02-21T08:33:20.057000Z",
             "unit": "kg",
             "label": "Sunday",
-            "finishedAt": null,
-            "status": "ready",
+            "finishedAt": "2026-03-04T16:40:49.321000Z",
+            "status": "partial",
             "notes": [],
             "muscleGroups": [
               {
                 "id": 118863498,
                 "dayId": 26369391,
                 "muscleGroupId": 4,
-                "pump": null,
-                "soreness": null,
-                "workload": null,
+                "pump": 1,
+                "soreness": 1,
+                "workload": 1,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-24T07:04:49.530Z",
+                "updatedAt": "2026-03-04T16:34:19.903Z",
                 "recommendedSets": 10,
-                "status": "programmed"
+                "status": "partial"
               },
               {
                 "id": 118863499,
                 "dayId": 26369391,
                 "muscleGroupId": 2,
-                "pump": null,
-                "soreness": null,
-                "workload": null,
+                "pump": 1,
+                "soreness": 1,
+                "workload": 0,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-25T17:24:56.346Z",
+                "updatedAt": "2026-03-04T16:40:44.237Z",
                 "recommendedSets": 4,
-                "status": "programmed"
+                "status": "partial"
               },
               {
                 "id": 118863500,
@@ -6258,9 +6258,9 @@
                 "soreness": null,
                 "workload": null,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-28T11:15:45.590Z",
+                "updatedAt": "2026-03-04T16:39:34.551Z",
                 "recommendedSets": 3,
-                "status": "programmed"
+                "status": "skipped"
               }
             ],
             "exercises": [
@@ -6269,26 +6269,26 @@
                 "dayId": 26369391,
                 "exerciseId": 90,
                 "position": 0,
-                "jointPain": null,
+                "jointPain": 0,
                 "muscleGroupId": 4,
                 "sourceDayExerciseId": 161999157,
-                "status": "ready",
+                "status": "complete",
                 "sets": [
                   {
                     "id": 215310588,
                     "dayExerciseId": 161999191,
                     "position": 0,
                     "setType": "regular",
-                    "weight": 30.75,
+                    "weight": 30,
                     "weightTarget": 30.75,
                     "weightTargetMin": 26.25,
                     "weightTargetMax": 33.75,
-                    "reps": null,
-                    "repsTarget": 10,
+                    "reps": 11,
+                    "repsTarget": 11,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:07:51.141000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6296,16 +6296,16 @@
                     "dayExerciseId": 161999191,
                     "position": 1,
                     "setType": "myorep-match",
-                    "weight": 30.75,
-                    "weightTarget": 30.75,
+                    "weight": 30,
+                    "weightTarget": 30,
                     "weightTargetMin": 26.25,
                     "weightTargetMax": 33.75,
-                    "reps": null,
-                    "repsTarget": 10,
+                    "reps": 11,
+                    "repsTarget": 11,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:13:09.546000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6313,16 +6313,16 @@
                     "dayExerciseId": 161999191,
                     "position": 2,
                     "setType": "myorep-match",
-                    "weight": 30.75,
-                    "weightTarget": 30.75,
+                    "weight": 30,
+                    "weightTarget": 30,
                     "weightTargetMin": 26.25,
                     "weightTargetMax": 33.75,
-                    "reps": null,
-                    "repsTarget": 10,
+                    "reps": 11,
+                    "repsTarget": 11,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:22:55.635000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6330,16 +6330,16 @@
                     "dayExerciseId": 161999191,
                     "position": 3,
                     "setType": "myorep-match",
-                    "weight": 30.75,
-                    "weightTarget": 30.75,
+                    "weight": 30,
+                    "weightTarget": 30,
                     "weightTargetMin": 26.25,
                     "weightTargetMax": 33.75,
-                    "reps": null,
-                    "repsTarget": 10,
+                    "reps": 11,
+                    "repsTarget": 11,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:22:56.584000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   }
                 ]
@@ -6349,26 +6349,26 @@
                 "dayId": 26369391,
                 "exerciseId": 535946,
                 "position": 1,
-                "jointPain": null,
+                "jointPain": 0,
                 "muscleGroupId": 4,
                 "sourceDayExerciseId": 161999158,
-                "status": "ready",
+                "status": "complete",
                 "sets": [
                   {
                     "id": 215310592,
                     "dayExerciseId": 161999192,
                     "position": 0,
                     "setType": "regular",
-                    "weight": 12.25,
+                    "weight": 13.5,
                     "weightTarget": 12.25,
                     "weightTargetMin": 10.5,
                     "weightTargetMax": 13.5,
-                    "reps": null,
-                    "repsTarget": 20,
+                    "reps": 16,
+                    "repsTarget": 16,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:00.832000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6376,16 +6376,16 @@
                     "dayExerciseId": 161999192,
                     "position": 1,
                     "setType": "regular",
-                    "weight": 12.25,
+                    "weight": 13.5,
                     "weightTarget": 12.25,
                     "weightTargetMin": 10.5,
                     "weightTargetMax": 13.5,
-                    "reps": null,
-                    "repsTarget": 20,
+                    "reps": 16,
+                    "repsTarget": 16,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:02.038000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6393,16 +6393,16 @@
                     "dayExerciseId": 161999192,
                     "position": 2,
                     "setType": "regular",
-                    "weight": 12.25,
+                    "weight": 13.5,
                     "weightTarget": 12.25,
                     "weightTargetMin": 10.5,
                     "weightTargetMax": 13.5,
-                    "reps": null,
-                    "repsTarget": 20,
+                    "reps": 16,
+                    "repsTarget": 16,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:03.165000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   }
                 ]
@@ -6412,26 +6412,26 @@
                 "dayId": 26369391,
                 "exerciseId": 535959,
                 "position": 2,
-                "jointPain": null,
+                "jointPain": 0,
                 "muscleGroupId": 2,
                 "sourceDayExerciseId": 161999159,
-                "status": "ready",
+                "status": "complete",
                 "sets": [
                   {
                     "id": 215604266,
                     "dayExerciseId": 161999193,
                     "position": 0,
                     "setType": "regular",
-                    "weight": 71,
+                    "weight": 70,
                     "weightTarget": 71,
                     "weightTargetMin": 60.5,
                     "weightTargetMax": 76.25,
-                    "reps": null,
-                    "repsTarget": 8,
+                    "reps": 9,
+                    "repsTarget": 9,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:38:44.463000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-25T17:24:56.346000Z"
                   },
                   {
@@ -6439,16 +6439,16 @@
                     "dayExerciseId": 161999193,
                     "position": 1,
                     "setType": "regular",
-                    "weight": 84.5,
+                    "weight": 80,
                     "weightTarget": 84.5,
                     "weightTargetMin": 72.25,
                     "weightTargetMax": 86.75,
-                    "reps": null,
-                    "repsTarget": 6,
+                    "reps": 8,
+                    "repsTarget": 8,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:38:48.350000Z",
+                    "status": "complete",
                     "createdAt": "2026-02-25T17:24:56.346000Z"
                   }
                 ]
@@ -6461,7 +6461,7 @@
                 "jointPain": null,
                 "muscleGroupId": 5,
                 "sourceDayExerciseId": 161999126,
-                "status": "ready",
+                "status": "skipped",
                 "sets": [
                   {
                     "id": 216123915,
@@ -6472,12 +6472,12 @@
                     "weightTarget": 65,
                     "weightTargetMin": 57,
                     "weightTargetMax": 70,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 8,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:40:37.736000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-28T11:15:45.590000Z"
                   },
                   {
@@ -6489,12 +6489,12 @@
                     "weightTarget": 65,
                     "weightTargetMin": 57,
                     "weightTargetMax": 70,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 8,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:40:37.736000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-28T11:15:45.590000Z"
                   },
                   {
@@ -6506,12 +6506,12 @@
                     "weightTarget": 65,
                     "weightTargetMin": 57,
                     "weightTargetMax": 66.75,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 6,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:40:37.736000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-28T11:15:45.590000Z"
                   }
                 ]
@@ -6524,23 +6524,23 @@
                 "jointPain": null,
                 "muscleGroupId": 2,
                 "sourceDayExerciseId": 161999162,
-                "status": "ready",
+                "status": "skipped",
                 "sets": [
                   {
                     "id": 215604268,
                     "dayExerciseId": 161999196,
                     "position": 0,
                     "setType": "regular",
-                    "weight": 82,
+                    "weight": 80,
                     "weightTarget": 82,
                     "weightTargetMin": 70,
                     "weightTargetMax": 84,
-                    "reps": null,
-                    "repsTarget": 6,
+                    "reps": -1,
+                    "repsTarget": 7,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:40:37.736000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-25T17:24:56.346000Z"
                   },
                   {
@@ -6548,16 +6548,16 @@
                     "dayExerciseId": 161999196,
                     "position": 1,
                     "setType": "regular",
-                    "weight": 84.5,
+                    "weight": 80,
                     "weightTarget": 84.5,
                     "weightTargetMin": 72.25,
                     "weightTargetMax": 86.75,
-                    "reps": null,
-                    "repsTarget": 6,
+                    "reps": -1,
+                    "repsTarget": 8,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:40:37.736000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-25T17:24:56.346000Z"
                   }
                 ]
@@ -6570,7 +6570,7 @@
                 "jointPain": null,
                 "muscleGroupId": 4,
                 "sourceDayExerciseId": 161999163,
-                "status": "ready",
+                "status": "skipped",
                 "sets": [
                   {
                     "id": 215310595,
@@ -6581,12 +6581,12 @@
                     "weightTarget": 23,
                     "weightTargetMin": 19.75,
                     "weightTargetMax": 23.75,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 6,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:16.035000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6598,12 +6598,12 @@
                     "weightTarget": 23,
                     "weightTargetMin": 19.75,
                     "weightTargetMax": 23.75,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 6,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:16.036000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   },
                   {
@@ -6615,12 +6615,12 @@
                     "weightTarget": 23,
                     "weightTargetMin": 19.75,
                     "weightTargetMax": 23.75,
-                    "reps": null,
+                    "reps": -1,
                     "repsTarget": 6,
                     "bodyweight": null,
                     "unit": "kg",
-                    "finishedAt": null,
-                    "status": "ready",
+                    "finishedAt": "2026-03-04T16:34:16.036000Z",
+                    "status": "skipped",
                     "createdAt": "2026-02-24T07:04:49.530000Z"
                   }
                 ]
@@ -7140,7 +7140,7 @@
             "unit": "kg",
             "label": "Wednesday",
             "finishedAt": null,
-            "status": "pending",
+            "status": "ready",
             "notes": [],
             "muscleGroups": [
               {
@@ -7151,9 +7151,9 @@
                 "soreness": null,
                 "workload": null,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-10T10:43:23.941Z",
-                "recommendedSets": null,
-                "status": "unprogrammed"
+                "updatedAt": "2026-03-04T16:40:46.780Z",
+                "recommendedSets": 8,
+                "status": "programmed"
               },
               {
                 "id": 118863511,
@@ -7163,9 +7163,9 @@
                 "soreness": null,
                 "workload": null,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-10T10:43:23.941Z",
-                "recommendedSets": null,
-                "status": "unprogrammed"
+                "updatedAt": "2026-03-04T16:40:46.780Z",
+                "recommendedSets": 4,
+                "status": "programmed"
               }
             ],
             "exercises": [
@@ -7176,9 +7176,78 @@
                 "position": 0,
                 "jointPain": null,
                 "muscleGroupId": 4,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 161999175,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015001,
+                    "dayExerciseId": 161999209,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 33.75,
+                    "reps": null,
+                    "repsTarget": 11,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015002,
+                    "dayExerciseId": 161999209,
+                    "position": 1,
+                    "setType": "myorep-match",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 33.75,
+                    "reps": null,
+                    "repsTarget": 11,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015003,
+                    "dayExerciseId": 161999209,
+                    "position": 2,
+                    "setType": "myorep-match",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 33.75,
+                    "reps": null,
+                    "repsTarget": 11,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015004,
+                    "dayExerciseId": 161999209,
+                    "position": 3,
+                    "setType": "myorep-match",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 33.75,
+                    "reps": null,
+                    "repsTarget": 11,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               },
               {
                 "id": 161999210,
@@ -7187,9 +7256,78 @@
                 "position": 1,
                 "jointPain": null,
                 "muscleGroupId": 4,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 161999176,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015005,
+                    "dayExerciseId": 161999210,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 20.5,
+                    "weightTarget": 20.5,
+                    "weightTargetMin": 17.5,
+                    "weightTargetMax": 22.5,
+                    "reps": null,
+                    "repsTarget": 12,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015006,
+                    "dayExerciseId": 161999210,
+                    "position": 1,
+                    "setType": "regular",
+                    "weight": 20.5,
+                    "weightTarget": 20.5,
+                    "weightTargetMin": 17.5,
+                    "weightTargetMax": 22.5,
+                    "reps": null,
+                    "repsTarget": 12,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015007,
+                    "dayExerciseId": 161999210,
+                    "position": 2,
+                    "setType": "regular",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 32.25,
+                    "reps": null,
+                    "repsTarget": 7,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015008,
+                    "dayExerciseId": 161999210,
+                    "position": 3,
+                    "setType": "regular",
+                    "weight": 30.75,
+                    "weightTarget": 30.75,
+                    "weightTargetMin": 26.25,
+                    "weightTargetMax": 30.75,
+                    "reps": null,
+                    "repsTarget": 5,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               },
               {
                 "id": 161999211,
@@ -7198,9 +7336,44 @@
                 "position": 2,
                 "jointPain": null,
                 "muscleGroupId": 2,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 161999177,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015009,
+                    "dayExerciseId": 161999211,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 71.75,
+                    "weightTarget": 71.75,
+                    "weightTargetMin": 61.25,
+                    "weightTargetMax": 78.75,
+                    "reps": null,
+                    "repsTarget": 9,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015010,
+                    "dayExerciseId": 161999211,
+                    "position": 1,
+                    "setType": "regular",
+                    "weight": 71.75,
+                    "weightTarget": 71.75,
+                    "weightTargetMin": 61.25,
+                    "weightTargetMax": 78.75,
+                    "reps": null,
+                    "repsTarget": 9,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               },
               {
                 "id": 163146834,
@@ -7209,9 +7382,44 @@
                 "position": 3,
                 "jointPain": null,
                 "muscleGroupId": 2,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 163146833,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015011,
+                    "dayExerciseId": 163146834,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 74.25,
+                    "weightTarget": 74.25,
+                    "weightTargetMin": 63.5,
+                    "weightTargetMax": 79.75,
+                    "reps": null,
+                    "repsTarget": 8,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  },
+                  {
+                    "id": 217015012,
+                    "dayExerciseId": 163146834,
+                    "position": 1,
+                    "setType": "regular",
+                    "weight": 89.75,
+                    "weightTarget": 89.75,
+                    "weightTargetMin": 76.5,
+                    "weightTargetMax": 89.75,
+                    "reps": null,
+                    "repsTarget": 5,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               }
             ]
           },
@@ -7361,9 +7569,9 @@
                 "soreness": null,
                 "workload": null,
                 "createdAt": "2026-02-10T10:43:23.941Z",
-                "updatedAt": "2026-02-10T10:43:23.941Z",
-                "recommendedSets": null,
-                "status": "unprogrammed"
+                "updatedAt": "2026-03-04T16:40:46.780Z",
+                "recommendedSets": 2,
+                "status": "programmed"
               }
             ],
             "exercises": [
@@ -7407,9 +7615,27 @@
                 "position": 3,
                 "jointPain": null,
                 "muscleGroupId": 5,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 161999188,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015013,
+                    "dayExerciseId": 161999222,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 43.25,
+                    "weightTarget": 43.25,
+                    "weightTargetMin": 37.75,
+                    "weightTargetMax": 45.5,
+                    "reps": null,
+                    "repsTarget": 7,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               },
               {
                 "id": 161999223,
@@ -7418,9 +7644,27 @@
                 "position": 4,
                 "jointPain": null,
                 "muscleGroupId": 5,
-                "sourceDayExerciseId": null,
-                "status": "empty",
-                "sets": []
+                "sourceDayExerciseId": 161999155,
+                "status": "ready",
+                "sets": [
+                  {
+                    "id": 217015014,
+                    "dayExerciseId": 161999223,
+                    "position": 0,
+                    "setType": "regular",
+                    "weight": 5.25,
+                    "weightTarget": 5.25,
+                    "weightTargetMin": 4.5,
+                    "weightTargetMax": 5.25,
+                    "reps": null,
+                    "repsTarget": 5,
+                    "bodyweight": null,
+                    "unit": "kg",
+                    "finishedAt": null,
+                    "status": "ready",
+                    "createdAt": "2026-03-04T16:40:46.780000Z"
+                  }
+                ]
               },
               {
                 "id": 161999224,

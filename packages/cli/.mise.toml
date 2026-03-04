@@ -29,7 +29,7 @@ env = { BUCKET_NAME = { required = true }, HEVY_API_KEY = { required = true } }
 run = "uv run python -m rp_to_hevy_cli hevy export --type exercise-templates --output s3://$BUCKET_NAME/exports/exercises/hevy-exercises.json"
 
 [tasks.export-rp-local]
-run = "uv run python -m rp_to_hevy_cli rp export --all --output exports/rp"
+run = "uv run python -m rp_to_hevy_cli rp export --type all --output exports/rp"
 
 [tasks.export-rp-s3]
 env = { BUCKET_NAME = { required = true } }
