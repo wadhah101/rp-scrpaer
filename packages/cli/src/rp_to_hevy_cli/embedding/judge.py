@@ -23,15 +23,14 @@ _SYSTEM_PROMPT = """\
 You are an expert in resistance training and exercise science.
 
 Given an exercise from the RP (Renaissance Periodization) database, \
-determine which candidate from the Hevy exercise database is the \
+determine which numbered candidate from the Hevy exercise database is the \
 best match. The exercises may have different names but refer to the \
 same or very similar movement.
 
 Rules:
-- You MUST pick exactly one candidate from the list. \
-There is no "none" option.
-- Return the candidate name EXACTLY as written in the list.
-- Even if the match is imperfect, pick the closest one."""
+- You MUST pick exactly one candidate by its number.
+- There is no "none" option — always pick the closest match.
+- Return ONLY the candidate number (1, 2, 3, etc.)."""
 
 _MAX_RETRIES = 3
 
@@ -43,49 +42,13 @@ class Confidence(str, Enum):
 
 
 class JudgeResult(BaseModel):
-    best_match: str
+    best_match: int
     confidence: Confidence
 
 
 def _build_user_prompt(rp_name: str, candidates: list[str]) -> str:
-    lines = "\n".join(f"  - {c}" for c in candidates)
+    lines = "\n".join(f"  {i}. {c}" for i, c in enumerate(candidates, 1))
     return f"RP Exercise: {rp_name}\n\nHevy Candidates:\n{lines}"
-
-
-class _ResolveResult:
-    __slots__ = ("hevy_id", "hevy_name", "fallback")
-
-    def __init__(self, hevy_id: str, hevy_name: str, *, fallback: bool):
-        self.hevy_id = hevy_id
-        self.hevy_name = hevy_name
-        self.fallback = fallback
-
-
-def _resolve_hevy_id(name: str, matches: list[dict]) -> _ResolveResult:
-    """Map best_match name back to hevy_id and canonical name.
-
-    Falls back to first candidate if no match found.
-    """
-    name_lower = name.lower().strip()
-
-    # Exact or prefix match
-    for m in matches:
-        candidate = m["hevy_embedding_name"]
-        candidate_lower = candidate.lower()
-        if (
-            candidate_lower == name_lower
-            or candidate_lower.startswith(name_lower)
-            or name_lower.startswith(candidate_lower)
-        ):
-            return _ResolveResult(m["hevy_id"], candidate, fallback=False)
-
-    # Fallback: pick the first candidate (closest by embedding distance)
-    first = matches[0]
-    return _ResolveResult(
-        first["hevy_id"],
-        first["hevy_embedding_name"],
-        fallback=True,
-    )
 
 
 async def _judge_one(
@@ -120,15 +83,13 @@ async def _judge_one(
         else:
             return None
 
-    resolved = _resolve_hevy_id(judge.best_match, matches)
-
-    if resolved.fallback:
+    idx = judge.best_match - 1  # 1-based → 0-based
+    if idx < 0 or idx >= len(matches):
         click.echo(
             click.style(
-                f"  FALLBACK: rp_id={rp_id} — LLM returned "
-                f"'{judge.best_match}' which does not match "
-                f"any candidate. Falling back to closest "
-                f"embedding match: '{resolved.hevy_name}'",
+                f"  OUT OF RANGE: rp_id={rp_id} — LLM returned "
+                f"{judge.best_match} but only {len(matches)} candidates. "
+                f"Falling back to candidate 1.",
                 fg="red",
                 bold=True,
             ),
@@ -136,27 +97,17 @@ async def _judge_one(
         )
         if strict:
             raise click.ClickException(
-                f"rp_id={rp_id} — LLM returned "
-                f"'{judge.best_match}' which does not "
-                f"match any candidate."
+                f"rp_id={rp_id} — LLM returned {judge.best_match} "
+                f"which is out of range (1-{len(matches)})."
             )
-    elif resolved.hevy_name != judge.best_match:
-        click.echo(
-            click.style(
-                f"  WARN: rp_id={rp_id} — LLM returned "
-                f"'{judge.best_match}', resolved to "
-                f"'{resolved.hevy_name}'",
-                fg="yellow",
-                bold=True,
-            ),
-            err=True,
-        )
+        idx = 0
 
+    chosen = matches[idx]
     return {
         "rp_id": rp_id,
         "rp_name": rp_name,
-        "hevy_best_match_id": resolved.hevy_id,
-        "hevy_best_match_name": resolved.hevy_name,
+        "hevy_best_match_id": chosen["hevy_id"],
+        "hevy_best_match_name": chosen["hevy_embedding_name"],
         "confidence": judge.confidence.value,
     }
 
@@ -249,7 +200,7 @@ async def _run(
     "--strict",
     is_flag=True,
     default=False,
-    help="Exit if LLM returns a name not matching any candidate.",
+    help="Exit if LLM returns an out-of-range candidate number.",
 )
 def llm_judge(
     api_base_url: str,
