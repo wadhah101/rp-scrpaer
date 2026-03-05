@@ -1,25 +1,10 @@
 from __future__ import annotations
 
-import asyncio
 from datetime import date, datetime
 
 import click
-from api_service_rp import ApiClient as RpApiClient
-from api_service_rp import Configuration as RpConfiguration
-from api_service_rp import TrainingDataApi
-from api_service_rp.models.mesocycle import Mesocycle
 
 from rp_to_hevy_cli.port.models import RP_DAY_ID_PATTERN
-
-
-async def _fetch_mesocycles(token: str) -> list[Mesocycle]:
-    config = RpConfiguration(access_token=token)
-    async with RpApiClient(config) as client:
-        api = TrainingDataApi(client)
-        summaries = await api.get_mesocycles()
-        return list(
-            await asyncio.gather(*(api.get_mesocycle(m.key) for m in summaries))
-        )
 
 
 def _parse_existing_workout_dates(workouts: list) -> set[date]:

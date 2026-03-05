@@ -56,6 +56,12 @@ async def _fetch_mesocycles(training_api: TrainingDataApi) -> list:
     )
 
 
+async def _fetch_mesocycles_by_token(token: str) -> list:
+    config = Configuration(access_token=token)
+    async with ApiClient(config) as client:
+        return await _fetch_mesocycles(TrainingDataApi(client))
+
+
 async def _export(token: str, export_type: str, output: Path | CloudPath) -> None:
     config = Configuration(access_token=token)
     async with ApiClient(config) as client:

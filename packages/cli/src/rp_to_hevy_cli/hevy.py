@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import asyncio
 import os
+from collections.abc import Awaitable, Callable
 from pathlib import Path
+from typing import Any
 from uuid import UUID
 
 import click
@@ -11,7 +13,7 @@ from hevy_api_service import ApiClient as HevyApiClient
 from hevy_api_service import Configuration as HevyConfiguration
 from hevy_api_service import ExerciseTemplatesApi, WorkoutsApi
 
-from rp_to_hevy_cli.utils import write_json
+from rp_to_hevy_cli.utils import _require_hevy_api_key, write_json
 
 HEVY_EXPORT_TYPES = [
     "all",
@@ -20,59 +22,63 @@ HEVY_EXPORT_TYPES = [
 ]
 
 
+def _hevy_client() -> HevyApiClient:
+    config = HevyConfiguration(host=os.environ.get("HEVY_API_BASE_URL"))
+    return HevyApiClient(config)
+
+
+async def _fetch_all_pages(
+    fetch: Callable[..., Awaitable[Any]],
+    items_attr: str,
+    api_key: UUID,
+    page_size: int,
+) -> list:
+    page = 1
+    all_items: list = []
+    while True:
+        resp = await fetch(api_key=api_key, page=page, page_size=page_size)
+        items = getattr(resp, items_attr, None)
+        if items:
+            all_items.extend(items)
+        if page >= (resp.page_count or 1):
+            break
+        page += 1
+    return all_items
+
+
 async def _fetch_all_exercise_templates(
     templates_api: ExerciseTemplatesApi, api_key: UUID
 ) -> list:
-    page = 1
-    all_templates = []
-    while True:
-        resp = await templates_api.get_exercise_templates(
-            api_key=api_key, page=page, page_size=100
-        )
-        if resp.exercise_templates:
-            all_templates.extend(resp.exercise_templates)
-        if page >= (resp.page_count or 1):
-            break
-        page += 1
-    return all_templates
+    return await _fetch_all_pages(
+        templates_api.get_exercise_templates, "exercise_templates", api_key, 100
+    )
 
 
 async def _fetch_all_workouts(workouts_api: WorkoutsApi, api_key: UUID) -> list:
-    page = 1
-    all_workouts = []
-    while True:
-        resp = await workouts_api.get_workouts(api_key=api_key, page=page, page_size=10)
-        if resp.workouts:
-            all_workouts.extend(resp.workouts)
-        if page >= (resp.page_count or 1):
-            break
-        page += 1
-    return all_workouts
+    return await _fetch_all_pages(workouts_api.get_workouts, "workouts", api_key, 10)
 
 
 async def _hevy_export(
-    api_key: str, export_type: str, output: Path | CloudPath
+    api_key: UUID, export_type: str, output: Path | CloudPath
 ) -> None:
-    key = UUID(api_key)
-    config = HevyConfiguration(host=os.environ.get("HEVY_API_BASE_URL"))
-    async with HevyApiClient(config) as client:
+    async with _hevy_client() as client:
         templates_api = ExerciseTemplatesApi(client)
         workouts_api = WorkoutsApi(client)
 
         if export_type == "exercise-templates":
-            data = await _fetch_all_exercise_templates(templates_api, key)
+            data = await _fetch_all_exercise_templates(templates_api, api_key)
             write_json(data, output)
             return
 
         if export_type == "workouts":
-            data = await _fetch_all_workouts(workouts_api, key)
+            data = await _fetch_all_workouts(workouts_api, api_key)
             write_json(data, output)
             return
 
         # all
         templates, workouts = await asyncio.gather(
-            _fetch_all_exercise_templates(templates_api, key),
-            _fetch_all_workouts(workouts_api, key),
+            _fetch_all_exercise_templates(templates_api, api_key),
+            _fetch_all_workouts(workouts_api, api_key),
         )
         data = {
             "exercise_templates": templates,
@@ -108,12 +114,7 @@ def hevy():
 )
 def hevy_export(export_type: str, output: str | None):
     """Export application data from Hevy to JSON."""
-    api_key = os.environ.get("HEVY_API_KEY")
-    if not api_key:
-        raise click.ClickException(
-            "HEVY_API_KEY environment variable is not set. "
-            "Get your key at https://hevy.com/settings?developer"
-        )
+    api_key = _require_hevy_api_key()
 
     if output is None:
         output_path = AnyPath(
