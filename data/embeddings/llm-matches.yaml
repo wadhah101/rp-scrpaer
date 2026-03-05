@@ -2,1574 +2,1259 @@
   rp_name: pushup deficit, bodyweight-only, chest
   hevy_best_match_id: C43825EA
   hevy_best_match_name: decline push up, chest, shoulders, triceps
-  confidence: low
 - rp_id: "2"
   rp_name: dumbbell press flat, dumbbell, chest
   hevy_best_match_id: 3601968B
   hevy_best_match_name: bench press dumbbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "3"
   rp_name: hammer machine chest press flat, machine, chest
   hevy_best_match_id: 98f23dd1-b0d5-45ad-afc8-54bfdeb78b84
   hevy_best_match_name: bench presshammer machine, chest, triceps
-  confidence: high
 - rp_id: "4"
   rp_name: hammer machine chest press incline, machine, chest
   hevy_best_match_id: FBF92739
   hevy_best_match_name: incline chest press machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "5"
   rp_name: machine chest press, machine, chest
   hevy_best_match_id: 7EB3F7C3
   hevy_best_match_name: chest press machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "6"
   rp_name: bench press medium grip, barbell, chest
   hevy_best_match_id: 79D0BB3A
   hevy_best_match_name: bench press barbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "7"
   rp_name: bench press narrow grip, barbell, chest
   hevy_best_match_id: 35B51B87
   hevy_best_match_name: bench press - close grip barbell, triceps, chest, shoulders
-  confidence: high
 - rp_id: "8"
   rp_name: pushup narrow grip, bodyweight-only, chest
   hevy_best_match_id: 947DAC23
   hevy_best_match_name: push up - close grip, chest, triceps, shoulders
-  confidence: high
 - rp_id: "9"
   rp_name: pushup, bodyweight-only, chest
   hevy_best_match_id: 392887AA
   hevy_best_match_name: push up, chest, triceps, shoulders
-  confidence: high
 - rp_id: "10"
   rp_name: smith machine bench press wide grip, smith-machine, chest
   hevy_best_match_id: 0FBF7195
   hevy_best_match_name: bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "11"
   rp_name: smith machine bench press medium grip, smith-machine, chest
   hevy_best_match_id: 0FBF7195
   hevy_best_match_name: bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "12"
   rp_name: smith machine bench press narrow grip, smith-machine, chest
   hevy_best_match_id: 0FBF7195
   hevy_best_match_name: bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "13"
   rp_name: bench press wide grip, barbell, chest
   hevy_best_match_id: E644F828
   hevy_best_match_name: bench press - wide grip barbell, chest, shoulders, triceps
-  confidence: high
 - rp_id: "14"
   rp_name: cable flye bent over, cable, chest
   hevy_best_match_id: 651F844C
   hevy_best_match_name: cable fly crossovers, chest
-  confidence: high
 - rp_id: "15"
   rp_name: cable flye, cable, chest
   hevy_best_match_id: 651F844C
   hevy_best_match_name: cable fly crossovers, chest
-  confidence: high
 - rp_id: "16"
   rp_name: cable flye underhand, cable, chest
   hevy_best_match_id: 293483AD
   hevy_best_match_name: low cable fly crossovers, chest
-  confidence: high
 - rp_id: "17"
   rp_name: bench press cambered bar, barbell, chest
   hevy_best_match_id: 79D0BB3A
   hevy_best_match_name: bench press barbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "18"
   rp_name: dumbbell flye flat, dumbbell, chest
   hevy_best_match_id: "12017185"
   hevy_best_match_name: chest fly dumbbell, chest
-  confidence: high
 - rp_id: "19"
   rp_name: dumbbell press flye flat, dumbbell, chest
   hevy_best_match_id: "12017185"
   hevy_best_match_name: chest fly dumbbell, chest
-  confidence: high
 - rp_id: "20"
   rp_name: cable flye high, cable, chest
   hevy_best_match_id: 651F844C
   hevy_best_match_name: cable fly crossovers, chest
-  confidence: high
 - rp_id: "21"
   rp_name: dumbbell flye incline, dumbbell, chest
   hevy_best_match_id: D3E2AB55
   hevy_best_match_name: incline chest fly dumbbell, chest
-  confidence: high
 - rp_id: "22"
   rp_name: dumbbell press flye incline, dumbbell, chest
   hevy_best_match_id: D3E2AB55
   hevy_best_match_name: incline chest fly dumbbell, chest
-  confidence: high
 - rp_id: "23"
   rp_name: machine flye, machine, chest
   hevy_best_match_id: "78683336"
   hevy_best_match_name: chest fly machine, chest
-  confidence: high
 - rp_id: "24"
   rp_name: pec dec flye, machine, chest
   hevy_best_match_id: "78683336"
   hevy_best_match_name: chest fly machine, chest
-  confidence: high
 - rp_id: "25"
   rp_name: dumbbell press medium incline, dumbbell, chest
   hevy_best_match_id: 07B38369
   hevy_best_match_name: incline bench press dumbbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "26"
   rp_name: machine chest press incline, machine, chest
   hevy_best_match_id: FBF92739
   hevy_best_match_name: incline chest press machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "27"
   rp_name: bench press incline, medium grip, barbell, chest
   hevy_best_match_id: 50DFDFAB
   hevy_best_match_name: incline bench press barbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "28"
   rp_name: bench press incline, narrow grip, barbell, chest
   hevy_best_match_id: 50DFDFAB
   hevy_best_match_name: incline bench press barbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "29"
   rp_name: bench press incline, wide grip, barbell, chest
   hevy_best_match_id: 50DFDFAB
   hevy_best_match_name: incline bench press barbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "30"
   rp_name: dumbbell press low incline, dumbbell, chest
   hevy_best_match_id: 07B38369
   hevy_best_match_name: incline bench press dumbbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "31"
   rp_name: smith machine press incline, wide grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "32"
   rp_name: smith machine press incline, medium grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "33"
   rp_name: dumbbell row 2-arm, dumbbell, lats, upper_back
   hevy_best_match_id: "23E92538"
   hevy_best_match_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "34"
   rp_name: barbell bent over row, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "35"
   rp_name: barbell row to chest, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "36"
   rp_name: chest supported row, machine, lats, upper_back
   hevy_best_match_id: 1DF4A847
   hevy_best_match_name: seated row machine, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "37"
   rp_name: seated cable row, cable, lats, upper_back
   hevy_best_match_id: 0393F233
   hevy_best_match_name: seated cable row - v grip cable, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "38"
   rp_name: dumbbell row single-arm, supported, dumbbell, lats, upper_back
   hevy_best_match_id: F1E57334
   hevy_best_match_name: dumbbell row, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "39"
   rp_name: ez bar row underhand, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "40"
   rp_name: cambered bar row, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "41"
   rp_name: hammer machine row high, machine, lats, upper_back
   hevy_best_match_id: BC3492DA
   hevy_best_match_name: iso-lateral high row machine, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "42"
   rp_name: hammer machine row low, machine, lats, upper_back
   hevy_best_match_id: AA1EB7D8
   hevy_best_match_name: iso-lateral row machine, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "43"
   rp_name: dumbbell row 2-arm, incline, dumbbell, lats, upper_back
   hevy_best_match_id: 914F3A96
   hevy_best_match_name: chest supported incline row dumbbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "44"
   rp_name: inverted row, bodyweight-only, lats, upper_back
   hevy_best_match_id: 425805F4
   hevy_best_match_name: inverted row, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "45"
   rp_name: machine chest supported row, machine, lats, upper_back
   hevy_best_match_id: 1DF4A847
   hevy_best_match_name: seated row machine, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "46"
   rp_name: seal row, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "47"
   rp_name: smith machine row, smith-machine, lats, upper_back
   hevy_best_match_id: 1DF4A847
   hevy_best_match_name: seated row machine, upper_back, lats, biceps, forearms
-  confidence: low
 - rp_id: "48"
   rp_name: t-bar row, machine, lats, upper_back
   hevy_best_match_id: 08A2974E
   hevy_best_match_name: t bar row, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "49"
   rp_name: barbell flexion row, barbell, lats, upper_back
   hevy_best_match_id: 55E6546F
   hevy_best_match_name: bent over row barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "50"
   rp_name: cable flexion row, cable, lats, upper_back
   hevy_best_match_id: 0393F233
   hevy_best_match_name: seated cable row - v grip cable, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "51"
   rp_name: dumbbell row to hips, dumbbell, lats, upper_back
   hevy_best_match_id: F1E57334
   hevy_best_match_name: dumbbell row, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "52"
   rp_name: assisted pullup normal grip, machine-assistance, lats, upper_back
   hevy_best_match_id: 2C37EC5E
   hevy_best_match_name: pull up assisted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "53"
   rp_name: assisted pullup parallel grip, machine-assistance, lats, upper_back
   hevy_best_match_id: 2C37EC5E
   hevy_best_match_name: pull up assisted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "54"
   rp_name: assisted pullup underhand grip, machine-assistance, lats, upper_back
   hevy_best_match_id: 2C37EC5E
   hevy_best_match_name: pull up assisted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "55"
   rp_name: assisted pullup wide grip, machine-assistance, lats, upper_back
   hevy_best_match_id: 2C37EC5E
   hevy_best_match_name: pull up assisted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "56"
   rp_name: dumbbell pullover, dumbbell, lats, upper_back
   hevy_best_match_id: "67280085"
   hevy_best_match_name: pullover dumbbell, lats, chest, upper_back, triceps
-  confidence: high
 - rp_id: "57"
   rp_name: machine pullover, machine, lats, upper_back
   hevy_best_match_id: B123DD01
   hevy_best_match_name: pullover machine, lats, upper_back, chest, triceps
-  confidence: high
 - rp_id: "58"
   rp_name: pulldown narrow grip, cable, lats, upper_back
   hevy_best_match_id: 4E5257DE
   hevy_best_match_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "59"
   rp_name: pulldown normal grip, cable, lats, upper_back
   hevy_best_match_id: 6A6C31A5
   hevy_best_match_name: lat pulldown cable, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "60"
   rp_name: pullup normal grip, bodyweight-only, lats, upper_back
   hevy_best_match_id: 1B2B1E7C
   hevy_best_match_name: pull up, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "61"
   rp_name: pullup parallel grip, bodyweight-only, lats, upper_back
   hevy_best_match_id: 1B2B1E7C
   hevy_best_match_name: pull up, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "62"
   rp_name: pulldown parallel grip, cable, lats, upper_back
   hevy_best_match_id: 4E5257DE
   hevy_best_match_name: lat pulldown - close grip cable, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "63"
   rp_name: pulldown straight arm, cable, lats, upper_back
   hevy_best_match_id: D2387AB1
   hevy_best_match_name: straight arm lat pulldown cable, lats, triceps
-  confidence: high
 - rp_id: "64"
   rp_name: pulldown underhand grip, cable, lats, upper_back
   hevy_best_match_id: 046E25A2
   hevy_best_match_name: reverse grip lat pulldown cable, lats, upper_back, biceps
-  confidence: high
 - rp_id: "65"
   rp_name: pullup underhand grip, bodyweight-only, lats, upper_back
   hevy_best_match_id: 1B2B1E7C
   hevy_best_match_name: pull up, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "66"
   rp_name: pulldown wide grip, cable, lats, upper_back
   hevy_best_match_id: 6A6C31A5
   hevy_best_match_name: lat pulldown cable, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "67"
   rp_name: pullup wide grip, bodyweight-only, lats, upper_back
   hevy_best_match_id: 7C50F118
   hevy_best_match_name: wide pull up, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "68"
   rp_name: pulldown upright torso to abs, cable, lats, upper_back
   hevy_best_match_id: 6A6C31A5
   hevy_best_match_name: lat pulldown cable, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "69"
   rp_name: assisted dip, machine-assistance, triceps
   hevy_best_match_id: 4B4BF8C2
   hevy_best_match_name: triceps dip assisted, triceps, chest, shoulders
-  confidence: high
 - rp_id: "70"
   rp_name: barbell skullcrusher, barbell, triceps
   hevy_best_match_id: 875F585F
   hevy_best_match_name: skullcrusher barbell, triceps
-  confidence: high
 - rp_id: "71"
   rp_name: cable triceps pushdown bar, cable, triceps
   hevy_best_match_id: 93A552C6
   hevy_best_match_name: triceps pushdown, triceps
-  confidence: high
 - rp_id: "72"
   rp_name: dip triceps-focused, bodyweight-only, triceps
   hevy_best_match_id: 28BB4A95
   hevy_best_match_name: triceps dip, triceps, chest, shoulders
-  confidence: high
 - rp_id: "73"
   rp_name: dumbbell skullcrusher, dumbbell, triceps
   hevy_best_match_id: 68F8A292
   hevy_best_match_name: skullcrusher dumbbell, triceps
-  confidence: high
 - rp_id: "74"
   rp_name: inverted skullcrusher, bodyweight-only, triceps
   hevy_best_match_id: 875F585F
   hevy_best_match_name: skullcrusher barbell, triceps
-  confidence: high
 - rp_id: "75"
   rp_name: cable triceps pushdown rope, cable, triceps
   hevy_best_match_id: 94B7239B
   hevy_best_match_name: triceps rope pushdown, triceps
-  confidence: high
 - rp_id: "76"
   rp_name: cable triceps pushdown single-arm, cable, triceps
   hevy_best_match_id: 552AB030
   hevy_best_match_name: single arm triceps pushdown cable, triceps
-  confidence: high
 - rp_id: "77"
   rp_name: jm press, barbell, triceps
   hevy_best_match_id: 74103F24
   hevy_best_match_name: jm press barbell, triceps, chest, shoulders
-  confidence: high
 - rp_id: "78"
   rp_name: machine triceps pushdown, machine, triceps
   hevy_best_match_id: 3092FADD
   hevy_best_match_name: triceps extension machine, triceps
-  confidence: high
 - rp_id: "79"
   rp_name: barbell overhead triceps extension, barbell, triceps
   hevy_best_match_id: 2F8D3067
   hevy_best_match_name: triceps extension barbell, triceps
-  confidence: high
 - rp_id: "80"
   rp_name: cable overhead triceps extension, cable, triceps
   hevy_best_match_id: B5EFBF9C
   hevy_best_match_name: overhead triceps extension cable, triceps
-  confidence: high
 - rp_id: "81"
   rp_name: cable overhead triceps extension rope, cable, triceps
   hevy_best_match_id: B5EFBF9C
   hevy_best_match_name: overhead triceps extension cable, triceps
-  confidence: high
 - rp_id: "82"
   rp_name: ez bar overhead triceps extension, barbell, triceps
   hevy_best_match_id: 2F8D3067
   hevy_best_match_name: triceps extension barbell, triceps
-  confidence: high
 - rp_id: "83"
   rp_name: machine triceps extension, machine, triceps
   hevy_best_match_id: 3092FADD
   hevy_best_match_name: triceps extension machine, triceps
-  confidence: high
 - rp_id: "84"
   rp_name: barbell overhead triceps extension seated, barbell, triceps
   hevy_best_match_id: 2F8D3067
   hevy_best_match_name: triceps extension barbell, triceps
-  confidence: high
 - rp_id: "85"
   rp_name: ez bar overhead triceps extension seated, barbell, triceps
   hevy_best_match_id: 2F8D3067
   hevy_best_match_name: triceps extension barbell, triceps
-  confidence: high
 - rp_id: "86"
   rp_name: dumbbell overhead extension single-arm, dumbbell, triceps
   hevy_best_match_id: 8347DFD1
   hevy_best_match_name: single arm tricep extension dumbbell, triceps
-  confidence: high
 - rp_id: "87"
   rp_name: dumbbell curl 2-arm, dumbbell, biceps
   hevy_best_match_id: 37FCC2BB
   hevy_best_match_name: bicep curl dumbbell, biceps
-  confidence: high
 - rp_id: "88"
   rp_name: dumbbell curl alternating, dumbbell, biceps
   hevy_best_match_id: 37FCC2BB
   hevy_best_match_name: bicep curl dumbbell, biceps
-  confidence: high
 - rp_id: "89"
   rp_name: barbell curl narrow grip, barbell, biceps
   hevy_best_match_id: A5AC6449
   hevy_best_match_name: bicep curl barbell, biceps
-  confidence: high
 - rp_id: "90"
   rp_name: barbell curl normal grip, barbell, biceps
   hevy_best_match_id: A5AC6449
   hevy_best_match_name: bicep curl barbell, biceps
-  confidence: high
 - rp_id: "91"
   rp_name: cable curl, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "92"
   rp_name: cable curl ez bar, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "93"
   rp_name: cable curl ez bar, wide grip, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "94"
   rp_name: cable rope twist curl, cable, biceps
   hevy_best_match_id: 234897AB
   hevy_best_match_name: rope cable curl, biceps, forearms
-  confidence: high
 - rp_id: "95"
   rp_name: dumbbell preacher curl single-arm, dumbbell, biceps
   hevy_best_match_id: FAB6EB2F
   hevy_best_match_name: preacher curl dumbbell, biceps
-  confidence: high
 - rp_id: "96"
   rp_name: dumbbell spider curl, dumbbell, biceps
   hevy_best_match_id: 90427D4A
   hevy_best_match_name: spider curl dumbbell, biceps
-  confidence: high
 - rp_id: "97"
   rp_name: dumbbell twist curl, dumbbell, biceps
   hevy_best_match_id: 37FCC2BB
   hevy_best_match_name: bicep curl dumbbell, biceps
-  confidence: high
 - rp_id: "98"
   rp_name: ez bar curl narrow grip, barbell, biceps
   hevy_best_match_id: 01A35BF9
   hevy_best_match_name: ez bar biceps curl, biceps
-  confidence: high
 - rp_id: "99"
   rp_name: ez bar curl wide grip, barbell, biceps
   hevy_best_match_id: 01A35BF9
   hevy_best_match_name: ez bar biceps curl, biceps
-  confidence: high
 - rp_id: "100"
   rp_name: ez bar preacher curl, barbell, biceps
   hevy_best_match_id: 4F942934
   hevy_best_match_name: preacher curl barbell, biceps
-  confidence: high
 - rp_id: "101"
   rp_name: ez bar spider curl, barbell, biceps
   hevy_best_match_id: 2348AB72
   hevy_best_match_name: spider curl barbell, biceps
-  confidence: high
 - rp_id: "102"
   rp_name: ez bar curl normal grip, barbell, biceps
   hevy_best_match_id: 01A35BF9
   hevy_best_match_name: ez bar biceps curl, biceps
-  confidence: high
 - rp_id: "103"
   rp_name: hammer curl, dumbbell, biceps
   hevy_best_match_id: 7E3BC8B6
   hevy_best_match_name: hammer curl dumbbell, biceps, forearms
-  confidence: high
 - rp_id: "104"
   rp_name: dumbbell curl incline, dumbbell, biceps
   hevy_best_match_id: 8BAB2735
   hevy_best_match_name: seated incline curl dumbbell, biceps
-  confidence: high
 - rp_id: "105"
   rp_name: machine preacher curl, machine, biceps
   hevy_best_match_id: 1E9A6B8E
   hevy_best_match_name: preacher curl machine, biceps
-  confidence: high
 - rp_id: "106"
   rp_name: freemotion curl facing machine, freemotion, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "107"
   rp_name: freemotion curl facing away, freemotion, biceps
   hevy_best_match_id: 2DBCA395
   hevy_best_match_name: behind the back curl cable, biceps
-  confidence: high
 - rp_id: "108"
   rp_name: freemotion curl single-arm, freemotion, biceps
   hevy_best_match_id: B33B526E
   hevy_best_match_name: single arm curl cable, biceps
-  confidence: high
 - rp_id: "109"
   rp_name: barbell upright row, barbell, shoulders
   hevy_best_match_id: 7AB9A362
   hevy_best_match_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "110"
   rp_name: cable cross body lateral raise, cable, shoulders
   hevy_best_match_id: DE68C825
   hevy_best_match_name: single arm lateral raise cable, shoulders
-  confidence: high
 - rp_id: "111"
   rp_name: cable leaning lateral raise, cable, shoulders
   hevy_best_match_id: DE68C825
   hevy_best_match_name: single arm lateral raise cable, shoulders
-  confidence: high
 - rp_id: "112"
   rp_name: cable upright row, cable, shoulders
   hevy_best_match_id: 286C1D0B
   hevy_best_match_name: upright row cable, shoulders, traps, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "113"
   rp_name: dumbbell lateral raise, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "114"
   rp_name: dumbbell upright row, dumbbell, shoulders
   hevy_best_match_id: 797F0782
   hevy_best_match_name: upright row dumbbell, shoulders, traps, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "115"
   rp_name: machine lateral raise, machine, shoulders
   hevy_best_match_id: D5D0354D
   hevy_best_match_name: lateral raise machine, shoulders
-  confidence: high
 - rp_id: "116"
   rp_name: smith machine upright row, smith-machine, shoulders
   hevy_best_match_id: 7AB9A362
   hevy_best_match_name: upright row barbell, shoulders, traps, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "117"
   rp_name: dumbbell lateral raise thumbs down, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "118"
   rp_name: dumbbell lateral raise top hold, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "119"
   rp_name: dumbbell lateral raise super rom, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "120"
   rp_name: freemotion y-raises, freemotion, shoulders
   hevy_best_match_id: F21D5693
   hevy_best_match_name: chest supported y raise dumbbell, shoulders, upper_back
-  confidence: high
 - rp_id: "121"
   rp_name: freemotion y-raises paused, freemotion, shoulders
   hevy_best_match_id: F21D5693
   hevy_best_match_name: chest supported y raise dumbbell, shoulders, upper_back
-  confidence: high
 - rp_id: "122"
   rp_name: barbell facepull, barbell, shoulders
   hevy_best_match_id: BE640BA0
   hevy_best_match_name: face pull, shoulders, biceps
-  confidence: high
 - rp_id: "123"
   rp_name: cable cross body bent lateral raise, cable, shoulders
   hevy_best_match_id: BE289E45
   hevy_best_match_name: lateral raise cable, shoulders
-  confidence: high
 - rp_id: "124"
   rp_name: cable rope facepull, cable, shoulders
   hevy_best_match_id: C315DC2A
   hevy_best_match_name: rear delt reverse fly cable, shoulders, upper_back
-  confidence: high
 - rp_id: "125"
   rp_name: cable single arm rear delt raise, cable, shoulders
   hevy_best_match_id: 9264ADA1
   hevy_best_match_name: reverse fly single arm cable, shoulders, upper_back
-  confidence: high
 - rp_id: "126"
   rp_name: dumbbell bent lateral raise, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "127"
   rp_name: dumbbell facepull, dumbbell, shoulders
   hevy_best_match_id: BE640BA0
   hevy_best_match_name: face pull, shoulders, biceps
-  confidence: high
 - rp_id: "128"
   rp_name: dumbbell facepull incline, dumbbell, shoulders
   hevy_best_match_id: 9372FFAA
   hevy_best_match_name: seated lateral raise dumbbell, shoulders
-  confidence: low
 - rp_id: "129"
   rp_name: dumbbell lateral raise incline, dumbbell, shoulders
   hevy_best_match_id: 422B08F1
   hevy_best_match_name: lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "130"
   rp_name: cable rope facepull kneeling, cable, shoulders
   hevy_best_match_id: C315DC2A
   hevy_best_match_name: rear delt reverse fly cable, shoulders, upper_back
-  confidence: high
 - rp_id: "131"
   rp_name: machine reverse flye, machine, shoulders
   hevy_best_match_id: D8281C62
   hevy_best_match_name: rear delt reverse fly machine, shoulders, upper_back
-  confidence: high
 - rp_id: "132"
   rp_name: freemotion rear delt flyes, freemotion, shoulders
   hevy_best_match_id: C315DC2A
   hevy_best_match_name: rear delt reverse fly cable, shoulders, upper_back
-  confidence: high
 - rp_id: "133"
   rp_name: freemotion rear delt flyes paused, freemotion, shoulders
   hevy_best_match_id: C315DC2A
   hevy_best_match_name: rear delt reverse fly cable, shoulders, upper_back
-  confidence: high
 - rp_id: "134"
   rp_name: barbell front raise, barbell, shoulders
   hevy_best_match_id: BD86EFD5
   hevy_best_match_name: front raise barbell, shoulders
-  confidence: high
 - rp_id: "135"
   rp_name: cable front raise underhand, cable, shoulders
   hevy_best_match_id: DBB91A3C
   hevy_best_match_name: front raise cable, shoulders
-  confidence: high
 - rp_id: "136"
   rp_name: dumbbell front raise, dumbbell, shoulders
   hevy_best_match_id: "8293E554"
   hevy_best_match_name: front raise dumbbell, shoulders
-  confidence: high
 - rp_id: "137"
   rp_name: barbell front raise ez bar, underhand, barbell, shoulders
   hevy_best_match_id: BD86EFD5
   hevy_best_match_name: front raise barbell, shoulders
-  confidence: high
 - rp_id: "138"
   rp_name: dumbbell press high incline, dumbbell, shoulders
   hevy_best_match_id: 9930DF71
   hevy_best_match_name: seated overhead press dumbbell, shoulders, triceps
-  confidence: high
 - rp_id: "139"
   rp_name: machine shoulder press, machine, shoulders
   hevy_best_match_id: 9237BAD1
   hevy_best_match_name: seated shoulder press machine, shoulders, triceps
-  confidence: high
 - rp_id: "140"
   rp_name: barbell shoulder press seated, barbell, shoulders
   hevy_best_match_id: 91AF29E0
   hevy_best_match_name: seated overhead press barbell, shoulders, triceps
-  confidence: high
 - rp_id: "141"
   rp_name: dumbbell shoulder press seated, dumbbell, shoulders
   hevy_best_match_id: 9930DF71
   hevy_best_match_name: seated overhead press dumbbell, shoulders, triceps
-  confidence: high
 - rp_id: "142"
   rp_name: smith machine shoulder press seated, smith-machine, shoulders
   hevy_best_match_id: B09A1304
   hevy_best_match_name: overhead press smith machine, shoulders, triceps
-  confidence: high
 - rp_id: "143"
   rp_name: barbell shoulder press standing, barbell, shoulders
   hevy_best_match_id: 073032BB
   hevy_best_match_name: standing military press barbell, shoulders, triceps
-  confidence: high
 - rp_id: "144"
   rp_name: dumbbell shoulder press standing, dumbbell, shoulders
   hevy_best_match_id: 6AC96645
   hevy_best_match_name: overhead press dumbbell, shoulders, triceps
-  confidence: high
 - rp_id: "145"
   rp_name: barbell bent over shrug, barbell, shoulders
   hevy_best_match_id: 0B841777
   hevy_best_match_name: shrug barbell, traps, neck
-  confidence: high
 - rp_id: "146"
   rp_name: barbell shrug, barbell, shoulders
   hevy_best_match_id: 0B841777
   hevy_best_match_name: shrug barbell, traps, neck
-  confidence: high
 - rp_id: "147"
   rp_name: cable bent over shrug, cable, shoulders
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "148"
   rp_name: cable shrug, cable, shoulders
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "149"
   rp_name: cable side shrug, cable, shoulders
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "150"
   rp_name: cable single arm side shrug, cable, shoulders
   hevy_best_match_id: DE68C825
   hevy_best_match_name: single arm lateral raise cable, shoulders
-  confidence: low
 - rp_id: "151"
   rp_name: dumbbell bent over shrug, dumbbell, shoulders
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "152"
   rp_name: dumbbell leaning shrug, dumbbell, shoulders
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "153"
   rp_name: dumbbell shrug, dumbbell, shoulders
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "154"
   rp_name: dumbbell shrug seated, dumbbell, shoulders
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "155"
   rp_name: barbell split squat, barbell, quadriceps
   hevy_best_match_id: 20C1A3CB
   hevy_best_match_name: split squat dumbbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "156"
   rp_name: belt squat, machine, quadriceps
   hevy_best_match_id: 3D1CDC75
   hevy_best_match_name: belt squat machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "157"
   rp_name: barbell squat close stance, feet forward, barbell, quadriceps
   hevy_best_match_id: D04AC939
   hevy_best_match_name: squat barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "158"
   rp_name: smith machine squat feet forward, smith-machine, quadriceps
   hevy_best_match_id: DDCC3821
   hevy_best_match_name: squat smith machine, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "159"
   rp_name: front squat, barbell, quadriceps
   hevy_best_match_id: 5046D0A9
   hevy_best_match_name: front squat, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "160"
   rp_name: front squat cross grip, barbell, quadriceps
   hevy_best_match_id: 5046D0A9
   hevy_best_match_name: front squat, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "161"
   rp_name: hack squat, machine, quadriceps
   hevy_best_match_id: 1E42FD5F
   hevy_best_match_name: hack squat machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "162"
   rp_name: barbell squat high bar, barbell, quadriceps
   hevy_best_match_id: D04AC939
   hevy_best_match_name: squat barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "163"
   rp_name: leg extension, machine, quadriceps
   hevy_best_match_id: 75A4F6C4
   hevy_best_match_name: leg extension machine, quadriceps
-  confidence: high
 - rp_id: "164"
   rp_name: leg press, machine, quadriceps
   hevy_best_match_id: C7973E0E
   hevy_best_match_name: leg press machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "165"
   rp_name: barbell squat narrow stance, barbell, quadriceps
   hevy_best_match_id: D04AC939
   hevy_best_match_name: squat barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "166"
   rp_name: walking lunges quad-focused, bodyweight, bodyweight-only, quadriceps
   hevy_best_match_id: 32HKJ34K
   hevy_best_match_name: walking lunge, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "167"
   rp_name: sissy squat machine, bodyweight-only, quadriceps
   hevy_best_match_id: F5DEF1EB
   hevy_best_match_name: sissy squat weighted, quadriceps
-  confidence: high
 - rp_id: "168"
   rp_name: sissy squat no machine, bodyweight-only, quadriceps
   hevy_best_match_id: F5DEF1EB
   hevy_best_match_name: sissy squat weighted, quadriceps
-  confidence: high
 - rp_id: "169"
   rp_name: pendulum squat, machine, quadriceps
   hevy_best_match_id: 30E293E3
   hevy_best_match_name: pendulum squat machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "170"
   rp_name: barbell squat safety bar, barbell, quadriceps
   hevy_best_match_id: D04AC939
   hevy_best_match_name: squat barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "171"
   rp_name: barbell squat cambered bar, barbell, quadriceps
   hevy_best_match_id: D04AC939
   hevy_best_match_name: squat barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "172"
   rp_name: barbell hip thrust, barbell, glutes
   hevy_best_match_id: D57C2EC7
   hevy_best_match_name: hip thrust barbell, glutes, hamstrings, quadriceps, adductors
-  confidence: high
 - rp_id: "173"
   rp_name: walking lunges glute-focused, barbell, barbell, glutes
   hevy_best_match_id: 32HKJ34K
   hevy_best_match_name: walking lunge, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "174"
   rp_name: cable pull through, cable, glutes
   hevy_best_match_id: 8C331CD8
   hevy_best_match_name: cable pull through, glutes, hamstrings, lower_back
-  confidence: high
 - rp_id: "175"
   rp_name: deadlift, barbell, glutes
   hevy_best_match_id: C6272009
   hevy_best_match_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "176"
   rp_name: deadlift deficit 25's, barbell, glutes
   hevy_best_match_id: C6272009
   hevy_best_match_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "177"
   rp_name: deadlift deficit, barbell, glutes
   hevy_best_match_id: C6272009
   hevy_best_match_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "178"
   rp_name: reverse lunge dumbbell, dumbbell, glutes
   hevy_best_match_id: FFDA283B
   hevy_best_match_name: reverse lunge dumbbell, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "179"
   rp_name: dumbbell split squat, dumbbell, glutes
   hevy_best_match_id: 20C1A3CB
   hevy_best_match_name: split squat dumbbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "180"
   rp_name: walking lunges glute-focused, dumbbell, dumbbell, glutes
   hevy_best_match_id: A733CC5B
   hevy_best_match_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "181"
   rp_name: machine glute kickback, machine, glutes
   hevy_best_match_id: CBA02382
   hevy_best_match_name: glute kickback machine, glutes, hamstrings
-  confidence: high
 - rp_id: "182"
   rp_name: dumbbell hip thrust single leg, dumbbell, glutes
   hevy_best_match_id: D1CD146F
   hevy_best_match_name: single leg hip thrust dumbbell, glutes, hamstrings, quadriceps
-  confidence: high
 - rp_id: "183"
   rp_name: deadlift sumo stance, barbell, glutes
   hevy_best_match_id: D20D7BBE
   hevy_best_match_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "184"
   rp_name: barbell squat sumo stance, barbell, glutes
   hevy_best_match_id: 6622E5A0
   hevy_best_match_name: sumo squat barbell, quadriceps, hamstrings, glutes, adductors
-  confidence: high
 - rp_id: "185"
   rp_name: belt squat wide stance, machine, glutes
   hevy_best_match_id: 3D1CDC75
   hevy_best_match_name: belt squat machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "186"
   rp_name: back raise 45 degree, bodyweight-only, hamstrings
   hevy_best_match_id: 091737FA
   hevy_best_match_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
-  confidence: high
 - rp_id: "187"
   rp_name: dumbbell stiff legged deadlift, dumbbell, hamstrings
   hevy_best_match_id: 72CFFAD5
   hevy_best_match_name: romanian deadlift dumbbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "188"
   rp_name: back raise glute ham deck, bodyweight-only, hamstrings
   hevy_best_match_id: 091737FA
   hevy_best_match_name: back extension weighted hyperextension, lower_back, hamstrings, glutes
-  confidence: high
 - rp_id: "189"
   rp_name: barbell good morning high bar, barbell, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "190"
   rp_name: barbell good morning low bar, barbell, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "191"
   rp_name: stiff-legged deadlift, barbell, hamstrings
   hevy_best_match_id: 2A48E443
   hevy_best_match_name: straight leg deadlift, hamstrings, glutes, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "192"
   rp_name: barbell good morning safety bar, barbell, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "193"
   rp_name: smith machine good morning, smith-machine, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "194"
   rp_name: barbell good morning cambered bar, barbell, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "195"
   rp_name: lying leg curl, machine, hamstrings
   hevy_best_match_id: B8127AD1
   hevy_best_match_name: lying leg curl machine, hamstrings, calves
-  confidence: high
 - rp_id: "196"
   rp_name: seated leg curl, machine, hamstrings
   hevy_best_match_id: 11A123F3
   hevy_best_match_name: seated leg curl machine, hamstrings, calves
-  confidence: high
 - rp_id: "197"
   rp_name: single-leg leg curl, machine, hamstrings
   hevy_best_match_id: 6120CAAB
   hevy_best_match_name: standing leg curls, hamstrings, calves
-  confidence: high
 - rp_id: "198"
   rp_name: calf machine, machine, calves
   hevy_best_match_id: E05C2C38
   hevy_best_match_name: standing calf raise machine, calves
-  confidence: high
 - rp_id: "199"
   rp_name: leg press calves, machine, calves
   hevy_best_match_id: 91237BDD
   hevy_best_match_name: calf press machine, calves
-  confidence: high
 - rp_id: "200"
   rp_name: stair calves single leg, bodyweight-only, calves
   hevy_best_match_id: 238BA231
   hevy_best_match_name: single leg standing calf raise, calves
-  confidence: high
 - rp_id: "201"
   rp_name: smith machine calves, smith-machine, calves
   hevy_best_match_id: AA52E8D2
   hevy_best_match_name: standing calf raise smith, calves
-  confidence: high
 - rp_id: "202"
   rp_name: stair calves, bodyweight-only, calves
   hevy_best_match_id: "06745E58"
   hevy_best_match_name: standing calf raise, calves
-  confidence: high
 - rp_id: "203"
   rp_name: belt squat calves, machine, calves
   hevy_best_match_id: E05C2C38
   hevy_best_match_name: standing calf raise machine, calves
-  confidence: high
 - rp_id: "204"
   rp_name: barbell bent over shrug, barbell, traps
   hevy_best_match_id: 0B841777
   hevy_best_match_name: shrug barbell, traps, neck
-  confidence: high
 - rp_id: "205"
   rp_name: barbell shrug, barbell, traps
   hevy_best_match_id: 0B841777
   hevy_best_match_name: shrug barbell, traps, neck
-  confidence: high
 - rp_id: "206"
   rp_name: cable bent over shrug, cable, traps
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "207"
   rp_name: cable shrug, cable, traps
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "208"
   rp_name: cable side shrug, cable, traps
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "209"
   rp_name: cable single arm side shrug, cable, traps
   hevy_best_match_id: FFABC123
   hevy_best_match_name: shrug cable, traps, neck
-  confidence: high
 - rp_id: "210"
   rp_name: dumbbell bent over shrug, dumbbell, traps
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "211"
   rp_name: dumbbell leaning shrug, dumbbell, traps
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "212"
   rp_name: dumbbell shrug, dumbbell, traps
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "213"
   rp_name: dumbbell shrug seated, dumbbell, traps
   hevy_best_match_id: ABEC557F
   hevy_best_match_name: shrug dumbbell, traps, neck
-  confidence: high
 - rp_id: "214"
   rp_name: barbell standing wrist curl, barbell, forearms
   hevy_best_match_id: DDB29047
   hevy_best_match_name: behind the back bicep wrist curl barbell, forearms
-  confidence: high
 - rp_id: "215"
   rp_name: cable wrist curl, cable, forearms
   hevy_best_match_id: 1006DF48
   hevy_best_match_name: seated palms up wrist curl, forearms
-  confidence: high
 - rp_id: "216"
   rp_name: dumbbell bench wrist curl, dumbbell, forearms
   hevy_best_match_id: 1006DF48
   hevy_best_match_name: seated palms up wrist curl, forearms
-  confidence: high
 - rp_id: "217"
   rp_name: dumbbell standing wrist curl, dumbbell, forearms
   hevy_best_match_id: 1006DF48
   hevy_best_match_name: seated palms up wrist curl, forearms
-  confidence: high
 - rp_id: "218"
   rp_name: grip roller, machine, forearms
   hevy_best_match_id: 0E4523F4
   hevy_best_match_name: wrist roller, forearms, shoulders
-  confidence: high
 - rp_id: "219"
   rp_name: cable rope crunch, cable, abdominals
   hevy_best_match_id: 23A48484
   hevy_best_match_name: cable crunch, abdominals
-  confidence: high
 - rp_id: "220"
   rp_name: hanging knee raise, bodyweight-only, abdominals
   hevy_best_match_id: "08590920"
   hevy_best_match_name: hanging knee raise, abdominals, forearms
-  confidence: high
 - rp_id: "221"
   rp_name: hanging straight leg raise, bodyweight-only, abdominals
   hevy_best_match_id: F8356514
   hevy_best_match_name: hanging leg raise, abdominals, forearms
-  confidence: high
 - rp_id: "222"
   rp_name: machine crunch, machine, abdominals
   hevy_best_match_id: EB43ADD4
   hevy_best_match_name: crunch machine, abdominals
-  confidence: high
 - rp_id: "223"
   rp_name: modified candlestick, bodyweight-only, abdominals
   hevy_best_match_id: 99D5F10E
   hevy_best_match_name: ab wheel, abdominals
-  confidence: low
 - rp_id: "224"
   rp_name: reaching sit-up, bodyweight-only, abdominals
   hevy_best_match_id: 022DF610
   hevy_best_match_name: sit up, abdominals
-  confidence: high
 - rp_id: "225"
   rp_name: slant board sit-up weighted, bodyweight-loadable, abdominals
   hevy_best_match_id: 9237BA12
   hevy_best_match_name: sit up weighted, abdominals
-  confidence: high
 - rp_id: "226"
   rp_name: v-up weighted, bodyweight-loadable, abdominals
   hevy_best_match_id: 6BE68B62
   hevy_best_match_name: v up, abdominals
-  confidence: high
 - rp_id: "232"
   rp_name: pullup weighted, normal grip, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 729237D1
   hevy_best_match_name: pull up weighted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "233"
   rp_name: pullup weighted, parallel grip, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 729237D1
   hevy_best_match_name: pull up weighted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "234"
   rp_name: pullup weighted, underhand grip, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 023943F1
   hevy_best_match_name: chin up weighted, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "235"
   rp_name: pullup weighted, wide grip, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 729237D1
   hevy_best_match_name: pull up weighted, lats, upper_back, biceps, forearms
-  confidence: medium
 - rp_id: "236"
   rp_name: dip weighted, triceps-focused, bodyweight-loadable, triceps
   hevy_best_match_id: 10347BAC
   hevy_best_match_name: triceps dip weighted, triceps, chest, shoulders
-  confidence: high
 - rp_id: "237"
   rp_name: pushup weighted, narrow grip, bodyweight-loadable, chest
   hevy_best_match_id: 947DAC23
   hevy_best_match_name: push up - close grip, chest, triceps, shoulders
-  confidence: high
 - rp_id: "238"
   rp_name: pushup weighted, normal grip, bodyweight-loadable, chest
   hevy_best_match_id: 19372ABC
   hevy_best_match_name: push up weighted, chest, triceps, shoulders
-  confidence: high
 - rp_id: "239"
   rp_name: reverse lunge barbell, barbell, glutes
   hevy_best_match_id: 818BA121
   hevy_best_match_name: reverse lunge barbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "240"
   rp_name: walking lunges quad-focused, dumbbell, dumbbell, quadriceps
   hevy_best_match_id: A733CC5B
   hevy_best_match_name: walking lunge dumbbell, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "241"
   rp_name: walking lunges quad-focused, barbell, barbell, quadriceps
   hevy_best_match_id: 32HKJ34K
   hevy_best_match_name: walking lunge, quadriceps, glutes, hamstrings
-  confidence: medium
 - rp_id: "242"
   rp_name: walking lunges glute-focused, bodyweight, bodyweight-only, glutes
   hevy_best_match_id: 32HKJ34K
   hevy_best_match_name: walking lunge, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "243"
   rp_name: cable lateral raise single-arm, cable, shoulders
   hevy_best_match_id: DE68C825
   hevy_best_match_name: single arm lateral raise cable, shoulders
-  confidence: high
 - rp_id: "400803"
   rp_name: lying biceps dumbbell curl, dumbbell, biceps
   hevy_best_match_id: 8BAB2735
   hevy_best_match_name: seated incline curl dumbbell, biceps
-  confidence: low
 - rp_id: "400804"
   rp_name: lying cable curl, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "535935"
   rp_name: bulgarian split squat quad-focused, dumbbell, quadriceps
   hevy_best_match_id: B5D3A742
   hevy_best_match_name: bulgarian split squat, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "535936"
   rp_name: bulgarian split squat glute-focused, dumbbell, glutes
   hevy_best_match_id: B5D3A742
   hevy_best_match_name: bulgarian split squat, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "535937"
   rp_name: goblet squat, dumbbell, quadriceps
   hevy_best_match_id: 3D0C7C75
   hevy_best_match_name: goblet squat, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "535938"
   rp_name: machine hip thrust, machine, glutes
   hevy_best_match_id: 68CE0B9B
   hevy_best_match_name: hip thrust machine, glutes, hamstrings, quadriceps, adductors
-  confidence: high
 - rp_id: "535939"
   rp_name: cable pullover, cable, lats, upper_back
   hevy_best_match_id: B123DD01
   hevy_best_match_name: pullover machine, lats, upper_back, chest, triceps
-  confidence: high
 - rp_id: "535940"
   rp_name: ab wheel, bodyweight-only, abdominals
   hevy_best_match_id: 99D5F10E
   hevy_best_match_name: ab wheel, abdominals
-  confidence: high
 - rp_id: "535941"
   rp_name: hip abduction machine, machine, glutes
   hevy_best_match_id: F4B4C6EE
   hevy_best_match_name: hip abduction machine, abductors
-  confidence: high
 - rp_id: "535942"
   rp_name: arnold press, dumbbell, shoulders
   hevy_best_match_id: A69FF221
   hevy_best_match_name: arnold press dumbbell, shoulders, triceps
-  confidence: high
 - rp_id: "535943"
   rp_name: lying dumbbell curl, dumbbell, biceps
   hevy_best_match_id: 8BAB2735
   hevy_best_match_name: seated incline curl dumbbell, biceps
-  confidence: low
 - rp_id: "535944"
   rp_name: nordic curl, bodyweight-only, hamstrings
   hevy_best_match_id: 108D7A14
   hevy_best_match_name: nordic hamstrings curls, hamstrings, glutes
-  confidence: high
 - rp_id: "535945"
   rp_name: meadows row, barbell, lats, upper_back
   hevy_best_match_id: C732C341
   hevy_best_match_name: meadows rows barbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "535946"
   rp_name: concentration curl, dumbbell, biceps
   hevy_best_match_id: 724CDE60
   hevy_best_match_name: concentration curl, biceps
-  confidence: high
 - rp_id: "535947"
   rp_name: deadlift, barbell, lats, upper_back
   hevy_best_match_id: C6272009
   hevy_best_match_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "535948"
   rp_name: seated cable row single-arm, cable, lats, upper_back
   hevy_best_match_id: D0C4A899
   hevy_best_match_name: single arm cable row, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "535949"
   rp_name: bayesian curl, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "535950"
   rp_name: pulldown single-arm, cable, lats, upper_back
   hevy_best_match_id: 2EE45F81
   hevy_best_match_name: single arm lat pulldown, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "535951"
   rp_name: ez bar skullcrusher, barbell, triceps
   hevy_best_match_id: 875F585F
   hevy_best_match_name: skullcrusher barbell, triceps
-  confidence: high
 - rp_id: "535952"
   rp_name: bench press close grip, barbell, triceps
   hevy_best_match_id: 35B51B87
   hevy_best_match_name: bench press - close grip barbell, triceps, chest, shoulders
-  confidence: high
 - rp_id: "535953"
   rp_name: dip machine, machine, triceps
   hevy_best_match_id: 5122E7D9
   hevy_best_match_name: seated dip machine, triceps, chest, shoulders
-  confidence: high
 - rp_id: "535954"
   rp_name: standing calf raise, machine, calves
   hevy_best_match_id: E05C2C38
   hevy_best_match_name: standing calf raise machine, calves
-  confidence: high
 - rp_id: "535955"
   rp_name: single leg press, machine, quadriceps
   hevy_best_match_id: 3FD83744
   hevy_best_match_name: single leg press machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "535956"
   rp_name: dip weighted, chest-focused, bodyweight-loadable, chest
   hevy_best_match_id: 29472BE1
   hevy_best_match_name: chest dip weighted, chest, triceps, shoulders
-  confidence: high
 - rp_id: "535957"
   rp_name: cable hammer curl rope, cable, biceps
   hevy_best_match_id: 36E8F14E
   hevy_best_match_name: hammer curl cable, biceps, forearms
-  confidence: high
 - rp_id: "535958"
   rp_name: bodyweight squat 2/3, bodyweight-only, quadriceps
   hevy_best_match_id: 9694DA61
   hevy_best_match_name: squat bodyweight, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "535959"
   rp_name: machine pulldown, machine, lats, upper_back
   hevy_best_match_id: 473CF5B8
   hevy_best_match_name: lat pulldown machine, lats, upper_back, biceps, forearms
-  confidence: high
 - rp_id: "535960"
   rp_name: single leg extension, machine, quadriceps
   hevy_best_match_id: 629AE73D
   hevy_best_match_name: single leg extensions, quadriceps
-  confidence: high
 - rp_id: "535961"
   rp_name: lying cable curl, cable, biceps
   hevy_best_match_id: ADA8623C
   hevy_best_match_name: bicep curl cable, biceps
-  confidence: high
 - rp_id: "535962"
   rp_name: machine shrug, machine, traps
   hevy_best_match_id: 19A38071
   hevy_best_match_name: shrug machine, traps, neck
-  confidence: high
 - rp_id: "535963"
   rp_name: cable chest press, cable, chest
   hevy_best_match_id: 99C1F2AD
   hevy_best_match_name: bench press cable, chest, shoulders, triceps
-  confidence: high
 - rp_id: "535964"
   rp_name: dumbbell overhead extension, dumbbell, triceps
   hevy_best_match_id: 3765684D
   hevy_best_match_name: triceps extension dumbbell, triceps
-  confidence: high
 - rp_id: "535965"
   rp_name: dip chest-focused, bodyweight-only, chest
   hevy_best_match_id: 6FCD7755
   hevy_best_match_name: chest dip, chest, shoulders, triceps
-  confidence: high
 - rp_id: "535966"
   rp_name: single leg romanian deadlift, dumbbell, hamstrings
   hevy_best_match_id: 937292AB
   hevy_best_match_name: single leg romanian deadlift dumbbell, hamstrings, glutes, lower_back
-  confidence: high
 - rp_id: "535967"
   rp_name: cable kickback, cable, glutes
   hevy_best_match_id: ACB2751D
   hevy_best_match_name: standing cable glute kickbacks, glutes, hamstrings
-  confidence: high
 - rp_id: "535968"
   rp_name: hip adduction, machine, quadriceps
   hevy_best_match_id: 8BEBFED6
   hevy_best_match_name: hip adduction machine, adductors
-  confidence: high
 - rp_id: "535969"
   rp_name: smith machine shrug, smith-machine, traps
   hevy_best_match_id: 742E5BD5
   hevy_best_match_name: shrug smith machine, traps, neck
-  confidence: high
 - rp_id: "535970"
   rp_name: smith machine jm press, smith-machine, triceps
   hevy_best_match_id: 74103F24
   hevy_best_match_name: jm press barbell, triceps, chest, shoulders
-  confidence: high
 - rp_id: "535971"
   rp_name: smith machine skullcrusher, smith-machine, triceps
   hevy_best_match_id: 875F585F
   hevy_best_match_name: skullcrusher barbell, triceps
-  confidence: high
 - rp_id: "535972"
   rp_name: cable glute kickback, cable, glutes
   hevy_best_match_id: ACB2751D
   hevy_best_match_name: standing cable glute kickbacks, glutes, hamstrings
-  confidence: high
 - rp_id: "535973"
   rp_name: dumbbell front squat, dumbbell, quadriceps
   hevy_best_match_id: DCFF3E9F
   hevy_best_match_name: squat dumbbell, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "535974"
   rp_name: trap bar deadlift, barbell, glutes
   hevy_best_match_id: B923B230
   hevy_best_match_name: deadlift trap bar, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "535975"
   rp_name: bench press decline, barbell, chest
   hevy_best_match_id: DA0F0470
   hevy_best_match_name: decline bench press barbell, chest, shoulders, triceps
-  confidence: high
 - rp_id: "535976"
   rp_name: reverse curl, barbell, forearms
   hevy_best_match_id: 112FC6B7
   hevy_best_match_name: reverse curl barbell, biceps, forearms
-  confidence: high
 - rp_id: "535977"
   rp_name: smith machine split squat, smith-machine, glutes
   hevy_best_match_id: DDCC3821
   hevy_best_match_name: squat smith machine, quadriceps, hamstrings, glutes
-  confidence: low
 - rp_id: "535978"
   rp_name: front foot elevated smith lunge, smith-machine, glutes
   hevy_best_match_id: DDCC3821
   hevy_best_match_name: squat smith machine, quadriceps, hamstrings, glutes
-  confidence: low
 - rp_id: "535979"
   rp_name: reverse hyper, machine, glutes
   hevy_best_match_id: 7C0028C3
   hevy_best_match_name: reverse hyperextension, glutes, hamstrings, lower_back
-  confidence: high
 - rp_id: "535980"
   rp_name: cable tricep kickback, cable, triceps
   hevy_best_match_id: EC3B69A3
   hevy_best_match_name: triceps kickback cable, triceps
-  confidence: high
 - rp_id: "535981"
   rp_name: landmine row, barbell, lats, upper_back
   hevy_best_match_id: D7D7FCCE
   hevy_best_match_name: landmine row, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "535982"
   rp_name: back extension, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 4F5866F8
   hevy_best_match_name: back extension hyperextension, lower_back, hamstrings, glutes
-  confidence: high
 - rp_id: "535983"
   rp_name: hammer preacher curl, dumbbell, biceps
   hevy_best_match_id: FAB6EB2F
   hevy_best_match_name: preacher curl dumbbell, biceps
-  confidence: medium
 - rp_id: "535984"
   rp_name: cable flye seated, cable, chest
   hevy_best_match_id: 6B4C797E
   hevy_best_match_name: seated chest flys cable, chest
-  confidence: high
 - rp_id: "535985"
   rp_name: cable curl single-arm, cable, biceps
   hevy_best_match_id: B33B526E
   hevy_best_match_name: single arm curl cable, biceps
-  confidence: high
 - rp_id: "633784"
   rp_name: machine reverse fly single hand, machine, lats, upper_back
   hevy_best_match_id: 2779cab9-b2cc-40bf-963a-9802608b53dc
   hevy_best_match_name: rear delt reverse fly one hand machine, upper_back, shoulders
-  confidence: high
 - rp_id: "712783"
   rp_name: dumbbbell flexion row, dumbbell, lats, upper_back
   hevy_best_match_id: "23E92538"
   hevy_best_match_name: bent over row dumbbell, upper_back, lats, biceps, forearms
-  confidence: high
 - rp_id: "712784"
   rp_name: deadlift flexion, barbell, lats, upper_back
   hevy_best_match_id: C6272009
   hevy_best_match_name: deadlift barbell, glutes, hamstrings, quadriceps, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "712785"
   rp_name: barbell pullover, barbell, lats, upper_back
   hevy_best_match_id: "67280085"
   hevy_best_match_name: pullover dumbbell, lats, chest, upper_back, triceps
-  confidence: high
 - rp_id: "712786"
   rp_name: dual cable pullover, cable, lats, upper_back
   hevy_best_match_id: B123DD01
   hevy_best_match_name: pullover machine, lats, upper_back, chest, triceps
-  confidence: high
 - rp_id: "712787"
   rp_name: back extension flexion, bodyweight-loadable, lats, upper_back
   hevy_best_match_id: 4F5866F8
   hevy_best_match_name: back extension hyperextension, lower_back, hamstrings, glutes
-  confidence: high
 - rp_id: "712788"
   rp_name: decline dumbbell curl, dumbbell, biceps
   hevy_best_match_id: 90427D4A
   hevy_best_match_name: spider curl dumbbell, biceps
-  confidence: high
 - rp_id: "712789"
   rp_name: donkey calf raise, machine, calves
   hevy_best_match_id: 91237BDD
   hevy_best_match_name: calf press machine, calves
-  confidence: high
 - rp_id: "712790"
   rp_name: smith machine press high incline, wide grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712791"
   rp_name: smith machine press high incline, medium grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712792"
   rp_name: smith machine press high incline, narrow grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712793"
   rp_name: smith machine press medium incline, narrow grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712794"
   rp_name: smith machine press low incline, wide grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712795"
   rp_name: smith machine press low incline, medium grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712796"
   rp_name: smith machine press low incline, narrow grip, smith-machine, chest
   hevy_best_match_id: 3A6FA3D1
   hevy_best_match_name: incline bench press smith machine, chest, shoulders, triceps
-  confidence: high
 - rp_id: "712797"
   rp_name: dumbbell press high incline, dumbbell, chest
   hevy_best_match_id: 07B38369
   hevy_best_match_name: incline bench press dumbbell, chest, triceps, shoulders
-  confidence: high
 - rp_id: "712798"
   rp_name: deadlift sumo stance, deficit, barbell, glutes
   hevy_best_match_id: D20D7BBE
   hevy_best_match_name: sumo deadlift, glutes, hamstrings, quadriceps, adductors, lower_back, upper_back, lats, traps
-  confidence: high
 - rp_id: "712799"
   rp_name: rogers reverse lunge, machine, glutes
   hevy_best_match_id: C284D923
   hevy_best_match_name: reverse lunge, quadriceps, hamstrings, glutes
-  confidence: high
 - rp_id: "712800"
   rp_name: rogers good morning, machine, hamstrings
   hevy_best_match_id: 4180C405
   hevy_best_match_name: good morning barbell, hamstrings, glutes, lower_back, upper_back, lats
-  confidence: high
 - rp_id: "712801"
   rp_name: rogers squat, machine, quadriceps
   hevy_best_match_id: 30E293E3
   hevy_best_match_name: pendulum squat machine, quadriceps, glutes, hamstrings
-  confidence: high
 - rp_id: "712802"
   rp_name: dumbell lateral raise seated, dumbbell, shoulders
   hevy_best_match_id: 9372FFAA
   hevy_best_match_name: seated lateral raise dumbbell, shoulders
-  confidence: high
 - rp_id: "712803"
   rp_name: barbell front raise overhand, barbell, shoulders
   hevy_best_match_id: BD86EFD5
   hevy_best_match_name: front raise barbell, shoulders
-  confidence: high
 - rp_id: "712804"
   rp_name: cable front raise overhand, cable, shoulders
   hevy_best_match_id: DBB91A3C
   hevy_best_match_name: front raise cable, shoulders
-  confidence: high
 - rp_id: "726541"
   rp_name: hammer machine chest press decline, machine, chest
   hevy_best_match_id: FAF31231
   hevy_best_match_name: decline bench press machine, chest, shoulders, triceps
-  confidence: high

@@ -21,7 +21,6 @@ class ExerciseMatch:
     rp_name: str
     hevy_best_match_id: str
     hevy_best_match_name: str
-    confidence: str
 
 
 def _load_matches(path: Path) -> list[ExerciseMatch]:

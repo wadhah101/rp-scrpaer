@@ -140,7 +140,6 @@ async def _judge_one(
         "rp_name": rp_name,
         "hevy_best_match_id": chosen["hevy_id"],
         "hevy_best_match_name": chosen["hevy_embedding_name"],
-        "confidence": judge.confidence.value,
     }
 
 
