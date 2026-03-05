@@ -50,8 +50,8 @@ services:
     image: nalgeon/redka:1.0.1
     volumes:
       - type: bind
-        source: ./redka.db
-        target: /data/redka.db
+        source: ./data/redka
+        target: /data
     ports:
       - target: 6379
         host_ip: 127.0.0.1
@@ -79,3 +79,7 @@ volumes:
     name: kestra_persistence
     labels:
       description: "Persistent storage for Kestra flows and executions"
+  redka_data:
+    name: redka_persistence
+    labels:
+      description: "Persistent storage for Redka SQLite database"
