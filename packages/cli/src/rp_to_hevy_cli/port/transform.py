@@ -43,7 +43,7 @@ def _build_hevy_workout(
     week_index: int,
     matches: list[ExerciseMatch],
 ) -> HevyPostWorkoutsRequestBody | None:
-    title = f"{meso_name} W{week_index + 1} - {day.label}"
+    title = day.label or f"{meso_name} W{week_index + 1}"
 
     exercises: list[PostWorkoutsRequestExercise] = []
     earliest_finished_at: datetime | None = None

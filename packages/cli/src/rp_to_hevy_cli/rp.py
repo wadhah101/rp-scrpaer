@@ -6,6 +6,7 @@ from typing import cast
 
 import click
 from api_service_rp import ApiClient, Configuration, TrainingDataApi, UserApi
+from api_service_rp.models.mesocycle import Mesocycle
 from cloudpathlib import AnyPath, CloudPath
 
 from rp_to_hevy_cli.utils import _require_rp_bearer_token, write_json
@@ -50,7 +51,7 @@ async def _fetch_all(user_api: UserApi, training_api: TrainingDataApi) -> dict:
     }
 
 
-async def _fetch_mesocycles(training_api: TrainingDataApi) -> list:
+async def _fetch_mesocycles(training_api: TrainingDataApi) -> list[Mesocycle]:
     summaries = await training_api.get_mesocycles()
     return list(
         await asyncio.gather(
@@ -59,7 +60,7 @@ async def _fetch_mesocycles(training_api: TrainingDataApi) -> list:
     )
 
 
-async def _fetch_mesocycles_by_token(token: str) -> list:
+async def _fetch_mesocycles_by_token(token: str) -> list[Mesocycle]:
     config = Configuration(access_token=token)
     async with ApiClient(config) as client:
         return await _fetch_mesocycles(TrainingDataApi(client))

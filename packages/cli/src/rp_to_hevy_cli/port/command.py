@@ -5,11 +5,13 @@ from datetime import date, datetime
 from pathlib import Path
 
 import click
+from api_service_rp.models.mesocycle import Mesocycle
 from hevy_api_service import WorkoutsApi
 from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
+from rp_to_hevy_cli.embedding.utils import RedisCache
 from rp_to_hevy_cli.hevy import _fetch_all_workouts, _hevy_client
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
@@ -18,6 +20,10 @@ from rp_to_hevy_cli.port.sync import (
     _print_summary,
 )
 from rp_to_hevy_cli.port.transform import _build_hevy_workout, _is_day_importable
+from rp_to_hevy_cli.port.workout_title_generator import (
+    build_title_agent,
+    generate_workout_titles,
+)
 from rp_to_hevy_cli.rp import _fetch_mesocycles_by_token
 from rp_to_hevy_cli.utils import _require_hevy_api_key, _require_rp_bearer_token
 
@@ -48,20 +54,77 @@ from rp_to_hevy_cli.utils import _require_hevy_api_key, _require_rp_bearer_token
     default=False,
     help="Update existing imported workouts instead of skipping them.",
 )
+@click.option(
+    "--title-api-base-url",
+    required=True,
+    help="API base URL for workout title LLM.",
+)
+@click.option(
+    "--title-api-key",
+    required=True,
+    help="API key for workout title LLM.",
+)
+@click.option(
+    "--title-api-model",
+    required=True,
+    help="Model name for workout title LLM.",
+)
+@click.option(
+    "--title-concurrency",
+    type=int,
+    default=10,
+    help="Max concurrent title-generation requests.",
+)
+@click.option(
+    "--title-timeout",
+    type=float,
+    default=120.0,
+    help="Per-request timeout for title generation (seconds).",
+)
+@click.option(
+    "--redis-url",
+    default=None,
+    help="Redis URL for caching LLM results.",
+)
 def port_rp_workout_to_hevy(
     matches_path: Path,
     dry_run: bool,
     start_date: datetime | None,
     upsert: bool,
+    title_api_base_url: str,
+    title_api_key: str,
+    title_api_model: str,
+    title_concurrency: int,
+    title_timeout: float,
+    redis_url: str | None,
 ):
-    asyncio.run(_port_rp_workout_to_hevy(matches_path, dry_run, start_date, upsert))
+    asyncio.run(
+        _port_rp_workout_to_hevy(
+            matches_path=matches_path,
+            dry_run=dry_run,
+            start_date=start_date,
+            upsert=upsert,
+            title_api_base_url=title_api_base_url,
+            title_api_key=title_api_key,
+            title_api_model=title_api_model,
+            title_concurrency=title_concurrency,
+            title_timeout=title_timeout,
+            redis_url=redis_url,
+        )
+    )
 
 
 async def _port_rp_workout_to_hevy(
     matches_path: Path,
     dry_run: bool,
     start_date: datetime | None,
+    title_api_base_url: str,
+    title_api_key: str,
+    title_api_model: str,
     upsert: bool = False,
+    title_concurrency: int = 10,
+    title_timeout: float = 120.0,
+    redis_url: str | None = None,
 ) -> None:
     """Port RP workout data to Hevy format."""
 
@@ -71,7 +134,7 @@ async def _port_rp_workout_to_hevy(
 
     rp_token = _require_rp_bearer_token()
     click.echo("Fetching mesocycles from RP...")
-    mesocycles = await _fetch_mesocycles_by_token(rp_token)
+    mesocycles: list[Mesocycle] = await _fetch_mesocycles_by_token(rp_token)
     click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
     # Phase 2: Validate
@@ -104,9 +167,27 @@ async def _port_rp_workout_to_hevy(
         "failed": 0,
     }
 
-    for meso in mesocycles:
-        for week_idx, week in enumerate(meso.weeks):
-            for day in week.days:
+    click.echo(f"Generating workout titles via {title_api_model}...")
+    title_agent = build_title_agent(title_api_base_url, title_api_key, title_api_model)
+    sem = asyncio.Semaphore(title_concurrency)
+
+    cache: RedisCache | None = None
+    if redis_url:
+        cache = RedisCache.from_url(redis_url, f"workout-titles:{title_api_model}")
+
+    titled_mesos: list[Mesocycle] = await asyncio.gather(
+        *(
+            generate_workout_titles(m, matches, title_agent, sem, title_timeout, cache)
+            for m in mesocycles
+        )
+    )
+
+    if cache is not None:
+        await cache.close()
+
+    for meso in titled_mesos:
+        for week_idx, week in enumerate(meso.weeks or []):
+            for day in week.days or []:
                 stats["scanned"] += 1
 
                 if not _is_day_importable(day):
@@ -126,7 +207,7 @@ async def _port_rp_workout_to_hevy(
                     stats["skipped_already_imported"] += 1
                     continue
 
-                workout = _build_hevy_workout(day, meso.name, week_idx, matches)
+                workout = _build_hevy_workout(day, meso.name or "", week_idx, matches)
                 if workout is None:
                     stats["skipped_no_exercises"] += 1
                     continue
