@@ -97,42 +97,62 @@ Key options:
 
 ### `port-rp-workout-to-hevy` — Import RP Workouts into Hevy
 
-The core command of the project. Reads every mesocycle from RP's reverse-engineered internal API (no public docs — endpoints were discovered by inspecting the mobile app's network traffic), maps each exercise to its Hevy equivalent using the AI-generated match file, transforms the training history into Hevy workout payloads, and creates (or updates) them via the Hevy API.
+The core command of the project. Reads every mesocycle from RP's reverse-engineered internal API (no public docs — endpoints were discovered by inspecting the mobile app's network traffic), generates descriptive workout titles via LLM, maps each exercise to its Hevy equivalent using the AI-generated match file, transforms the training history into Hevy workout payloads, and creates (or updates) them via the Hevy API.
 
 ```
 Usage: port-rp-workout-to-hevy [OPTIONS]
 
 Options:
-  --matches PATH           Path to llm-matches.yaml file  [default: data/embeddings/llm-matches.yaml]
-  --dry-run                Show what would be imported without posting
-  --start-date [%Y-%m-%d]  Only import days finished on or after this date
-  --upsert                 Update existing imported workouts instead of skipping them
+  --matches PATH              Path to llm-matches.yaml file  [default: data/embeddings/llm-matches.yaml]
+  --dry-run                   Show what would be imported without posting
+  --start-date [%Y-%m-%d]    Only import days finished on or after this date
+  --upsert                    Update existing imported workouts instead of skipping them
+  --title-api-base-url TEXT   API base URL for workout title LLM  [required]
+  --title-api-key TEXT        API key for workout title LLM  [required]
+  --title-api-model TEXT      Model name for workout title LLM  [required]
+  --title-concurrency INT     Max concurrent title-generation requests  [default: 10]
+  --title-timeout FLOAT       Per-request timeout for title generation (seconds)  [default: 120.0]
+  --redis-url TEXT            Redis URL for caching LLM results
 ```
 
 ```bash
 # Preview what would be imported
-mise //packages/cli:cli port-rp-workout-to-hevy --dry-run
+mise //packages/cli:cli port-rp-workout-to-hevy \
+  --title-api-base-url https://openrouter.ai/api/v1 \
+  --title-api-key $OPENROUTER_API_KEY \
+  --title-api-model google/gemini-2.5-flash \
+  --dry-run
 
 # Import everything from January 2026 onwards
-mise //packages/cli:cli port-rp-workout-to-hevy --start-date 2026-01-01
+mise //packages/cli:cli port-rp-workout-to-hevy \
+  --title-api-base-url https://openrouter.ai/api/v1 \
+  --title-api-key $OPENROUTER_API_KEY \
+  --title-api-model google/gemini-2.5-flash \
+  --start-date 2026-01-01
 
-# Re-sync previously imported workouts
-mise //packages/cli:cli port-rp-workout-to-hevy --upsert
+# With Redis caching for repeated runs
+mise //packages/cli:cli port-rp-workout-to-hevy \
+  --title-api-base-url https://openrouter.ai/api/v1 \
+  --title-api-key $OPENROUTER_API_KEY \
+  --title-api-model google/gemini-2.5-flash \
+  --redis-url redis://127.0.0.1:6379 \
+  --upsert
 ```
 
 **How it works:**
 
 1. Loads the AI-generated exercise match file ([`llm-matches.yaml`](../../data/embeddings/llm-matches.yaml)) produced by the embedding pipeline above
 2. Fetches all mesocycles from RP's reverse-engineered API (training blocks containing weeks, days, exercises, and sets with weight/reps/RIR)
-3. Fetches existing Hevy workouts for deduplication (by date and embedded `rp-day-id` tag)
-4. Filters days — skips unfinished, skipped, or already-imported days
-5. Transforms RP training data into Hevy workout payloads — maps each RP exercise to its Hevy equivalent using the AI match file, converts sets (lb→kg), and clamps duration to 45min–2h
-6. Shows a preview table and asks for confirmation
-7. Creates or updates workouts via the Hevy API, then prints a summary
+3. Generates workout titles via LLM — inspects the exercises in each day's first week and produces gym-standard names like "Chest & Triceps", "Pull Day", or "Legs & Glutes". Titles are generated once from the first week and reused across all weeks in the mesocycle. Results are cached in Redis/Valkey when `--redis-url` is provided
+4. Fetches existing Hevy workouts for deduplication (by date and embedded `rp-day-id` tag)
+5. Filters days — skips unfinished, skipped, or already-imported days
+6. Transforms RP training data into Hevy workout payloads — maps each RP exercise to its Hevy equivalent using the AI match file, converts sets (lb→kg), and clamps duration to 45min–2h
+7. Shows a preview table and asks for confirmation
+8. Creates or updates workouts via the Hevy API, then prints a summary
 
 **Deduplication:** Each imported workout's description contains an `#import-from-rp` tag and `rp-day-id:<id>` marker. On subsequent runs, days already in Hevy are skipped unless `--upsert` is passed.
 
-**Requirements:** `HEVY_API_KEY` and `RP_BEARER_TOKEN` environment variables.
+**Requirements:** `HEVY_API_KEY`, `RP_BEARER_TOKEN`, and `OPENROUTER_API_KEY` environment variables.
 
 ## Cloud Storage
 
@@ -167,8 +187,9 @@ src/rp_to_hevy_cli/
     __init__.py      # Re-exports the click command
     models.py        # ExerciseMatch dataclass, constants, YAML loader
     transform.py     # Workout builder, day filtering, duration clamping
-    sync.py          # RP API fetching, Hevy dedup parsing, summary
+    sync.py          # Hevy dedup parsing, summary
     command.py       # Click command + async orchestration
+    workout_title_generator.py  # LLM-powered workout title generation
 ```
 
 ## Dependencies
@@ -177,6 +198,7 @@ src/rp_to_hevy_cli/
 | --- | --- |
 | `click` >=8.1 | CLI framework |
 | `pydantic` >=2.12 | Data validation |
+| `pydantic-ai` | LLM agent framework (structured output, retries) |
 | `api-service` | Async API clients for RP and Hevy (workspace) |
 | `embeddings` | Embedding and similarity search library (workspace) |
 | `cloudpathlib[s3]` | Cloud storage abstraction (S3, GCS, Azure) |

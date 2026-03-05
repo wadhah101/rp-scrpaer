@@ -86,7 +86,7 @@ description = "Port RP workout data to Hevy format"
 run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
-  --start-date 2022-02-28 \
+  --start-date 2026-02-28 \
   --title-api-base-url "https://openrouter.ai/api/v1" \
   --title-api-key "$OPENROUTER_API_KEY" \
   --title-api-model "google/gemini-3-flash-preview" \
