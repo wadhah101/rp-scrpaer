@@ -23,6 +23,8 @@ jobs:
       - uses: jdx/mise-action@e79ddf65a11cec7b0e882bedced08d6e976efb2d # v3.6.2
         with:
           cache: false
+      - name: Install Dependencies
+        run: uv sync --all-packages
       - name: Run hk check
         run: hk check --all
         env:
@@ -56,6 +58,8 @@ jobs:
         working-directory: scripts/hevy-extract
       - name: mise generate
         run: mise "//...:generate-libs*"
+      - name: Install uv Dependencies
+        run: uv sync --all-packages
       - name: fix formatting
         run: mise format
       - name: assert no diff
