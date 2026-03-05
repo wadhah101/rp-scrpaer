@@ -98,6 +98,10 @@ async def _judge_one(
                     continue
                 return None
             except Exception as exc:
+                click.echo(
+                    click.style(f"FAILED for reason {exc}", fg="red", bold=True),
+                    err=True,
+                )
                 if attempt < _MAX_RETRIES - 1:
                     await asyncio.sleep(2**attempt)
                     continue
