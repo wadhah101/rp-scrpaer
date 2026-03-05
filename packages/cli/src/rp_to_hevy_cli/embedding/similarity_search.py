@@ -80,7 +80,7 @@ def run_rp_similarity_search(
     rp_data = rp_collection.get(include=["embeddings", "documents"])
     rp_embeddings = np.array(rp_data["embeddings"], dtype=np.float32)
     rp_ids = rp_data["ids"]
-    rp_doc_names = rp_data["documents"]
+    rp_doc_names = rp_data["documents"] or []
     rp_docs = [{"id": id_, "name": name} for id_, name in zip(rp_ids, rp_doc_names)]
 
     results = query_matches(hevy_collection, rp_embeddings, n_results)
