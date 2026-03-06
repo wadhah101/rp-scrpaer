@@ -1,0 +1,18 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "packages/cli/Dockerfile"
+watchPatterns = [
+  "packages/cli/**",
+  "packages/api-service/**",
+  "packages/embeddings/**",
+  "uv.lock",
+  "railway/rp-export.toml",
+]
+
+[deploy]
+startCommand = 'rp-to-hevy-cli rp export --type all -o "s3://stashed-lockerbox-flrz0lt/exports/rp/$(date +%Y-%m-%dT%H%M%S)/"'
+cronSchedule = "*/15 * * * *"
+
+[deploy.limitOverride]
+containers.cpu = 0.5
+containers.memoryBytes = 1073741824

@@ -32,5 +32,10 @@
   },
 
   // Match pyproject.toml line-length for Flake8
-  "flake8.args": ["--max-line-length=88"]
+  "flake8.args": ["--max-line-length=88"],
+
+  // Railway config schema for TOML files under railway/
+  "evenBetterToml.schema.associations": {
+    "railway/*.toml": "https://railway.com/railway.schema.json"
+  }
 }
