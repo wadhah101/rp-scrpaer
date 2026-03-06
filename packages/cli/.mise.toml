@@ -35,22 +35,6 @@ run = "uv run python -m rp_to_hevy_cli rp export --type all --output exports/rp"
 env = { BUCKET_NAME = { required = true } }
 run = "uv run python -m rp_to_hevy_cli rp export --type all --output s3://$BUCKET_NAME/exports/exercises/rp-exercises.json"
 
-[tasks.embed-ollama]
-description = "Embed exercises using local Ollama"
-run = """
-uv run python -m rp_to_hevy_cli embedding embd \
-  --api-base-url "${OLLAMA_BASE_URL}/v1" \
-  --api-key ollama \
-  --api-model "$OLLAMA_MODEL" \
-  --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
-  --hevy-path "$MONOREPO_ROOT/packages/cli/exports/hevy/exercises.json" \
-  --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json" \
-  --chroma-mode persistent
-"""
-
-[tasks.embed-ollama.env]
-OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen3-embedding:8b-fp16"
 
 [tasks.run-rp-similarity-search]
 description = "Run similarity search on embedded exercises"
@@ -87,7 +71,7 @@ run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
   --start-date 2026-02-28 \
-  --redis-url "$VALKEY_URL"
+  --redis-url "$REDIS_URL"
 """
 
 [tasks.port-rp-workout-to-hevy.env]
@@ -95,7 +79,7 @@ HEVY_API_KEY = { required = true }
 TITLE_API_BASE_URL = "https://openrouter.ai/api/v1"
 TITLE_API_KEY = "{{env.OPENROUTER_API_KEY}}"
 TITLE_API_MODEL = "google/gemini-3-flash-preview"
-VALKEY_URL = "redis://127.0.0.1:6379"
+REDIS_URL = "redis://127.0.0.1:6379"
 
 [tasks.port-rp-workout-to-hevy-dry-run]
 description = "Dry run: preview RP workouts that would be imported to Hevy"
@@ -104,12 +88,12 @@ uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
   --start-date 2026-01-01 \
   --dry-run \
-  --redis-url "$VALKEY_URL"
+  --redis-url "$REDIS_URL"
 """
 
 [tasks.port-rp-workout-to-hevy-dry-run.env]
 HEVY_API_KEY = { required = true }
 TITLE_API_BASE_URL = "https://openrouter.ai/api/v1"
 TITLE_API_KEY = "{{env.OPENROUTER_API_KEY}}"
-TITLE_API_MODEL = "google/gemini-2.5-flash"
-VALKEY_URL = "redis://127.0.0.1:6379"
+TITLE_API_MODEL = "google/gemini-3-flash-preview"
+REDIS_URL = "redis://127.0.0.1:6379"
