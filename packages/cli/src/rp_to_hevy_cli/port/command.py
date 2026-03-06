@@ -5,14 +5,14 @@ from datetime import date, datetime
 from pathlib import Path
 
 import click
+from api_service_rp import TrainingDataApi
 from api_service_rp.models.mesocycle import Mesocycle
 from hevy_api_service import WorkoutsApi
 from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
-from rp_to_hevy_cli.embedding.utils import RedisCache
-from rp_to_hevy_cli.hevy import _fetch_all_workouts, _hevy_client
+from rp_to_hevy_cli.hevy import _fetch_all_pages
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
     _parse_existing_workout_dates,
@@ -21,11 +21,15 @@ from rp_to_hevy_cli.port.sync import (
 )
 from rp_to_hevy_cli.port.transform import _build_hevy_workout, _is_day_importable
 from rp_to_hevy_cli.port.workout_title_generator import (
-    build_title_agent,
+    _SYSTEM_PROMPT as _TITLE_SYSTEM_PROMPT,
+)
+from rp_to_hevy_cli.port.workout_title_generator import (
+    WorkoutTitle,
     generate_workout_titles,
 )
-from rp_to_hevy_cli.rp import _fetch_mesocycles_by_token
-from rp_to_hevy_cli.utils import _require_hevy_api_key, _require_rp_bearer_token
+from rp_to_hevy_cli.rp import _fetch_mesocycles
+from rp_to_hevy_cli.settings import hevy_client, rp_client, title_llm_config
+from rp_to_hevy_cli.utils import RedisCache, build_openai_agent
 
 
 @click.command("port-rp-workout-to-hevy")
@@ -55,21 +59,6 @@ from rp_to_hevy_cli.utils import _require_hevy_api_key, _require_rp_bearer_token
     help="Update existing imported workouts instead of skipping them.",
 )
 @click.option(
-    "--title-api-base-url",
-    required=True,
-    help="API base URL for workout title LLM.",
-)
-@click.option(
-    "--title-api-key",
-    required=True,
-    help="API key for workout title LLM.",
-)
-@click.option(
-    "--title-api-model",
-    required=True,
-    help="Model name for workout title LLM.",
-)
-@click.option(
     "--title-concurrency",
     type=int,
     default=10,
@@ -91,9 +80,6 @@ def port_rp_workout_to_hevy(
     dry_run: bool,
     start_date: datetime | None,
     upsert: bool,
-    title_api_base_url: str,
-    title_api_key: str,
-    title_api_model: str,
     title_concurrency: int,
     title_timeout: float,
     redis_url: str | None,
@@ -104,9 +90,6 @@ def port_rp_workout_to_hevy(
             dry_run=dry_run,
             start_date=start_date,
             upsert=upsert,
-            title_api_base_url=title_api_base_url,
-            title_api_key=title_api_key,
-            title_api_model=title_api_model,
             title_concurrency=title_concurrency,
             title_timeout=title_timeout,
             redis_url=redis_url,
@@ -118,9 +101,6 @@ async def _port_rp_workout_to_hevy(
     matches_path: Path,
     dry_run: bool,
     start_date: datetime | None,
-    title_api_base_url: str,
-    title_api_key: str,
-    title_api_model: str,
     upsert: bool = False,
     title_concurrency: int = 10,
     title_timeout: float = 120.0,
@@ -132,19 +112,19 @@ async def _port_rp_workout_to_hevy(
     matches = _load_matches(matches_path)
     click.echo(f"Loaded {len(matches)} exercise matches")
 
-    rp_token = _require_rp_bearer_token()
     click.echo("Fetching mesocycles from RP...")
-    mesocycles: list[Mesocycle] = await _fetch_mesocycles_by_token(rp_token)
+    async with rp_client() as client:
+        mesocycles: list[Mesocycle] = await _fetch_mesocycles(TrainingDataApi(client))
     click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
-    # Phase 2: Validate
-    api_key = _require_hevy_api_key()
-
-    # Phase 3: Fetch existing Hevy workouts for dedup
+    # Phase 2: Fetch existing Hevy workouts for dedup
     click.echo("Fetching existing Hevy workouts for dedup...")
-    async with _hevy_client() as client:
-        workouts_api = WorkoutsApi(client)
-        existing_workouts = await _fetch_all_workouts(workouts_api, api_key)
+    hevy, api_key = hevy_client()
+    async with hevy:
+        workouts_api = WorkoutsApi(hevy)
+        existing_workouts = await _fetch_all_pages(
+            workouts_api.get_workouts, "workouts", api_key, 10
+        )
 
     existing_dates = _parse_existing_workout_dates(existing_workouts)
     imported_day_ids = _parse_imported_day_ids(existing_workouts)
@@ -167,8 +147,15 @@ async def _port_rp_workout_to_hevy(
         "failed": 0,
     }
 
+    title_api_base_url, title_api_key, title_api_model = title_llm_config()
     click.echo(f"Generating workout titles via {title_api_model}...")
-    title_agent = build_title_agent(title_api_base_url, title_api_key, title_api_model)
+    title_agent = build_openai_agent(
+        title_api_base_url,
+        title_api_key,
+        title_api_model,
+        _TITLE_SYSTEM_PROMPT,
+        WorkoutTitle,
+    )
     sem = asyncio.Semaphore(title_concurrency)
 
     cache: RedisCache | None = None
@@ -251,8 +238,9 @@ async def _port_rp_workout_to_hevy(
         return
 
     # Phase 6: Post / Put
-    async with _hevy_client() as client:
-        workouts_api = WorkoutsApi(client)
+    hevy, api_key = hevy_client()
+    async with hevy:
+        workouts_api = WorkoutsApi(hevy)
 
         for workout, workout_date, day_id, hevy_id in to_import:
             assert workout.workout is not None

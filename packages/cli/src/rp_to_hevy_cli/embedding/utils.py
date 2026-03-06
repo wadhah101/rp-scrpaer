@@ -2,28 +2,11 @@ from __future__ import annotations
 
 import atexit
 import functools
-import hashlib
-import io
 import os
 import tempfile
-from pathlib import Path
-from typing import Any
 
 import click
-import redis.asyncio as aioredis
 from cloudpathlib import AnyPath, CloudPath
-from embeddings import (
-    ApiEmbedder,
-    ClientMode,
-    RateLimitConfig,
-    create_client,
-)
-from ruamel.yaml import YAML
-
-yaml = YAML()
-yaml.width = 4096
-yaml.indent(mapping=2, sequence=4, offset=2)
-
 
 # ---------------------------------------------------------------------------
 # Shared option decorators
@@ -92,52 +75,6 @@ def _chromadb_options(f):
     return wrapper
 
 
-def _common_options(f):
-    f = _data_options(f)
-    f = _embedder_options(f)
-    f = _chromadb_options(f)
-    return f
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-
-def _build_embedder(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-    api_dimensions: int | None,
-    api_max_rpm: int,
-    api_batch_size: int,
-) -> ApiEmbedder:
-    return ApiEmbedder(
-        base_url=api_base_url,
-        api_key=api_key,
-        model=api_model,
-        dimensions=api_dimensions,
-        rate_limit=RateLimitConfig(
-            max_requests_per_minute=api_max_rpm,
-            batch_size=api_batch_size,
-        ),
-    )
-
-
-def _build_chroma_client(
-    chroma_mode: str,
-    chroma_path: str,
-    chroma_host: str,
-    chroma_port: int,
-):
-    return create_client(
-        mode=ClientMode(chroma_mode),
-        path=chroma_path,
-        host=chroma_host,
-        port=chroma_port,
-    )
-
-
 def _resolve_input(path_str: str) -> str:
     """If *path_str* is a cloud URI, download to a local temp file and return its path."""
     path = AnyPath(path_str)
@@ -149,62 +86,3 @@ def _resolve_input(path_str: str) -> str:
         atexit.register(os.unlink, tmp.name)
         return tmp.name
     return path_str
-
-
-# Custom representer function
-def string_representer(representer: Any, data: str) -> Any:
-    # Condition: if the string is just digits, force double quotes
-    if data.isdigit():
-        return representer.represent_scalar("tag:yaml.org,2002:str", data, style='"')
-    # Otherwise, output normally
-    return representer.represent_scalar("tag:yaml.org,2002:str", data)
-
-
-yaml.representer.add_representer(str, string_representer)
-
-
-def _write_yaml(data: object, output_path: str) -> None:
-    string_stream = io.StringIO()
-    yaml.dump(data, string_stream)
-    yaml_string = string_stream.getvalue()
-
-    path: Path | CloudPath = AnyPath(output_path)  # type: ignore[assignment]
-    if isinstance(path, CloudPath):
-        path.write_text(yaml_string)
-    else:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(yaml_string)
-    click.echo(f"Wrote {path}")
-
-
-# ---------------------------------------------------------------------------
-# Redis hash-based cache
-# ---------------------------------------------------------------------------
-
-
-class RedisCache:
-    """Async Redis hash cache keyed by SHA-256 of a prompt string."""
-
-    __slots__ = ("_client", "_hash_key")
-
-    def __init__(self, client: aioredis.Redis, hash_key: str) -> None:
-        self._client = client
-        self._hash_key = hash_key
-
-    @staticmethod
-    def field(prompt: str) -> str:
-        return hashlib.sha256(prompt.encode()).hexdigest()
-
-    async def get(self, prompt: str) -> str | None:
-        return await self._client.hget(self._hash_key, self.field(prompt))  # ty: ignore[invalid-await]
-
-    async def set(self, prompt: str, value: str) -> None:
-        await self._client.hset(self._hash_key, self.field(prompt), value)  # ty: ignore[invalid-await]
-
-    async def close(self) -> None:
-        await self._client.aclose()
-
-    @classmethod
-    def from_url(cls, redis_url: str, hash_key: str) -> RedisCache:
-        client = aioredis.from_url(redis_url, decode_responses=True)
-        return cls(client, hash_key)

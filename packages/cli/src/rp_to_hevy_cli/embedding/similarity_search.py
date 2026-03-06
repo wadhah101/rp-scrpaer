@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import click
 import numpy as np
 from embeddings import (
+    ClientMode,
     build_match_results,
     compute_metrics,
+    create_client,
     create_collection,
     load_muscle_group_mappings,
     load_rp_exercises,
@@ -16,11 +19,10 @@ from embeddings import (
 from embeddings.embed import DEFAULT_N_RESULTS
 
 from rp_to_hevy_cli.embedding.utils import (
-    _build_chroma_client,
     _chromadb_options,
     _resolve_input,
-    _write_yaml,
 )
+from rp_to_hevy_cli.utils import _write_yaml
 
 
 @click.command("run-rp-similarity-search")
@@ -73,7 +75,12 @@ def run_rp_similarity_search(
     ground_truths_dir: str,
 ):
     """Run similarity search on already-embedded exercises in ChromaDB."""
-    client = _build_chroma_client(chroma_mode, chroma_path, chroma_host, chroma_port)
+    client = create_client(
+        mode=ClientMode(chroma_mode),
+        path=chroma_path,
+        host=chroma_host,
+        port=chroma_port,
+    )
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 
@@ -113,12 +120,5 @@ def run_rp_similarity_search(
     if exercise_output_dir:
         match_results = build_match_results(rp_docs, results)
         for item in match_results:
-            normalized = (
-                item["rp_id"]
-                .replace(" ", "-")
-                .replace(",", "")
-                .replace("/", "")
-                .replace(")", "")
-                .replace("(", "")
-            )
+            normalized = re.sub(r"[ ,/()]", "-", item["rp_id"])
             _write_yaml(item, str(Path(exercise_output_dir) / f"{normalized}.yaml"))

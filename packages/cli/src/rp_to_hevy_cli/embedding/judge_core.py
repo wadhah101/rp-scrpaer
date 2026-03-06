@@ -1,19 +1,14 @@
 from __future__ import annotations
 
 import asyncio
-import logging
 import sys
 from enum import Enum
 
 import click
 from pydantic import BaseModel
 from pydantic_ai import Agent
-from pydantic_ai.models.openai import OpenAIChatModel
-from pydantic_ai.providers.openai import OpenAIProvider
 
-from rp_to_hevy_cli.embedding.utils import RedisCache
-
-logger = logging.getLogger(__name__)
+from rp_to_hevy_cli.utils import RedisCache, run_agent_cached
 
 _SYSTEM_PROMPT = """\
 You are an expert in resistance training and exercise science.
@@ -49,17 +44,14 @@ def _build_user_prompt(rp_name: str, candidates: list[str]) -> str:
 
 
 class _Counter:
-    __slots__ = ("_done", "_total", "_cached")
+    __slots__ = ("_done", "_total")
 
     def __init__(self, total: int) -> None:
         self._done = 0
-        self._cached = 0
         self._total = total
 
-    def tick(self, *, cached: bool = False) -> None:
+    def tick(self) -> None:
         self._done += 1
-        if cached:
-            self._cached += 1
         sys.stderr.write(f"\r  {self._done}/{self._total}")
         sys.stderr.flush()
 
@@ -98,22 +90,6 @@ def _resolve_match(
     }
 
 
-def build_agent(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-) -> Agent[None, JudgeResult]:
-    model = OpenAIChatModel(
-        api_model,
-        provider=OpenAIProvider(base_url=api_base_url, api_key=api_key),
-    )
-    return Agent(  # ty: ignore[invalid-return-type]
-        model,
-        system_prompt=_SYSTEM_PROMPT,
-        output_type=JudgeResult,
-    )
-
-
 async def _judge_one(
     agent: Agent[None, JudgeResult],
     exercise: dict,
@@ -124,54 +100,20 @@ async def _judge_one(
     cache: RedisCache | None = None,
 ) -> dict | None:
     """Judge a single exercise with retries."""
-    rp_id = str(exercise["rp_id"])
     candidates = [m["hevy_embedding_name"] for m in exercise["semantic_matches"]]
     user_prompt = _build_user_prompt(exercise["rp_embedding_name"], candidates)
 
-    # Check cache before acquiring semaphore / calling LLM
-    if cache is not None:
-        cached = await cache.get(user_prompt)
-        if cached is not None:
-            judge = JudgeResult.model_validate_json(cached)
-            counter.tick(cached=True)
-            return _resolve_match(judge, exercise, strict)
-
-    async with sem:
-        for attempt in range(_MAX_RETRIES):
-            try:
-                result = await asyncio.wait_for(agent.run(user_prompt), timeout=timeout)
-                judge = result.output
-                break
-            except TimeoutError:
-                logger.warning(
-                    "Timeout for rp_id=%s (attempt %d/%d)",
-                    rp_id,
-                    attempt + 1,
-                    _MAX_RETRIES,
-                )
-                if attempt < _MAX_RETRIES - 1:
-                    continue
-                return None
-            except Exception as exc:
-                click.echo(
-                    click.style(f"FAILED for reason {exc}", fg="red", bold=True),
-                    err=True,
-                )
-                if attempt < _MAX_RETRIES - 1:
-                    await asyncio.sleep(2**attempt)
-                    continue
-                logger.warning(
-                    "Failed for rp_id=%s, skipping: %s",
-                    rp_id,
-                    exc,
-                )
-                return None
-        else:
-            return None
-
-    # Cache the result
-    if cache is not None:
-        await cache.set(user_prompt, judge.model_dump_json())
+    judge = await run_agent_cached(
+        agent,
+        user_prompt,
+        sem,
+        timeout,
+        max_retries=_MAX_RETRIES,
+        cache=cache,
+        output_type=JudgeResult,
+    )
+    if judge is None:
+        return None
 
     counter.tick()
     return _resolve_match(judge, exercise, strict)

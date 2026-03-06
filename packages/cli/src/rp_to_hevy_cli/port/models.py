@@ -4,10 +4,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from ruamel.yaml import YAML
-
-yaml = YAML()
-yaml.width = 4096
+from rp_to_hevy_cli.utils import yaml
 
 DEFAULT_MATCHES_PATH = Path("data/embeddings/llm-matches.yaml")
 

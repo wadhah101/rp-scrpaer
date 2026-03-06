@@ -4,13 +4,14 @@ import asyncio
 from pathlib import Path
 
 import click
-from ruamel.yaml import YAML
 
-from rp_to_hevy_cli.embedding.judge_core import _Counter, _judge_one, build_agent
-from rp_to_hevy_cli.embedding.utils import RedisCache, _write_yaml
-
-yaml = YAML()
-yaml.width = 4096
+from rp_to_hevy_cli.embedding.judge_core import (
+    _SYSTEM_PROMPT,
+    JudgeResult,
+    _Counter,
+    _judge_one,
+)
+from rp_to_hevy_cli.utils import RedisCache, _write_yaml, build_openai_agent, yaml
 
 
 async def _run(
@@ -40,7 +41,9 @@ async def _run(
     exercises = [yaml.load(f.read_text()) for f in files]
     total = len(exercises)
 
-    agent = build_agent(api_base_url, api_key, api_model)
+    agent = build_openai_agent(
+        api_base_url, api_key, api_model, _SYSTEM_PROMPT, JudgeResult
+    )
     sem = asyncio.Semaphore(concurrency)
 
     cache: RedisCache | None = None
@@ -67,8 +70,6 @@ async def _run(
     _write_yaml(results, output)
     skipped = total - len(results)
     msg = f"Done. {len(results)}/{total} exercises matched."
-    if counter._cached:
-        msg += f" ({counter._cached} cached, {len(results) - counter._cached} via LLM)"
     if skipped:
         msg += f" ({skipped} skipped)"
     click.echo(msg)
