@@ -120,21 +120,21 @@ Options:
 mise //packages/cli:cli port-rp-workout-to-hevy \
   --title-api-base-url https://openrouter.ai/api/v1 \
   --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-2.5-flash \
+  --title-api-model google/gemini-3-flash-preview \
   --dry-run
 
 # Import everything from January 2026 onwards
 mise //packages/cli:cli port-rp-workout-to-hevy \
   --title-api-base-url https://openrouter.ai/api/v1 \
   --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-2.5-flash \
+  --title-api-model google/gemini-3-flash-preview \
   --start-date 2026-01-01
 
 # With Redis caching for repeated runs
 mise //packages/cli:cli port-rp-workout-to-hevy \
   --title-api-base-url https://openrouter.ai/api/v1 \
   --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-2.5-flash \
+  --title-api-model google/gemini-3-flash-preview \
   --redis-url redis://127.0.0.1:6379 \
   --upsert
 ```
@@ -143,7 +143,7 @@ mise //packages/cli:cli port-rp-workout-to-hevy \
 
 1. Loads the AI-generated exercise match file ([`llm-matches.yaml`](../../data/embeddings/llm-matches.yaml)) produced by the embedding pipeline above
 2. Fetches all mesocycles from RP's reverse-engineered API (training blocks containing weeks, days, exercises, and sets with weight/reps/RIR)
-3. Generates workout titles via LLM — inspects the exercises in each day's first week and produces gym-standard names like "Chest & Triceps", "Pull Day", or "Legs & Glutes". Titles are generated once from the first week and reused across all weeks in the mesocycle. Results are cached in Redis/Valkey when `--redis-url` is provided
+3. Generates workout titles via LLM — inspects the exercises in each day's first week and produces gym-standard names like "Chest & Triceps", "Pull Day", or "Legs & Glutes". Titles are generated once from the first week and reused across all weeks in the mesocycle. Results are cached in Redis when `--redis-url` is provided
 4. Fetches existing Hevy workouts for deduplication (by date and embedded `rp-day-id` tag)
 5. Filters days — skips unfinished, skipped, or already-imported days
 6. Transforms RP training data into Hevy workout payloads — maps each RP exercise to its Hevy equivalent using the AI match file, converts sets (lb→kg), and clamps duration to 45min–2h
