@@ -24,14 +24,14 @@ HEVY_EXPORT_TYPES = [
 ]
 
 
-async def _fetch_all_pages(
+async def _fetch_all_pages[T](
     fetch: Callable[..., Awaitable[Any]],
     items_attr: str,
     api_key: UUID,
     page_size: int,
-) -> list:
+) -> list[T]:
     page = 1
-    all_items: list = []
+    all_items: list[T] = []
     while True:
         resp = await fetch(api_key=api_key, page=page, page_size=page_size)
         items = getattr(resp, items_attr, None)
