@@ -69,7 +69,7 @@ async def _hevy_export(export_type: str, output: Path | CloudPath) -> None:
 
         if output.suffix == ".json":
             write_json(data, output)
-        elif output.is_dir():
+        elif output.suffix == "":
             if isinstance(output, Path):
                 output.mkdir(parents=True, exist_ok=True)
             for key, value in data.items():

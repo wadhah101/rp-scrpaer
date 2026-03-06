@@ -69,7 +69,7 @@ async def _export(export_type: str, output: Path | CloudPath) -> None:
             data = await _fetch_all(user_api, training_api)
             if output.suffix == ".json":
                 write_json(data, output)
-            elif output.is_dir():
+            elif output.suffix == "":
                 if isinstance(output, Path):
                     output.mkdir(parents=True, exist_ok=True)
                 for key, value in data.items():
