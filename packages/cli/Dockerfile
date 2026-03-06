@@ -46,6 +46,10 @@ ENV PATH="/app/.venv/bin:/opt/python/bin:$PATH" \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
+RUN mkdir -p /app/packages/cli/data/rp
+RUN chown -R app:app /app/packages/cli/data/rp
+
+
 USER app
 
 COPY packages/cli/src packages/api-service/src packages/embeddings/src /app/packages/
