@@ -1,0 +1,9 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "packages/cli/Dockerfile"
+watchPatterns = ["packages/cli/**", "packages/api-service/**", "packages/embeddings/**", "uv.lock"]
+
+[deploy]
+startCommand = "rp-to-hevy-cli rp export --type all -o s3://$AWS_S3_BUCKET_NAME/exports/rp/"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
