@@ -25,7 +25,7 @@ from rp_to_hevy_cli.port.workout_title_generator import (
     generate_workout_titles,
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles
-from rp_to_hevy_cli.settings import hevy_client, rp_client
+from rp_to_hevy_cli.settings import hevy_client, rp_client, title_llm_config
 from rp_to_hevy_cli.utils import RedisCache
 
 
@@ -56,21 +56,6 @@ from rp_to_hevy_cli.utils import RedisCache
     help="Update existing imported workouts instead of skipping them.",
 )
 @click.option(
-    "--title-api-base-url",
-    required=True,
-    help="API base URL for workout title LLM.",
-)
-@click.option(
-    "--title-api-key",
-    required=True,
-    help="API key for workout title LLM.",
-)
-@click.option(
-    "--title-api-model",
-    required=True,
-    help="Model name for workout title LLM.",
-)
-@click.option(
     "--title-concurrency",
     type=int,
     default=10,
@@ -92,9 +77,6 @@ def port_rp_workout_to_hevy(
     dry_run: bool,
     start_date: datetime | None,
     upsert: bool,
-    title_api_base_url: str,
-    title_api_key: str,
-    title_api_model: str,
     title_concurrency: int,
     title_timeout: float,
     redis_url: str | None,
@@ -105,9 +87,6 @@ def port_rp_workout_to_hevy(
             dry_run=dry_run,
             start_date=start_date,
             upsert=upsert,
-            title_api_base_url=title_api_base_url,
-            title_api_key=title_api_key,
-            title_api_model=title_api_model,
             title_concurrency=title_concurrency,
             title_timeout=title_timeout,
             redis_url=redis_url,
@@ -119,9 +98,6 @@ async def _port_rp_workout_to_hevy(
     matches_path: Path,
     dry_run: bool,
     start_date: datetime | None,
-    title_api_base_url: str,
-    title_api_key: str,
-    title_api_model: str,
     upsert: bool = False,
     title_concurrency: int = 10,
     title_timeout: float = 120.0,
@@ -166,6 +142,7 @@ async def _port_rp_workout_to_hevy(
         "failed": 0,
     }
 
+    title_api_base_url, title_api_key, title_api_model = title_llm_config()
     click.echo(f"Generating workout titles via {title_api_model}...")
     title_agent = build_title_agent(title_api_base_url, title_api_key, title_api_model)
     sem = asyncio.Semaphore(title_concurrency)

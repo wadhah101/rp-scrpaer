@@ -30,6 +30,13 @@ def rp_client() -> RpApiClient:
     )
 
 
+def title_llm_config() -> tuple[str, str, str]:
+    base_url = _require_env("TITLE_API_BASE_URL", "Set the LLM API base URL.")
+    api_key = _require_env("TITLE_API_KEY", "Set the LLM API key.")
+    model = _require_env("TITLE_API_MODEL", "Set the LLM model name.")
+    return base_url, api_key, model
+
+
 def hevy_client() -> tuple[HevyApiClient, UUID]:
     api_key = UUID(
         _require_env(

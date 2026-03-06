@@ -87,15 +87,14 @@ run = """
 uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
   --start-date 2026-02-28 \
-  --title-api-base-url "https://openrouter.ai/api/v1" \
-  --title-api-key "$OPENROUTER_API_KEY" \
-  --title-api-model "google/gemini-3-flash-preview" \
   --redis-url "$VALKEY_URL"
 """
 
 [tasks.port-rp-workout-to-hevy.env]
 HEVY_API_KEY = { required = true }
-OPENROUTER_API_KEY = { required = true }
+TITLE_API_BASE_URL = "https://openrouter.ai/api/v1"
+TITLE_API_KEY = "{{env.OPENROUTER_API_KEY}}"
+TITLE_API_MODEL = "google/gemini-3-flash-preview"
 VALKEY_URL = "redis://127.0.0.1:6379"
 
 [tasks.port-rp-workout-to-hevy-dry-run]
@@ -105,13 +104,12 @@ uv run python -m rp_to_hevy_cli port-rp-workout-to-hevy \
   --matches "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
   --start-date 2026-01-01 \
   --dry-run \
-  --title-api-base-url "https://openrouter.ai/api/v1" \
-  --title-api-key "$OPENROUTER_API_KEY" \
-  --title-api-model "google/gemini-2.5-flash" \
   --redis-url "$VALKEY_URL"
 """
 
 [tasks.port-rp-workout-to-hevy-dry-run.env]
 HEVY_API_KEY = { required = true }
-OPENROUTER_API_KEY = { required = true }
+TITLE_API_BASE_URL = "https://openrouter.ai/api/v1"
+TITLE_API_KEY = "{{env.OPENROUTER_API_KEY}}"
+TITLE_API_MODEL = "google/gemini-2.5-flash"
 VALKEY_URL = "redis://127.0.0.1:6379"
