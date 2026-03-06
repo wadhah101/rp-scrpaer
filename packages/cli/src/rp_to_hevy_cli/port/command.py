@@ -25,12 +25,7 @@ from rp_to_hevy_cli.port.workout_title_generator import (
     generate_workout_titles,
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles
-from rp_to_hevy_cli.settings import (
-    hevy_client,
-    require_hevy_api_key,
-    require_rp_bearer_token,
-    rp_client,
-)
+from rp_to_hevy_cli.settings import hevy_client, rp_client
 from rp_to_hevy_cli.utils import RedisCache
 
 
@@ -138,19 +133,16 @@ async def _port_rp_workout_to_hevy(
     matches = _load_matches(matches_path)
     click.echo(f"Loaded {len(matches)} exercise matches")
 
-    rp_token = require_rp_bearer_token()
     click.echo("Fetching mesocycles from RP...")
-    async with rp_client(rp_token) as client:
+    async with rp_client() as client:
         mesocycles: list[Mesocycle] = await _fetch_mesocycles(TrainingDataApi(client))
     click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
-    # Phase 2: Validate
-    api_key = require_hevy_api_key()
-
-    # Phase 3: Fetch existing Hevy workouts for dedup
+    # Phase 2: Fetch existing Hevy workouts for dedup
     click.echo("Fetching existing Hevy workouts for dedup...")
-    async with hevy_client() as client:
-        workouts_api = WorkoutsApi(client)
+    hevy, api_key = hevy_client()
+    async with hevy:
+        workouts_api = WorkoutsApi(hevy)
         existing_workouts = await _fetch_all_workouts(workouts_api, api_key)
 
     existing_dates = _parse_existing_workout_dates(existing_workouts)
@@ -258,8 +250,9 @@ async def _port_rp_workout_to_hevy(
         return
 
     # Phase 6: Post / Put
-    async with hevy_client() as client:
-        workouts_api = WorkoutsApi(client)
+    hevy, api_key = hevy_client()
+    async with hevy:
+        workouts_api = WorkoutsApi(hevy)
 
         for workout, workout_date, day_id, hevy_id in to_import:
             assert workout.workout is not None

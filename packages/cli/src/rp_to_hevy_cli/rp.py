@@ -8,7 +8,7 @@ from api_service_rp import TrainingDataApi, UserApi
 from api_service_rp.models.mesocycle import Mesocycle
 from cloudpathlib import CloudPath
 
-from rp_to_hevy_cli.settings import require_rp_bearer_token, rp_client
+from rp_to_hevy_cli.settings import rp_client
 from rp_to_hevy_cli.utils import resolve_output_path, write_json, write_json_multi
 
 EXPORT_TYPES = [
@@ -60,8 +60,8 @@ async def _fetch_mesocycles(training_api: TrainingDataApi) -> list[Mesocycle]:
     )
 
 
-async def _export(token: str, export_type: str, output: Path | CloudPath) -> None:
-    async with rp_client(token) as client:
+async def _export(export_type: str, output: Path | CloudPath) -> None:
+    async with rp_client() as client:
         user_api = UserApi(client)
         training_api = TrainingDataApi(client)
 
@@ -102,6 +102,5 @@ def rp():
 )
 def export(export_type: str, output: str | None):
     """Export personal data from RP Hypertrophy to JSON."""
-    token = require_rp_bearer_token()
     output_path = resolve_output_path(output, "export", export_type)
-    asyncio.run(_export(token, export_type, output_path))
+    asyncio.run(_export(export_type, output_path))
