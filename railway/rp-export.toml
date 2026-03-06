@@ -10,7 +10,7 @@ watchPatterns = [
 ]
 
 [deploy]
-startCommand = 'rp-to-hevy-cli hevy rp --type all -o s3://stashed-lockerbox-flrz0lt/exports/rp/'
+startCommand = 'rp-to-hevy-cli rp --type all -o s3://stashed-lockerbox-flrz0lt/exports/rp/'
 cronSchedule = "*/15 * * * *"
 limitOverride.containers.cpu = 0.5
 limitOverride.containers.memoryBytes = 1073741824
