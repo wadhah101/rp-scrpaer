@@ -9,10 +9,6 @@ from uuid import UUID
 import click
 from cloudpathlib import CloudPath
 from hevy_api_service import ExerciseTemplatesApi, WorkoutsApi
-from hevy_api_service.models.get_exercise_templates200_response import (
-    GetExerciseTemplates200Response,
-)
-from hevy_api_service.models.get_workouts200_response import GetWorkouts200Response
 
 from rp_to_hevy_cli.settings import hevy_client
 from rp_to_hevy_cli.utils import resolve_output_path, write_json
@@ -43,20 +39,6 @@ async def _fetch_all_pages[T](
     return all_items
 
 
-async def _fetch_all_exercise_templates(
-    templates_api: ExerciseTemplatesApi, api_key: UUID
-) -> list[GetExerciseTemplates200Response]:
-    return await _fetch_all_pages(
-        templates_api.get_exercise_templates, "exercise_templates", api_key, 100
-    )
-
-
-async def _fetch_all_workouts(
-    workouts_api: WorkoutsApi, api_key: UUID
-) -> list[GetWorkouts200Response]:
-    return await _fetch_all_pages(workouts_api.get_workouts, "workouts", api_key, 10)
-
-
 async def _hevy_export(export_type: str, output: Path | CloudPath) -> None:
     client, api_key = hevy_client()
     async with client:
@@ -65,17 +47,24 @@ async def _hevy_export(export_type: str, output: Path | CloudPath) -> None:
 
         if export_type != "all":
             fetchers = {
-                "exercise-templates": lambda: _fetch_all_exercise_templates(
-                    templates_api, api_key
+                "exercise-templates": lambda: _fetch_all_pages(
+                    templates_api.get_exercise_templates,
+                    "exercise_templates",
+                    api_key,
+                    100,
                 ),
-                "workouts": lambda: _fetch_all_workouts(workouts_api, api_key),
+                "workouts": lambda: _fetch_all_pages(
+                    workouts_api.get_workouts, "workouts", api_key, 10
+                ),
             }
             write_json(await fetchers[export_type](), output)
             return
 
         templates, workouts = await asyncio.gather(
-            _fetch_all_exercise_templates(templates_api, api_key),
-            _fetch_all_workouts(workouts_api, api_key),
+            _fetch_all_pages(
+                templates_api.get_exercise_templates, "exercise_templates", api_key, 100
+            ),
+            _fetch_all_pages(workouts_api.get_workouts, "workouts", api_key, 10),
         )
         data = {"exercise_templates": templates, "workouts": workouts}
         if output.suffix == ".json":

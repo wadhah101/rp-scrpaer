@@ -12,7 +12,7 @@ from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
-from rp_to_hevy_cli.hevy import _fetch_all_workouts
+from rp_to_hevy_cli.hevy import _fetch_all_pages
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
     _parse_existing_workout_dates,
@@ -21,12 +21,15 @@ from rp_to_hevy_cli.port.sync import (
 )
 from rp_to_hevy_cli.port.transform import _build_hevy_workout, _is_day_importable
 from rp_to_hevy_cli.port.workout_title_generator import (
-    build_title_agent,
+    _SYSTEM_PROMPT as _TITLE_SYSTEM_PROMPT,
+)
+from rp_to_hevy_cli.port.workout_title_generator import (
+    WorkoutTitle,
     generate_workout_titles,
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles
 from rp_to_hevy_cli.settings import hevy_client, rp_client, title_llm_config
-from rp_to_hevy_cli.utils import RedisCache
+from rp_to_hevy_cli.utils import RedisCache, build_openai_agent
 
 
 @click.command("port-rp-workout-to-hevy")
@@ -119,7 +122,9 @@ async def _port_rp_workout_to_hevy(
     hevy, api_key = hevy_client()
     async with hevy:
         workouts_api = WorkoutsApi(hevy)
-        existing_workouts = await _fetch_all_workouts(workouts_api, api_key)
+        existing_workouts = await _fetch_all_pages(
+            workouts_api.get_workouts, "workouts", api_key, 10
+        )
 
     existing_dates = _parse_existing_workout_dates(existing_workouts)
     imported_day_ids = _parse_imported_day_ids(existing_workouts)
@@ -144,7 +149,13 @@ async def _port_rp_workout_to_hevy(
 
     title_api_base_url, title_api_key, title_api_model = title_llm_config()
     click.echo(f"Generating workout titles via {title_api_model}...")
-    title_agent = build_title_agent(title_api_base_url, title_api_key, title_api_model)
+    title_agent = build_openai_agent(
+        title_api_base_url,
+        title_api_key,
+        title_api_model,
+        _TITLE_SYSTEM_PROMPT,
+        WorkoutTitle,
+    )
     sem = asyncio.Semaphore(title_concurrency)
 
     cache: RedisCache | None = None

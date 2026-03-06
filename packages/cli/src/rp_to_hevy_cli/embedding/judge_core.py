@@ -8,7 +8,7 @@ import click
 from pydantic import BaseModel
 from pydantic_ai import Agent
 
-from rp_to_hevy_cli.utils import RedisCache, build_openai_agent, run_agent_cached
+from rp_to_hevy_cli.utils import RedisCache, run_agent_cached
 
 _SYSTEM_PROMPT = """\
 You are an expert in resistance training and exercise science.
@@ -88,16 +88,6 @@ def _resolve_match(
         "hevy_best_match_id": chosen["hevy_id"],
         "hevy_best_match_name": chosen["hevy_embedding_name"],
     }
-
-
-def build_agent(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-) -> Agent[None, JudgeResult]:
-    return build_openai_agent(
-        api_base_url, api_key, api_model, _SYSTEM_PROMPT, JudgeResult
-    )
 
 
 async def _judge_one(

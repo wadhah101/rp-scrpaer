@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from pydantic_ai import Agent
 
 from rp_to_hevy_cli.port.models import ExerciseMatch
-from rp_to_hevy_cli.utils import RedisCache, build_openai_agent, run_agent_cached
+from rp_to_hevy_cli.utils import RedisCache, run_agent_cached
 
 _SYSTEM_PROMPT = """\
 You are an expert personal trainer. Given a list of exercises performed in a \
@@ -27,16 +27,6 @@ Rules:
 
 class WorkoutTitle(BaseModel):
     title: str
-
-
-def build_title_agent(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-) -> Agent[None, WorkoutTitle]:
-    return build_openai_agent(
-        api_base_url, api_key, api_model, _SYSTEM_PROMPT, WorkoutTitle
-    )
 
 
 async def _generate_title_for_day(

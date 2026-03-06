@@ -44,11 +44,9 @@ def _write_yaml(data: object, output_path: str) -> None:
     yaml_string = string_stream.getvalue()
 
     path: Path | CloudPath = AnyPath(output_path)  # type: ignore[assignment]
-    if isinstance(path, CloudPath):
-        path.write_text(yaml_string)
-    else:
+    if isinstance(path, Path):
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(yaml_string)
+    path.write_text(yaml_string)
     click.echo(f"Wrote {path}")
 
 

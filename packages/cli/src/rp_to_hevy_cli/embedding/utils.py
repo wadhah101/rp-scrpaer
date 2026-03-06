@@ -7,12 +7,6 @@ import tempfile
 
 import click
 from cloudpathlib import AnyPath, CloudPath
-from embeddings import (
-    ApiEmbedder,
-    ClientMode,
-    RateLimitConfig,
-    create_client,
-)
 
 # ---------------------------------------------------------------------------
 # Shared option decorators
@@ -79,52 +73,6 @@ def _chromadb_options(f):
         return f(*args, **kwargs)
 
     return wrapper
-
-
-def _common_options(f):
-    f = _data_options(f)
-    f = _embedder_options(f)
-    f = _chromadb_options(f)
-    return f
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-
-def _build_embedder(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-    api_dimensions: int | None,
-    api_max_rpm: int,
-    api_batch_size: int,
-) -> ApiEmbedder:
-    return ApiEmbedder(
-        base_url=api_base_url,
-        api_key=api_key,
-        model=api_model,
-        dimensions=api_dimensions,
-        rate_limit=RateLimitConfig(
-            max_requests_per_minute=api_max_rpm,
-            batch_size=api_batch_size,
-        ),
-    )
-
-
-def _build_chroma_client(
-    chroma_mode: str,
-    chroma_path: str,
-    chroma_host: str,
-    chroma_port: int,
-):
-    return create_client(
-        mode=ClientMode(chroma_mode),
-        path=chroma_path,
-        host=chroma_host,
-        port=chroma_port,
-    )
 
 
 def _resolve_input(path_str: str) -> str:

@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import click
 from embeddings import (
+    ApiEmbedder,
+    ClientMode,
+    RateLimitConfig,
+    create_client,
     create_collection,
     encode_and_store,
     load_hevy_exercises,
@@ -12,15 +16,17 @@ from embeddings import (
 )
 
 from rp_to_hevy_cli.embedding.utils import (
-    _build_chroma_client,
-    _build_embedder,
-    _common_options,
+    _chromadb_options,
+    _data_options,
+    _embedder_options,
     _resolve_input,
 )
 
 
 @click.command()
-@_common_options
+@_data_options
+@_embedder_options
+@_chromadb_options
 @click.option("--rp-prompt", default="", help="Prompt prepended to RP exercise texts.")
 @click.option(
     "--hevy-prompt", default="", help="Prompt prepended to Hevy exercise texts."
@@ -43,13 +49,15 @@ def embd(
     hevy_prompt: str,
 ):
     """Embed exercises into ChromaDB."""
-    embedder = _build_embedder(
-        api_base_url,
-        api_key,
-        api_model,
-        api_dimensions,
-        api_max_rpm,
-        api_batch_size,
+    embedder = ApiEmbedder(
+        base_url=api_base_url,
+        api_key=api_key,
+        model=api_model,
+        dimensions=api_dimensions,
+        rate_limit=RateLimitConfig(
+            max_requests_per_minute=api_max_rpm,
+            batch_size=api_batch_size,
+        ),
     )
 
     rp_raw = load_rp_exercises(_resolve_input(rp_path))
@@ -59,7 +67,12 @@ def embd(
     rp_df = prepare_rp_exercises(rp_raw, mappings)
     hevy_df = prepare_hevy_exercises(hevy_raw)
 
-    client = _build_chroma_client(chroma_mode, chroma_path, chroma_host, chroma_port)
+    client = create_client(
+        mode=ClientMode(chroma_mode),
+        path=chroma_path,
+        host=chroma_host,
+        port=chroma_port,
+    )
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 
