@@ -5,10 +5,8 @@ import hashlib
 import io
 import json
 import logging
-import os
 from pathlib import Path
 from typing import Any, cast
-from uuid import UUID
 
 import click
 import redis.asyncio as aioredis
@@ -52,34 +50,6 @@ def _write_yaml(data: object, output_path: str) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(yaml_string)
     click.echo(f"Wrote {path}")
-
-
-# ---------------------------------------------------------------------------
-# Environment helpers
-# ---------------------------------------------------------------------------
-
-
-def _require_env(name: str, hint: str) -> str:
-    raw = os.environ.get(name)
-    if not raw:
-        raise click.ClickException(f"{name} is not set. {hint}")
-    return raw
-
-
-def _require_hevy_api_key() -> UUID:
-    return UUID(
-        _require_env(
-            "HEVY_API_KEY",
-            "Get your key at https://hevy.com/settings?developer",
-        )
-    )
-
-
-def _require_rp_bearer_token() -> str:
-    return _require_env(
-        "RP_BEARER_TOKEN",
-        "Get your bearer token from the RP Strength web app network traffic.",
-    ).strip()
 
 
 # ---------------------------------------------------------------------------

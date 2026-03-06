@@ -5,14 +5,14 @@ from datetime import date, datetime
 from pathlib import Path
 
 import click
-from api_service_rp import ApiClient, Configuration, TrainingDataApi
+from api_service_rp import TrainingDataApi
 from api_service_rp.models.mesocycle import Mesocycle
 from hevy_api_service import WorkoutsApi
 from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
-from rp_to_hevy_cli.hevy import _fetch_all_workouts, _hevy_client
+from rp_to_hevy_cli.hevy import _fetch_all_workouts
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
     _parse_existing_workout_dates,
@@ -25,11 +25,13 @@ from rp_to_hevy_cli.port.workout_title_generator import (
     generate_workout_titles,
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles
-from rp_to_hevy_cli.utils import (
-    RedisCache,
-    _require_hevy_api_key,
-    _require_rp_bearer_token,
+from rp_to_hevy_cli.settings import (
+    hevy_client,
+    require_hevy_api_key,
+    require_rp_bearer_token,
+    rp_client,
 )
+from rp_to_hevy_cli.utils import RedisCache
 
 
 @click.command("port-rp-workout-to-hevy")
@@ -136,18 +138,18 @@ async def _port_rp_workout_to_hevy(
     matches = _load_matches(matches_path)
     click.echo(f"Loaded {len(matches)} exercise matches")
 
-    rp_token = _require_rp_bearer_token()
+    rp_token = require_rp_bearer_token()
     click.echo("Fetching mesocycles from RP...")
-    async with ApiClient(Configuration(access_token=rp_token)) as client:
+    async with rp_client(rp_token) as client:
         mesocycles: list[Mesocycle] = await _fetch_mesocycles(TrainingDataApi(client))
     click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
     # Phase 2: Validate
-    api_key = _require_hevy_api_key()
+    api_key = require_hevy_api_key()
 
     # Phase 3: Fetch existing Hevy workouts for dedup
     click.echo("Fetching existing Hevy workouts for dedup...")
-    async with _hevy_client() as client:
+    async with hevy_client() as client:
         workouts_api = WorkoutsApi(client)
         existing_workouts = await _fetch_all_workouts(workouts_api, api_key)
 
@@ -256,7 +258,7 @@ async def _port_rp_workout_to_hevy(
         return
 
     # Phase 6: Post / Put
-    async with _hevy_client() as client:
+    async with hevy_client() as client:
         workouts_api = WorkoutsApi(client)
 
         for workout, workout_date, day_id, hevy_id in to_import:

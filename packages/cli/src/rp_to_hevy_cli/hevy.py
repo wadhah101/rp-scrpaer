@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import asyncio
-import os
 from collections.abc import Awaitable, Callable
 from pathlib import Path
 from typing import Any
@@ -9,27 +8,20 @@ from uuid import UUID
 
 import click
 from cloudpathlib import CloudPath
-from hevy_api_service import ApiClient as HevyApiClient
-from hevy_api_service import Configuration as HevyConfiguration
 from hevy_api_service import ExerciseTemplatesApi, WorkoutsApi
-
-from rp_to_hevy_cli.utils import (
-    _require_hevy_api_key,
-    resolve_output_path,
-    write_json,
-    write_json_multi,
+from hevy_api_service.models.get_exercise_templates200_response import (
+    GetExerciseTemplates200Response,
 )
+from hevy_api_service.models.get_workouts200_response import GetWorkouts200Response
+
+from rp_to_hevy_cli.settings import hevy_client, require_hevy_api_key
+from rp_to_hevy_cli.utils import resolve_output_path, write_json, write_json_multi
 
 HEVY_EXPORT_TYPES = [
     "all",
     "exercise-templates",
     "workouts",
 ]
-
-
-def _hevy_client() -> HevyApiClient:
-    config = HevyConfiguration(host=os.environ.get("HEVY_API_BASE_URL"))
-    return HevyApiClient(config)
 
 
 async def _fetch_all_pages(
@@ -53,20 +45,22 @@ async def _fetch_all_pages(
 
 async def _fetch_all_exercise_templates(
     templates_api: ExerciseTemplatesApi, api_key: UUID
-) -> list:
+) -> list[GetExerciseTemplates200Response]:
     return await _fetch_all_pages(
         templates_api.get_exercise_templates, "exercise_templates", api_key, 100
     )
 
 
-async def _fetch_all_workouts(workouts_api: WorkoutsApi, api_key: UUID) -> list:
+async def _fetch_all_workouts(
+    workouts_api: WorkoutsApi, api_key: UUID
+) -> list[GetWorkouts200Response]:
     return await _fetch_all_pages(workouts_api.get_workouts, "workouts", api_key, 10)
 
 
 async def _hevy_export(
     api_key: UUID, export_type: str, output: Path | CloudPath
 ) -> None:
-    async with _hevy_client() as client:
+    async with hevy_client() as client:
         templates_api = ExerciseTemplatesApi(client)
         workouts_api = WorkoutsApi(client)
 
@@ -111,6 +105,6 @@ def hevy():
 )
 def hevy_export(export_type: str, output: str | None):
     """Export application data from Hevy to JSON."""
-    api_key = _require_hevy_api_key()
+    api_key = require_hevy_api_key()
     output_path = resolve_output_path(output, "hevy-export", export_type)
     asyncio.run(_hevy_export(api_key, export_type, output_path))
