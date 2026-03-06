@@ -19,8 +19,8 @@ from rp_to_hevy_cli.embedding.utils import (
     _build_chroma_client,
     _chromadb_options,
     _resolve_input,
-    _write_yaml,
 )
+from rp_to_hevy_cli.utils import _write_yaml
 
 
 @click.command("run-rp-similarity-search")

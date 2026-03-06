@@ -1,20 +1,13 @@
 from __future__ import annotations
 
 import asyncio
-import logging
 
 from api_service_rp.models.mesocycle import Mesocycle
 from pydantic import BaseModel
 from pydantic_ai import Agent
-from pydantic_ai.models.openai import OpenAIChatModel
-from pydantic_ai.providers.openai import OpenAIProvider
 
-from rp_to_hevy_cli.embedding.utils import RedisCache
 from rp_to_hevy_cli.port.models import ExerciseMatch
-
-logger = logging.getLogger(__name__)
-
-_MAX_RETRIES = 3
+from rp_to_hevy_cli.utils import RedisCache, build_openai_agent, run_agent_cached
 
 _SYSTEM_PROMPT = """\
 You are an expert personal trainer. Given a list of exercises performed in a \
@@ -41,14 +34,8 @@ def build_title_agent(
     api_key: str,
     api_model: str,
 ) -> Agent[None, WorkoutTitle]:
-    model = OpenAIChatModel(
-        api_model,
-        provider=OpenAIProvider(base_url=api_base_url, api_key=api_key),
-    )
-    return Agent(  # ty: ignore[invalid-return-type]
-        model,
-        system_prompt=_SYSTEM_PROMPT,
-        output_type=WorkoutTitle,
+    return build_openai_agent(  # ty: ignore[invalid-return-type]
+        api_base_url, api_key, api_model, _SYSTEM_PROMPT, WorkoutTitle
     )
 
 
@@ -60,51 +47,23 @@ async def _generate_title_for_day(
     cache: RedisCache | None = None,
 ) -> str:
     user_prompt = "Exercises:\n" + "\n".join(f"- {name}" for name in exercise_names)
-
-    # Deduplicate by sorting names for cache key
     cache_key = "Exercises:\n" + "\n".join(
         f"- {name}" for name in sorted(exercise_names)
     )
 
-    if cache is not None:
-        cached = await cache.get(cache_key)
-        if cached is not None:
-            print(f"Cache hit for {cache_key}")
-            return WorkoutTitle.model_validate_json(cached).title
-
-    async with sem:
-        for attempt in range(_MAX_RETRIES):
-            try:
-                result = await asyncio.wait_for(agent.run(user_prompt), timeout=timeout)
-                title = result.output.title
-                break
-            except TimeoutError:
-                logger.warning(
-                    "Timeout generating title (attempt %d/%d)",
-                    attempt + 1,
-                    _MAX_RETRIES,
-                )
-                if attempt < _MAX_RETRIES - 1:
-                    continue
-                return "Workout"
-            except Exception as exc:
-                logger.warning(
-                    "Failed generating title (attempt %d/%d): %s",
-                    attempt + 1,
-                    _MAX_RETRIES,
-                    exc,
-                )
-                if attempt < _MAX_RETRIES - 1:
-                    await asyncio.sleep(2**attempt)
-                    continue
-                return "Workout"
-        else:
-            return "Workout"
-
-    if cache is not None:
-        await cache.set(cache_key, result.output.model_dump_json())
-
-    return title
+    result = await run_agent_cached(
+        agent,  # ty: ignore[invalid-argument-type]
+        user_prompt,
+        sem,
+        timeout,
+        cache=cache,
+        cache_key=cache_key,
+        output_type=WorkoutTitle,
+    )
+    if result is None:
+        return "Workout"
+    title: WorkoutTitle = result  # ty: ignore[invalid-assignment]
+    return title.title
 
 
 async def generate_workout_titles(

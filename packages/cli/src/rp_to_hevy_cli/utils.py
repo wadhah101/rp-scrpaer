@@ -1,40 +1,94 @@
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import io
 import json
+import logging
 import os
 from pathlib import Path
+from typing import Any, cast
 from uuid import UUID
 
 import click
-from cloudpathlib import AzureBlobPath, CloudPath, GSPath, S3Path
+import redis.asyncio as aioredis
+from cloudpathlib import AnyPath, AzureBlobPath, CloudPath, GSPath, S3Path
+from pydantic import BaseModel
+from pydantic_ai import Agent
+from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.providers.openai import OpenAIProvider
+from ruamel.yaml import YAML
+
+logger = logging.getLogger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# YAML
+# ---------------------------------------------------------------------------
+
+yaml = YAML()
+yaml.width = 4096
+yaml.indent(mapping=2, sequence=4, offset=2)
+
+
+def _string_representer(representer: Any, data: str) -> Any:
+    if data.isdigit():
+        return representer.represent_scalar("tag:yaml.org,2002:str", data, style='"')
+    return representer.represent_scalar("tag:yaml.org,2002:str", data)
+
+
+yaml.representer.add_representer(str, _string_representer)
+
+
+def _write_yaml(data: object, output_path: str) -> None:
+    string_stream = io.StringIO()
+    yaml.dump(data, string_stream)
+    yaml_string = string_stream.getvalue()
+
+    path: Path | CloudPath = AnyPath(output_path)  # type: ignore[assignment]
+    if isinstance(path, CloudPath):
+        path.write_text(yaml_string)
+    else:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(yaml_string)
+    click.echo(f"Wrote {path}")
+
+
+# ---------------------------------------------------------------------------
+# Environment helpers
+# ---------------------------------------------------------------------------
+
+
+def _require_env(name: str, hint: str) -> str:
+    raw = os.environ.get(name)
+    if not raw:
+        raise click.ClickException(f"{name} is not set. {hint}")
+    return raw
 
 
 def _require_hevy_api_key() -> UUID:
-    raw = os.environ.get("HEVY_API_KEY")
-    if not raw:
-        raise click.ClickException(
-            "HEVY_API_KEY environment variable is not set. "
-            "Get your key at https://hevy.com/settings?developer"
+    return UUID(
+        _require_env(
+            "HEVY_API_KEY",
+            "Get your key at https://hevy.com/settings?developer",
         )
-    return UUID(raw)
+    )
 
 
 def _require_rp_bearer_token() -> str:
-    raw = os.environ.get("RP_BEARER_TOKEN")
-    if not raw:
-        raise click.ClickException(
-            "RP_BEARER_TOKEN environment variable is not set. "
-            "Get your bearer token from the RP Strength web app network traffic."
-        )
-    return raw.strip()
+    return _require_env(
+        "RP_BEARER_TOKEN",
+        "Get your bearer token from the RP Strength web app network traffic.",
+    ).strip()
+
+
+# ---------------------------------------------------------------------------
+# JSON I/O
+# ---------------------------------------------------------------------------
 
 
 def _serialize(obj: object) -> object:
     from datetime import datetime
-
-    from pydantic import BaseModel
 
     if isinstance(obj, BaseModel):
         return obj.model_dump(mode="json", by_alias=True)
@@ -70,3 +124,126 @@ def write_json(data: object, output: Path | CloudPath) -> None:
 
     output.write_bytes(data_to_write)
     click.echo(f"Wrote {output}")
+
+
+def write_json_multi(data: dict, output: Path | CloudPath) -> None:
+    if output.suffix == ".json":
+        write_json(data, output)
+    else:
+        if isinstance(output, Path):
+            output.mkdir(parents=True, exist_ok=True)
+        for key, value in data.items():
+            write_json(value, output / f"{key}.json")
+
+
+def resolve_output_path(
+    output: str | None, default_dir: str, export_type: str
+) -> Path | CloudPath:
+    if output is None:
+        return cast(
+            "Path | CloudPath",
+            AnyPath(default_dir if export_type == "all" else f"{export_type}.json"),
+        )
+    return cast("Path | CloudPath", AnyPath(output))
+
+
+# ---------------------------------------------------------------------------
+# Redis cache
+# ---------------------------------------------------------------------------
+
+
+class RedisCache:
+    """Async Redis hash cache keyed by SHA-256 of a prompt string."""
+
+    __slots__ = ("_client", "_hash_key")
+
+    def __init__(self, client: aioredis.Redis, hash_key: str) -> None:
+        self._client = client
+        self._hash_key = hash_key
+
+    @staticmethod
+    def field(prompt: str) -> str:
+        return hashlib.sha256(prompt.encode()).hexdigest()
+
+    async def get(self, prompt: str) -> str | None:
+        return await self._client.hget(self._hash_key, self.field(prompt))  # ty: ignore[invalid-await]
+
+    async def set(self, prompt: str, value: str) -> None:
+        await self._client.hset(self._hash_key, self.field(prompt), value)  # ty: ignore[invalid-await]
+
+    async def close(self) -> None:
+        await self._client.aclose()
+
+    @classmethod
+    def from_url(cls, redis_url: str, hash_key: str) -> RedisCache:
+        client = aioredis.from_url(redis_url, decode_responses=True)
+        return cls(client, hash_key)
+
+
+# ---------------------------------------------------------------------------
+# LLM agent helpers
+# ---------------------------------------------------------------------------
+
+
+def build_openai_agent(
+    api_base_url: str,
+    api_key: str,
+    api_model: str,
+    system_prompt: str,
+    output_type: type[BaseModel],
+) -> Agent:
+    model = OpenAIChatModel(
+        api_model,
+        provider=OpenAIProvider(base_url=api_base_url, api_key=api_key),
+    )
+    return Agent(
+        model,
+        system_prompt=system_prompt,
+        output_type=output_type,
+    )
+
+
+async def run_agent_cached(
+    agent: Agent,
+    user_prompt: str,
+    sem: asyncio.Semaphore,
+    timeout: float,
+    max_retries: int = 3,
+    cache: RedisCache | None = None,
+    cache_key: str | None = None,
+    output_type: type[BaseModel] | None = None,
+) -> BaseModel | None:
+    """Run an agent with semaphore, retries, timeout, and optional cache."""
+    key = cache_key or user_prompt
+
+    if cache is not None and output_type is not None:
+        cached_raw = await cache.get(key)
+        if cached_raw is not None:
+            return output_type.model_validate_json(cached_raw)
+
+    async with sem:
+        for attempt in range(max_retries):
+            try:
+                result = await asyncio.wait_for(agent.run(user_prompt), timeout=timeout)
+                output = result.output
+                break
+            except TimeoutError:
+                logger.warning("Timeout (attempt %d/%d)", attempt + 1, max_retries)
+                if attempt < max_retries - 1:
+                    continue
+                return None
+            except Exception as exc:
+                logger.warning(
+                    "Failed (attempt %d/%d): %s", attempt + 1, max_retries, exc
+                )
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(2**attempt)
+                    continue
+                return None
+        else:
+            return None
+
+    if cache is not None:
+        await cache.set(key, output.model_dump_json())  # ty: ignore[unresolved-attribute]
+
+    return output  # ty: ignore[invalid-return-type]

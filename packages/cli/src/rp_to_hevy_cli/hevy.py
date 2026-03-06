@@ -4,16 +4,21 @@ import asyncio
 import os
 from collections.abc import Awaitable, Callable
 from pathlib import Path
-from typing import Any, cast
+from typing import Any
 from uuid import UUID
 
 import click
-from cloudpathlib import AnyPath, CloudPath
+from cloudpathlib import CloudPath
 from hevy_api_service import ApiClient as HevyApiClient
 from hevy_api_service import Configuration as HevyConfiguration
 from hevy_api_service import ExerciseTemplatesApi, WorkoutsApi
 
-from rp_to_hevy_cli.utils import _require_hevy_api_key, write_json
+from rp_to_hevy_cli.utils import (
+    _require_hevy_api_key,
+    resolve_output_path,
+    write_json,
+    write_json_multi,
+)
 
 HEVY_EXPORT_TYPES = [
     "all",
@@ -65,32 +70,24 @@ async def _hevy_export(
         templates_api = ExerciseTemplatesApi(client)
         workouts_api = WorkoutsApi(client)
 
-        if export_type == "exercise-templates":
-            data = await _fetch_all_exercise_templates(templates_api, api_key)
-            write_json(data, output)
+        if export_type != "all":
+            fetchers = {
+                "exercise-templates": lambda: _fetch_all_exercise_templates(
+                    templates_api, api_key
+                ),
+                "workouts": lambda: _fetch_all_workouts(workouts_api, api_key),
+            }
+            write_json(await fetchers[export_type](), output)
             return
 
-        if export_type == "workouts":
-            data = await _fetch_all_workouts(workouts_api, api_key)
-            write_json(data, output)
-            return
-
-        # all
         templates, workouts = await asyncio.gather(
             _fetch_all_exercise_templates(templates_api, api_key),
             _fetch_all_workouts(workouts_api, api_key),
         )
-        data = {
-            "exercise_templates": templates,
-            "workouts": workouts,
-        }
-        if output.suffix == ".json":
-            write_json(data, output)
-        else:
-            if isinstance(output, Path):
-                output.mkdir(parents=True, exist_ok=True)
-            for name, value in data.items():
-                write_json(value, output / f"{name}.json")
+        write_json_multi(
+            {"exercise_templates": templates, "workouts": workouts},
+            output,
+        )
 
 
 @click.group()
@@ -115,13 +112,5 @@ def hevy():
 def hevy_export(export_type: str, output: str | None):
     """Export application data from Hevy to JSON."""
     api_key = _require_hevy_api_key()
-
-    if output is None:
-        output_path = cast(
-            "Path | CloudPath",
-            AnyPath("hevy-export" if export_type == "all" else f"{export_type}.json"),
-        )
-    else:
-        output_path = cast("Path | CloudPath", AnyPath(output))
-
+    output_path = resolve_output_path(output, "hevy-export", export_type)
     asyncio.run(_hevy_export(api_key, export_type, output_path))

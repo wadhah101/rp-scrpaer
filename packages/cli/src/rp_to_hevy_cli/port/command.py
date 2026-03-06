@@ -11,7 +11,6 @@ from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
-from rp_to_hevy_cli.embedding.utils import RedisCache
 from rp_to_hevy_cli.hevy import _fetch_all_workouts, _hevy_client
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
@@ -25,7 +24,11 @@ from rp_to_hevy_cli.port.workout_title_generator import (
     generate_workout_titles,
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles_by_token
-from rp_to_hevy_cli.utils import _require_hevy_api_key, _require_rp_bearer_token
+from rp_to_hevy_cli.utils import (
+    RedisCache,
+    _require_hevy_api_key,
+    _require_rp_bearer_token,
+)
 
 
 @click.command("port-rp-workout-to-hevy")

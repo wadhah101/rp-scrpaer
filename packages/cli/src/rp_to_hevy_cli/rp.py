@@ -2,14 +2,18 @@ from __future__ import annotations
 
 import asyncio
 from pathlib import Path
-from typing import cast
 
 import click
 from api_service_rp import ApiClient, Configuration, TrainingDataApi, UserApi
 from api_service_rp.models.mesocycle import Mesocycle
-from cloudpathlib import AnyPath, CloudPath
+from cloudpathlib import CloudPath
 
-from rp_to_hevy_cli.utils import _require_rp_bearer_token, write_json
+from rp_to_hevy_cli.utils import (
+    _require_rp_bearer_token,
+    resolve_output_path,
+    write_json,
+    write_json_multi,
+)
 
 EXPORT_TYPES = [
     "all",
@@ -74,13 +78,7 @@ async def _export(token: str, export_type: str, output: Path | CloudPath) -> Non
 
         if export_type == "all":
             data = await _fetch_all(user_api, training_api)
-            if output.suffix == ".json":
-                write_json(data, output)
-            else:
-                if isinstance(output, Path):
-                    output.mkdir(parents=True, exist_ok=True)
-                for key, value in data.items():
-                    write_json(value, output / f"{key}.json")
+            write_json_multi(data, output)
             return
 
         fetchers = {
@@ -116,13 +114,5 @@ def rp():
 def export(export_type: str, output: str | None):
     """Export personal data from RP Hypertrophy to JSON."""
     token = _require_rp_bearer_token()
-
-    if output is None:
-        output_path = cast(
-            "Path | CloudPath",
-            AnyPath("export" if export_type == "all" else f"{export_type}.json"),
-        )
-    else:
-        output_path = cast("Path | CloudPath", AnyPath(output))
-
+    output_path = resolve_output_path(output, "export", export_type)
     asyncio.run(_export(token, export_type, output_path))
