@@ -5,6 +5,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 import click
+from api_service_rp import ApiClient, Configuration, TrainingDataApi
 from api_service_rp.models.mesocycle import Mesocycle
 from hevy_api_service import WorkoutsApi
 from hevy_api_service.models import (
@@ -23,7 +24,7 @@ from rp_to_hevy_cli.port.workout_title_generator import (
     build_title_agent,
     generate_workout_titles,
 )
-from rp_to_hevy_cli.rp import _fetch_mesocycles_by_token
+from rp_to_hevy_cli.rp import _fetch_mesocycles
 from rp_to_hevy_cli.utils import (
     RedisCache,
     _require_hevy_api_key,
@@ -137,7 +138,8 @@ async def _port_rp_workout_to_hevy(
 
     rp_token = _require_rp_bearer_token()
     click.echo("Fetching mesocycles from RP...")
-    mesocycles: list[Mesocycle] = await _fetch_mesocycles_by_token(rp_token)
+    async with ApiClient(Configuration(access_token=rp_token)) as client:
+        mesocycles: list[Mesocycle] = await _fetch_mesocycles(TrainingDataApi(client))
     click.echo(f"Fetched {len(mesocycles)} mesocycles")
 
     # Phase 2: Validate
