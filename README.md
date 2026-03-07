@@ -238,15 +238,6 @@ The project runs on Google Cloud Platform with Terraform-managed infrastructure.
 
 Both jobs run on Cloud Run Gen2 with Secret Manager integration for API keys (Hevy, RP, OpenRouter, Turso). A Cloud Scheduler trigger fires the export job daily at midnight CET.
 
-### GCP services used
-
-| Service | Purpose |
-| --- | --- |
-| Cloud Run Jobs | Containerized job execution |
-| Cloud Scheduler | Cron trigger for nightly exports |
-| Secret Manager | API keys and tokens |
-| Cloud Storage (GCS) | Export data + Terraform state |
-
 ### Deploying
 
 Prerequisites: [Terraform](https://www.terraform.io/) >= 1.5 and a GCP project with billing enabled.
