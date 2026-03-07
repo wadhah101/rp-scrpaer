@@ -130,15 +130,18 @@ def encode_and_store(
     embeddings = embedder.encode(docs, prompt=prompt)
     logger.debug("Embeddings shape: %s, dtype: %s", embeddings.shape, embeddings.dtype)
 
-    add_kwargs: dict[str, Any] = {
-        "ids": ids,
-        "embeddings": embeddings.tolist(),
-        "documents": docs,
-    }
-    if metadatas is not None:
-        add_kwargs["metadatas"] = metadatas
+    BATCH_SIZE = 300
+    emb_list = embeddings.tolist()
+    for i in range(0, len(ids), BATCH_SIZE):
+        batch: dict[str, Any] = {
+            "ids": ids[i : i + BATCH_SIZE],
+            "embeddings": emb_list[i : i + BATCH_SIZE],
+            "documents": docs[i : i + BATCH_SIZE],
+        }
+        if metadatas is not None:
+            batch["metadatas"] = metadatas[i : i + BATCH_SIZE]
+        collection.upsert(**batch)
 
-    collection.upsert(**add_kwargs)
     logger.info(
         "Stored %d embeddings, collection count: %d", len(ids), collection.count()
     )

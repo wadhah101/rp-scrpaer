@@ -33,6 +33,22 @@ env = { BUCKET_NAME = { required = true } }
 run = "uv run python -m rp_to_hevy_cli rp export --type all --output s3://$BUCKET_NAME/exports/exercises/rp-exercises.json"
 
 
+[tasks.embd]
+description = "Embed exercises into ChromaDB"
+run = """
+uv run python -m rp_to_hevy_cli embedding embd \
+  --api-base-url "https://openrouter.ai/api/v1" \
+  --api-key "$OPENROUTER_API_KEY" \
+  --api-model "qwen/qwen3-embedding-8b" \
+  --api-batch-size "1000" \
+  --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
+  --hevy-path "$MONOREPO_ROOT/packages/cli/exports/hevy/exercises.json" \
+  --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json"
+"""
+
+[tasks.embd.env]
+OPENROUTER_API_KEY = { required = true }
+
 [tasks.run-rp-similarity-search]
 description = "Run similarity search on embedded exercises"
 run = """
