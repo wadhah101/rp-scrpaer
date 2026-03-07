@@ -15,13 +15,11 @@ from rp_to_hevy_cli.embedding.judge_core import (
     _Counter,
     _judge_one,
 )
+from rp_to_hevy_cli.settings import judge_llm_config
 from rp_to_hevy_cli.utils import _write_yaml, yaml
 
 
 async def _run(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
     sample_size: int | None,
     input_dir: str,
     output: str,
@@ -45,6 +43,7 @@ async def _run(
     exercises = [yaml.load(f.read_text()) for f in files]
     total = len(exercises)
 
+    api_base_url, api_key, api_model = judge_llm_config()
     model = OpenAIChatModel(
         api_model, provider=OpenAIProvider(base_url=api_base_url, api_key=api_key)
     )
@@ -77,13 +76,6 @@ async def _run(
 
 
 @click.command("llm-judge")
-@click.option(
-    "--api-base-url",
-    required=True,
-    help="OpenAI-compatible API base URL.",
-)
-@click.option("--api-key", required=True, help="API key.")
-@click.option("--api-model", required=True, help="Model name.")
 @click.option(
     "--sample-size",
     type=int,
@@ -124,9 +116,6 @@ async def _run(
     help="Cache database URL.",
 )
 def llm_judge(
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
     sample_size: int | None,
     concurrency: int,
     input_dir: str,
@@ -138,9 +127,6 @@ def llm_judge(
     """Use an LLM to pick the best Hevy match for each RP exercise."""
     asyncio.run(
         _run(
-            api_base_url,
-            api_key,
-            api_model,
             sample_size,
             input_dir,
             output,

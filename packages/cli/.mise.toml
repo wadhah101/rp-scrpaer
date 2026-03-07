@@ -37,17 +37,15 @@ run = "uv run python -m rp_to_hevy_cli rp export --type all --output s3://$BUCKE
 description = "Embed exercises into ChromaDB"
 run = """
 uv run python -m rp_to_hevy_cli embedding embd \
-  --api-base-url "https://openrouter.ai/api/v1" \
-  --api-key "$OPENROUTER_API_KEY" \
-  --api-model "qwen/qwen3-embedding-8b" \
-  --api-batch-size "1000" \
   --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
   --hevy-path "$MONOREPO_ROOT/packages/cli/exports/hevy/exercises.json" \
   --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json"
 """
 
 [tasks.embd.env]
-OPENROUTER_API_KEY = { required = true }
+EMBEDDING_API_BASE_URL = "https://openrouter.ai/api/v1"
+EMBEDDING_API_KEY = "{{env.OPENROUTER_API_KEY}}"
+EMBEDDING_API_MODEL = "qwen/qwen3-embedding-8b"
 
 [tasks.run-rp-similarity-search]
 description = "Run similarity search on embedded exercises"
@@ -65,17 +63,15 @@ uv run python -m rp_to_hevy_cli embedding run-rp-similarity-search \
 description = "Use LLM to pick the best Hevy match for each RP exercise"
 run = """
 uv run python -m rp_to_hevy_cli embedding llm-judge \
-  --api-base-url "https://openrouter.ai/api/v1" \
-  --api-key "$OPENROUTER_API_KEY" \
-  --api-model "google/gemini-3.1-pro-preview" \
   --input-dir "$MONOREPO_ROOT/data/embeddings/output" \
   --output "$MONOREPO_ROOT/data/embeddings/llm-matches.yaml" \
-  --concurrency "50" \
-  # --strict
+  --concurrency "50"
 """
 
 [tasks.llm-judge.env]
-OPENROUTER_API_KEY = { required = true }
+JUDGE_API_BASE_URL = "https://openrouter.ai/api/v1"
+JUDGE_API_KEY = "{{env.OPENROUTER_API_KEY}}"
+JUDGE_API_MODEL = "google/gemini-3.1-pro-preview"
 
 [tasks.port-rp-workout-to-hevy]
 description = "Port RP workout data to Hevy format"

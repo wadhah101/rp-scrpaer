@@ -32,23 +32,6 @@ def _data_options(f):
     return wrapper
 
 
-def _embedder_options(f):
-    @click.option("--api-base-url", required=True, help="API base URL.")
-    @click.option("--api-key", required=True, help="API key.")
-    @click.option("--api-model", required=True, help="API model name.")
-    @click.option(
-        "--api-dimensions", type=int, default=None, help="API embedding dimensions."
-    )
-    @click.option(
-        "--api-max-rpm", type=int, default=60, help="API max requests per minute."
-    )
-    @click.option("--api-batch-size", type=int, default=100, help="API batch size.")
-    @functools.wraps(f)
-    def wrapper(*args, **kwargs):
-        return f(*args, **kwargs)
-
-    return wrapper
-
 
 
 def _resolve_input(path_str: str) -> str:

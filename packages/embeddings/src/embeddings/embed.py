@@ -3,7 +3,6 @@ from __future__ import annotations
 import logging
 import os
 import statistics
-import time
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Any, Protocol, runtime_checkable
@@ -41,7 +40,6 @@ def create_local_embedder(model_name: str, device: str | None = None) -> LocalEm
 
 @dataclass
 class RateLimitConfig:
-    max_requests_per_minute: int = 60
     batch_size: int = 100
 
 
@@ -63,22 +61,6 @@ class ApiEmbedder(Embedder):
         self._model = model
         self._dimensions = dimensions
         self._rate_limit = rate_limit or RateLimitConfig()
-        self._request_timestamps: list[float] = []
-
-    # -- rate limiting helpers ------------------------------------------------
-
-    def _wait_if_needed(self) -> None:
-        now = time.monotonic()
-        window = 60.0
-        self._request_timestamps = [
-            t for t in self._request_timestamps if now - t < window
-        ]
-        if len(self._request_timestamps) >= self._rate_limit.max_requests_per_minute:
-            sleep_for = window - (now - self._request_timestamps[0])
-            if sleep_for > 0:
-                logger.debug("Rate-limit: sleeping %.2fs", sleep_for)
-                time.sleep(sleep_for)
-        self._request_timestamps.append(time.monotonic())
 
     def encode(self, texts: list[str], *, prompt: str = "") -> np.ndarray:
         if prompt:
@@ -89,8 +71,6 @@ class ApiEmbedder(Embedder):
 
         for i in range(0, len(texts), batch_size):
             batch = texts[i : i + batch_size]
-            self._wait_if_needed()
-
             kwargs: dict[str, Any] = {"input": batch, "model": self._model}
             if self._dimensions is not None:
                 kwargs["dimensions"] = self._dimensions

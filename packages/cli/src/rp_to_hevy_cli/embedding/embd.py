@@ -14,17 +14,12 @@ from embeddings import (
     prepare_rp_exercises,
 )
 
-from rp_to_hevy_cli.embedding.utils import (
-    _data_options,
-    _embedder_options,
-    _resolve_input,
-)
-from rp_to_hevy_cli.settings import chroma_config
+from rp_to_hevy_cli.embedding.utils import _data_options, _resolve_input
+from rp_to_hevy_cli.settings import chroma_config, embedding_api_config
 
 
 @click.command()
 @_data_options
-@_embedder_options
 @click.option("--rp-prompt", default="", help="Prompt prepended to RP exercise texts.")
 @click.option(
     "--hevy-prompt", default="", help="Prompt prepended to Hevy exercise texts."
@@ -33,25 +28,17 @@ def embd(
     rp_path: str,
     hevy_path: str,
     mappings_path: str,
-    api_base_url: str,
-    api_key: str,
-    api_model: str,
-    api_dimensions: int | None,
-    api_max_rpm: int,
-    api_batch_size: int,
     rp_prompt: str,
     hevy_prompt: str,
 ):
     """Embed exercises into ChromaDB."""
+    base_url, api_key, model, dimensions, batch_size = embedding_api_config()
     embedder = ApiEmbedder(
-        base_url=api_base_url,
+        base_url=base_url,
         api_key=api_key,
-        model=api_model,
-        dimensions=api_dimensions,
-        rate_limit=RateLimitConfig(
-            max_requests_per_minute=api_max_rpm,
-            batch_size=api_batch_size,
-        ),
+        model=model,
+        dimensions=dimensions,
+        rate_limit=RateLimitConfig(batch_size=batch_size),
     )
 
     rp_raw = load_rp_exercises(_resolve_input(rp_path))
