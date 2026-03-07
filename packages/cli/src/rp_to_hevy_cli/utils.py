@@ -117,15 +117,15 @@ class _Base(DeclarativeBase):
     pass
 
 
-class _CacheEntry(_Base):
+class _CacheEntry(DeclarativeBase):
     __tablename__ = "cache_entries"
-    namespace = Column(String, primary_key=True)
+    namespace = Column(String(256), primary_key=True)
     field_hash = Column(String(64), primary_key=True)
-    value = Column(Text, nullable=False)
+    value = Column(Text(1024), nullable=False)
 
 
 class LLMCache:
-    """Async LLM response cache backed by SQLAlchemy + libSQL."""
+    """LLM response cache backed by SQLAlchemy + libSQL."""
 
     __slots__ = ("_engine", "_namespace")
 
@@ -133,26 +133,20 @@ class LLMCache:
         self._engine = engine
         self._namespace = namespace
 
-    @staticmethod
-    def field(prompt: str) -> str:
-        return hashlib.sha256(prompt.encode()).hexdigest()
-
-    async def get(self, prompt: str) -> str | None:
+    def get(self, prompt: str) -> str | None:
+        fh = hashlib.sha256(prompt.encode()).hexdigest()
         with Session(self._engine) as session:
-            row = session.get(_CacheEntry, (self._namespace, self.field(prompt)))
+            row = session.get(_CacheEntry, (self._namespace, fh))
             return str(row.value) if row else None
 
-    async def set(self, prompt: str, value: str) -> None:
+    def set(self, prompt: str, value: str) -> None:
         from sqlalchemy.dialects.sqlite import insert
 
+        fh = hashlib.sha256(prompt.encode()).hexdigest()
         with Session(self._engine) as session:
             stmt = (
                 insert(_CacheEntry)
-                .values(
-                    namespace=self._namespace,
-                    field_hash=self.field(prompt),
-                    value=value,
-                )
+                .values(namespace=self._namespace, field_hash=fh, value=value)
                 .on_conflict_do_update(
                     index_elements=["namespace", "field_hash"],
                     set_={"value": value},
@@ -161,7 +155,7 @@ class LLMCache:
             session.execute(stmt)
             session.commit()
 
-    async def close(self) -> None:
+    def close(self) -> None:
         self._engine.dispose()
 
     @classmethod
@@ -211,7 +205,7 @@ async def run_agent_cached[T: BaseModel](
     key = cache_key or user_prompt
 
     if cache is not None and output_type is not None:
-        cached_raw = await cache.get(key)
+        cached_raw = cache.get(key)
         if cached_raw is not None:
             return output_type.model_validate_json(cached_raw)
 
@@ -238,6 +232,6 @@ async def run_agent_cached[T: BaseModel](
             return None
 
     if cache is not None:
-        await cache.set(key, output.model_dump_json())
+        cache.set(key, output.model_dump_json())
 
     return output
