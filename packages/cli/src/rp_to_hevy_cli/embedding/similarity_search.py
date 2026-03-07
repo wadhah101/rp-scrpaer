@@ -6,7 +6,6 @@ from pathlib import Path
 import click
 import numpy as np
 from embeddings import (
-    ClientMode,
     build_match_results,
     compute_metrics,
     create_client,
@@ -60,8 +59,6 @@ from rp_to_hevy_cli.utils import _write_yaml
     help="Directory containing ground truth YAML files.",
 )
 def run_rp_similarity_search(
-    chroma_mode: str,
-    chroma_path: str,
     chroma_host: str,
     chroma_port: int,
     n_results: int,
@@ -75,12 +72,7 @@ def run_rp_similarity_search(
     ground_truths_dir: str,
 ):
     """Run similarity search on already-embedded exercises in ChromaDB."""
-    client = create_client(
-        mode=ClientMode(chroma_mode),
-        path=chroma_path,
-        host=chroma_host,
-        port=chroma_port,
-    )
+    client = create_client(host=chroma_host, port=chroma_port)
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 

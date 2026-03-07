@@ -1,4 +1,4 @@
-from embeddings.db import ClientMode, create_client, create_collection
+from embeddings.db import create_client, create_collection
 from embeddings.df import (
     load_hevy_exercises,
     load_muscle_group_mappings,
@@ -28,7 +28,6 @@ from embeddings.schemas import (
 
 __all__ = [
     "ApiEmbedder",
-    "ClientMode",
     "Embedder",
     "LocalEmbedder",
     "MuscleGroupMapping",

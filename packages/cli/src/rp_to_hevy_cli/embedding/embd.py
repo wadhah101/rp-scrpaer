@@ -3,7 +3,6 @@ from __future__ import annotations
 import click
 from embeddings import (
     ApiEmbedder,
-    ClientMode,
     RateLimitConfig,
     create_client,
     create_collection,
@@ -41,8 +40,6 @@ def embd(
     api_dimensions: int | None,
     api_max_rpm: int,
     api_batch_size: int,
-    chroma_mode: str,
-    chroma_path: str,
     chroma_host: str,
     chroma_port: int,
     rp_prompt: str,
@@ -67,12 +64,7 @@ def embd(
     rp_df = prepare_rp_exercises(rp_raw, mappings)
     hevy_df = prepare_hevy_exercises(hevy_raw)
 
-    client = create_client(
-        mode=ClientMode(chroma_mode),
-        path=chroma_path,
-        host=chroma_host,
-        port=chroma_port,
-    )
+    client = create_client(host=chroma_host, port=chroma_port)
     hevy_collection = create_collection(client, "hevy_exercises")
     rp_collection = create_collection(client, "rp_exercises")
 
@@ -103,5 +95,5 @@ def embd(
 
     click.echo(
         f"Embedded {len(hevy_docs)} Hevy and {len(rp_docs)} RP exercises "
-        f"into ChromaDB ({chroma_mode})."
+        f"into ChromaDB ({chroma_host}:{chroma_port})."
     )

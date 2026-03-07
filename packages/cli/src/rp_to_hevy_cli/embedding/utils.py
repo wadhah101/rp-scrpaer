@@ -51,18 +51,9 @@ def _embedder_options(f):
 
 
 def _chromadb_options(f):
+    @click.option("--chroma-host", default="localhost", help="ChromaDB server host.")
     @click.option(
-        "--chroma-mode",
-        type=click.Choice(["memory", "persistent", "http"], case_sensitive=False),
-        default="persistent",
-        help="ChromaDB client mode.",
-    )
-    @click.option(
-        "--chroma-path", default="./chroma_data", help="Path for persistent ChromaDB."
-    )
-    @click.option("--chroma-host", default="localhost", help="Host for HTTP ChromaDB.")
-    @click.option(
-        "--chroma-port", type=int, default=8000, help="Port for HTTP ChromaDB."
+        "--chroma-port", type=int, default=8000, help="ChromaDB server port."
     )
     @functools.wraps(f)
     def wrapper(*args, **kwargs):

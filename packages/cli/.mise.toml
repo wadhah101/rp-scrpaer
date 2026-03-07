@@ -37,7 +37,6 @@ run = "uv run python -m rp_to_hevy_cli rp export --type all --output s3://$BUCKE
 description = "Run similarity search on embedded exercises"
 run = """
 uv run python -m rp_to_hevy_cli embedding run-rp-similarity-search \
-  --chroma-mode persistent \
   --exercise-output-dir "$MONOREPO_ROOT/data/embeddings/output" \
   --rp-path "$MONOREPO_ROOT/packages/cli/exports/rp/exercises.json" \
   --mappings-path "$MONOREPO_ROOT/data/muscle_group_mapping.json" \
