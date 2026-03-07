@@ -6,8 +6,9 @@ from api_service_rp.models.mesocycle import Mesocycle
 from pydantic import BaseModel
 from pydantic_ai import Agent
 
+from rp_to_hevy_cli.agent import run_agent_cached
+from rp_to_hevy_cli.cache import LLMCache
 from rp_to_hevy_cli.port.models import ExerciseMatch
-from rp_to_hevy_cli.utils import LLMCache, run_agent_cached
 
 _SYSTEM_PROMPT = """\
 You are an expert personal trainer. Given a list of exercises performed in a \

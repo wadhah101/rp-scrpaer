@@ -5,13 +5,15 @@ from pathlib import Path
 
 import click
 
+from rp_to_hevy_cli.agent import build_openai_agent
+from rp_to_hevy_cli.cache import LLMCache
 from rp_to_hevy_cli.embedding.judge_core import (
     _SYSTEM_PROMPT,
     JudgeResult,
     _Counter,
     _judge_one,
 )
-from rp_to_hevy_cli.utils import LLMCache, _write_yaml, build_openai_agent, yaml
+from rp_to_hevy_cli.utils import _write_yaml, yaml
 
 
 async def _run(

@@ -8,10 +8,6 @@ import tempfile
 import click
 from cloudpathlib import AnyPath, CloudPath
 
-# ---------------------------------------------------------------------------
-# Shared option decorators
-# ---------------------------------------------------------------------------
-
 
 def _data_options(f):
     @click.option(
