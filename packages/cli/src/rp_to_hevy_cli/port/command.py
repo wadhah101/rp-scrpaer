@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 from datetime import date, datetime
 from pathlib import Path
+from typing import cast
 
 import click
 from api_service_rp import TrainingDataApi
@@ -171,8 +172,13 @@ async def _port_rp_workout_to_hevy(
         title_api_model,
         provider=OpenAIProvider(base_url=title_api_base_url, api_key=title_api_key),
     )
-    title_agent = Agent(
-        title_model, system_prompt=_TITLE_SYSTEM_PROMPT, output_type=WorkoutTitle
+    title_agent = cast(
+        Agent[None, WorkoutTitle],
+        Agent(
+            title_model,
+            system_prompt=_TITLE_SYSTEM_PROMPT,
+            output_type=WorkoutTitle,
+        ),
     )
     sem = asyncio.Semaphore(title_concurrency)
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 from pathlib import Path
+from typing import cast
 
 import click
 from pydantic_ai import Agent
@@ -47,7 +48,10 @@ async def _run(
     model = OpenAIChatModel(
         api_model, provider=OpenAIProvider(base_url=api_base_url, api_key=api_key)
     )
-    agent = Agent(model, system_prompt=_SYSTEM_PROMPT, output_type=JudgeResult)
+    agent = cast(
+        Agent[None, JudgeResult],
+        Agent(model, system_prompt=_SYSTEM_PROMPT, output_type=JudgeResult),
+    )
     sem = asyncio.Semaphore(concurrency)
     cache = LLMCache.from_url(cache_url, f"llm-judge:{api_model}")
 
