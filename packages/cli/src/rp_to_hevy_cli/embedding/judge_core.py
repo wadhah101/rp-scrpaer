@@ -1,14 +1,15 @@
 from __future__ import annotations
 
 import asyncio
+import enum
 import sys
-from enum import Enum
 
 import click
 from pydantic import BaseModel
 from pydantic_ai import Agent
 
-from rp_to_hevy_cli.utils import LLMCache, run_agent_cached
+from rp_to_hevy_cli.agent import run_agent_cached
+from rp_to_hevy_cli.cache import LLMCache
 
 _SYSTEM_PROMPT = """\
 You are an expert in resistance training and exercise science.
@@ -27,7 +28,7 @@ Rules:
 _MAX_RETRIES = 10
 
 
-class Confidence(str, Enum):
+class Confidence(enum.StrEnum):
     high = "high"
     medium = "medium"
     low = "low"

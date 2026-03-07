@@ -12,6 +12,8 @@ from hevy_api_service.models import (
     PostWorkoutsRequestBody as HevyPostWorkoutsRequestBody,
 )
 
+from rp_to_hevy_cli.agent import build_openai_agent
+from rp_to_hevy_cli.cache import LLMCache
 from rp_to_hevy_cli.hevy import _fetch_all_pages
 from rp_to_hevy_cli.port.models import DEFAULT_MATCHES_PATH, _load_matches
 from rp_to_hevy_cli.port.sync import (
@@ -29,7 +31,6 @@ from rp_to_hevy_cli.port.workout_title_generator import (
 )
 from rp_to_hevy_cli.rp import _fetch_mesocycles
 from rp_to_hevy_cli.settings import hevy_client, rp_client, title_llm_config
-from rp_to_hevy_cli.utils import LLMCache, build_openai_agent
 
 
 @click.command("port-rp-workout-to-hevy")
