@@ -117,7 +117,7 @@ class _Base(DeclarativeBase):
     pass
 
 
-class _CacheEntry(DeclarativeBase):
+class _CacheEntry(_Base):
     __tablename__ = "cache_entries"
     namespace = Column(String(256), primary_key=True)
     field_hash = Column(String(64), primary_key=True)
