@@ -58,7 +58,7 @@ async def _run(
     raw_results = await asyncio.gather(*tasks)
     click.echo(err=True)  # newline after progress
 
-    await cache.close()
+    cache.close()
 
     results = [r for r in raw_results if r is not None]
     results.sort(key=lambda r: int(r["rp_id"]))

@@ -182,7 +182,7 @@ async def _port_rp_workout_to_hevy(
         )
     )
 
-    await cache.close()
+    cache.close()
 
     for meso in titled_mesos:
         for week_idx, week in enumerate(meso.weeks or []):
