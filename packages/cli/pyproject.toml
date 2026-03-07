@@ -9,7 +9,7 @@ dependencies = [
   "api-service",
   "cloudpathlib[s3,gs]",
   "embeddings[api]",
-  "pydantic-ai[openai]",
+  "pydantic-ai-slim[openai]",
   "pyyaml>=6.0",
   "sqlalchemy>=2.0",
   "sqlalchemy-libsql",
