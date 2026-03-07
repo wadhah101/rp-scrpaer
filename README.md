@@ -1,12 +1,12 @@
 # rp-to-hevy
 
-> I love [Hevy](https://www.hevyapp.com/) UI but I train with [RP Hypertrophy](https://rpstrength.com/). So I built a pipeline to port my entire workout history — reverse-engineered API, AI exercise matching, and all.
+> I love [Hevy](https://www.hevyapp.com/) UI but I train with [RP Hypertrophy](https://rpstrength.com/). So I built a pipeline to port my entire workout history -- reverse-engineered API, AI exercise matching, and all.
 
 **Note:** This is a personal project. The data in this repository is mine. If you want to use this for your own data, you'll need to run through several setup steps outlined below.
 
 ## Why This Exists
 
-I use two fitness apps. [RP Hypertrophy](https://rpstrength.com/) programs my training — it auto-regulates weight, volume, and RIR based on sport science, and it's genuinely great at that. But its interface is a laggy PWA that feels like a web page pretending to be an app. [Hevy](https://www.hevyapp.com/) is the opposite — a proper native Android app with a clean UI, social features, and a workout log I actually enjoy using.
+I use two fitness apps. [RP Hypertrophy](https://rpstrength.com/) programs my training -- it auto-regulates weight, volume, and RIR based on sport science, and it's genuinely great at that. But its interface is a laggy PWA that feels like a web page pretending to be an app. [Hevy](https://www.hevyapp.com/) is the opposite -- a proper native Android app with a clean UI, social features, and a workout log I actually enjoy using.
 
 I wanted my entire RP training history inside Hevy. One command, every mesocycle, every set. That's what this project does.
 
@@ -16,7 +16,7 @@ The catch: nothing about this was straightforward.
 
 ### 1. RP has no public API
 
-RP doesn't document or expose an API. I reverse-engineered it by intercepting traffic from the web app — mapping endpoints, figuring out auth, and building a Python SDK from hand crafted openapi file. The whole thing is undocumented and could break any time RP ships an update.
+RP doesn't document or expose an API. I reverse-engineered it by intercepting traffic from the web app -- mapping endpoints, figuring out auth, and building a Python SDK from hand crafted openapi file. The whole thing is undocumented and could break any time RP ships an update.
 
 ### 2. Hevy's OpenAPI spec is broken
 
@@ -30,9 +30,11 @@ Hevy *does* have a developer API, but its OpenAPI spec is riddled with violation
 
 A three-stage pipeline maps every RP exercise to its Hevy equivalent:
 
-1. **Embed** — Each exercise gets turned into a rich text string (name + equipment + muscle groups) and encoded into a vector using [Qwen3-Embedding-8B](https://huggingface.co/Qwen/Qwen3-Embedding-8B). Vectors go into ChromaDB.
-2. **Search** — For every RP exercise, query the Hevy collection by cosine similarity and pull the top-K nearest candidates.
-3. **Judge** — An LLM reviews each RP exercise against its candidates and picks the single best match. Results land in `llm-matches.yaml`.
+1. **Embed** -- Each exercise gets turned into a rich text string (name + equipment + muscle groups) and encoded into a vector via an OpenAI-compatible embedding API. Vectors are stored in ChromaDB.
+2. **Search** -- For every RP exercise, query the Hevy collection by cosine similarity and pull the top-K nearest candidates.
+3. **Judge** -- An LLM reviews each RP exercise against its candidates and picks the single best match. Results land in `llm-matches.yaml`.
+
+The embeddings package uses [chromadb-client](https://pypi.org/project/chromadb-client/) -- the HTTP-only thin client -- instead of the full `chromadb` package. The full package drags in `onnxruntime`, `tokenizers`, and other heavy dependencies for a default embedding function we never use (we bring our own embedder). Locally, ChromaDB runs via Docker Compose. In production, we use [Chroma Cloud](https://www.trychroma.com/).
 
 The pipeline achieves **92% muscle group precision@1** and **75% ground truth accuracy** (weighted, on 100 human-verified pairs). A confidence-weighted evaluation system discounts ambiguous matches so the model isn't penalized for cases even a human would debate. See the [embeddings package](packages/embeddings/README.md) for the full methodology.
 
@@ -48,7 +50,7 @@ flowchart TD
 
     CLI["cli<br/>export · embed · match · port"]
 
-    Embeddings["embeddings<br/>Qwen3-8B · ChromaDB · LLM judge"]
+    Embeddings["embeddings<br/>ChromaDB · LLM judge"]
     RP --> RPSDK
     Hevy --> HevySDK
 
@@ -60,23 +62,29 @@ flowchart TD
 
 ## Core workflow
 
-The core command is **`port-rp-workout-to-hevy`** — it fetches every mesocycle from RP, maps exercises through the AI match file, generates descriptive workout titles via LLM (e.g. "Chest & Triceps", "Pull Day"), transforms sets (lb to kg, duration clamping), deduplicates against existing Hevy workouts, and creates or updates them via the Hevy API.
+The core command is **`port-rp-workout-to-hevy`** -- it fetches every mesocycle from RP, maps exercises through the AI match file, generates descriptive workout titles via LLM (e.g. "Chest & Triceps", "Pull Day"), transforms sets (lb to kg, duration clamping), deduplicates against existing Hevy workouts, and creates or updates them via the Hevy API.
+
+### LLM Response Cache
+
+LLM calls (workout title generation, exercise judging) are expensive and deterministic for the same input. Every response is cached in a SQLite database via SQLAlchemy, keyed by `(namespace, sha256(prompt))` where namespace includes the model name to avoid collisions when switching models.
+
+Locally, the cache is a SQLite file. In production, we use [Turso](https://turso.tech/) -- a hosted libSQL service that gives us a persistent, globally-replicated cache database without managing infrastructure. The `sqlalchemy-libsql` dialect connects to Turso via its HTTP API, authenticated by `TURSO_AUTH_TOKEN`. This means re-running an import after a partial failure skips all LLM calls that already succeeded.
 
 ## Build System & CI
 
-### mise — single source of truth
+### mise -- single source of truth
 
 [mise](https://mise.jdx.dev/) manages everything: Python 3.12, uv, ruff, hk, hadolint, trufflehog, and 15+ other tools. One `mise install` provisions the entire dev environment. Tasks are defined per-package with monorepo routing (`mise //packages/cli:build`), and `mise all-ci` reproduces the full CI pipeline locally.
 
 ### Remote Docker builds over Tailscale
 
-CI doesn't use GitHub's hosted runners for Docker builds. Instead, I run a persistent BuildKit daemon on my home server — a machine that was sitting there doing nothing — and connect to it from GitHub Actions over [Tailscale](https://tailscale.com/). Direct UDP connection, no SSH tunnels, Tailscale ACLs restricting access to the builder port.
+CI doesn't use GitHub's hosted runners for Docker builds. Instead, I run a persistent BuildKit daemon on my home server -- a machine that was sitting there doing nothing -- and connect to it from GitHub Actions over [Tailscale](https://tailscale.com/). Direct UDP connection, no SSH tunnels, Tailscale ACLs restricting access to the builder port.
 
-Because the daemon is long-lived, BuildKit's cache layers persist across CI runs. Repeat builds finish in **under 30 seconds** — faster than any commercial CI builder I tried, and completely free. If the home server is unreachable, CI falls back gracefully to a local builder.
+Because the daemon is long-lived, BuildKit's cache layers persist across CI runs. Repeat builds finish in **under 30 seconds** -- faster than any commercial CI builder I tried, and completely free. If the home server is unreachable, CI falls back gracefully to a local builder.
 
 ### Security-first pipeline
 
-Every image goes through **build → scan → push** gating:
+Every image goes through **build -> scan -> push** gating:
 
 1. Docker builds with BuildKit secret mounts (tokens never baked into layers)
 2. [TruffleHog](https://github.com/trufflesecurity/trufflehog) scans the built image for leaked secrets
@@ -103,30 +111,26 @@ mise //...:test                       # test every package
 
 ### Porting your workouts
 
+All API configuration is read from environment variables. Copy `.env.example` and fill in your values:
+
 ```bash
-# Preview what would be imported
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --dry-run
-
-# Import everything from a specific date
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --start-date 2026-01-01
-
-# Re-sync previously imported workouts
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --upsert
+cp .env.example .env
 ```
 
-You'll need an RP bearer token (`RP_BEARER_TOKEN` env var, intercepted from app traffic), a Hevy API key (`HEVY_API_KEY` env var, from [hevy.com/settings](https://hevy.com/settings?developer)), and an OpenRouter API key (`OPENROUTER_API_KEY`) for LLM-powered workout title generation.
+Then run the import:
+
+```bash
+# Preview what would be imported
+mise //packages/cli:cli port-rp-workout-to-hevy --dry-run
+
+# Import everything from a specific date
+mise //packages/cli:cli port-rp-workout-to-hevy --start-date 2026-01-01
+
+# Re-sync previously imported workouts
+mise //packages/cli:cli port-rp-workout-to-hevy --upsert
+```
+
+You'll need an RP bearer token (`RP_BEARER_TOKEN`, intercepted from app traffic), a Hevy API key (`HEVY_API_KEY`, from [hevy.com/settings](https://hevy.com/settings?developer)), and LLM API credentials (`TITLE_API_*`) for workout title generation.
 
 ## Running the Full Pipeline
 
@@ -150,11 +154,9 @@ npm run start
 Export the Hevy exercise catalog (~433 exercises) to use as matching targets:
 
 ```bash
-# Set your Hevy API key
 export HEVY_API_KEY="your-api-key-from-hevy-settings"
 
-# Export Hevy exercise templates
-mise //packages/cli:cli hevy export --type exercise-templates -o data/hevy/exercises.json
+mise //packages/cli:export-hevy-local
 ```
 
 ### 3. Export RP Data
@@ -162,38 +164,27 @@ mise //packages/cli:cli hevy export --type exercise-templates -o data/hevy/exerc
 Export your complete RP training history. You'll need a bearer token from the RP app (inspect network traffic to grab it):
 
 ```bash
-# Set your RP bearer token
 export RP_BEARER_TOKEN="your-rp-bearer-token"
 
-# Export all RP data (profile, exercises, mesocycles, templates, etc.)
-mise //packages/cli:cli rp export --type all -o data/rp/
+mise //packages/cli:export-rp-local
 ```
 
 ### 4. Run Embedding and Matching
 
-Generate AI-powered exercise matches between the RP and Hevy exercise catalogs using semantic embeddings:
+Generate AI-powered exercise matches between the RP and Hevy exercise catalogs. All API and ChromaDB configuration is read from environment variables (see `.env.example`).
 
 ```bash
-# Step 1: Embed all exercises into vectors using Qwen3-Embedding-8B
-mise //packages/cli:cli embedding embd \
-  --backend local \
-  --model-name Qwen/Qwen3-Embedding-8B \
-  --chroma-mode persistent \
-  --chroma-path ./chroma_data
+# Start local ChromaDB
+docker compose up -d
+
+# Step 1: Embed all exercises into vectors
+mise //packages/cli:embd
 
 # Step 2: Run similarity search to find top-K candidates
-mise //packages/cli:cli embedding run-rp-similarity-search \
-  --chroma-mode persistent \
-  --chroma-path ./chroma_data \
-  --exercise-output-dir data/embeddings/candidates/
+mise //packages/cli:run-rp-similarity-search
 
 # Step 3: Use an LLM to judge the best match from candidates
-# Requires OpenRouter or OpenAI API key
-export OPENROUTER_API_KEY="your-openrouter-api-key"
-mise //packages/cli:cli embedding llm-judge \
-  --api-base-url https://openrouter.ai/api/v1 \
-  --api-key $OPENROUTER_API_KEY \
-  --api-model google/gemini-3.1-pro-preview
+mise //packages/cli:llm-judge
 
 # This produces data/embeddings/llm-matches.yaml
 ```
@@ -204,37 +195,29 @@ Finally, import your entire RP training history into Hevy:
 
 ```bash
 # Preview what would be imported (dry run)
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --dry-run
+mise //packages/cli:cli port-rp-workout-to-hevy --dry-run
 
 # Import everything from a specific date
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --start-date 2026-01-01
+mise //packages/cli:cli port-rp-workout-to-hevy --start-date 2026-01-01
 
 # Re-sync previously imported workouts
-mise //packages/cli:cli port-rp-workout-to-hevy \
-  --title-api-base-url https://openrouter.ai/api/v1 \
-  --title-api-key $OPENROUTER_API_KEY \
-  --title-api-model google/gemini-3-flash-preview \
-  --upsert
+mise //packages/cli:cli port-rp-workout-to-hevy --upsert
 ```
 
-Workout titles are generated by an LLM that inspects the exercises in each day and produces gym-standard names like "Chest & Triceps" or "Pull Day". Titles are generated once from the first week and reused across all weeks. Results are cached in [Turso](https://turso.tech/) (a libSQL edge database) via `--cache-url`, which avoids redundant LLM calls across runs.
+Workout titles are generated by an LLM that inspects the exercises in each day and produces gym-standard names like "Chest & Triceps" or "Pull Day". Titles are generated once from the first week and reused across all weeks. Results are cached in the LLM response cache (Turso in production, local SQLite in development) to avoid redundant calls across runs.
 
 Each imported workout will be tagged with `#import-from-rp` and `rp-day-id:<id>` in the description for deduplication.
 
 ## Infrastructure (GCP)
 
-The project runs on Google Cloud Platform with Terraform-managed infrastructure. Two Cloud Run jobs handle automated operations:
+I didn't want to build an API, handle auth, or expose a public service. I also didn't want a scheduled cron job for the RP import -- if RP detects automated scraping, my account gets banned and I lose my training data. The import needs to happen on my terms.
 
-- **hevy-export** — nightly cron job that exports the full Hevy workout history to a GCS bucket (daily snapshots under `exports/hevy/`)
-- **port-rp-workout-to-hevy** — on-demand job that runs the porting pipeline (RP fetch → exercise matching → LLM title generation → Hevy import), using Turso as a title cache
+The solution: **GCP Cloud Run Jobs**. A Cloud Run Job can be triggered manually from the GCP Console or the GCP mobile app, runs to completion, and shuts down. No always-on infrastructure, no API surface, no cron hitting RP's servers on a schedule. I trigger an import when I want one and pay only for the seconds it runs.
+
+The project runs on Google Cloud Platform with Terraform-managed infrastructure:
+
+- **hevy-export** -- nightly cron job that exports the full Hevy workout history to a GCS bucket (this is safe to automate -- Hevy has a public API)
+- **port-rp-workout-to-hevy** -- on-demand job triggered manually, runs the full porting pipeline (RP fetch -> exercise matching -> LLM title generation -> Hevy import), using Turso as a title cache
 
 Both jobs run on Cloud Run Gen2 with Secret Manager integration for API keys (Hevy, RP, OpenRouter, Turso). A Cloud Scheduler trigger fires the export job daily at midnight CET.
 
@@ -275,7 +258,7 @@ echo -n "your-token" | gcloud secrets versions add turso-auth-token --data-file=
 | Path | What it does |
 | --- | --- |
 | [`packages/api-service`](packages/api-service/README.md) | Auto-generated async Python SDKs for both APIs |
-| [`packages/cli`](packages/cli/README.md) | Click CLI — the main interface for everything |
+| [`packages/cli`](packages/cli/README.md) | Click CLI -- the main interface for everything |
 | [`packages/embeddings`](packages/embeddings/README.md) | Embedding pipeline, similarity search, LLM judge, evaluation |
 | [`scripts/hevy-extract`](scripts/hevy-extract/README.md) | Bun/TS tool that fetches and patches Hevy's broken OpenAPI spec |
 | [`infra`](infra/) | Terraform configuration for GCP infrastructure |
